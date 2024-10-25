@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#gitignore pal build //Decir jose
+*build_property.ProjectDir
