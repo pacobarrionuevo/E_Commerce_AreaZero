@@ -44,6 +44,20 @@ namespace E_Commerce_VS
 
                 });
 
+            if (builder.Environment.IsDevelopment())
+            {
+                builder.Services.AddCors(options =>
+                {
+                    options.AddDefaultPolicy(builder =>
+                    {
+                        builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
+                });
+            }
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -51,6 +65,9 @@ namespace E_Commerce_VS
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+
+                //Permite CORS
+                app.UseCors();
             }
 
             app.UseHttpsRedirection();
