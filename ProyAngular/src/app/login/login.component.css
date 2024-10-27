@@ -50,16 +50,28 @@ body {
     border: 1px solid #595858;
     margin-top: 5px;
 }
+
 .button {
-    background: #1A1728;
-    color: white;
     font-size: 30px;
     padding: 15px;
     border-radius: 25px;
     border: 3px solid #ADADAD;
     cursor: pointer;
     margin-top: 20px;
+    width: 100%; 
 }
+
+.button-login {
+    background: #1A1728;
+    color: white;
+}
+
+.button-signup {
+    background: white;
+    color: #1A1728;
+    border: 3px solid #1A1728;
+}
+
 .link {
     color: #0479FF;
     font-size: 20px;
