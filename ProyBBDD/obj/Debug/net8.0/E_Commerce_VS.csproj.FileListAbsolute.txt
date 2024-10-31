@@ -139,3 +139,7 @@ C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\
 C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\net8.0\Stripe.net.dll
+C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\pacob\Desktop\PROYECTO_ECOMMERCE\E_Commerce_VS\E_Commerce_VS\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
