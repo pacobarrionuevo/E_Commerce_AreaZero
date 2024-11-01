@@ -1,4 +1,3 @@
-
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -27,13 +26,13 @@ namespace E_Commerce_VS
                 .AddJwtBearer(options =>
                 {
                     //antes del f "" 8 ya hay 24 caracteres (256 bits)
-                    //Deber?a establecerse una variable de entorno
+                    //Deberia establecerse una variable de entorno
 
                     string key = "aljdvb##@coienwe82784f8fnuioecwcq2";
 
                     options.TokenValidationParameters = new TokenValidationParameters()
                     {
-                        //P?gina 94 del PDF de Jose
+                        //Pagina 94 del PDF de Jose
 
                         ValidateIssuer = false,
 
