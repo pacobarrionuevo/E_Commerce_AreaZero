@@ -1,0 +1,1 @@
+Este proyecto contiene toda la lógica del backend necesaria para hacer el catálogo en el front, lo subo asi a development porque no me gusta complicarme con el GitHub (y la rama que tiene que estar limpia es Main asi que via libre)
