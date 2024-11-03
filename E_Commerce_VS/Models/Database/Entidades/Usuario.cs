@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace E_Commerce_VS.Database.Entidades
+namespace E_Commerce_VS.Models.Database.Entidades
 {
     public class Usuario
     {
-        
+
         public int UsuarioId { get; set; }
 
         [MaxLength(100)]
@@ -19,9 +19,7 @@ namespace E_Commerce_VS.Database.Entidades
         [MaxLength(150)]
         public string Direccion { get; set; }
 
-        public string Rol {  get ; set; }
-
-        public ICollection<Usuario> Usuarios { get; set; } = [];
+        public string? Rol { get; set; } 
 
     }
 }
