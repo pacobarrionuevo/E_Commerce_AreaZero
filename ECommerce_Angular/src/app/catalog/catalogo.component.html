@@ -1,0 +1,17 @@
+<body>
+
+    <section class="background">
+        <div id="lista-productos" class="grid">
+            <figure class="product" *ngFor="let product of productList">
+                <span class="product-name">Producto 1</span>
+                <img class="imagen" src="{{ product.ruta }}"
+                alt="{{ product.name }} image"
+                class="img">
+                <button class="add-to-cart">AÑADIR A CARRITO</button>
+                <span class="price">X €</span>
+            </figure>
+            
+        </div>
+    </section>
+    
+    </body>
