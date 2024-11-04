@@ -24,9 +24,9 @@ namespace E_Commerce_VS.Models.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            //optionsBuilder.UseSqlite($"DataSource={baseDir}{DATABASE_PATH}");
-            optionsBuilder.UseSqlite(_settings.DatabaseConnection);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            optionsBuilder.UseSqlite($"DataSource={baseDir}{DATABASE_PATH}");
+            //optionsBuilder.UseSqlite(_settings.DatabaseConnection);
         }
     }
 }
