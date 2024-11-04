@@ -1,11 +1,11 @@
 export class Product {
     id: number;
-    name: string;
+    nombre: string;
     ruta: string;
 
     constructor(id: number, nombre: string, ruta: string) {
         this.id = id;
-        this.name = nombre;
+        this.nombre = nombre;
         this.ruta = ruta;
     }
 }
