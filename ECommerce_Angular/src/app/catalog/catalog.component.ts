@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Products } from '../models/products';
+import { Product } from '../models/products';
 import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-catalog',
@@ -11,7 +11,7 @@ import { ApiService } from '../services/api.service';
 })
 export class CatalogComponent implements OnInit {
 
-  productList: Products[] = [];
+  productList: Product[] = [];
 
 
   constructor(private apiService: ApiService) {}
@@ -21,7 +21,7 @@ export class CatalogComponent implements OnInit {
   }
   async getProducts() {
     try {
-      const result = await this.apiService.get<Products[]>('/controladorproducto');
+      const result = await this.apiService.get<Product[]>('controladorproducto');
       
       if (result.success) {
         this.productList = result.data || [];  // Asignar productos a la lista
