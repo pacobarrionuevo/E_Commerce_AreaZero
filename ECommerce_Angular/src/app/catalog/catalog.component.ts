@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../models/products';
+import { Product } from '../models/product';
 import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-catalog',
