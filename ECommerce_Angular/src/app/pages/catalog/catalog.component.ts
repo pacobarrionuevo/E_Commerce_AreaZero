@@ -21,7 +21,7 @@ export class CatalogComponent implements OnInit {
   }
   async getProducts() {
     try {
-      const result = await this.apiService.get<Product[]>('/controladorproducto');
+      const result = await this.apiService.get<Product[]>('controladorproducto');
       
       if (result.success) {
         this.productList = result.data || [];  // Asignar productos a la lista
