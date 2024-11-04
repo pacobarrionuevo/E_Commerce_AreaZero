@@ -8,7 +8,6 @@ using E_Commerce_VS.Models.Database.Repositories;
 using E_Commerce_VS.Models.Mapper;
 using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace E_Commerce_VS
 {
@@ -17,7 +16,6 @@ namespace E_Commerce_VS
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
@@ -30,55 +28,37 @@ namespace E_Commerce_VS
 
             builder.Services.AddScoped<Services.ProductService>();
 
-            // Aï¿½adimos los mappers como Transient
+            // Añadimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddScoped<ProyectoDbContext>();
 
-<<<<<<< HEAD
-            // Configuración de autenticación JWT
-            builder.Services.AddAuthentication(options =>
-=======
-            // Configuraciï¿½n de CORS
+            // Configuración de CORS
             builder.Services.AddCors(options =>
->>>>>>> origin/gonza
             {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
+
+            builder.Services.AddAuthentication().AddJwtBearer(options =>
             {
-                // Clave para la firma del JWT
-                string key = Environment.GetEnvironmentVariable("JWT_KEY") ?? "aljdvb##@coienwe82784f8fnuioecwcq2";
-                Console.WriteLine($"JWT_KEY: {key}");
+                string Key = Environment.GetEnvironmentVariable("JWT_KEY");
+                Console.WriteLine($"JWT_KEY: {Key}");
 
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-<<<<<<< HEAD
-=======
-                    //Pï¿½gina 94 del PDF de Jose
->>>>>>> origin/gonza
+                    //Página 94 del PDF de Jose
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Key))
                 };
             });
-
-            if (builder.Environment.IsDevelopment())
-            {
-                builder.Services.AddCors(options =>
-                {
-                    options.AddDefaultPolicy(builder =>
-                    {
-                        builder.AllowAnyOrigin()
-                               .AllowAnyMethod()
-                               .AllowAnyHeader();
-                    });
-                });
-            }
 
             var app = builder.Build();
 
@@ -92,7 +72,7 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-            // Autenticaciï¿½n y Autorizaciï¿½n
+            // Autenticación y Autorización
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -108,20 +88,9 @@ namespace E_Commerce_VS
                 _dbContext.Database.EnsureCreated();
             }
 
-            // Habilitar CORS
-            app.UseCors();
-
-            app.UseStaticFiles();
-            app.MapControllers();
-
-            InitStripe(app.Services);
-
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-            }
             app.Run();
         }
+
+
     }
 }
