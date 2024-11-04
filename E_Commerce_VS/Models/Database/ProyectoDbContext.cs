@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Models.Database.Entidades;
+using Microsoft.Extensions.Options;
 
 namespace E_Commerce_VS.Models.Database
 {
@@ -7,17 +8,25 @@ namespace E_Commerce_VS.Models.Database
     {
         private const string DATABASE_PATH = "areaZero.db";
 
+        private readonly Settings _settings;
+
         //Tablas de la base de datos
-        // IREMOS AÑADIENDO POCO A POCO, AHORA MISMO SÓLO HACE FALTA LA DE USUARIO PARA EL INICIO DE SESIÓN
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Producto> Productos { get; set; }
 
         // Configuramos el EntityFramework para crear un archivo de BBDD Sqlite
 
+        public ProyectoDbContext(IOptions<Settings> options)
+        {
+            _settings = options.Value;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            optionsBuilder.UseSqlite($"DataSource={baseDir}{DATABASE_PATH}");
+            //string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            //optionsBuilder.UseSqlite($"DataSource={baseDir}{DATABASE_PATH}");
+            optionsBuilder.UseSqlite(_settings.DatabaseConnection);
         }
     }
 }

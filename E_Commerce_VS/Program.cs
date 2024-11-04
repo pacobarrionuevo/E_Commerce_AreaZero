@@ -4,6 +4,10 @@ using System.Text;
 using System.Text.Json.Serialization;
 using Stripe;
 using Microsoft.Extensions.Options;
+using E_Commerce_VS.Models.Database.Repositories;
+using E_Commerce_VS.Models.Mapper;
+using Microsoft.EntityFrameworkCore;
+using E_Commerce_VS.Services;
 
 namespace E_Commerce_VS
 {
@@ -14,8 +18,19 @@ namespace E_Commerce_VS
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
+
             // Add services to the container.
             builder.Services.AddControllers();
+
+            builder.Services.AddScoped<ProyectoDbContext>();
+            builder.Services.AddScoped<UnitOfWork>();
+            builder.Services.AddScoped<RepositorioProducto>();
+
+            builder.Services.AddScoped<Services.ProductService>();
+
+            // A�adimos los mappers como Transient
+            builder.Services.AddScoped<ProductoMapper>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -57,9 +72,23 @@ namespace E_Commerce_VS
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             // Autenticaci�n y Autorizaci�n
             app.UseAuthentication();
             app.UseAuthorization();
+
+            // Habilitar CORS
+            app.UseCors();
+
+            app.UseStaticFiles();
+            app.MapControllers();
+
+            using (IServiceScope scope = app.Services.CreateScope())
+            {
+                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
+                _dbContext.Database.EnsureCreated();
+            }
 
             // Habilitar CORS
             app.UseCors();
@@ -77,11 +106,6 @@ namespace E_Commerce_VS
             app.Run();
         }
 
-        static void InitStripe(IServiceProvider serviceProvider)
-        {
-            using IServiceScope scope = serviceProvider.CreateScope();
-            IOptions<Settings> options = scope.ServiceProvider.GetService<IOptions<Settings>>();
-            StripeConfiguration.ApiKey = options.Value.StripeSecret;
-        }
+        
     }
 }
