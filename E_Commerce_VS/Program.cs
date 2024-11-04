@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 using E_Commerce_VS.Models.Database;
->>>>>>> origin/development
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -11,6 +8,7 @@ using E_Commerce_VS.Models.Database.Repositories;
 using E_Commerce_VS.Models.Mapper;
 using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace E_Commerce_VS
 {
@@ -38,55 +36,38 @@ namespace E_Commerce_VS
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-<<<<<<< HEAD
-            builder.Services.AddAuthentication()
-                .AddJwtBearer(options =>
-                {
-                    //antes del f "" 8 ya hay 24 caracteres (256 bits)
-                    //Deberia establecerse una variable de entorno
-
-                    string key = "aljdvb##@coienwe82784f8fnuioecwcq2";
-
-                    options.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        //Pagina 94 del PDF de Jose
-
-                        ValidateIssuer = false,
-
-                        ValidateAudience = false,
-
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
-                    };
-
-                });
-
-            if (builder.Environment.IsDevelopment())
-=======
-            // Configuración de CORS
-            builder.Services.AddCors(options =>
->>>>>>> origin/development
+            // Configuración de autenticación JWT
+            builder.Services.AddAuthentication(options =>
             {
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder.AllowAnyOrigin()
-                           .AllowAnyMethod()
-                           .AllowAnyHeader();
-                });
-            });
-
-            builder.Services.AddAuthentication().AddJwtBearer(options =>
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
             {
-                string Key = Environment.GetEnvironmentVariable("JWT_KEY");
-                Console.WriteLine($"JWT_KEY: {Key}");
+                // Clave para la firma del JWT
+                string key = Environment.GetEnvironmentVariable("JWT_KEY") ?? "aljdvb##@coienwe82784f8fnuioecwcq2";
+                Console.WriteLine($"JWT_KEY: {key}");
 
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    //Página 94 del PDF de Jose
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Key))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
                 };
             });
+
+            if (builder.Environment.IsDevelopment())
+            {
+                builder.Services.AddCors(options =>
+                {
+                    options.AddDefaultPolicy(builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+                });
+            }
 
             var app = builder.Build();
 
@@ -118,7 +99,5 @@ namespace E_Commerce_VS
 
             app.Run();
         }
-
-        
     }
 }
