@@ -17,6 +17,7 @@ namespace E_Commerce_VS
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
@@ -29,15 +30,21 @@ namespace E_Commerce_VS
 
             builder.Services.AddScoped<Services.ProductService>();
 
-            // Añadimos los mappers como Transient
+            // Aï¿½adimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<ProyectoDbContext>();
 
+<<<<<<< HEAD
             // Configuración de autenticación JWT
             builder.Services.AddAuthentication(options =>
+=======
+            // Configuraciï¿½n de CORS
+            builder.Services.AddCors(options =>
+>>>>>>> origin/gonza
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -50,6 +57,10 @@ namespace E_Commerce_VS
 
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
+<<<<<<< HEAD
+=======
+                    //Pï¿½gina 94 del PDF de Jose
+>>>>>>> origin/gonza
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
@@ -81,7 +92,7 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-            // Autenticación y Autorización
+            // Autenticaciï¿½n y Autorizaciï¿½n
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -97,6 +108,19 @@ namespace E_Commerce_VS
                 _dbContext.Database.EnsureCreated();
             }
 
+            // Habilitar CORS
+            app.UseCors();
+
+            app.UseStaticFiles();
+            app.MapControllers();
+
+            InitStripe(app.Services);
+
+            using (IServiceScope scope = app.Services.CreateScope())
+            {
+                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
+                _dbContext.Database.EnsureCreated();
+            }
             app.Run();
         }
     }
