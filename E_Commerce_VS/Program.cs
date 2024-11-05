@@ -28,6 +28,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<RepositorioProducto>();
 
             builder.Services.AddScoped<Services.ProductService>();
+            builder.Services.AddScoped<Services.SmartSearchService>();
 
             // A�adimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
