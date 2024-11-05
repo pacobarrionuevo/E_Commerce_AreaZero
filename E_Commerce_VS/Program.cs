@@ -16,6 +16,7 @@ namespace E_Commerce_VS
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
@@ -27,15 +28,17 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<RepositorioProducto>();
 
             builder.Services.AddScoped<Services.ProductService>();
+            builder.Services.AddScoped<Services.SmartSearchService>();
 
-            // Añadimos los mappers como Transient
+            // Aï¿½adimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<ProyectoDbContext>();
 
-            // Configuración de CORS
+            // Configuraciï¿½n de CORS
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -53,7 +56,7 @@ namespace E_Commerce_VS
 
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    //Página 94 del PDF de Jose
+                    //Pï¿½gina 94 del PDF de Jose
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Key))
@@ -72,7 +75,7 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-            // Autenticación y Autorización
+            // Autenticaciï¿½n y Autorizaciï¿½n
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -88,9 +91,21 @@ namespace E_Commerce_VS
                 _dbContext.Database.EnsureCreated();
             }
 
+            // Habilitar CORS
+            app.UseCors();
+
+            app.UseStaticFiles();
+            app.MapControllers();
+
+
+            using (IServiceScope scope = app.Services.CreateScope())
+            {
+                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
+                _dbContext.Database.EnsureCreated();
+            }
             app.Run();
         }
 
-
+        
     }
 }

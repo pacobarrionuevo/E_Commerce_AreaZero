@@ -1,27 +1,28 @@
 import { Injectable } from '@angular/core';
-import { ApiService } from './api.service';
-import { AuthRequest } from '../models/auth-request';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AuthRequest} from '../models/auth-request';
 import { AuthResponse } from '../models/auth-response';
-import { Result } from '../models/result';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private api: ApiService) {}
+  private URL = `${environment.apiUrl}`;
 
-  async login(authData: AuthRequest): Promise<Result<AuthResponse>> {
-    const result = await this.api.post<AuthResponse>('auth', authData);
+  constructor(private http: HttpClient) {}
 
-    if (result.success) {
-      this.api.jwt = result.data.accessToken;
-    }
+  register(authData: AuthRequest): Observable<AuthResponse> {
+    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}api/ControladorUsuario/Registro`, authData)
 
-    return result;
+     return resultado;
   }
 
-  getSecretMessage(): Promise<Result<string>> {
-    return this.api.get<string>('auth', null, 'text');
+  login(authData: AuthRequest): Observable<AuthResponse> {
+    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}api/ControladorUsuario/`, authData)
+
+     return resultado;
   }
 }
