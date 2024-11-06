@@ -89,7 +89,11 @@ namespace E_Commerce_VS
             {
                 ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
                 _dbContext.Database.EnsureCreated();
+
+                var seeder = new Seeder(_dbContext);
+                seeder.SeedAsync().Wait();
             }
+            
 
             // Habilitar CORS
             app.UseCors();

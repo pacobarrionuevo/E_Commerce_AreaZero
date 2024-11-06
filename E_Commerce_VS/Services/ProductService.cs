@@ -33,7 +33,8 @@ namespace E_Commerce_VS.Services
             Producto nuevoProducto = new Producto
             {
                 Nombre = prodReq.Nombre,
-                Ruta = relativePath
+                Ruta = relativePath,
+                Precio = prodReq.Precio
             };
 
             await _unitOfWork.RepoProd.InsertAsync(nuevoProducto);
