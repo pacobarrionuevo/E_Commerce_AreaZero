@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <body>
     <section class="background">
         <div id="lista-productos" class="grid">
@@ -11,3 +12,26 @@
         </div>
     </section>
 </body>
+=======
+<!-- catalog.component.html -->
+<body>
+    <section class="background">
+      <!-- Formulario de búsqueda -->
+      <form (ngSubmit)="searchProducts()">
+        <input type="text" placeholder="Buscar productos..." [(ngModel)]="query" name="search" />
+        <input type="submit" value="Buscar" />
+      </form>
+  
+      <!-- Lista de productos -->
+      <div id="lista-productos" class="grid">
+        <figure class="product" *ngFor="let product of productList">
+          <span class="product-name">{{ product.nombre }}</span>
+          <img class="imagen" src="{{ product.ruta }}" alt="{{ product.nombre }} image" />
+          <button class="add-to-cart">AÑADIR A CARRITO</button>
+          <span class="price">€</span>
+        </figure>
+      </div>
+    </section>
+  </body>
+  
+>>>>>>> origin/gonza
