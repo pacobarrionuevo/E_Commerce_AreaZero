@@ -1,41 +1,29 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { FormsModule } from '@angular/forms';
-import { AuthRequest } from '../../models/auth-request';
-import { RouterModule } from '@angular/router';
+import { FormsModule} from '@angular/forms'; 
 
 @Component({
-  selector: 'app-auth',
+  selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-  name: string = '';
-  password: string = '';
-  role: string = 'admin';
+  email: string = ''; 
+  password: string = ''; 
+  nombre: string = '';
+  direccion: string = ''; 
   jwt: string = '';
 
   constructor(private authService: AuthService) {}
 
   async submit() {
-    const authData : AuthRequest = { username: this.name, password: this.password, role: this.role };
-    const result = await this.authService.login(authData);
+    const authData = { nombre: this.nombre, email: this.email , password: this.password, direccion: this.direccion   }; 
+    const result = await this.authService.register(authData).toPromise();
 
-    if (result.success) {
-      this.jwt = result.data.accessToken;
-    }
-  }
-
-  async showSecretMessage() {
-    const result = await this.authService.getSecretMessage();
-
-    if (result.success) {
-      alert(result.data);
-    } else {
-      alert('No estás autorizado');
+    if (result) {
+      this.jwt = result.accessToken; 
     }
   }
 }

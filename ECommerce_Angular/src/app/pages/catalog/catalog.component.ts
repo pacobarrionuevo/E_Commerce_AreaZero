@@ -30,7 +30,7 @@ export class CatalogComponent implements OnInit {
       const result = await this.apiService.get<Product[]>('controladorproducto');
       
       if (result.success) {
-        this.productList = result.data || [];  // Asignar productos a la lista
+        this.productList = result.data;
         console.log(this.productList);
       } else {
         console.error('Error al obtener productos:',);
@@ -39,9 +39,6 @@ export class CatalogComponent implements OnInit {
       console.error('Error en la solicitud:', error);
     }
   }
-<<<<<<< HEAD
-}
-=======
 
   async searchProducts() {
     this.getProducts();
@@ -63,4 +60,3 @@ export class CatalogComponent implements OnInit {
     console.log(this.productList);
   }
 }
->>>>>>> origin/gonza

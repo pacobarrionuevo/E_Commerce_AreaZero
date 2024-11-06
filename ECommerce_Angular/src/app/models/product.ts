@@ -1,6 +1,6 @@
 export class Product {
     id: number;
-    nombre: string;
+    nombre: string;  
     ruta: string;
 
     constructor(id: number, nombre: string, ruta: string) {
