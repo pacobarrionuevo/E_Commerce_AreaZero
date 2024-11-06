@@ -91,7 +91,7 @@ namespace E_Commerce_VS
                 _dbContext.Database.EnsureCreated();
 
                 var seeder = new Seeder(_dbContext);
-                seeder.SeedAsync().Wait();
+                seeder.SeedAsync();
             }
             
 
