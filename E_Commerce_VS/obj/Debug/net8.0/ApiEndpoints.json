@@ -18,7 +18,7 @@
         "IsRequired": false
       },
       {
-        "Name": "totalPaginas",
+        "Name": "elementosPorPagina",
         "Type": "System.Int32",
         "IsRequired": false
       },
