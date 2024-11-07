@@ -45,23 +45,41 @@ namespace E_Commerce_VS.Controllers
                 productos = productos.Where(p => p.Nombre.Contains(query, StringComparison.OrdinalIgnoreCase));
             }
 
-            // Ordenamiento basado en los filtros de nombre y precio
-            if (filtroNombre == FiltroNombre.DeAaZ && filtroPrecio == FiltroPrecio.Ascendente)
+            // Primero, ordenamos por el filtro de nombre
+            IOrderedEnumerable<Producto> productosOrdenados;
+
+            switch (filtroNombre)
             {
-                productos = productos.OrderBy(p => p.Nombre).ThenBy(p => p.Precio);
+                case FiltroNombre.DeAaZ:
+                    productosOrdenados = productos.OrderBy(p => p.Nombre); // Ascendente por nombre
+                    break;
+
+                case FiltroNombre.DeZaA:
+                    productosOrdenados = productos.OrderByDescending(p => p.Nombre); // Descendente por nombre
+                    break;
+
+                default:
+                    productosOrdenados = productos.OrderBy(p => p.Nombre); // Default: Ascendente por nombre
+                    break;
             }
-            else if (filtroNombre == FiltroNombre.DeAaZ && filtroPrecio == FiltroPrecio.Descendente)
+
+            // Luego, aplicamos el filtro de precio
+            switch (filtroPrecio)
             {
-                productos = productos.OrderBy(p => p.Nombre).ThenByDescending(p => p.Precio);
+                case FiltroPrecio.Ascendente:
+                    productosOrdenados = productosOrdenados.ThenBy(p => p.Precio); // Ascendente por precio
+                    break;
+
+                case FiltroPrecio.Descendente:
+                    productosOrdenados = productosOrdenados.ThenByDescending(p => p.Precio); // Descendente por precio
+                    break;
+
+                default:
+                    productosOrdenados = productosOrdenados.ThenBy(p => p.Precio); // Default: Ascendente por precio
+                    break;
             }
-            else if (filtroNombre == FiltroNombre.DeZaA && filtroPrecio == FiltroPrecio.Ascendente)
-            {
-                productos = productos.OrderByDescending(p => p.Nombre).ThenBy(p => p.Precio);
-            }
-            else if (filtroNombre == FiltroNombre.DeZaA && filtroPrecio == FiltroPrecio.Descendente)
-            {
-                productos = productos.OrderByDescending(p => p.Nombre).ThenByDescending(p => p.Precio);
-            }
+
+
 
             // Paginación
             var totalElementos = productos.Count();
