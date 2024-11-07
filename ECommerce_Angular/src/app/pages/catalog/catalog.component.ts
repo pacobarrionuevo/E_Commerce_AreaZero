@@ -47,7 +47,6 @@ export class CatalogComponent implements OnInit {
       if (result.success) {
         const searchResults = result.data;
         
-        // Filtra los productos del catálogo actual
         this.productList = searchResults.length
           ? this.productList.filter(product => searchResults.includes(product.nombre))
           : [];

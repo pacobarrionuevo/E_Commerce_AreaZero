@@ -14,6 +14,6 @@ export class SmartSearchService {
   // Llama al endpoint de búsqueda en el backend
   async search(query: string): Promise<Result<string[]>> {
     // Usa el ApiService para realizar la solicitud GET, construyendo el path completo con el endpoint actual
-    return this.api.get<string[]>(`ControladorSmartSearch`, { query });
+    return this.api.get<string[]>(`ControladorCatalogo`, { query });
   }
 }
