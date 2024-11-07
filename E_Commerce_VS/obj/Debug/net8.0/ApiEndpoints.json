@@ -1,5 +1,46 @@
 [
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCatalogo",
+    "Method": "GetAllAsync",
+    "RelativePath": "api/ControladorCatalogo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "filtro",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "paginaActual",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "elementosPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "E_Commerce_VS.Models.Database.Paginaci\u00F3n.Paginacion\u00601[[E_Commerce_VS.Models.Dto.ProductoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorProducto",
     "Method": "GetAllAsync",
     "RelativePath": "api/ControladorProducto",
@@ -35,6 +76,11 @@
       {
         "Name": "Archivo",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Precio",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],
@@ -97,6 +143,11 @@
       {
         "Name": "Archivo",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Precio",
+        "Type": "System.Int32",
         "IsRequired": false
       }
     ],

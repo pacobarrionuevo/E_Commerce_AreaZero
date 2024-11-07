@@ -1,8 +1,6 @@
 ﻿using E_Commerce_VS.Models.Database;
 using E_Commerce_VS.Models.Database.Entidades;
-using E_Commerce_VS.Models.Database.Repositories;
 using E_Commerce_VS.Models.Dto;
-using E_Commerce_VS.Models.Mapper;
 using E_Commerce_VS.Recursos;
 
 namespace E_Commerce_VS.Services
@@ -35,7 +33,8 @@ namespace E_Commerce_VS.Services
             Producto nuevoProducto = new Producto
             {
                 Nombre = prodReq.Nombre,
-                Ruta = relativePath
+                Ruta = relativePath,
+                Precio = prodReq.Precio
             };
 
             await _unitOfWork.RepoProd.InsertAsync(nuevoProducto);

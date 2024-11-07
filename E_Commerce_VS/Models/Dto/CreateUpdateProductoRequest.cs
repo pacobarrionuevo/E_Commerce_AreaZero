@@ -4,5 +4,6 @@
     {
         public string Nombre { get; set; }
         public IFormFile Archivo { get; set; }
+        public int Precio { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
-using E_Commerce_VS.Models.Database.Entidades;
 
 namespace E_Commerce_VS.Models.Database.Repositories
 {
