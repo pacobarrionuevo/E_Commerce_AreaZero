@@ -4,7 +4,6 @@ using E_Commerce_VS.Models.Mapper;
 using E_Commerce_VS.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using static E_Commerce_VS.Models.Database.Filtros.Enumerables;
@@ -30,8 +29,7 @@ namespace E_Commerce_VS.Controllers
         // Endpoint de paginación y búsqueda combinados
         [HttpGet]
         public async Task<Paginacion<ProductoDto>> GetAllAsync(
-            FiltroPrecio filtroPrecio = FiltroPrecio.Ascendente,
-            FiltroNombre filtroNombre = FiltroNombre.DeAaZ,
+            Ordenacion filtro = Ordenacion.AscendenteNombre,
             int paginaActual = 1,
             int elementosPorPagina = 10,
             string query = "")  // Parámetro opcional para la búsqueda
@@ -45,23 +43,17 @@ namespace E_Commerce_VS.Controllers
                 productos = productos.Where(p => p.Nombre.Contains(query, StringComparison.OrdinalIgnoreCase));
             }
 
-            // Ordenamiento basado en los filtros de nombre y precio
-            if (filtroNombre == FiltroNombre.DeAaZ && filtroPrecio == FiltroPrecio.Ascendente)
+            
+            productos = filtro switch
             {
-                productos = productos.OrderBy(p => p.Nombre).ThenBy(p => p.Precio);
-            }
-            else if (filtroNombre == FiltroNombre.DeAaZ && filtroPrecio == FiltroPrecio.Descendente)
-            {
-                productos = productos.OrderBy(p => p.Nombre).ThenByDescending(p => p.Precio);
-            }
-            else if (filtroNombre == FiltroNombre.DeZaA && filtroPrecio == FiltroPrecio.Ascendente)
-            {
-                productos = productos.OrderByDescending(p => p.Nombre).ThenBy(p => p.Precio);
-            }
-            else if (filtroNombre == FiltroNombre.DeZaA && filtroPrecio == FiltroPrecio.Descendente)
-            {
-                productos = productos.OrderByDescending(p => p.Nombre).ThenByDescending(p => p.Precio);
-            }
+                Ordenacion.AscendenteNombre => productos.OrderBy(p => p.Nombre),
+                Ordenacion.DescendenteNombre => productos.OrderByDescending(p => p.Nombre),
+                Ordenacion.AscendentePrecio => productos.OrderBy(p => p.Precio),
+                Ordenacion.DescendentePrecio => productos.OrderByDescending(p => p.Precio),
+                _ => productos
+            };
+
+          
 
             // Paginación
             var totalElementos = productos.Count();

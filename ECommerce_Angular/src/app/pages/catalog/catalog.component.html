@@ -1,21 +1,41 @@
 <body>
   <section class="background">
-    <!-- Contenedor de búsqueda -->
-    <div class="search-container">
-      <form (ngSubmit)="searchProducts()">
-        <input type="text" placeholder="Buscar productos..." [(ngModel)]="query" name="search" />
-        <button type="submit">Buscar</button>
-      </form>
+    <!-- Formulario de búsqueda -->
+    <form (ngSubmit)="searchProducts()" class="search-form">
+      <input type="text" placeholder="Buscar productos..." [(ngModel)]="query" name="search" />
+      <input type="submit" value="Buscar" />
+    </form>
+
+    <!-- Filtros de ordenamiento -->
+    <div class="filters">
+      <label for="filtroPrecio">Ordenar por precio:</label>
+      <select [(ngModel)]="filtroPrecio" name="filtroPrecio" (change)="getProducts()">
+        <option value="Ascendente">Ascendente</option>
+        <option value="Descendente">Descendente</option>
+      </select>
+
+      <label for="filtroNombre">Ordenar por nombre:</label>
+      <select [(ngModel)]="filtroNombre" name="filtroNombre" (change)="getProducts()">
+        <option value="DeAaZ">De A a Z</option>
+        <option value="DeZaA">De Z a A</option>
+      </select>
     </div>
 
     <!-- Lista de productos -->
     <div id="lista-productos" class="grid">
       <figure class="product" *ngFor="let product of productList">
         <span class="product-name">{{ product.nombre }}</span>
-        <img class="imagen" [src]="product.ruta" alt="{{ product.nombre }} image" />
+        <img class="imagen" [src]="product.ruta" [alt]="product.nombre + ' image'" />
         <button class="add-to-cart">AÑADIR A CARRITO</button>
-        <span class="price">{{ product.precio }}€</span>
+        <span class="product-precio">{{ product.precio / 100 }}€</span>
       </figure>
+    </div>
+
+    <!-- Controles de paginación -->
+    <div class="pagination-controls">
+      <button (click)="cambiarPagina(-1)" [disabled]="paginaActual === 1">Anterior</button>
+      <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+      <button (click)="cambiarPagina(1)" [disabled]="paginaActual === totalPaginas">Siguiente</button>
     </div>
   </section>
 </body>
