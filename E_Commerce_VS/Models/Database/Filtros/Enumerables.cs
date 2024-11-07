@@ -2,16 +2,12 @@
 {
     public class Enumerables
     {
-        public enum FiltroPrecio
+        public enum Ordenacion
         {
-            Ascendente = 0,
-            Descendente = 1
-        }
-            
-        public enum FiltroNombre
-        {
-            DeAaZ = 0,
-            DeZaA = 1,
+            AscendentePrecio = 0,
+            DescendentePrecio = 1,
+            AscendenteNombre = 2,
+            DescendenteNombre = 3
         }
     }
 }

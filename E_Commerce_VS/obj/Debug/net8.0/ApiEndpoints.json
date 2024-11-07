@@ -8,12 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "filtroPrecio",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "filtroNombre",
+        "Name": "filtro",
         "Type": "System.String",
         "IsRequired": false
       },

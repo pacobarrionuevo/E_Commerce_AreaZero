@@ -4,7 +4,6 @@ using E_Commerce_VS.Models.Mapper;
 using E_Commerce_VS.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using static E_Commerce_VS.Models.Database.Filtros.Enumerables;
@@ -30,8 +29,7 @@ namespace E_Commerce_VS.Controllers
         // Endpoint de paginación y búsqueda combinados
         [HttpGet]
         public async Task<Paginacion<ProductoDto>> GetAllAsync(
-            FiltroPrecio filtroPrecio = FiltroPrecio.Ascendente,
-            FiltroNombre filtroNombre = FiltroNombre.DeAaZ,
+            Ordenacion filtro = Ordenacion.AscendenteNombre,
             int paginaActual = 1,
             int elementosPorPagina = 10,
             string query = "")  // Parámetro opcional para la búsqueda
@@ -45,41 +43,17 @@ namespace E_Commerce_VS.Controllers
                 productos = productos.Where(p => p.Nombre.Contains(query, StringComparison.OrdinalIgnoreCase));
             }
 
-            // Primero, ordenamos por el filtro de nombre
-            IOrderedEnumerable<Producto> productosOrdenados;
-
-            switch (filtroNombre)
+            
+            productos = filtro switch
             {
-                case FiltroNombre.DeAaZ:
-                    productosOrdenados = productos.OrderBy(p => p.Nombre); // Ascendente por nombre
-                    break;
+                Ordenacion.AscendenteNombre => productos.OrderBy(p => p.Nombre),
+                Ordenacion.DescendenteNombre => productos.OrderByDescending(p => p.Nombre),
+                Ordenacion.AscendentePrecio => productos.OrderBy(p => p.Precio),
+                Ordenacion.DescendentePrecio => productos.OrderByDescending(p => p.Precio),
+                _ => productos
+            };
 
-                case FiltroNombre.DeZaA:
-                    productosOrdenados = productos.OrderByDescending(p => p.Nombre); // Descendente por nombre
-                    break;
-
-                default:
-                    productosOrdenados = productos.OrderBy(p => p.Nombre); // Default: Ascendente por nombre
-                    break;
-            }
-
-            // Luego, aplicamos el filtro de precio
-            switch (filtroPrecio)
-            {
-                case FiltroPrecio.Ascendente:
-                    productosOrdenados = productosOrdenados.ThenBy(p => p.Precio); // Ascendente por precio
-                    break;
-
-                case FiltroPrecio.Descendente:
-                    productosOrdenados = productosOrdenados.ThenByDescending(p => p.Precio); // Descendente por precio
-                    break;
-
-                default:
-                    productosOrdenados = productosOrdenados.ThenBy(p => p.Precio); // Default: Ascendente por precio
-                    break;
-            }
-
-
+          
 
             // Paginación
             var totalElementos = productos.Count();
