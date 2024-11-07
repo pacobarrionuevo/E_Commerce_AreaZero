@@ -31,7 +31,7 @@ namespace E_Commerce_VS.Controllers
         public async Task<Paginacion<ProductoDto>> GetAllAsync(
             Ordenacion filtro = Ordenacion.AscendenteNombre,
             int paginaActual = 1,
-            int totalPaginas = 1,
+            int elementosPorPagina = 10,
             string query = "")  // Parámetro opcional para la búsqueda
         {
             // Obtención de productos desde el servicio
@@ -43,7 +43,7 @@ namespace E_Commerce_VS.Controllers
                 productos = productos.Where(p => p.Nombre.Contains(query, StringComparison.OrdinalIgnoreCase));
             }
 
-            
+
             productos = filtro switch
             {
                 Ordenacion.AscendenteNombre => productos.OrderBy(p => p.Nombre),
@@ -53,11 +53,11 @@ namespace E_Commerce_VS.Controllers
                 _ => productos
             };
 
-          
+
 
             // Paginación
             var totalElementos = productos.Count();
-            var elementosPorPagina = (int)Math.Ceiling(totalElementos / (double)totalPaginas);
+            var totalPaginas = (int)Math.Ceiling(totalElementos / (double)elementosPorPagina);
             var productosPaginados = productos
                 .Skip((paginaActual - 1) * elementosPorPagina)
                 .Take(elementosPorPagina);

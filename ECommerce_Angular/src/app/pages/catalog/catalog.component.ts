@@ -14,10 +14,8 @@ export class CatalogComponent implements OnInit {
   productList: any[] = [];
   query: string = '';
   paginaActual: number = 1;
-  elementosPorPagina: number = 10;
-  filtroPrecio: string = 'Ascendente';
-  filtroNombre: string = 'DeAaZ';
-  totalPaginas: number = 0;
+  Ordenacion: number = 2;
+  totalPaginas: number = 1;
 
   constructor(private catalogoService: CatalogoService) {}
 
@@ -26,7 +24,7 @@ export class CatalogComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.catalogoService.getAll(this.filtroPrecio, this.filtroNombre, this.paginaActual, this.elementosPorPagina, this.query)
+    this.catalogoService.getAll(this.Ordenacion, this.paginaActual, this.totalPaginas, this.query)
       .subscribe({
         next: (result) => {
           this.productList = result.resultados;
@@ -41,21 +39,6 @@ export class CatalogComponent implements OnInit {
   searchProducts(): void {
     this.paginaActual = 1; // Reinicia a la primera página para la nueva búsqueda
     this.getProducts();
-    try {
-      const result = await this.smartSearchService.search(this.query);
-      if (result.success) {
-        const searchResults = result.data;
-        
-        this.productList = searchResults.length
-          ? this.productList.filter(product => searchResults.includes(product.nombre))
-          : [];
-      } else {
-        console.error('Error al buscar productos');
-      }
-    } catch (error) {
-      console.error('Error en la solicitud de búsqueda:', error);
-    }
-    console.log(this.productList);
   }
 
   cambiarPagina(direccion: number): void {
