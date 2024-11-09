@@ -4,6 +4,7 @@ using E_Commerce_VS.Models.Mapper;
 using E_Commerce_VS.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using static E_Commerce_VS.Models.Database.Filtros.Enumerables;
@@ -43,7 +44,7 @@ namespace E_Commerce_VS.Controllers
                 productos = productos.Where(p => p.Nombre.Contains(query, StringComparison.OrdinalIgnoreCase));
             }
 
-
+            // Ordenamiento basado en los filtros de nombre y precio
             productos = filtro switch
             {
                 Ordenacion.AscendenteNombre => productos.OrderBy(p => p.Nombre),
@@ -52,8 +53,6 @@ namespace E_Commerce_VS.Controllers
                 Ordenacion.DescendentePrecio => productos.OrderByDescending(p => p.Precio),
                 _ => productos
             };
-
-
 
             // Paginación
             var totalElementos = productos.Count();
@@ -74,6 +73,20 @@ namespace E_Commerce_VS.Controllers
                 ElementosPorPagina = elementosPorPagina,
                 PaginaActual = paginaActual
             };
+        }
+
+        // Método para obtener un producto por ID
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByIdAsync(long id)
+        {
+            var producto = await _service.GetAsync(id);
+            if (producto == null)
+            {
+                return NotFound();
+            }
+
+            var productoDto = _mapper.ToDto(producto, Request);
+            return Ok(productoDto);
         }
     }
 }
