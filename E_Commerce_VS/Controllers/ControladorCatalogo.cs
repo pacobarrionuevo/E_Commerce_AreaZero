@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 using static E_Commerce_VS.Models.Database.Filtros.Enumerables;
 using E_Commerce_VS.Models.Database.Paginación;
 
@@ -19,31 +20,31 @@ namespace E_Commerce_VS.Controllers
         private readonly ProductoMapper _mapper;
         private readonly SmartSearchService _smartSearchService;
 
-        public ControladorCatalogo(ProductService service, ProductoMapper mapper)
+        public ControladorCatalogo(ProductService service, ProductoMapper mapper, SmartSearchService smartSearchService)
         {
             _service = service;
             _mapper = mapper;
-            _smartSearchService = new SmartSearchService();
+            _smartSearchService = smartSearchService;
         }
 
-        // Endpoint de paginación y búsqueda combinados
         [HttpGet]
         public async Task<Paginacion<ProductoDto>> GetAllAsync(
             Ordenacion filtro = Ordenacion.AscendenteNombre,
             int paginaActual = 1,
             int elementosPorPagina = 10,
-            string query = "")  // Parámetro opcional para la búsqueda
+            string query = "")
         {
-            // Obtención de productos desde el servicio
+            // Obtiene todos los productos desde el servicio
             IEnumerable<Producto> productos = await _service.GetAllAsync();
 
-            // Si hay un término de búsqueda, filtramos los productos por nombre
+            // Si hay un término de búsqueda, aplica SmartSearchService para obtener coincidencias
             if (!string.IsNullOrEmpty(query))
             {
-                productos = productos.Where(p => p.Nombre.Contains(query, StringComparison.OrdinalIgnoreCase));
+                var searchResults = _smartSearchService.Search(query);
+                productos = productos.Where(p => searchResults.Contains(p.Nombre));
             }
 
-
+            // Aplica el filtro de ordenación seleccionado
             productos = filtro switch
             {
                 Ordenacion.AscendenteNombre => productos.OrderBy(p => p.Nombre),
@@ -53,8 +54,6 @@ namespace E_Commerce_VS.Controllers
                 _ => productos
             };
 
-
-
             // Paginación
             var totalElementos = productos.Count();
             var totalPaginas = (int)Math.Ceiling(totalElementos / (double)elementosPorPagina);
@@ -62,10 +61,10 @@ namespace E_Commerce_VS.Controllers
                 .Skip((paginaActual - 1) * elementosPorPagina)
                 .Take(elementosPorPagina);
 
-            // Mapeo a DTO
+            // Mapea los productos paginados a DTO
             var productosDto = _mapper.ToDto(productosPaginados, Request);
 
-            // Retorno del resultado paginado y filtrado
+            // Retorna los resultados paginados y filtrados
             return new Paginacion<ProductoDto>
             {
                 Resultados = productosDto,

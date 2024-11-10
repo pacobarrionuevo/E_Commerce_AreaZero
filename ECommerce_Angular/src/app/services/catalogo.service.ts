@@ -29,14 +29,16 @@ export class CatalogoService {
   getAll(
     Ordenacion: number = 2,
     paginaActual: number = 1,
-    totalPaginas: number = 1,
-    query: string = ''
+    elementosPorPagina: number =20,
+    query: string = '',
+    totalPaginas: number=1
   ): Observable<Paginacion<ProductoDto>> {
+
+    
     let params = new HttpParams()
      .set('filtro', Ordenacion)
       .set('paginaActual', paginaActual.toString())
-      .set('totalPaginas', totalPaginas.toString());
-    
+      .set('elementosPorPagina', elementosPorPagina.toString());
     if (query) {
       params = params.set('query', query);
     }

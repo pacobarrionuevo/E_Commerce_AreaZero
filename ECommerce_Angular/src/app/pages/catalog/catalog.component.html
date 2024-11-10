@@ -5,6 +5,22 @@
       <input type="text" placeholder="Buscar productos..." [(ngModel)]="query" name="search" />
       <input type="submit" value="Buscar" />
     </form>
+    <div class="filters">
+      <label for="filtroPrecio">Productos por página:</label>
+      <select [(ngModel)]="elementosPorPagina" name="Paginacion" (change)="getProducts()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+
+      </select>
+    </div>
 
     <!-- Filtros de ordenamiento -->
     <div class="filters">
@@ -22,7 +38,7 @@
       <figure class="product" *ngFor="let product of productList">
         <span class="product-name">{{ product.nombre }}</span>
         <img class="imagen" [src]="product.ruta" [alt]="product.nombre + ' image'" />
-        <button class="add-to-cart">AÑADIR A CARRITO</button>
+        <button class="add-to-cart">Ver</button>
         <span class="product-precio">{{ product.precio / 100 }}€</span>
       </figure>
     </div>

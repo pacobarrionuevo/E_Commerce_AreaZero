@@ -13,10 +13,10 @@ import { FormsModule } from '@angular/forms';
 export class CatalogComponent implements OnInit {
   productList: any[] = [];
   query: string = '';
-  paginaActual: number = 1;
+  paginaActual: number;
   Ordenacion: number = 2;
-  totalPaginas: number = 1;
-
+  elementosPorPagina: number = 20;
+  totalPaginas: number;
   constructor(private catalogoService: CatalogoService) {}
 
   ngOnInit(): void {
@@ -24,10 +24,12 @@ export class CatalogComponent implements OnInit {
   }
 
   getProducts(): void {
-    this.catalogoService.getAll(this.Ordenacion, this.paginaActual, this.totalPaginas, this.query)
+    this.catalogoService.getAll(this.Ordenacion, this.paginaActual, this.elementosPorPagina, this.query, this.totalPaginas)
       .subscribe({
         next: (result) => {
           this.productList = result.resultados;
+          this.elementosPorPagina = result.elementosPorPagina;
+          this.paginaActual = result.paginaActual;
           this.totalPaginas = result.totalPaginas;
         },
         error: (error) => {
