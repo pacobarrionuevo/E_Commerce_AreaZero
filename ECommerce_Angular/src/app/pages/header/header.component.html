@@ -4,11 +4,13 @@
     </div>
     
     <div class="carrito">
-        <img src="/app/assets/images/carrito.png" alt="carrito" width="50" height="50">
+        <button [routerLink]="'/catalog'">
+        <img src="/app/assets/images/carrito.png" alt="catalogo" width="50" height="50">
+        </button>
     </div>
 
     <div class="torneos">
-        <img src="/src/assets/images/trofeo.png" alt="carrito" width="50" height="50">
+        <img src="../../assets/images/torneos.png" alt="torneos" width="50" height="50">
     </div>
 
     <div class="subscripcion">
@@ -21,7 +23,7 @@
     </nav>
 
     <div class="sobre-nosotros">
-        <a href="#">Sobre Nosotros</a> 
+        <a [routerLink]="'/aboutus'">Sobre Nosotros</a> 
     </div>
     
     <div class="login-register">

@@ -27,18 +27,18 @@ export class CatalogoService {
   constructor(private http: HttpClient) {}
 
   getAll(
-    filtroPrecio: string = 'Ascendente',
-    filtroNombre: string = 'DeAaZ',
+    Ordenacion: number = 2,
     paginaActual: number = 1,
-    elementosPorPagina: number = 10,
-    query: string = ''
+    elementosPorPagina: number =20,
+    query: string = '',
+    totalPaginas: number=1
   ): Observable<Paginacion<ProductoDto>> {
+
+    
     let params = new HttpParams()
-     .set('filtroNombre', filtroNombre)
-      .set('filtroPrecio', filtroPrecio)
+     .set('filtro', Ordenacion)
       .set('paginaActual', paginaActual.toString())
       .set('elementosPorPagina', elementosPorPagina.toString());
-    
     if (query) {
       params = params.set('query', query);
     }
