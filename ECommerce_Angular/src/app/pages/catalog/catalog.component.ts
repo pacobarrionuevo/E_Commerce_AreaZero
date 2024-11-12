@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CatalogoService } from '../../services/catalogo.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css']
 })

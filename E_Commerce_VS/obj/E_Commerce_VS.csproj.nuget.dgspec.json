@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
+    "C:\\Users\\pacob\\Desktop\\E_Commerce_12_11\\E_Commerce_AreaZero-gonza\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {
+    "C:\\Users\\pacob\\Desktop\\E_Commerce_12_11\\E_Commerce_AreaZero-gonza\\E_Commerce_VS\\E_Commerce_VS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "projectUniqueName": "C:\\Users\\pacob\\Desktop\\E_Commerce_12_11\\E_Commerce_AreaZero-gonza\\E_Commerce_VS\\E_Commerce_VS.csproj",
         "projectName": "E_Commerce_VS",
-        "projectPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
-        "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
+        "projectPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_12_11\\E_Commerce_AreaZero-gonza\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "packagesPath": "C:\\Users\\pacob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_12_11\\E_Commerce_AreaZero-gonza\\E_Commerce_VS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,6 +68,18 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
+            "Microsoft.Extensions.ML": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.ML.TorchSharp": {
+              "target": "Package",
+              "version": "[0.21.1, )"
+            },
             "Stripe.net": {
               "target": "Package",
               "version": "[47.0.0, )"
@@ -75,6 +87,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.9.0, )"
+            },
+            "TorchSharp-cpu": {
+              "target": "Package",
+              "version": "[0.101.5, )"
             }
           },
           "imports": [
@@ -96,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
