@@ -18,7 +18,7 @@ namespace E_Commerce_VS.Services
 
         public Task<ICollection<Producto>> GetAllAsync()
         {
-            return _unitOfWork.RepoProd.GetAllAsync();
+            return _unitOfWork.RepoProd.GetAllWithFullDataSync();
         }
 
         public Task<Producto> GetAsync(long id)
@@ -34,7 +34,8 @@ namespace E_Commerce_VS.Services
             {
                 Nombre = prodReq.Nombre,
                 Ruta = relativePath,
-                Precio = prodReq.Precio
+                Precio = prodReq.Precio,
+                Stock = prodReq.Stock
             };
 
             await _unitOfWork.RepoProd.InsertAsync(nuevoProducto);

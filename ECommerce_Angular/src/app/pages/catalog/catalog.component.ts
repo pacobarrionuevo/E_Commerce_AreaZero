@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CatalogoService } from '../../services/catalogo.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css']
 })
@@ -39,7 +40,7 @@ export class CatalogComponent implements OnInit {
   }
 
   searchProducts(): void {
-    this.paginaActual = 1; // Reinicia a la primera página para la nueva búsqueda
+    this.paginaActual = 1;
     this.getProducts();
   }
 

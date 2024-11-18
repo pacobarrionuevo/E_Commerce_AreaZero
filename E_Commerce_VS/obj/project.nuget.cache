@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MxJsESayP/U=",
+  "dgSpecHash": "gqrKU/gqLLI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\pacob\\Desktop\\E_Commerce_12_11\\E_Commerce_AreaZero-gonza\\E_Commerce_VS\\E_Commerce_VS.csproj",
+  "projectFilePath": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-development\\E_Commerce_VS\\E_Commerce_VS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pacob\\.nuget\\packages\\f23.stringsimilarity\\6.0.0\\f23.stringsimilarity.6.0.0.nupkg.sha512",
     "C:\\Users\\pacob\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
@@ -97,8 +97,7 @@
     "C:\\Users\\pacob\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
     "C:\\Users\\pacob\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\pacob\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
-    "C:\\Users\\pacob\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\pacob\\.nuget\\packages\\system.text.json\\6.0.1\\system.text.json.6.0.1.nupkg.sha512",
+    "C:\\Users\\pacob\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512",
     "C:\\Users\\pacob\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\pacob\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\pacob\\.nuget\\packages\\torchsharp\\0.101.5\\torchsharp.0.101.5.nupkg.sha512",

@@ -33,8 +33,6 @@ export class CatalogoService {
     query: string = '',
     totalPaginas: number=1
   ): Observable<Paginacion<ProductoDto>> {
-
-    
     let params = new HttpParams()
      .set('filtro', Ordenacion)
       .set('paginaActual', paginaActual.toString())
