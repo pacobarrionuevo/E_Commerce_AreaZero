@@ -32,11 +32,9 @@ namespace E_Commerce_VS.Controllers
             Ordenacion filtro = Ordenacion.AscendenteNombre,
             int paginaActual = 1,
             int elementosPorPagina = 10,
-<<<<<<< HEAD
+
             string query = "")  // Parámetro opcional para la búsqueda
-=======
-            string query = "")
->>>>>>> origin/gonza
+
         {
             // Obtiene todos los productos desde el servicio
             IEnumerable<Producto> productos = await _service.GetAllAsync();
