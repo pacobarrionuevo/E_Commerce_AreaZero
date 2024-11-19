@@ -15,13 +15,13 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   register(authData: AuthRequest): Observable<AuthResponse> {
-    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}api/ControladorUsuario/Registro`, authData)
+    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/Registro`, authData)
 
      return resultado;
   }
 
   login(authData: AuthRequest): Observable<AuthResponse> {
-    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}api/ControladorUsuario/`, authData)
+    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/login`, authData)
 
      return resultado;
   }

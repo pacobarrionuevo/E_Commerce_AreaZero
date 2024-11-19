@@ -1,4 +1,5 @@
 export class Result<T = void> {
+    [x: string]: any;
     success: boolean;
     statusCode: number;
     error: string;
