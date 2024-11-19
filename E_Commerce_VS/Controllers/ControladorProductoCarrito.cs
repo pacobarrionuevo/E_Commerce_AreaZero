@@ -42,7 +42,7 @@ namespace E_Commerce_VS.Controllers
             return Ok("Producto eliminado del carrito.");
         }
 
-        // Modificar la cantidad de un producto en el carrito
+        
         [HttpPut("cambiarcantidad")]
         public async Task<IActionResult> ModifyProduct([FromBody] ModifyProductDto request)
         {

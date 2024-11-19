@@ -18,7 +18,6 @@ namespace E_Commerce_VS.Controllers
             _context = dbContext;
         }
 
-        // Obtener todos los carritos (devuelve solo datos necesarios para evitar ciclos)
         [HttpGet("carritos")]
         public async Task<IActionResult> GetCarritos()
         {
