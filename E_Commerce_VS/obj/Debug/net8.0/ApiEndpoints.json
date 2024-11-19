@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
+    "Method": "AddProduct",
+    "RelativePath": "api/ControladorCarrito/addtoshopcart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Commerce_VS.Models.Dto.AddProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
+    "Method": "AssociateCart",
+    "RelativePath": "api/ControladorCarrito/associate-cart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
+    "Method": "GetCarritos",
+    "RelativePath": "api/ControladorCarrito/carritos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorCatalogo",
     "Method": "GetAllAsync",
     "RelativePath": "api/ControladorCatalogo",
@@ -190,6 +232,58 @@
     ]
   },
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
+    "Method": "ModifyProduct",
+    "RelativePath": "api/ControladorProductoCarrito/cambiarcantidad",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Commerce_VS.Models.Dto.ModifyProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/ControladorProductoCarrito/eliminarproductocarrito",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "E_Commerce_VS.Models.Dto.DeleteProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
+    "Method": "GetProductosCarrito",
+    "RelativePath": "api/ControladorProductoCarrito/productosCarrito",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[E_Commerce_VS.Models.Database.Entidades.ProductoCarrito, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorUsuario",
     "Method": "Login",
     "RelativePath": "api/ControladorUsuario/login",
@@ -198,14 +292,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Password",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "userLoginDto",
+        "Type": "E_Commerce_VS.Models.Dto.UserLoginDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

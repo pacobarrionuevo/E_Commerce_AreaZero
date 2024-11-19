@@ -7,6 +7,7 @@ interface ProductoDto {
     nombre: string;
     ruta: string;
     precio: number;
+    stock: number;
   }
 
 
