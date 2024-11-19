@@ -14,7 +14,8 @@ namespace E_Commerce_VS.Models.Mapper
                 Id = producto.Id,
                 Nombre = producto.Nombre,
                 Ruta = httpRequest is null ? producto.Ruta : httpRequest.GetAbsoluteUrl(producto.Ruta),
-                Precio = producto.Precio
+                Precio = producto.Precio,
+                Stock = producto.Stock
             };
         }
 
