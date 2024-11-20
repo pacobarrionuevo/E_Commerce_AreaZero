@@ -18,7 +18,7 @@ namespace E_Commerce_VS.Services
 
         public Task<ICollection<Producto>> GetAllAsync()
         {
-            return _unitOfWork.RepoProd.GetAllAsync();
+            return _unitOfWork.RepoProd.GetAllWithFullDataSync();
         }
 
         public Task<Producto> GetAsync(long id)

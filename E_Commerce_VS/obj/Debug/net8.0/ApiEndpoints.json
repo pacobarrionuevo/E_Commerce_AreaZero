@@ -83,6 +83,35 @@
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorModelo",
+    "Method": "Predict",
+    "RelativePath": "api/ControladorModelo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "text",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "E_Commerce_VS.Models.Database.Entidades.ModelOutput",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+>>>>>>> origin/paco_segundarama
     "ContainingType": "E_Commerce_VS.Controllers.ControladorProducto",
     "Method": "GetAllAsync",
     "RelativePath": "api/ControladorProducto",
@@ -124,6 +153,14 @@
         "Name": "Precio",
         "Type": "System.Int32",
         "IsRequired": false
+<<<<<<< HEAD
+=======
+      },
+      {
+        "Name": "Stock",
+        "Type": "System.Int32",
+        "IsRequired": false
+>>>>>>> origin/paco_segundarama
       }
     ],
     "ReturnTypes": [
@@ -191,6 +228,14 @@
         "Name": "Precio",
         "Type": "System.Int32",
         "IsRequired": false
+<<<<<<< HEAD
+=======
+      },
+      {
+        "Name": "Stock",
+        "Type": "System.Int32",
+        "IsRequired": false
+>>>>>>> origin/paco_segundarama
       }
     ],
     "ReturnTypes": [
@@ -284,6 +329,45 @@
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorReview",
+    "Method": "GetAllReviews",
+    "RelativePath": "api/ControladorReview",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[E_Commerce_VS.Models.Dto.ReviewDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorReview",
+    "Method": "AddReview",
+    "RelativePath": "api/ControladorReview",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reviewDto",
+        "Type": "E_Commerce_VS.Models.Dto.CreateReviewDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+>>>>>>> origin/paco_segundarama
     "ContainingType": "E_Commerce_VS.Controllers.ControladorUsuario",
     "Method": "Login",
     "RelativePath": "api/ControladorUsuario/login",

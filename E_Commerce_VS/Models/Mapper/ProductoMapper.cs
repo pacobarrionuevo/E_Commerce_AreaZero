@@ -7,6 +7,7 @@ namespace E_Commerce_VS.Models.Mapper
 {
     public class ProductoMapper
     {
+        private readonly ReviewMapper _reviewMapper = new ReviewMapper();
         public ProductoDto ToDto(Producto producto, HttpRequest httpRequest = null)
         {
             return new ProductoDto()

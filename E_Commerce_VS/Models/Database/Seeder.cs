@@ -45,6 +45,7 @@ namespace E_Commerce_VS.Models.Database
             };
 
             await _dbContext.Productos.AddRangeAsync(productos);
+            await _dbContext.Reviews.AddRangeAsync(reviews);
         }
 
     }
