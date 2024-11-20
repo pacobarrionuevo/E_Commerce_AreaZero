@@ -20,6 +20,8 @@
     <PackageReference Include="Microsoft.ML.TorchSharp" Version="0.21.1" />
     <PackageReference Include="Stripe.net" Version="47.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
+    <PackageReference Include="TorchSharp-cpu" Version="0.101.5" />
   </ItemGroup>
 
   <ItemGroup>

@@ -83,8 +83,6 @@
     ]
   },
   {
-<<<<<<< HEAD
-=======
     "ContainingType": "E_Commerce_VS.Controllers.ControladorModelo",
     "Method": "Predict",
     "RelativePath": "api/ControladorModelo",
@@ -111,7 +109,6 @@
     ]
   },
   {
->>>>>>> origin/paco_segundarama
     "ContainingType": "E_Commerce_VS.Controllers.ControladorProducto",
     "Method": "GetAllAsync",
     "RelativePath": "api/ControladorProducto",
@@ -153,14 +150,11 @@
         "Name": "Precio",
         "Type": "System.Int32",
         "IsRequired": false
-<<<<<<< HEAD
-=======
       },
       {
         "Name": "Stock",
         "Type": "System.Int32",
         "IsRequired": false
->>>>>>> origin/paco_segundarama
       }
     ],
     "ReturnTypes": [
@@ -228,14 +222,11 @@
         "Name": "Precio",
         "Type": "System.Int32",
         "IsRequired": false
-<<<<<<< HEAD
-=======
       },
       {
         "Name": "Stock",
         "Type": "System.Int32",
         "IsRequired": false
->>>>>>> origin/paco_segundarama
       }
     ],
     "ReturnTypes": [
@@ -329,8 +320,6 @@
     ]
   },
   {
-<<<<<<< HEAD
-=======
     "ContainingType": "E_Commerce_VS.Controllers.ControladorReview",
     "Method": "GetAllReviews",
     "RelativePath": "api/ControladorReview",
@@ -367,7 +356,6 @@
     "ReturnTypes": []
   },
   {
->>>>>>> origin/paco_segundarama
     "ContainingType": "E_Commerce_VS.Controllers.ControladorUsuario",
     "Method": "Login",
     "RelativePath": "api/ControladorUsuario/login",

@@ -22,7 +22,6 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
@@ -40,6 +39,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<RepositorioReview>();
 
             builder.Services.AddScoped<Services.ProductService>();
+            builder.Services.AddScoped<Services.ReviewService>();
             builder.Services.AddScoped<Services.SmartSearchService>();
 
             // A�adimos los mappers como Transient
@@ -50,6 +50,9 @@ namespace E_Commerce_VS
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<ProyectoDbContext>();
+
+            //Configuracion de MLModel para las reseñas
+            builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
             // Configuraci�n de CORS
             builder.Services.AddCors(options =>
@@ -69,7 +72,7 @@ namespace E_Commerce_VS
 
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    //P�gina 94 del PDF de Jose
+                    //Pagina 94 del PDF de Jose
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Key))
@@ -88,7 +91,7 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-            // Autenticaci�n y Autorizaci�n
+            // Autenticacion y Autorizacion
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -106,7 +109,7 @@ namespace E_Commerce_VS
                 var seeder = new Seeder(_dbContext);
                 seeder.SeedAsync();
             }
-            
+
 
             // Habilitar CORS
             app.UseCors();

@@ -16,7 +16,8 @@ namespace E_Commerce_VS.Models.Mapper
                 Nombre = producto.Nombre,
                 Ruta = httpRequest is null ? producto.Ruta : httpRequest.GetAbsoluteUrl(producto.Ruta),
                 Precio = producto.Precio,
-                Stock = producto.Stock
+                Stock = producto.Stock,
+                Reviews = _reviewMapper.ToDto(producto.Reviews).ToList()
             };
         }
 
