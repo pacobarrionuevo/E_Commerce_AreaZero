@@ -20,15 +20,23 @@ export class CatalogComponent implements OnInit {
   Ordenacion: number = 2;
   elementosPorPagina: number = 20;
   totalPaginas: number;
-  
+  userId: any;
   // Agregar apiService aquí
-  constructor(private catalogoService: CatalogoService, private carritoService: CarritoService, private apiService: ApiService) {}
+  constructor(private catalogoService: CatalogoService, private carritoService: CarritoService, private authService: AuthService, private apiService: ApiService) {}
 
   ngOnInit(): void {
+    this.userId = localStorage.getItem('usuarioId');
+    if (!this.userId) {
+      console.error('No se encontró el ID de usuario en el localStorage.');
+    }
     this.getProducts();
   }
-  addProductToCart(productId: number, userId: number,quantity: number): void {
-    this.carritoService.addProductToCart(productId, userId, quantity)
+  addProductToCart(productId: number, quantity: number): void {
+    if (!this.userId) {
+      console.error('El usuario no está autenticado.');
+      return;
+    }
+    this.carritoService.addProductToCart(productId, this.userId, quantity)
       .then(result => {
         console.log('Producto añadido al carrito', result);
       })

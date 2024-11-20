@@ -23,7 +23,7 @@ export class RegisterComponent {
     const result = await this.authService.register(authData).toPromise();
 
     if (result) {
-      this.jwt = result.accessToken; 
+      this.jwt = result.stringToken; 
     }
   }
 }
