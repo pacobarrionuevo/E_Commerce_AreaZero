@@ -74,7 +74,9 @@ namespace E_Commerce_VS.Controllers
             return Ok(new { StringToken = accessToken });
         }
         [HttpPost("login")]
-        public IActionResult Login([FromForm] UserLoginDto userLoginDto)
+        public IActionResult Login([FromBody] UserLoginDto userLoginDto)
+
+
         {
             foreach (Usuario userList in _context.Usuarios.ToList())
             {
@@ -115,6 +117,7 @@ namespace E_Commerce_VS.Controllers
         {
             return new UserRegistrarseDto()
             {
+                UsuarioId = users.UsuarioId,
                 Nombre = users.Nombre,
                 Email = users.Email,
                 Password = users.Password,

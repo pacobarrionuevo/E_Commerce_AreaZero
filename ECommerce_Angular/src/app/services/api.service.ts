@@ -92,6 +92,7 @@ export class ApiService {
   private getHeader(accept = null, contentType = null): HttpHeaders {
     let header: any = {};
 
+    // Para cuando haya que poner un JWT
     header['Authorization'] = `Bearer ${this.jwt}`;
 
     if (accept)

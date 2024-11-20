@@ -34,8 +34,7 @@ namespace E_Commerce_VS.Services
             {
                 Nombre = prodReq.Nombre,
                 Ruta = relativePath,
-                Precio = prodReq.Precio,
-                Stock = prodReq.Stock
+                Precio = prodReq.Precio
             };
 
             await _unitOfWork.RepoProd.InsertAsync(nuevoProducto);

@@ -32,7 +32,9 @@ namespace E_Commerce_VS.Controllers
             Ordenacion filtro = Ordenacion.AscendenteNombre,
             int paginaActual = 1,
             int elementosPorPagina = 10,
-            string query = "")
+
+            string query = "")  // Parámetro opcional para la búsqueda
+
         {
             // Obtiene todos los productos desde el servicio
             IEnumerable<Producto> productos = await _service.GetAllAsync();
@@ -73,19 +75,6 @@ namespace E_Commerce_VS.Controllers
                 ElementosPorPagina = elementosPorPagina,
                 PaginaActual = paginaActual
             };
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetByIdAsync(long id)
-        {
-            var producto = await _service.GetAsync(id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            var productoDto = _mapper.ToDto(producto, Request);
-            return Ok(productoDto);
         }
     }
 }

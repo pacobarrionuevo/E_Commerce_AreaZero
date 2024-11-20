@@ -3,10 +3,12 @@
 .about-us-container {
     width: 100%;
     max-width: 1440px;
-    height: 1024px;
+    height: auto;
     margin: 0 auto;
     background: #FFFFFF;
     position: relative;
+    padding-bottom: 40px;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Encabezado */
@@ -14,9 +16,6 @@
     width: 100%;
     height: 272px;
     background: #BCB8E2;
-    position: absolute;
-    top: 0;
-    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,33 +24,33 @@
 }
 
 .logo {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background: url('/assets/logo.png') no-repeat center/cover;
 }
 
 .about-us-title h1 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 40px;
+    font-weight: 700;
+    font-size: 48px;
     color: #0479FF;
     text-align: center;
 }
 
 .line1, .line2 {
-    border: 1px solid #0479FF;
+    border: 2px solid #0479FF;
 }
 
 .line1 {
-    width: 123px;
+    width: 150px;
     margin: 5px auto;
 }
 
 .line2 {
-    width: 218px;
+    width: 250px;
     margin: 5px auto;
 }
 
+/* Barra de búsqueda */
 .search-bar {
     display: flex;
     align-items: center;
@@ -62,73 +61,75 @@
     height: 64px;
     background: #D9D9D9;
     border: 1px solid #040000;
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    color: #000;
+    font-size: 26px;
     padding-left: 10px;
+    border-radius: 8px 0 0 8px;
 }
 
 .search-bar button {
     width: 94px;
     height: 64px;
-    background: #D9D9D9;
-    border: 1px solid #000;
-    font-size: 16px;
-    color: #000;
+    background: #0479FF;
+    border: none;
+    font-size: 18px;
+    color: #FFF;
     cursor: pointer;
+    border-radius: 0 8px 8px 0;
 }
 
 .profile-pic {
-    width: 185px;
-    height: 184.2px;
+    width: 100px;
+    height: 100px;
     background: #D9D9D9;
     border: 1px solid #000;
     border-radius: 50%;
 }
 
 .login-register {
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 24px;
     color: #0479FF;
     text-align: center;
 }
 
-/* Secciones principales */
+/* Contenido principal */
 .main-content {
-    position: relative;
-    padding-top: 300px;
+    padding-top: 320px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     padding: 0 100px;
+    gap: 40px;
 }
 
-.mission, .history {
-    width: 45%;
+.mission-section, .vision-section, .values-section {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background: #F5F5F5;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.mission h2, .history h2 {
-    font-family: 'Inter', sans-serif;
+.mission-section h2, .vision-section h2, .values-section h2 {
     font-weight: 900;
-    font-size: 40px;
+    font-size: 42px;
     color: #000;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.mission p, .history p {
-    font-family: 'Inter', sans-serif;
+.mission-section p, .vision-section p, .values-section p {
     font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    color: #000;
+    font-size: 28px;
+    line-height: 36px;
+    color: #333;
     text-align: center;
+    margin: 10px 0;
 }
 
-.mission-image, .history-image {
-    width: 280px;
-    height: 280px;
-    background: url('/assets/mission-image.png') no-repeat center/cover;
+.values-section p strong {
+    color: #0479FF;
 }
 
 /* Redes sociales */
@@ -141,8 +142,7 @@
 }
 
 .social-media p {
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     color: #000;
 }
 
@@ -153,8 +153,48 @@
 }
 
 .social-icon {
-    width: 85px;
-    height: 85px;
+    width: 60px;
+    height: 60px;
     background: #D9D9D9;
     border: 1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Redes sociales */
+.social-media {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    background-color: #F9F9F9;
+}
+
+.social-media p {
+    font-size: 28px;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons img {
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
 }

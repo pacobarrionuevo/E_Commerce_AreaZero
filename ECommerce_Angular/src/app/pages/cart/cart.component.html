@@ -1,0 +1,22 @@
+<div *ngIf="productosCarrito.length > 0">
+  <div *ngFor="let productoCarrito of productosCarrito">
+    <h3>{{ productoCarrito.producto.nombre }}</h3>
+    <img
+      class="imagen"
+      [src]="productoCarrito.producto.ruta"
+      [alt]="productoCarrito.producto.nombre + ' image'"
+    />
+    <p>Precio: {{ productoCarrito.producto.precio }}€</p>
+    <p>
+      Cantidad:
+      <input
+        type="number"
+        [value]="productoCarrito.cantidad"
+        (change)="modifyQuantity(productoCarrito.productoId, productoCarrito.carritoId, $event)"
+      />
+    </p>
+    <button (click)="removeProduct(productoCarrito.productoId, productoCarrito.carritoId)">
+      Eliminar
+    </button>
+  </div>
+</div>

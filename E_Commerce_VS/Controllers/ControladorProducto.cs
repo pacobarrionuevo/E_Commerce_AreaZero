@@ -21,6 +21,7 @@ namespace E_Commerce_VS.Controllers
         [HttpGet]
         public async Task<IEnumerable<ProductoDto>> GetAllAsync()
         {
+            Console.WriteLine("10");
             IEnumerable<Producto> productos = await _service.GetAllAsync();
             return _mapper.ToDto(productos, Request);
         }

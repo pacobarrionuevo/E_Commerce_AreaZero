@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { FormsModule} from '@angular/forms'; 
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
-  selector: 'app-register',
+  selector: 'app-login',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './login.component.html',
@@ -12,18 +12,23 @@ import { FormsModule} from '@angular/forms';
 export class LoginComponent {
   email: string = ''; 
   password: string = ''; 
-  nombre: string = '';
-  direccion: string = ''; 
-  jwt: string = '';
+  jwt: string = ''; 
 
   constructor(private authService: AuthService) {}
 
   async submit() {
-    const authData = { nombre: this.nombre, email: this.email , password: this.password, direccion: this.direccion   }; 
-    const result = await this.authService.register(authData).toPromise();
+    // Solo enviar email y password para el login
+    const authData = { email: this.email, password: this.password }; 
 
-    if (result) {
-      this.jwt = result.accessToken; 
+    try {
+      const result = await this.authService.login(authData).toPromise();
+
+      if (result) {
+        this.jwt = result.accessToken; // Guardar el token JWT recibido del backend
+        console.log("Inicio de sesión exitoso.");
+      }
+    } catch (error) {
+      console.error("Error al iniciar sesión:", error);
     }
   }
 }
