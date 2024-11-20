@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
+    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {
+    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "projectUniqueName": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
         "projectName": "E_Commerce_VS",
-        "projectPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "projectPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
         "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
+        "outputPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -68,6 +68,18 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
+            "Microsoft.Extensions.ML": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.ML.TorchSharp": {
+              "target": "Package",
+              "version": "[0.21.1, )"
+            },
             "Stripe.net": {
               "target": "Package",
               "version": "[47.0.0, )"
@@ -75,6 +87,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.9.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "TorchSharp-cpu": {
+              "target": "Package",
+              "version": "[0.101.5, )"
             }
           },
           "imports": [

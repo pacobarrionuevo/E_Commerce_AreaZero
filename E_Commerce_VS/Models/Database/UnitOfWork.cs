@@ -7,12 +7,15 @@ namespace E_Commerce_VS.Models.Database
         private readonly ProyectoDbContext _context;
 
         public RepositorioProducto RepoProd { get; init; }
+        public RepositorioReview RepoRev { get; init; }
 
-        public UnitOfWork(ProyectoDbContext context, RepositorioProducto repoProd)
+        public UnitOfWork(ProyectoDbContext context, RepositorioProducto repoProd, RepositorioReview repoRev)
         {
             _context = context;
 
             RepoProd = repoProd;
+
+            RepoRev = repoRev;
         }
 
         public async Task<bool> SaveAsync()

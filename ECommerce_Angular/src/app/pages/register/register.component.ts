@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { FormsModule} from '@angular/forms'; 
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-register',
@@ -19,11 +19,12 @@ export class RegisterComponent {
   constructor(private authService: AuthService) {}
 
   async submit() {
-    const authData = { nombre: this.nombre, email: this.email , password: this.password, direccion: this.direccion   }; 
+    const authData = { nombre: this.nombre, email: this.email, password: this.password, direccion: this.direccion }; 
     const result = await this.authService.register(authData).toPromise();
 
     if (result) {
-      this.jwt = result.accessToken; 
+      this.jwt = result.StringToken;  
+      localStorage.setItem('authToken', this.jwt);
     }
   }
 }

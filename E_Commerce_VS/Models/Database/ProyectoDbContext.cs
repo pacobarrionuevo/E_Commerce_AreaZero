@@ -14,6 +14,10 @@ namespace E_Commerce_VS.Models.Database
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Carrito> Carritos { get; set; }
+        public DbSet<ProductoCarrito> ProductoCarritos { get; set; }
+
+        public DbSet<Review> Reviews { get; set; }
 
         // Configuramos el EntityFramework para crear un archivo de BBDD Sqlite
 

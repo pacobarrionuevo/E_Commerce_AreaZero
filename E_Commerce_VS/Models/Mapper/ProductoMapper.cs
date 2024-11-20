@@ -7,6 +7,7 @@ namespace E_Commerce_VS.Models.Mapper
 {
     public class ProductoMapper
     {
+        private readonly ReviewMapper _reviewMapper = new ReviewMapper();
         public ProductoDto ToDto(Producto producto, HttpRequest httpRequest = null)
         {
             return new ProductoDto()
@@ -14,7 +15,9 @@ namespace E_Commerce_VS.Models.Mapper
                 Id = producto.Id,
                 Nombre = producto.Nombre,
                 Ruta = httpRequest is null ? producto.Ruta : httpRequest.GetAbsoluteUrl(producto.Ruta),
-                Precio = producto.Precio
+                Precio = producto.Precio,
+                Stock = producto.Stock,
+                Reviews = _reviewMapper.ToDto(producto.Reviews).ToList()
             };
         }
 
