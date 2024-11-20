@@ -76,5 +76,18 @@ namespace E_Commerce_VS.Controllers
                 PaginaActual = paginaActual
             };
         }
+        // Método para obtener un producto por ID
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByIdAsync(long id)
+        {
+            var producto = await _service.GetAsync(id);
+            if (producto == null)
+            {
+                return NotFound();
+            }
+
+            var productoDto = _mapper.ToDto(producto, Request);
+            return Ok(productoDto);
+        }
     }
 }

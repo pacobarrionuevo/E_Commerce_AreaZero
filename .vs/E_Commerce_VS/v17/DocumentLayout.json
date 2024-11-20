@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcatalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcatalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\services\\reviewservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -74,10 +82,6 @@
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcatalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcatalogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\models\\database\\filtros\\enumerables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\filtros\\enumerables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -125,15 +129,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Seeder.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Seeder.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Seeder.cs",
@@ -147,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ProductService.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Services\\ProductService.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Services\\ProductService.cs",
@@ -161,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
@@ -174,47 +174,12 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReviewDto.cs",
-              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
-              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T18:53:18.314Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReviewService.cs",
-              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Services\\ReviewService.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Services\\ReviewService.cs",
-              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Services\\ReviewService.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Services\\ReviewService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T18:47:29.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Review.cs",
-              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs",
-              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T18:45:41.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Repositorio.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\Repositorio.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Repositories\\Repositorio.cs",
@@ -227,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
@@ -240,20 +205,85 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ControladorCatalogo.cs",
+              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
+              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T18:00:15.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ControladorReview.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorReview.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorReview.cs",
-              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorReview.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorReview.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAApAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorReview.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorReview.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T18:24:36.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs",
+              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Entidades\\Review.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T18:45:41.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReviewService.cs",
+              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Services\\ReviewService.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Services\\ReviewService.cs",
+              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Services\\ReviewService.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Services\\ReviewService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T18:47:29.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ControladorCarrito.cs",
+              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T19:13:25.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReviewDto.cs",
+              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
+              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T18:53:18.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Paginacion.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\PaginacionC\\Paginacion.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\PaginacionC\\Paginacion.cs",
@@ -266,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Extensiones.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\PaginacionC\\Extensiones.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\PaginacionC\\Extensiones.cs",
@@ -279,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\UnitOfWork.cs",
@@ -292,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ProyectoDbContext.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\ProyectoDbContext.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\ProyectoDbContext.cs",
@@ -305,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ModelOutput.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\ModelOutput.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\ModelOutput.cs",
@@ -317,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Usuario.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\Usuario.cs",
@@ -329,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserDto.cs",
@@ -341,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "RepositorioProducto.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioProducto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioProducto.cs",
@@ -353,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ControladorModelo.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorModelo.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorModelo.cs",
@@ -365,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ModelInput.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\ModelInput.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\ModelInput.cs",
@@ -377,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Enumerables.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Filtros\\Enumerables.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Filtros\\Enumerables.cs",
@@ -389,19 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ControladorCatalogo.cs",
-              "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
-              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAuwCMAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T18:00:15.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "UserLoginDto.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserLoginDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserLoginDto.cs",
@@ -413,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "UserRegistrarseDto.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserRegistrarseDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserRegistrarseDto.cs",
@@ -425,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ControladorUsuario.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
@@ -437,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "SmartSearchService.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Services\\SmartSearchService.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Services\\SmartSearchService.cs",
@@ -449,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ProductoDto.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
@@ -461,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ProductoMapper.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Mapper\\ProductoMapper.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Mapper\\ProductoMapper.cs",
@@ -473,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "IRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\IRepositorio.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Repositories\\IRepositorio.cs",
@@ -485,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "CreateUpdateProductoRequest.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\CreateUpdateProductoRequest.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\CreateUpdateProductoRequest.cs",
