@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
+    "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\E_Commerce_VS.csproj": {
+    "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "projectUniqueName": "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
         "projectName": "E_Commerce_VS",
-        "projectPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\E_Commerce_VS.csproj",
-        "packagesPath": "C:\\Users\\pacob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\obj\\",
+        "projectPath": "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "packagesPath": "C:\\Users\\fbarflo0312\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fbarflo0312\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -116,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
