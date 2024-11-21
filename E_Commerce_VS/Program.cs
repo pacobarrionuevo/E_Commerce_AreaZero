@@ -42,7 +42,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<Services.ReviewService>();
             builder.Services.AddScoped<Services.SmartSearchService>();
 
-            // A�adimos los mappers como Transient
+            // Añadimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
             builder.Services.AddScoped<ReviewMapper>();
 
@@ -51,13 +51,13 @@ namespace E_Commerce_VS
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<ProyectoDbContext>();
 
-            //Configuracion de MLModel para las reseñas
+            // Configuracion de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
-            // Configuraci�n de CORS
+            // Configuración de CORS
             builder.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy(builder =>
+                options.AddPolicy("AllowAllOrigins", builder =>
                 {
                     builder.AllowAnyOrigin()
                            .AllowAnyMethod()
@@ -72,7 +72,6 @@ namespace E_Commerce_VS
 
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    //Pagina 94 del PDF de Jose
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Key))
@@ -88,17 +87,15 @@ namespace E_Commerce_VS
             }
 
             app.UseHttpsRedirection();
-
             app.UseStaticFiles();
 
             // Autenticacion y Autorizacion
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // Habilitar CORS
-            app.UseCors();
+            // Configuramos CORS para que acepte cualquier petición de cualquier origen (no es seguro)
+            app.UseCors("AllowAllOrigins");
 
-            app.UseStaticFiles();
             app.MapControllers();
 
             using (IServiceScope scope = app.Services.CreateScope())
@@ -107,25 +104,10 @@ namespace E_Commerce_VS
                 _dbContext.Database.EnsureCreated();
 
                 var seeder = new Seeder(_dbContext);
-                seeder.SeedAsync();
+                await seeder.SeedAsync();
             }
 
-
-            // Habilitar CORS
-            app.UseCors();
-
-            app.UseStaticFiles();
-            app.MapControllers();
-
-
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-            }
             app.Run();
         }
-
-
     }
 }

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailService } from '../../services/product-detail.service';
 import { ReviewService } from '../../services/review.service';
+import { AuthService } from '../../services/auth.service'; 
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarritoService } from '../../services/carrito.service';
+
 interface Review {
   id: number;
   fechaPublicacion: Date;
@@ -30,15 +32,18 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private carritoService: CarritoService,
     private productDetailService: ProductDetailService,
-    private reviewService: ReviewService
+    private reviewService: ReviewService,
+    private authService: AuthService 
   ) {}
 
   ngOnInit(): void {
     this.getProduct();
   }
-  addProductToCart(productId: number, userId: number,quantity: number): void {
+
+  addProductToCart(productId: number, userId: number, quantity: number): void {
     this.carritoService.addProductToCart(productId, userId, quantity)
       .then(result => {
         console.log('Producto añadido al carrito', result);
@@ -47,6 +52,7 @@ export class ProductDetailComponent implements OnInit {
         console.error('Error al añadir producto al carrito', error);
       });
   }
+
   getProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
@@ -70,6 +76,11 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addReview(): void {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
     if (this.newReview.trim()) {
       const reviewDto = { 
         textReview: this.newReview, 
