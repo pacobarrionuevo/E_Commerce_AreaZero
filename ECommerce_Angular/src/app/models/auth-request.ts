@@ -1,6 +1,6 @@
 export interface AuthRequest {
-  nombre: string;
+  nombre?: string;
   email: string;
   password: string;
-  direccion: string;
+  direccion?: string;
 }

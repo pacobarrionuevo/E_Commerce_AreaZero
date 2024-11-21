@@ -37,7 +37,7 @@
       <figure class="product" *ngFor="let product of productList">
         <span class="product-name">{{ product.nombre }}</span>
         <img class="imagen" [src]="product.ruta" [alt]="product.nombre + ' image'" />
-        <button class="add-to-cart" [routerLink]="['/product-detail', product.id]">Ver</button>
+        <button class="btnfos btnfos-4" [routerLink]="['/product-detail', product.id]">Ver</button>
         <span class="product-precio">{{ product.precio / 100 }}€</span>
       </figure>
     </div>
