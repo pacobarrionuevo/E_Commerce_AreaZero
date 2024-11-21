@@ -5,7 +5,6 @@ import { ReviewService } from '../../services/review.service';
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 interface Review {
   id: number;
   fechaPublicacion: Date;
@@ -37,7 +36,15 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.getProduct();
   }
-
+  addProductToCart(productId: number, userId: number,quantity: number): void {
+    this.carritoService.addProductToCart(productId, userId, quantity)
+      .then(result => {
+        console.log('Producto añadido al carrito', result);
+      })
+      .catch(error => {
+        console.error('Error al añadir producto al carrito', error);
+      });
+  }
   getProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {

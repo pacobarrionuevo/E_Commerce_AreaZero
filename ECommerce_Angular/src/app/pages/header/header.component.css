@@ -1,12 +1,15 @@
+/* Estilos generales */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
 }
 
 section, nav, article {
     margin: 20px;
 }
 
+/* Contenedor principal */
 .container {
     display: flex;
     justify-content: space-around;
@@ -32,36 +35,98 @@ section, nav, article {
     margin: 40px 0;
 }
 
+/* Estilos del encabezado */
 header {
-    width: 100vw;
+    width: 100%;
     background: #b0abe0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height: 272px;
+    padding: 10px 20px;
+    height: 80px;
     box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.search-bar {
+header .profile img {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+header .profile img:hover {
+    transform: scale(1.1);
+}
+
+header .carrito button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+header .carrito img,
+header .torneos img,
+header .subscripcion img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+header .carrito img:hover,
+header .torneos img:hover,
+header .subscripcion img:hover {
+    transform: scale(1.1);
+}
+
+header .search-bar {
     display: flex;
     align-items: center;
 }
 
-.search-bar input {
-    width: 384px;
-    height: 64px;
-    border: 1px solid black;
-    background: #D9D9D9;
+header .search-bar input {
+    width: 240px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
     padding: 0 10px;
-    font-size: 24px;
+    font-size: 16px;
 }
 
-.search-bar button {
-    height: 64px;
+header .search-bar button {
+    height: 40px;
     margin-left: 10px;
-    background: #D9D9D9;
-    border: 1px solid black;
+    background: #3498db;
+    border: none;
+    color: #fff;
     padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header .search-bar button:hover {
+    background: #2980b9;
+}
+
+header .sobre-nosotros a,
+header .login-register a {
+    text-decoration: none;
+    color: #34495e;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header .sobre-nosotros a:hover,
+header .login-register a:hover {
+    color: #2980b9;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

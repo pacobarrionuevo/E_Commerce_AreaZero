@@ -37,7 +37,9 @@ namespace E_Commerce_VS.Controllers
             return Ok(new { reviews, averageScore });
         }
 
+        // Proteger este método con [Authorize]
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> AddReview([FromBody] CreateReviewDto reviewDto)
         {
             if (!ModelState.IsValid)

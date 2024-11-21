@@ -1,5 +1,5 @@
-<div *ngIf="productosCarrito.length > 0">
-  <div *ngFor="let productoCarrito of productosCarrito">
+<div class="cart-container" *ngIf="productosCarrito.length > 0">
+  <div *ngFor="let productoCarrito of productosCarrito" class="cart-item">
     <h3>{{ productoCarrito.producto.nombre }}</h3>
     <img
       class="imagen"
@@ -19,4 +19,10 @@
       Eliminar
     </button>
   </div>
+</div>
+<div class="error-message" *ngIf="productosCarrito.length === 0">
+  No hay productos en tu carrito.
+</div>
+<div class="loading" *ngIf="isLoading">
+  Cargando...
 </div>
