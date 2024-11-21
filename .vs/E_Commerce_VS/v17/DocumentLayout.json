@@ -7,20 +7,36 @@
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\dto\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\dto\\productocarritodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\productocarritodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\database\\entidades\\ordentemporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\entidades\\ordentemporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\database\\entidades\\productoordentemporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\entidades\\productoordentemporal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\database\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\proyectodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\database\\entidades\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\entidades\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\database\\seeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\seeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\e_commerce_4_11\\e_commerce_areazero-salperro\\e_commerce_vs\\models\\dto\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,15 +54,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ControladorCarrito.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwB8AAAAjAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ProyectoDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\ProyectoDbContext.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\ProyectoDbContext.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\ProyectoDbContext.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\ProyectoDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T10:24:48.724Z",
+              "WhenOpened": "2024-11-21T11:43:12.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Entidades\\Producto.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\Producto.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Entidades\\Producto.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Entidades\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T11:42:28.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductoCarritoDto.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Dto\\ProductoCarritoDto.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ProductoCarritoDto.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Dto\\ProductoCarritoDto.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\ProductoCarritoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T11:39:29.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductoDto.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T11:37:12.563Z",
               "EditorCaption": ""
             },
             {
@@ -57,48 +112,61 @@
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
               "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAYwCoAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAowIUAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T09:50:47.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Program.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Program.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Program.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAQwG4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T10:04:34.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Services\\ProductService.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Services\\ProductService.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAgwEEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T10:00:43.457Z",
+              "WhenOpened": "2024-11-21T11:19:08.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ProductoDto.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Title": "ProductoOrdenTemporal.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Entidades\\ProductoOrdenTemporal.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\ProductoOrdenTemporal.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Entidades\\ProductoOrdenTemporal.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Entidades\\ProductoOrdenTemporal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T09:54:23.533Z",
+              "WhenOpened": "2024-11-21T11:32:20.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrdenTemporal.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Entidades\\OrdenTemporal.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\OrdenTemporal.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Entidades\\OrdenTemporal.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Entidades\\OrdenTemporal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T11:32:50.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Seeder.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Seeder.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Seeder.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Models\\Database\\Seeder.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Seeder.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T11:21:32.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Program.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\Program.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Program.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAgwG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T10:04:34.744Z",
               "EditorCaption": ""
             }
           ]
