@@ -67,15 +67,15 @@ namespace E_Commerce_VS
 
             builder.Services.AddAuthentication().AddJwtBearer(options =>
             {
-                string Key = Environment.GetEnvironmentVariable("JWT_KEY");
-                Console.WriteLine($"JWT_KEY: {Key}");
+                Settings settings = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>();
+                string key = settings.JwtKey;
 
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
                     //Pagina 94 del PDF de Jose
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Key))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
                 };
             });
 
@@ -91,41 +91,45 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
+            app.UseCors();
+
             // Autenticacion y Autorizacion
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // Habilitar CORS
-            app.UseCors();
-
-            app.UseStaticFiles();
             app.MapControllers();
 
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
+            await InitDatabaseAsync(app.Services);
 
-                var seeder = new Seeder(_dbContext);
-                seeder.SeedAsync();
-            }
+            InitStripe(app.Services);
 
+            // Empezamos a atender a las peticiones de nuestro servidor 
+            await app.RunAsync();
 
-            // Habilitar CORS
-            app.UseCors();
-
-            app.UseStaticFiles();
-            app.MapControllers();
-
-
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-            }
             app.Run();
         }
 
+        static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
+        {
+            using IServiceScope scope = serviceProvider.CreateScope();
+            using ProyectoDbContext dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
 
-    }
+            // Si no existe la base de datos entonces la creamos y ejecutamos el seeder
+            if (dbContext.Database.EnsureCreated())
+            {
+                Seeder seeder = new Seeder(dbContext);
+                await seeder.SeedAsync();
+            }
+        }
+
+        static void InitStripe(IServiceProvider serviceProvider)
+        {
+            using IServiceScope scope = serviceProvider.CreateScope();
+            IOptions<Settings> options = scope.ServiceProvider.GetService<IOptions<Settings>>();
+
+            // Ponemos nuestro secret key (se consulta en el dashboard => desarrolladores)
+            StripeConfiguration.ApiKey = options.Value.StripeSecret;
+        }
+
+    }    
 }

@@ -1483,7 +1483,7 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
-      "Stripe.net/47.0.0": {
+      "Stripe.net/47.1.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
@@ -4122,10 +4122,10 @@
         "sqlitepclraw.provider.e_sqlite3.nuspec"
       ]
     },
-    "Stripe.net/47.0.0": {
-      "sha512": "GPGZPYtxGd/T/DbOdn8YY4rTVuC6yt7Jbc4SwrJJzWnMFlB4eU4uukpj8P7QEdEqxbwLvFWM9QnCIUKR8pAD1Q==",
+    "Stripe.net/47.1.0": {
+      "sha512": "APS+3Rlc2KD3e8dUaPzYKhSwTGNFixxITHUU4+fE0SZKPcNwnBW6dXAVoN4TgjWm9LX3jrTyTX6kWneJ+kjeew==",
       "type": "package",
-      "path": "stripe.net/47.0.0",
+      "path": "stripe.net/47.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4146,7 +4146,7 @@
         "lib/netcoreapp3.1/Stripe.net.xml",
         "lib/netstandard2.0/Stripe.net.dll",
         "lib/netstandard2.0/Stripe.net.xml",
-        "stripe.net.47.0.0.nupkg.sha512",
+        "stripe.net.47.1.0.nupkg.sha512",
         "stripe.net.nuspec"
       ]
     },
@@ -5474,7 +5474,7 @@
       "Microsoft.Extensions.ML >= 3.0.1",
       "Microsoft.ML >= 3.0.1",
       "Microsoft.ML.TorchSharp >= 0.21.1",
-      "Stripe.net >= 47.0.0",
+      "Stripe.net >= 47.1.0",
       "Swashbuckle.AspNetCore >= 6.9.0",
       "System.Text.Json >= 9.0.0",
       "TorchSharp-cpu >= 0.101.5"
@@ -5486,11 +5486,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-Fitin\\E_Commerce_VS\\E_Commerce_VS.csproj",
+      "projectUniqueName": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\E_Commerce_VS.csproj",
       "projectName": "E_Commerce_VS",
-      "projectPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-Fitin\\E_Commerce_VS\\E_Commerce_VS.csproj",
+      "projectPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\E_Commerce_VS.csproj",
       "packagesPath": "C:\\Users\\pacob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-Fitin\\E_Commerce_VS\\obj\\",
+      "outputPath": "C:\\Users\\pacob\\Desktop\\E_Commerce_4_11\\E_Commerce_AreaZero-salperro\\E_Commerce_VS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5561,7 +5561,7 @@
           },
           "Stripe.net": {
             "target": "Package",
-            "version": "[47.0.0, )"
+            "version": "[47.1.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

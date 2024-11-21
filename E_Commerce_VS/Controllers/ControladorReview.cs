@@ -1,8 +1,7 @@
 ﻿using E_Commerce_VS.Models.Dto;
-using E_Commerce_VS.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-
+using E_Commerce_VS.Services;
 namespace E_Commerce_VS.Controllers
 {
     [Route("api/[controller]")]
@@ -24,7 +23,9 @@ namespace E_Commerce_VS.Controllers
             return Ok(reviews);
         }
 
+        // Proteger este método con [Authorize]
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> AddReview([FromBody] CreateReviewDto reviewDto)
         {
             if (!ModelState.IsValid)

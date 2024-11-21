@@ -1,181 +1,101 @@
-/* about-us.component.css */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
 
 .about-us-container {
     width: 100%;
-    max-width: 1440px;
-    height: auto;
+    max-width: 1200px;
     margin: 0 auto;
-    background: #FFFFFF;
-    position: relative;
-    padding-bottom: 40px;
-    font-family: 'Inter', sans-serif;
+    padding: 40px 20px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-/* Encabezado */
+
 .header {
     width: 100%;
-    height: 272px;
-    background: #BCB8E2;
+    background: #bcb8e2;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    box-sizing: border-box;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 10px 10px 0 0;
 }
 
 .logo {
     width: 150px;
     height: 150px;
     background: url('/assets/logo.png') no-repeat center/cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .about-us-title h1 {
     font-weight: 700;
     font-size: 48px;
-    color: #0479FF;
+    color: #0479ff;
     text-align: center;
-}
-
-.line1, .line2 {
-    border: 2px solid #0479FF;
+    margin: 0;
 }
 
 .line1 {
     width: 150px;
-    margin: 5px auto;
+    border: 2px solid #0479ff;
+    margin: 20px auto 0;
 }
 
-.line2 {
-    width: 250px;
-    margin: 5px auto;
-}
 
-/* Barra de búsqueda */
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    width: 384px;
-    height: 64px;
-    background: #D9D9D9;
-    border: 1px solid #040000;
-    font-size: 26px;
-    padding-left: 10px;
-    border-radius: 8px 0 0 8px;
-}
-
-.search-bar button {
-    width: 94px;
-    height: 64px;
-    background: #0479FF;
-    border: none;
-    font-size: 18px;
-    color: #FFF;
-    cursor: pointer;
-    border-radius: 0 8px 8px 0;
-}
-
-.profile-pic {
-    width: 100px;
-    height: 100px;
-    background: #D9D9D9;
-    border: 1px solid #000;
-    border-radius: 50%;
-}
-
-.login-register {
-    font-weight: 600;
-    font-size: 24px;
-    color: #0479FF;
-    text-align: center;
-}
-
-/* Contenido principal */
 .main-content {
-    padding-top: 320px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0 100px;
     gap: 40px;
 }
 
 .mission-section, .vision-section, .values-section {
-    width: 90%;
-    max-width: 800px;
+    background: #f5f5f5;
     padding: 20px;
-    background: #F5F5F5;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .mission-section h2, .vision-section h2, .values-section h2 {
-    font-weight: 900;
-    font-size: 42px;
+    font-size: 36px;
     color: #000;
-    text-align: center;
     margin-bottom: 20px;
 }
 
 .mission-section p, .vision-section p, .values-section p {
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 36px;
-    color: #333;
-    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
     margin: 10px 0;
 }
 
 .values-section p strong {
-    color: #0479FF;
+    color: #0479ff;
 }
 
-/* Redes sociales */
+
 .social-media {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .social-media p {
-    font-size: 26px;
-    color: #000;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-icon {
-    width: 60px;
-    height: 60px;
-    background: #D9D9D9;
-    border: 1px solid #000;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.social-icon:hover {
-    transform: scale(1.1);
-}
-
-/* Redes sociales */
-.social-media {
-    width: 100%;
-    text-align: center;
-    padding: 40px 0;
-    background-color: #F9F9F9;
-}
-
-.social-media p {
-    font-size: 28px;
+    font-size: 24px;
     color: #000;
     font-weight: 700;
     margin-bottom: 20px;
