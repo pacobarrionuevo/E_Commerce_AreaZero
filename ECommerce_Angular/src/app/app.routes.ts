@@ -6,6 +6,7 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
     {
         path: 'product-detail/:id',
         component: ProductDetailComponent,
+    },
+    {
+        path: 'checkout',
+        component: CheckoutComponent
     }
 ];
