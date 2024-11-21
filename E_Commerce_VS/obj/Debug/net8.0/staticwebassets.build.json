@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qSbfoQJrkBN+JTJgoVWvCfW1inxqs34sZ8wKBSuuLfA=",
+  "Hash": "0iSaeiSdv7qmNuJBq2+p6tZ1mSnsHXG8fFAiyTBGkPo=",
   "Source": "E_Commerce_VS",
   "BasePath": "_content/E_Commerce_VS",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "E_Commerce_VS\\wwwroot",
       "Source": "E_Commerce_VS",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/1.png",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\images\\1.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/10.png",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\images\\10.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\11.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\11.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/11.png",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\images\\11.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\12.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\12.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/12.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\images\\12.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\13.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\13.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/13.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\images\\13.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\14.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\14.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/14.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\images\\14.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\15.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\15.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/15.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\images\\15.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\16.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\16.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/16.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\images\\16.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\17.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\17.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/17.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\images\\17.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\18.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\18.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/18.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\18.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\19.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\19.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/19.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\images\\19.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\2.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\2.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/2.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\images\\2.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\20.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\20.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/20.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\images\\20.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\3.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\3.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/3.png",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\images\\3.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\4.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\4.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/4.png",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\images\\4.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\5.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\5.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/5.png",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\images\\5.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\6.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\6.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/6.png",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\images\\6.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\7.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\7.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/7.png",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\images\\7.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\8.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\8.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/8.png",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\images\\8.png"
     },
     {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
+      "Identity": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/9.png",
       "AssetKind": "All",

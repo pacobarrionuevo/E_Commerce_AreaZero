@@ -54,16 +54,16 @@ namespace E_Commerce_VS
             // Configuracion de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
-            // Configuración de CORS
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowAllOrigins", builder =>
+                options.AddPolicy("AngularApp", builder =>
                 {
-                    builder.AllowAnyOrigin()
+                    builder.WithOrigins("http://localhost:4200")
                            .AllowAnyMethod()
                            .AllowAnyHeader();
                 });
             });
+
 
             builder.Services.AddAuthentication().AddJwtBearer(options =>
             {
@@ -88,13 +88,12 @@ namespace E_Commerce_VS
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCors("AngularApp");
 
-            // Autenticacion y Autorizacion
+
             app.UseAuthentication();
             app.UseAuthorization();
 
-            // Configuramos CORS para que acepte cualquier petición de cualquier origen (no es seguro)
-            app.UseCors("AllowAllOrigins");
 
             app.MapControllers();
 
@@ -104,7 +103,7 @@ namespace E_Commerce_VS
                 _dbContext.Database.EnsureCreated();
 
                 var seeder = new Seeder(_dbContext);
-                await seeder.SeedAsync();
+                
             }
 
             app.Run();
