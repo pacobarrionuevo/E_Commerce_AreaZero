@@ -3,13 +3,13 @@ export class Product {
     nombre: string;  
     ruta: string;
     precio: number;
-    stock: number;
-
+    stock: number; 
+  
     constructor(id: number, nombre: string, ruta: string, precio: number, stock: number) {
-        this.id = id;
-        this.nombre = nombre;
-        this.ruta = ruta;
-        this.precio = precio;
-        this.stock = stock;
+      this.id = id;
+      this.nombre = nombre;
+      this.ruta = ruta;
+      this.precio = precio;
+      this.stock = stock; 
     }
-}
+  }

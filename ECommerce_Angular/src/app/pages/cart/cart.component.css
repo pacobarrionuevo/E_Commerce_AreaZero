@@ -1,32 +1,124 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
 .cart-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.error-message {
+  color: #e74c3c;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+.cart-item {
+  border-bottom: 1px solid #ecf0f1;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.cart-item h3 {
+  font-size: 1.5em;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.cart-item .imagen {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.cart-item p {
+  margin: 0 10px;
+  font-size: 1.2em;
+  color: #7f8c8d;
+  flex: 1;
+}
+
+
+.cart-item input[type='number'] {
+  width: 60px;
+  padding: 5px;
+  font-size: 1em;
+  margin-left: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.cart-item input[type='number']:focus {
+  border-color: #3498db;
+}
+
+
+.cart-item button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cart-item button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+
+.loading {
+  font-size: 1.5em;
+  color: #7f8c8d;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .cart-container {
+    padding: 10px;
   }
-  
-  .error-message {
-    color: red;
-    margin-bottom: 20px;
-  }
-  
-  .cart-items {
-    list-style-type: none;
-    padding: 0;
-  }
-  
+
   .cart-item {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .cart-item h3 {
-    margin: 0;
+    margin-bottom: 10px;
   }
-  
-  .loading {
-    text-align: center;
+
+  .cart-item .imagen {
+    margin-bottom: 10px;
   }
-  
+}
