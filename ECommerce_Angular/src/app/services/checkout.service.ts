@@ -14,15 +14,15 @@ export class CheckoutService {
   constructor(private api: ApiService) { }
 
   getAllProducts(): Promise<Result<Carrito[]>> {
-    return this.api.get<Carrito[]>('checkout/carritos');
+    return this.api.get<Carrito[]>('/ControladorCheckout/products');
   }
 
-  getHostedCheckout(): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('checkout/hosted');
+  getHostedCheckout(products: any): Promise<Result<CheckoutSession>> {
+    return this.api.get<CheckoutSession>('/controladorcheckout/hosted', products);
   }
 
-  getEmbededCheckout(): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('checkout/embedded');
+  getEmbededCheckout(products: any): Promise<Result<CheckoutSession>> {
+    return this.api.get<CheckoutSession>('/controladorcheckout/embedded', products);
   }
 
   getStatus(sessionId: string): Promise<Result<CheckoutSessionStatus>> {
