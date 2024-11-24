@@ -6,11 +6,12 @@ import { Subscription } from 'rxjs';
 import { StripeEmbeddedCheckout, StripeEmbeddedCheckoutOptions } from '@stripe/stripe-js';
 import { StripeService } from 'ngx-stripe';
 import { Carrito } from '../../models/carrito';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css'
 })
