@@ -173,6 +173,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorImagen",
+    "Method": "GetImage",
+    "RelativePath": "api/ControladorImagen/{imageName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "imageName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorModelo",
     "Method": "Predict",
     "RelativePath": "api/ControladorModelo",

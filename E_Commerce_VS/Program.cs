@@ -2,7 +2,6 @@ using E_Commerce_VS.Models.Database;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json.Serialization;
-using Stripe;
 using Microsoft.Extensions.Options;
 using E_Commerce_VS.Models.Database.Repositories;
 using E_Commerce_VS.Models.Mapper;
@@ -10,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Services;
 using E_Commerce_VS.Models.Database.Entidades;
 using Microsoft.Extensions.ML;
+using Stripe;
 
 namespace E_Commerce_VS
 {
@@ -42,7 +42,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<Services.ReviewService>();
             builder.Services.AddScoped<Services.SmartSearchService>();
 
-            // A�adimos los mappers como Transient
+            // Añadimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
             builder.Services.AddScoped<ReviewMapper>();
 
@@ -51,13 +51,13 @@ namespace E_Commerce_VS
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<ProyectoDbContext>();
 
-            //Configuracion de MLModel para las reseñas
+            // Configuración de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
-            // Configuraci�n de CORS
+            // Configuración de CORS
             builder.Services.AddCors(options =>
             {
-                options.AddDefaultPolicy(builder =>
+                options.AddPolicy("AllowAllOrigins", builder =>
                 {
                     builder.AllowAnyOrigin()
                            .AllowAnyMethod()
@@ -91,22 +91,23 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-            app.UseCors();
+            // Configuramos CORS para que acepte cualquier petición de cualquier origen (no es seguro)
+            app.UseCors("AllowAllOrigins");
 
-            // Autenticacion y Autorizacion
+            // Autenticación y Autorización
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
 
+            // Inicialización de la base de datos
             await InitDatabaseAsync(app.Services);
 
+            // Inicialización de Stripe
             InitStripe(app.Services);
 
             // Empezamos a atender a las peticiones de nuestro servidor 
             await app.RunAsync();
-
-            app.Run();
         }
 
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
@@ -130,6 +131,5 @@ namespace E_Commerce_VS
             // Ponemos nuestro secret key (se consulta en el dashboard => desarrolladores)
             StripeConfiguration.ApiKey = options.Value.StripeSecret;
         }
-
-    }    
+    }
 }

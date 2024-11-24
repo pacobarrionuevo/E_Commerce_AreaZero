@@ -1,34 +1,19 @@
 <main class="container">
-    <section class="box" (click)="navigateToCatalog()">
+    <section class="box">
         <h2>COMPRA SOBRES Y CARTAS</h2>
         <p>Encuentra las mejores ofertas y cartas únicas para completar tu colección.</p>
-        <img src="assets/images/sobre.png" alt="Sobre" width="200" height="200">
+        <img [src]="sobreImgSrc" alt="Sobre" width="200" height="200">
     </section>
 
     <section class="box">
         <h2>¡APÚNTATE A NUESTROS TORNEOS!</h2>
         <p>Participa y compite en nuestros torneos exclusivos.</p>
-        <img src="assets/images/torneos.png" alt="Torneos" width="200" height="200">
+        <img [src]="torneosImgSrc" alt="Torneos" width="200" height="200">
     </section>
 
     <section class="box">
         <h2>SUBSCRÍBETE A NUESTRA TIENDA</h2>
         <p>Consigue los mejores descuentos y promociones.</p>
-        <img src="assets/images/chapaplateada.png" alt="Chapa Plateada" width="200" height="200">
+        <img [src]="chapaImgSrc" alt="Chapa Plateada" width="200" height="200">
     </section>
 </main>
-
-<footer class="social-icons">
-    <a href="https://twitter.com" target="_blank">
-        <img src="assets/images/twitter.png" alt="Twitter" width="64" height="64">
-    </a>
-    <a href="https://instagram.com" target="_blank">
-        <img src="assets/images/instagram.png" alt="Instagram" width="64" height="64">
-    </a>
-    <a href="https://tiktok.com" target="_blank">
-        <img src="assets/images/tiktok.png" alt="TikTok" width="64" height="64">
-    </a>
-    <a href="https://discord.com" target="_blank">
-        <img src="assets/images/discord.png" alt="Discord" width="64" height="64">
-    </a>
-</footer>
