@@ -19,10 +19,11 @@ namespace E_Commerce_VS.Controllers
         private readonly ProductService _productService;
         private readonly ProyectoDbContext _dbContext;
 
-        public ControladorCheckout(IOptions<Settings> options, ProductService productService)
+        public ControladorCheckout(IOptions<Settings> options, ProductService productService, ProyectoDbContext contexto)
         {
             _settings = options.Value;
             _productService = productService;
+            _dbContext = contexto;
         }
 
         [HttpGet("products")]
@@ -134,6 +135,59 @@ namespace E_Commerce_VS.Controllers
             var session = await sessionService.GetAsync(sessionId);
 
             return Ok(new { status = session.Status, customerEmail = session.CustomerEmail });
+        }
+
+        [HttpPost("CrearOrdenTemporal")]
+        public async Task<ActionResult> CrearOrdenTemporal([FromBody] List<ProductoCarritoDto> productosCarrito)
+        {
+            if (productosCarrito == null || !productosCarrito.Any())
+                return BadRequest("El carrito está vacío.");
+
+            var ordenTemporal = new OrdenTemporal
+            {
+                FechaCreacion = DateTime.UtcNow,
+                FechaExpiracion = DateTime.UtcNow.AddMinutes(5), 
+                Productos = new List<ProductoOrdenTemporal>()
+            };
+
+            foreach (var productoCarrito in productosCarrito)
+            {
+                var producto = await _dbContext.Productos.FindAsync(productoCarrito.ProductoId);
+
+                if (producto == null)
+                    return NotFound($"Producto con ID {productoCarrito.ProductoId} no encontrado.");
+
+                if (producto.Stock < productoCarrito.Cantidad)
+                {
+                    return BadRequest(new
+                    {
+                        Mensaje = $"No hay suficiente stock para el producto: {producto.Nombre}. Disponible: {producto.Stock}, Solicitado: {productoCarrito.Cantidad}"
+                    });
+                }
+
+                producto.Stock -= productoCarrito.Cantidad;
+
+                ordenTemporal.Productos.Add(new ProductoOrdenTemporal
+                {
+                    ProductoId = (int)producto.Id,
+                    Cantidad = productoCarrito.Cantidad,
+                    PrecioUnitario = producto.Precio
+                });
+            }
+
+            _dbContext.OrdenesTemporales.Add(ordenTemporal);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok(new
+            {
+                OrdenId = ordenTemporal.Id,
+                Mensaje = "Orden temporal creada exitosamente.",
+                ProductosReservados = ordenTemporal.Productos.Select(p => new
+                {
+                    p.ProductoId,
+                    p.Cantidad
+                })
+            });
         }
     }
 }
