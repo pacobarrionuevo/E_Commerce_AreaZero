@@ -46,8 +46,7 @@
               "RelativeToolTip": "E_Commerce_VS\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAsAAAAAAAAAAAArwBoAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-21T20:04:05.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T20:04:05.439Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "E_Commerce_VS\\E_Commerce_VS.http",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-11-21T20:04:00.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T20:04:00.173Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "E_Commerce_VS\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-21T20:03:38.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T20:03:38.046Z"
             },
             {
               "$type": "Document",
@@ -85,8 +82,7 @@
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorProducto.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAA5wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T20:03:22.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T20:03:22.981Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorReview.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAgwBsAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T12:11:38.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T12:11:38.216Z"
             }
           ]
         }
