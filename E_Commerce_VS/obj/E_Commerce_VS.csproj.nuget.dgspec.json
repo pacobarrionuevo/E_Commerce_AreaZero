@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
+    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {
+    "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "projectUniqueName": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
         "projectName": "E_Commerce_VS",
-        "projectPath": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
-        "packagesPath": "C:\\Users\\jsalaba2610\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
+        "projectPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+        "packagesPath": "C:\\Users\\jorge\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_VS\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jsalaba2610\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\jorge\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
