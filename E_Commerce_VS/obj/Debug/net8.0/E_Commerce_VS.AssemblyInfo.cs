@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("E_Commerce_VS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d996248d8f84202b55a956cdfc376248bc3a0621")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+918c150b225f861e8df66ca40c594eb0003c9b0d")]
->>>>>>> origin/paco_segundarama
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4128db69f86a7ea6af9a359e3e9f0fd8e3d2c978")]
 [assembly: System.Reflection.AssemblyProductAttribute("E_Commerce_VS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("E_Commerce_VS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
