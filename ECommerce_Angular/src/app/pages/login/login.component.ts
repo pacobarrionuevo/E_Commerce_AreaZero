@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms'; 
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
   jwt: string = ''; 
   usuarioId: number | null = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private carritoService: CarritoService) {}
 
   async submit() {
     const authData = { email: this.email, password: this.password }; 
@@ -34,6 +35,7 @@ export class LoginComponent {
         this.usuarioId = result.usuarioId;
 
         console.log("Inicio de sesión exitoso.");
+        this.carritoService.associateCart(this.usuarioId);
       } else {
         console.error("No se recibió un token de acceso.");
       }

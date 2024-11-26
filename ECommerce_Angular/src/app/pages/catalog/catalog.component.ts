@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CatalogoService } from '../../services/catalogo.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../services/carrito.service';
+import { ApiService } from '../../services/api.service';
+import { Result } from '../../models/result';
+import { AuthService } from '../../services/auth.service';
 import { RouterModule } from '@angular/router';
-
 @Component({
   selector: 'app-catalog',
   standalone: true,
@@ -18,12 +21,28 @@ export class CatalogComponent implements OnInit {
   Ordenacion: number = 2;
   elementosPorPagina: number = 20;
   totalPaginas: number;
-  constructor(private catalogoService: CatalogoService) {}
+  userId: any;
+
+  constructor(private catalogoService: CatalogoService, private carritoService: CarritoService, private authService: AuthService, private apiService: ApiService) {}
 
   ngOnInit(): void {
+    this.userId = localStorage.getItem('usuarioId');
+    if (!this.userId) {
+      console.error('No se encontró el ID de usuario en el localStorage.');
+    }
     this.getProducts();
   }
+  addProductToCart(productId: number, quantity: number): void {
+    this.carritoService.addProductToCart(productId, this.userId, quantity)
+      .then(result => {
+        console.log('Producto añadido al carrito', result);
+      })
+      .catch(error => {
+        console.error('Error al añadir producto al carrito', error);
+      });
+  }
 
+  // Obtener los productos de la API
   getProducts(): void {
     this.catalogoService.getAll(this.Ordenacion, this.paginaActual, this.elementosPorPagina, this.query, this.totalPaginas)
       .subscribe({

@@ -5,6 +5,7 @@ export class ProductoCarrito {
   carritoId: number;
   cantidad: number;
   producto: Product;
+  id: any;
 
   constructor(productoId: number, carritoId: number, cantidad: number, producto: Product) {
     this.productoId = productoId;

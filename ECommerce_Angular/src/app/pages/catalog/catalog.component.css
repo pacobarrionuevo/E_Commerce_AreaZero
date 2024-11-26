@@ -29,7 +29,6 @@ body, html {
   box-sizing: border-box;
 }
 
-
 .search-form {
   display: flex;
   gap: 10px;
@@ -70,7 +69,6 @@ body, html {
   transform: scale(1.05);
 }
 
-
 .filters {
   display: flex;
   align-items: center;
@@ -101,7 +99,6 @@ body, html {
   outline: none;
 }
 
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -110,7 +107,6 @@ body, html {
   max-width: 1200px;
   box-sizing: border-box;
 }
-
 
 .product {
   background-color: #ffffff;
@@ -170,7 +166,6 @@ body, html {
   background-color: #333;
   transform: scale(1.05);
 }
-
 
 .pagination-controls {
   display: flex;
