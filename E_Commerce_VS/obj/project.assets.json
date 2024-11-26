@@ -5481,23 +5481,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gruiazu\\.nuget\\packages\\": {},
+    "C:\\Users\\gonza\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gruiazu\\source\\repos\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+      "projectUniqueName": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
       "projectName": "E_Commerce_VS",
-      "projectPath": "C:\\Users\\gruiazu\\source\\repos\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
-      "packagesPath": "C:\\Users\\gruiazu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gruiazu\\source\\repos\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
+      "projectPath": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+      "packagesPath": "C:\\Users\\gonza\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\gruiazu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gonza\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5600,7 +5600,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
