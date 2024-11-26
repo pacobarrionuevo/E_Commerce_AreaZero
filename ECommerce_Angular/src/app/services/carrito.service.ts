@@ -18,72 +18,18 @@ export class CarritoService {
     return this.api.get<Carrito[]>(`${this.carritoEndpoint}/carritos`);
   }
 
-  async associateCart(userId: number): Promise<Result<string>> {
-    const body = { userId };
-    return this.api.post<string>(`${this.carritoEndpoint}/associate-cart`, body, 'application/json');
-
-  }
-
   // Añadir un producto al carrito
-  async addProductToCart(productId: number, userId: number, quantity: number): Promise<Result<number>> {
-    // Enviar los datos al backend
-    const body = { productId, userId, quantity };
-    const result = await this.api.post<number>(`${this.carritoEndpoint}/addtoshopcart`, body, 'application/json');
-  
-    if (result.success) {
-      console.log(`Producto añadido con éxito al carrito con ID: ${result.data}`);
-    }
-  
-    return result; 
+  async addProductToCart(productId: number, userId: number, quantity: number): Promise<Result<string>> {
+    // Enviar solo productId y quantity, sin userId
+    const body = { productId, userId, quantity };  // Sin userId
+    return this.api.post<string>(`${this.carritoEndpoint}/addtoshopcart`, body, 'application/json');
   }
   
 
   // Obtener todos los productos en el carrito
   async getProductosCarrito(): Promise<Result<ProductoCarrito[]>> {
-    const result = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito`);
-  
-    if (result.success && result.data.length > 0) {
-      // Buscar el carritoId del último producto añadido
-      const lastProduct = result.data.reduce((latest, current) => {
-        return current.id > latest.id ? current : latest;
-      });
-  
-      const carritoId = lastProduct.carritoId;
-  
-      // Guardar el carritoId en el localStorage si no está o si es diferente
-      const storedCarritoId = localStorage.getItem('carritoId');
-      if (!storedCarritoId || Number(storedCarritoId) !== carritoId) {
-        localStorage.setItem('carritoId', carritoId.toString());
-        console.log(`CarritoId actualizado en localStorage: ${carritoId}`);
-      }
-    }
-  
-    return result;
+    return this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito`);
   }
-  
-
-  async getProductosCarritoId(carritoId: number): Promise<Result<ProductoCarrito[]>> {
-    const result = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito/${carritoId}`);
-    
-    if (result.success && result.data.length > 0) {
-      // Buscar el carritoId del último producto añadido
-      const lastProduct = result.data.reduce((latest, current) => {
-        return current.id > latest.id ? current : latest;
-      });
-  
-      const lastCarritoId = lastProduct.carritoId;
-  
-      // Guardar el carritoId en el localStorage si no está o si es diferente
-      const storedCarritoId = localStorage.getItem('carritoId');
-      if (!storedCarritoId || Number(storedCarritoId) !== lastCarritoId) {
-        localStorage.setItem('carritoId', lastCarritoId.toString());
-        console.log(`CarritoId actualizado en localStorage desde getProductosCarritoId: ${lastCarritoId}`);
-      }
-    }
-  
-    return result;
-  }
-  
 
   // Eliminar un producto del carrito
   async removeProductFromCart(productId: number, carritoId: number): Promise<Result<string>> {

@@ -496,5 +496,31 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.CheckoutApiController",
+    "Method": "Create",
+    "RelativePath": "create-checkout-session",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.SessionStatusController",
+    "Method": "SessionStatus",
+    "RelativePath": "session-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "session_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product';
-import { Result } from '../models/result';
 import { ApiService } from './api.service';
-import { Checkout } from '../models/checkout';
-import { CheckoutStatus } from '../models/checkout-status';
+import { Result } from '../models/result';
+import { Product } from '../models/product';
+import { CheckoutSession } from '../models/checkout-session';
+import { CheckoutSessionStatus } from '../models/checkout-session-status';
+import { Carrito } from '../models/carrito';
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +13,19 @@ export class CheckoutService {
 
   constructor(private api: ApiService) { }
 
-  getAllProducts(): Promise<Result<Product[]>> {
-    return this.api.get<Product[]>('ControladorCheckout/products');
+  getAllProducts(): Promise<Result<Carrito[]>> {
+    return this.api.get<Carrito[]>('/ControladorCheckout/products');
   }
 
-  getHostedCheckout(): Promise<Result<Checkout>> {
-    return this.api.get<Checkout>('ControladorCheckout/hosted');
+  getHostedCheckout(products: any): Promise<Result<CheckoutSession>> {
+    return this.api.get<CheckoutSession>('/controladorcheckout/hosted', products);
   }
 
-  getEmbededCheckout(): Promise<Result<Checkout>> {
-    return this.api.get<Checkout>('ControladorCheckout/embedded');
+  getEmbededCheckout(products: any): Promise<Result<CheckoutSession>> {
+    return this.api.get<CheckoutSession>('/controladorcheckout/embedded', products);
   }
 
-  getStatus(sessionId: string): Promise<Result<CheckoutStatus>> {
-    return this.api.get<CheckoutStatus>(`Checkout/status/${sessionId}`);
+  getStatus(sessionId: string): Promise<Result<CheckoutSessionStatus>> {
+    return this.api.get<CheckoutSessionStatus>(`checkout/status/${sessionId}`);
   }
 }
