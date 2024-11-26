@@ -39,6 +39,7 @@
         <img class="imagen" [src]="product.ruta" [alt]="product.nombre + ' image'" />
         <button class="btnfos btnfos-4" [routerLink]="['/product-detail', product.id]">Ver</button>
         <span class="product-precio">{{ product.precio / 100 }}€</span>
+        <button (click)="addProductToCart(product.id, 1)">Añadir al carrito</button>
       </figure>
     </div>
 

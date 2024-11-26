@@ -5,6 +5,7 @@ import { ReviewService } from '../../services/review.service';
 import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CarritoService } from '../../services/carrito.service';
 interface Review {
   id: number;
   fechaPublicacion: Date;
@@ -30,7 +31,8 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productDetailService: ProductDetailService,
-    private reviewService: ReviewService
+    private reviewService: ReviewService,
+    private carritoService: CarritoService
   ) {}
 
   ngOnInit(): void {
