@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "siK0Hf2DenE=",
   "success": true,
   "projectFilePath": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+=======
+  "dgSpecHash": "6177xAV6DpE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+>>>>>>> origin/paco_segundarama
   "expectedPackageFiles": [
     "C:\\Users\\gonza\\.nuget\\packages\\f23.stringsimilarity\\6.0.0\\f23.stringsimilarity.6.0.0.nupkg.sha512",
     "C:\\Users\\gonza\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

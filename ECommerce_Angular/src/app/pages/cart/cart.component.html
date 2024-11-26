@@ -19,6 +19,9 @@
       Eliminar
     </button>
   </div>
+  <div>
+    <button [routerLink] = "'/checkout'">PAGAR</button>
+  </div>
 </div>
 <div class="error-message" *ngIf="productosCarrito.length === 0">
   No hay productos en tu carrito.

@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "+OAw5FQNNOmI7mdrlw40Qw6TN3qX+LvyI0rqxwrMEV8=",
+=======
+  "Hash": "n7CDZOz29TLDQgNm1q1V8kr4cyPwrUFuBy4TUgZKyBI=",
+>>>>>>> origin/paco_segundarama
   "Source": "E_Commerce_VS",
   "BasePath": "_content/E_Commerce_VS",
   "Mode": "Default",
@@ -10,17 +14,28 @@
     {
       "Name": "E_Commerce_VS\\wwwroot",
       "Source": "E_Commerce_VS",
+<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/1.png",
       "AssetKind": "All",
@@ -36,10 +51,17 @@
       "OriginalItemSpec": "wwwroot\\images\\1.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/10.png",
       "AssetKind": "All",
@@ -55,10 +77,17 @@
       "OriginalItemSpec": "wwwroot\\images\\10.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\11.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\11.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/11.png",
       "AssetKind": "All",
@@ -74,10 +103,17 @@
       "OriginalItemSpec": "wwwroot\\images\\11.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\12.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\12.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/12.png",
       "AssetKind": "All",
@@ -93,10 +129,17 @@
       "OriginalItemSpec": "wwwroot\\images\\12.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\13.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\13.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/13.png",
       "AssetKind": "All",
@@ -112,10 +155,17 @@
       "OriginalItemSpec": "wwwroot\\images\\13.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\14.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\14.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/14.png",
       "AssetKind": "All",
@@ -131,10 +181,17 @@
       "OriginalItemSpec": "wwwroot\\images\\14.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\15.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\15.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/15.png",
       "AssetKind": "All",
@@ -150,10 +207,17 @@
       "OriginalItemSpec": "wwwroot\\images\\15.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\16.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\16.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/16.png",
       "AssetKind": "All",
@@ -169,10 +233,17 @@
       "OriginalItemSpec": "wwwroot\\images\\16.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\17.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\17.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/17.png",
       "AssetKind": "All",
@@ -188,10 +259,17 @@
       "OriginalItemSpec": "wwwroot\\images\\17.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\18.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\18.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/18.png",
       "AssetKind": "All",
@@ -207,10 +285,17 @@
       "OriginalItemSpec": "wwwroot\\images\\18.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\19.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\19.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/19.png",
       "AssetKind": "All",
@@ -226,10 +311,17 @@
       "OriginalItemSpec": "wwwroot\\images\\19.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\2.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\2.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/2.png",
       "AssetKind": "All",
@@ -245,10 +337,17 @@
       "OriginalItemSpec": "wwwroot\\images\\2.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\20.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\20.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/20.png",
       "AssetKind": "All",
@@ -264,10 +363,17 @@
       "OriginalItemSpec": "wwwroot\\images\\20.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\3.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\3.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/3.png",
       "AssetKind": "All",
@@ -283,10 +389,17 @@
       "OriginalItemSpec": "wwwroot\\images\\3.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\4.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\4.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/4.png",
       "AssetKind": "All",
@@ -302,10 +415,17 @@
       "OriginalItemSpec": "wwwroot\\images\\4.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\5.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\5.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/5.png",
       "AssetKind": "All",
@@ -321,10 +441,17 @@
       "OriginalItemSpec": "wwwroot\\images\\5.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\6.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\6.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/6.png",
       "AssetKind": "All",
@@ -340,10 +467,17 @@
       "OriginalItemSpec": "wwwroot\\images\\6.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\7.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\7.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/7.png",
       "AssetKind": "All",
@@ -359,10 +493,17 @@
       "OriginalItemSpec": "wwwroot\\images\\7.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\8.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\8.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/8.png",
       "AssetKind": "All",
@@ -378,10 +519,17 @@
       "OriginalItemSpec": "wwwroot\\images\\8.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/paco_segundarama
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/9.png",
       "AssetKind": "All",

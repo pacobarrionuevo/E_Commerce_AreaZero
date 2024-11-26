@@ -5,7 +5,6 @@ import { ApiService } from './api.service';
 import { Checkout } from '../models/checkout';
 import { CheckoutStatus } from '../models/checkout-status';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +25,6 @@ export class CheckoutService {
   }
 
   getStatus(sessionId: string): Promise<Result<CheckoutStatus>> {
-    return this.api.get<CheckoutStatus>(`ControladorCheckout/status/${sessionId}`);
+    return this.api.get<CheckoutStatus>(`Checkout/status/${sessionId}`);
   }
 }
