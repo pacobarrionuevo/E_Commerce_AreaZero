@@ -21,11 +21,16 @@ interface Review {
   selector: 'app-product-detail',
   standalone: true,
   imports: [CommonModule, FormsModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
   product: Product | undefined;
+  reviews: Review[] = [];
+  newReview: string = '';
+  usuarioId: number = 1;
   reviews: Review[] = [];
   newReview: string = '';
   usuarioId: number = 1;
@@ -91,6 +96,7 @@ export class ProductDetailComponent implements OnInit {
         this.reviews.push(review);
         this.newReview = '';
       }, error => {
+        console.error('Error al añadir la reseña:', error);
         console.error('Error al añadir la reseña:', error);
       });
     }

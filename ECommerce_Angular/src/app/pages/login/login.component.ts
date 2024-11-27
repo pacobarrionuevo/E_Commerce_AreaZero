@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Importar Router
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms'; 
 
@@ -16,7 +15,7 @@ export class LoginComponent {
   jwt: string = ''; 
   usuarioId: number | null = null;
 
-  constructor(private authService: AuthService, private router: Router) {} // Añadir Router al constructor
+  constructor(private authService: AuthService) {}
 
   async submit() {
     const authData = { email: this.email, password: this.password }; 
@@ -35,9 +34,6 @@ export class LoginComponent {
         this.usuarioId = result.usuarioId;
 
         console.log("Inicio de sesión exitoso.");
-        
-        // Redirigir al usuario a la página principal o donde prefieras
-        this.router.navigate(['/']);
       } else {
         console.error("No se recibió un token de acceso.");
       }
@@ -45,4 +41,5 @@ export class LoginComponent {
       console.error("Error al iniciar sesión:", error);
     }
   }
+  
 }

@@ -26,10 +26,12 @@ namespace E_Commerce_VS.Controllers
         // Proteger este método con [Authorize]
         [HttpPost]
         [Authorize]
-
         public async Task<ActionResult> AddReview([FromBody] CreateReviewDto reviewDto)
         {
-            
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
             await _reviewService.AddReviewAsync(reviewDto);
             return CreatedAtAction(nameof(GetAllReviews), new { }, reviewDto);

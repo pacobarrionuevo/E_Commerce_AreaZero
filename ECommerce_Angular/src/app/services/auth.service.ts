@@ -15,12 +15,13 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   register(authData: AuthRequest): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/Registro`, authData);
+    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/Registro`, authData)
+
+     return resultado;
   }
 
   login(authData: AuthRequest): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/login`, authData);
-  }
+    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/login`, authData)
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
