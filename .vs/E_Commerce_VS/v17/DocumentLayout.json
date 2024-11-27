@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\",
+  "WorkspaceRootPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\repositorioclonado\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcheckoutapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcheckoutapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcheckoutapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\repositorioclonado\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,9 +28,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ControladorCheckoutApi.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -41,9 +41,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeToolTip": "E_Commerce_VS\\Program.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAkwDMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
