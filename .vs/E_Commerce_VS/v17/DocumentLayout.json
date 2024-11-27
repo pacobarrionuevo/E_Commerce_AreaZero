@@ -2,6 +2,7 @@
   "Version": 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\",
   "Documents": [
     {
@@ -116,9 +117,16 @@
 =======
   "WorkspaceRootPath": "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\",
 >>>>>>> origin/paco_segundarama
+=======
+  "WorkspaceRootPath": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\",
+>>>>>>> origin/paco_segundarama
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fbarflo0312\\desktop\\proyecto\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\repositorioclonado\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcheckoutapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcheckoutapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\pacob\\desktop\\repositorioclonado\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
 <<<<<<< HEAD
     },
@@ -217,6 +225,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "ControladorProductoCarrito.cs",
@@ -404,38 +413,30 @@
             },
             {
               "$type": "Document",
+=======
+>>>>>>> origin/paco_segundarama
               "DocumentIndex": 0,
-              "Title": "Settings.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Settings.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Settings.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Settings.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Settings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAWAAAAAAAAAA==",
+              "Title": "ControladorCheckoutApi.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T09:03:30.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ControladorCheckout.cs",
-              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
-              "ToolTip": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAkwLsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T11:19:08.047Z"
+              "WhenOpened": "2024-11-26T23:26:19.162Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
-              "ToolTip": "C:\\Users\\fbarflo0312\\Desktop\\Proyecto\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
+              "ToolTip": "C:\\Users\\pacob\\Desktop\\REPOSITORIOCLONADO\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeToolTip": "E_Commerce_VS\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAgwBwAAAAuAAAA",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwDMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2024-11-21T10:04:34.744Z"
             },
             {
@@ -787,6 +788,9 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T11:21:32.298Z"
+>>>>>>> origin/paco_segundarama
+=======
+              "WhenOpened": "2024-11-24T09:03:30.904Z"
 >>>>>>> origin/paco_segundarama
             }
           ]

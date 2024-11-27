@@ -25,6 +25,7 @@ namespace E_Commerce_VS
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
+            StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
             // Add services to the container.
             builder.Services.AddControllers();
@@ -50,7 +51,6 @@ namespace E_Commerce_VS
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddScoped<ProyectoDbContext>();
 
             //Configuracion de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
