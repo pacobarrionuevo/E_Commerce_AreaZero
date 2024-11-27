@@ -410,6 +410,22 @@
     ]
   },
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
+    "Method": "GetProductosCarrito",
+    "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{carritoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorReview",
     "Method": "GetAllReviews",
     "RelativePath": "api/ControladorReview",

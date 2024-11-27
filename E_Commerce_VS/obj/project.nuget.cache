@@ -104,12 +104,5 @@
     "C:\\Users\\gonza\\.nuget\\packages\\torchsharp\\0.101.5\\torchsharp.0.101.5.nupkg.sha512",
     "C:\\Users\\gonza\\.nuget\\packages\\torchsharp-cpu\\0.101.5\\torchsharp-cpu.0.101.5.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
