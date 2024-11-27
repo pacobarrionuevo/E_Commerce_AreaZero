@@ -4,6 +4,10 @@
   "WorkspaceRootPath": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jsalaba2610\\desktop\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jsalaba2610\\desktop\\e_commerce_areazero\\e_commerce_vs\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -14,10 +18,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jsalaba2610\\desktop\\e_commerce_areazero\\e_commerce_vs\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jsalaba2610\\desktop\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jsalaba2610\\desktop\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,11 +47,15 @@
         {
           "DockedWidth": 200,
 <<<<<<< HEAD
+<<<<<<< HEAD
           "SelectedChildIndex": 2,
+=======
+          "SelectedChildIndex": 4,
+>>>>>>> f104161822c5af1f5812356b4fa1a16b4b963d2d
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Properties\\launchSettings.json",
@@ -59,6 +63,7 @@
               "RelativeToolTip": "E_Commerce_VS\\Properties\\launchSettings.json",
               "ViewState": "AQIAAAsAAAAAAAAAAAArwBoAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+<<<<<<< HEAD
               "WhenOpened": "2024-11-21T20:04:05.439Z",
 =======
           "SelectedChildIndex": 0,
@@ -81,6 +86,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
 <<<<<<< HEAD
+=======
+              "WhenOpened": "2024-11-21T20:04:05.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+>>>>>>> f104161822c5af1f5812356b4fa1a16b4b963d2d
               "Title": "E_Commerce_VS.http",
               "DocumentMoniker": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.http",
               "RelativeDocumentMoniker": "E_Commerce_VS\\E_Commerce_VS.http",
@@ -88,21 +100,19 @@
               "RelativeToolTip": "E_Commerce_VS\\E_Commerce_VS.http",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-11-21T20:04:00.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T20:04:00.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\appsettings.Development.json",
               "RelativeDocumentMoniker": "E_Commerce_VS\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\appsettings.Development.json*",
-              "RelativeToolTip": "E_Commerce_VS\\appsettings.Development.json*",
+              "ToolTip": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\appsettings.Development.json",
+              "RelativeToolTip": "E_Commerce_VS\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-21T20:03:38.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T20:03:38.046Z"
             },
             {
               "$type": "Document",
@@ -114,18 +124,17 @@
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorProducto.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAA5wAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T20:03:22.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T20:03:22.981Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
               "ToolTip": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeToolTip": "E_Commerce_VS\\Program.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAkwDwAAAA5AAAA",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAkwD8AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T12:20:43.791Z",
               "EditorCaption": ""
@@ -136,10 +145,11 @@
               "Title": "ControladorReview.cs",
               "DocumentMoniker": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorReview.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorReview.cs",
-              "ToolTip": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorReview.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorReview.cs*",
+              "ToolTip": "C:\\Users\\jsalaba2610\\Desktop\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorReview.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorReview.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAgwBsAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2024-11-21T12:11:38.216Z",
 =======
               "Title": "Program.cs",
@@ -152,6 +162,9 @@
               "WhenOpened": "2024-11-21T10:04:34.744Z",
 >>>>>>> paco_segundarama
               "EditorCaption": ""
+=======
+              "WhenOpened": "2024-11-21T12:11:38.216Z"
+>>>>>>> f104161822c5af1f5812356b4fa1a16b4b963d2d
             }
           ]
         }
