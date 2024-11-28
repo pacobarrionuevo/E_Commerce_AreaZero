@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
     this.loadCartProducts();
   }
 
-  // Cargar los productos del carrito
+
   async loadCartProducts(): Promise<void> {
     this.isLoading = true;
     this.errorMessage = '';
@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
     }
   }
 
-  // Eliminar un producto del carrito
+  
   async removeProduct(productId: number, carritoId: number): Promise<void> {
     try {
       const result = await this.carritoService.removeProductFromCart(productId, carritoId);
@@ -55,10 +55,10 @@ export class CartComponent implements OnInit {
     }
   }
 
-  // Modificar la cantidad de un producto
+  
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
-    const input = event.target as HTMLInputElement; // Hacemos el casting a HTMLInputElement
-    const quantity = parseInt(input.value, 10); // Ahora accedemos a la propiedad `value`
+    const input = event.target as HTMLInputElement; 
+    const quantity = parseInt(input.value, 10);
   
     if (quantity < 1) {
       this.errorMessage = 'La cantidad debe ser al menos 1.';

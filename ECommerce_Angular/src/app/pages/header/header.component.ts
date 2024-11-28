@@ -12,13 +12,13 @@ import { ImageService } from '../../services/image.service';
 export class HeaderComponent {
   logoImgSrc: string;
   carritoImgSrc: string;
-  trofeosImgSrc: string;
+  torneosImgSrc: string;
   subscripcionImgSrc: string;
 
   constructor(private imageService: ImageService) {
     this.logoImgSrc = this.imageService.getImageUrl('logo.png');
     this.carritoImgSrc = this.imageService.getImageUrl('carrito.png');
-    this.trofeosImgSrc = this.imageService.getImageUrl('trofeo.png');
+    this.torneosImgSrc = this.imageService.getImageUrl('ticket.png');
     this.subscripcionImgSrc = this.imageService.getImageUrl('ticket.png');
   }
 }

@@ -6,6 +6,7 @@ import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarritoService } from '../../services/carrito.service';
+
 interface Review {
   id: number;
   fechaPublicacion: Date;
@@ -26,7 +27,8 @@ export class ProductDetailComponent implements OnInit {
   product: Product | undefined;
   reviews: Review[] = [];
   newReview: string = '';
-  usuarioId: number = 1;
+  usuarioId: number | null = null;
+  jwt: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,9 +38,15 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Obtenermos el token y el id desde el almacenamiento local
+    this.jwt = localStorage.getItem('accessToken'); 
+    this.usuarioId = Number(localStorage.getItem('usuarioId')); 
+    // Mensaje en la consola para controlar si se ha iniciado sesion
+    console.log('Usuario ID:', this.usuarioId); 
     this.getProduct();
   }
-  addProductToCart(productId: number, userId: number,quantity: number): void {
+
+  addProductToCart(productId: number, userId: number, quantity: number): void {
     this.carritoService.addProductToCart(productId, userId, quantity)
       .then(result => {
         console.log('Producto añadido al carrito', result);
@@ -47,6 +55,7 @@ export class ProductDetailComponent implements OnInit {
         console.error('Error al añadir producto al carrito', error);
       });
   }
+
   getProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
@@ -70,11 +79,22 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addReview(): void {
+    // Reaseguramos que se obtiene el token y el id antes de añadir una reseña
+    this.jwt = localStorage.getItem('accessToken'); 
+    this.usuarioId = Number(localStorage.getItem('usuarioId')); 
+
+    console.log('Verificando token antes de añadir la reseña:', this.jwt); // Mensaje de consola para saber si tenemos el token para poder reseñar
+
+    if (!this.jwt) {
+      alert('Por favor, inicie sesión para añadir una reseña.');
+      return;
+    }
+
     if (this.newReview.trim()) {
-      const reviewDto = { 
-        textReview: this.newReview, 
-        usuarioId: this.usuarioId, 
-        productoId: this.product?.id || 0 
+      const reviewDto = {
+        textReview: this.newReview,
+        usuarioId: this.usuarioId,
+        productoId: this.product?.id || 0
       };
       this.reviewService.addReview(reviewDto).subscribe((review: Review) => {
         this.reviews.push(review);

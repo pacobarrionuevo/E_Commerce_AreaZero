@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -9,7 +9,7 @@ section, nav, article {
     margin: 20px;
 }
 
-/* Contenedor principal */
+
 .container {
     display: flex;
     justify-content: space-around;
@@ -35,7 +35,7 @@ section, nav, article {
     margin: 40px 0;
 }
 
-/* Estilos del encabezado */
+
 header {
     width: 100%;
     background: #b0abe0;
@@ -125,7 +125,7 @@ header .login-register a:hover {
     color: #2980b9;
 }
 
-/* Animación de entrada */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }

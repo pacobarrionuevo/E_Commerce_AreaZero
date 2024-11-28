@@ -40,7 +40,7 @@ export class CatalogComponent implements OnInit {
   }
 
   searchProducts(): void {
-    this.paginaActual = 1; // Reinicia a la primera página para la nueva búsqueda
+    this.paginaActual = 1; 
     this.getProducts();
   }
 

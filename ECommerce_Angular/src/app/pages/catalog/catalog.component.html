@@ -1,6 +1,5 @@
 <body>
   <section class="background">
-    <!-- Formulario de búsqueda -->
     <form (ngSubmit)="searchProducts()" class="search-form">
       <input type="text" placeholder="Buscar productos..." [(ngModel)]="query" name="search" />
       <input type="submit" value="Buscar" />
@@ -21,7 +20,6 @@
       </select>
     </div>
 
-    <!-- Filtros de ordenamiento -->
     <div class="filters">
       <label for="filtroPrecio">Ordenar por:</label>
       <select [(ngModel)]="Ordenacion" name="filtroPrecio" (change)="getProducts()">
@@ -32,7 +30,7 @@
       </select>
     </div>
 
-    <!-- Lista de productos -->
+
     <div id="lista-productos" class="grid">
       <figure class="product" *ngFor="let product of productList">
         <span class="product-name">{{ product.nombre }}</span>
@@ -42,7 +40,6 @@
       </figure>
     </div>
 
-    <!-- Controles de paginación -->
     <div class="pagination-controls">
       <button (click)="cambiarPagina(-1)" [disabled]="paginaActual === 1">Anterior</button>
       <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
