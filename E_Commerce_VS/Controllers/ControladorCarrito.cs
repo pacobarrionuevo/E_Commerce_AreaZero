@@ -168,6 +168,17 @@ namespace E_Commerce_VS.Controllers
             {
                 return NotFound("El producto especificado no existe.");
             }
+
+            var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(userId);
+            if (carrito == null)
+            {
+                carrito = new Carrito
+                {
+                    UsuarioId = userId,
+                    Productos = new List<ProductoCarritoLocal>()
+                };
+                await _unitOfWork.CarritoRepository.InsertAsync(carrito);
+            }
         }
         
     }
