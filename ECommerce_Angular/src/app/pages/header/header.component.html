@@ -1,6 +1,6 @@
 <header>
     <div class="profile">
-        <a [routerLink]="'/main'">
+        <a [routerLink]="''">
             <img [src]="logoImgSrc" alt="Logo">
         </a>
     </div>
@@ -21,17 +21,9 @@
         </a>
     </div>
 
-    <nav class="search-bar">
-        <input type="text" placeholder="Barra de búsqueda">
-        <button>Buscar</button>
-    </nav>
-
-    <div class="sobre-nosotros">
-        <a [routerLink]="'/aboutus'">Sobre Nosotros</a> 
-    </div>
-    
-    <div class="login-register">
-        <a [routerLink]="'/login'">Inicia Sesión</a> /
-        <a [routerLink]="'/register'">Registrarse</a>
+    <div class="nav-buttons">
+        <button [routerLink]="'/aboutus'" class="nav-button">Sobre Nosotros</button>
+        <button [routerLink]="'/login'" class="nav-button">Inicia Sesión</button>
+        <button [routerLink]="'/register'" class="nav-button">Registrarse</button>
     </div>
 </header>

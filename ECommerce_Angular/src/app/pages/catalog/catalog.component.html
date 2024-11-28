@@ -30,12 +30,11 @@
       </select>
     </div>
 
-
     <div id="lista-productos" class="grid">
       <figure class="product" *ngFor="let product of productList">
         <span class="product-name">{{ product.nombre }}</span>
         <img class="imagen" [src]="product.ruta" [alt]="product.nombre + ' image'" />
-        <button class="btnfos btnfos-4" [routerLink]="['/product-detail', product.id]">Ver</button>
+        <button class="product-button" [routerLink]="['/product-detail', product.id]"><span>Ver</span></button>
         <span class="product-precio">{{ product.precio / 100 }}€</span>
       </figure>
     </div>
@@ -43,7 +42,4 @@
     <div class="pagination-controls">
       <button (click)="cambiarPagina(-1)" [disabled]="paginaActual === 1">Anterior</button>
       <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
-      <button (click)="cambiarPagina(1)" [disabled]="paginaActual === totalPaginas">Siguiente</button>
-    </div>
-  </section>
-</body>
+      <button (click)="cambiarPagina(1)" [disabled]="paginaActual === totalPaginas">

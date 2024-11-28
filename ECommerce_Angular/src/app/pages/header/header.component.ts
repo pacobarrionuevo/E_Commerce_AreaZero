@@ -18,7 +18,7 @@ export class HeaderComponent {
   constructor(private imageService: ImageService) {
     this.logoImgSrc = this.imageService.getImageUrl('logo.png');
     this.carritoImgSrc = this.imageService.getImageUrl('carrito.png');
-    this.torneosImgSrc = this.imageService.getImageUrl('ticket.png');
+    this.torneosImgSrc = this.imageService.getImageUrl('trofeo.png');
     this.subscripcionImgSrc = this.imageService.getImageUrl('ticket.png');
   }
 }
