@@ -1,116 +1,115 @@
 body {
-    font-family: 'Inter', sans-serif;
-    background: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  .about-us-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-  
-  .header {
-    width: 100%;
-    background: #ffcc00; /* Cambiado a un amarillo suave */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-    border-radius: 10px 10px 0 0;
-  }
-  
-  .logo {
-    width: 150px;
-    height: 150px;
-    background: url('/assets/logo.png') no-repeat center/cover;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  .about-us-title h1 {
-    font-weight: 700;
-    font-size: 48px;
-    color: #333; /* Cambiado a un tono más oscuro para mejor legibilidad */
-    text-align: center;
-    margin: 0;
-  }
-  
-  .line1 {
-    width: 150px;
-    border: 2px solid #333; /* Cambiado para coincidir con el texto */
-    margin: 20px auto 0;
-  }
-  
-  .main-content {
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-  
-  .mission-section, .vision-section, .values-section {
-    background: #e0f7fa; /* Un color azul claro suave */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .mission-section h2, .vision-section h2, .values-section h2 {
-    font-size: 36px;
-    color: #00796b; /* Un verde oscuro */
-    margin-bottom: 20px;
-  }
-  
-  .mission-section p, .vision-section p, .values-section p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-    margin: 10px 0;
-  }
-  
-  .values-section p strong {
-    color: #00796b; /* Un verde oscuro */
-  }
-  
-  .social-media {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #e0f7fa; /* Igual que las secciones */
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .social-media p {
-    font-size: 24px;
-    color: #00796b; /* Un verde oscuro */
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-  }
-  
-  .social-icons img {
-    width: 64px;
-    height: 64px;
-    cursor: pointer;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  
-  .social-icons img:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-  
+  font-family: 'Inter', sans-serif;
+  background: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.about-us-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.header {
+  width: 100%;
+  background: #b8def1; /* Color base Diaphanous Jellyfish */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 10px 10px 0 0;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  background: url('/assets/logo.png') no-repeat center/cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.about-us-title h1 {
+  font-weight: 700;
+  font-size: 48px;
+  color: #5a738e; /* Color Diaphanous Jellyfish */
+  text-align: center;
+  margin: 0;
+}
+
+.line1 {
+  width: 150px;
+  border: 2px solid #5a738e; /* Color Diaphanous Jellyfish */
+  margin: 20px auto 0;
+}
+
+.main-content {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mission-section, .vision-section, .values-section {
+  background: #e8f4fa; /* Color más claro Diaphanous Jellyfish */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.mission-section h2, .vision-section h2, .values-section h2 {
+  font-size: 36px;
+  color: #395b75; /* Color Diaphanous Jellyfish */
+  margin-bottom: 20px;
+}
+
+.mission-section p, .vision-section p, .values-section p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  margin: 10px 0;
+}
+
+.values-section p strong {
+  color: #395b75; /* Color Diaphanous Jellyfish */
+}
+
+.social-media {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e8f4fa; /* Igual que las secciones */
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-media p {
+  font-size: 24px;
+  color: #395b75; /* Color Diaphanous Jellyfish */
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icons img {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
