@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Models.Dto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_Commerce_VS.Controllers
 {
@@ -12,6 +13,7 @@ namespace E_Commerce_VS.Controllers
     public class ControladorCarrito : ControllerBase
     {
         private readonly ProyectoDbContext _context;
+        private readonly UnitOfWork _unitOfWork;
 
         public ControladorCarrito(ProyectoDbContext dbContext)
         {
@@ -143,5 +145,30 @@ namespace E_Commerce_VS.Controllers
 
             return BadRequest("No hay un carrito anónimo para asociar.");
         }
+        
+        
+        [Authorize]
+        [HttpPost("PasaProductoAlCarrito")]
+        public async Task<IActionResult<ICollection<ProductoCarritoLocal>>> PasaProductoAlCarrito([FromBody] ProductoCarritoLocal prod )
+        {
+            if (prod == null || prod.ProductId <= 0 || prod.Cantidad <= 0)
+            {
+                return BadRequest("Producto inválido. Asegúrate de que el ID del producto y la cantidad sean válidos.");
+            }
+
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "id");
+
+            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+            {
+                return Unauthorized("Usuario no válido.");
+            }
+
+            var producto = await _unitOfWork.RepoProd.GetByIdAsync(prod.ProductId);
+            if (producto == null)
+            {
+                return NotFound("El producto especificado no existe.");
+            }
+        }
+        
     }
 }
