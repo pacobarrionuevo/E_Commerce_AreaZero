@@ -29,8 +29,7 @@ export class CheckoutComponent implements OnInit, OnDestroy  {
     private service: CheckoutService, 
     private route: ActivatedRoute, 
     private router: Router,
-    private stripe: StripeService,
-    ) {}
+    private stripe: StripeService) {}
 
    ngOnInit() {
     // El evento ngOnInit solo se llama una vez en toda la vida del componente.

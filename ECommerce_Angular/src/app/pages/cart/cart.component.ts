@@ -36,24 +36,26 @@ export class CartComponent implements OnInit {
 
   // Cargar los productos del carrito
   loadCartProducts(): void {
-    const carritoId = Number(localStorage.getItem('carritoId'));
-    this.carritoService.getProductosCarrito()
-      .then(result => {
-        if (result.success) {
-          const carritoId = Number(localStorage.getItem('carritoId'));
-          if (carritoId) {
-            this.productosCarrito = result.data.filter(producto => producto.carritoId === carritoId);
-            console.log('Productos cargados para carritoId:', carritoId, this.productosCarrito);
-          } else {
-            console.error('No se encontró carritoId en localStorage.');
-          }
-        } else {
-          console.error('Error al obtener productos del carrito:', result.error);
+  const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
+  
+  this.productosCarrito = []; // Reiniciar la lista de productos
+        if (!this.userId){
+          const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
+            this.carritoService.getProductById(item.productId).then(producto => ({
+              producto,
+              cantidad: item.quantity
+            }))
+          );
+      
+          Promise.all(productRequests)
+            .then(productosCarrito => {
+              this.productosCarrito = productosCarrito;
+              console.log('Productos cargados:', this.productosCarrito);
+            })
+            .catch(error => {
+              console.error('Error al cargar productos del carrito:', error);
+            });
         }
-      })
-      .catch(error => {
-        console.error('Error al cargar productos del carrito:', error);
-      });
   }
   
 

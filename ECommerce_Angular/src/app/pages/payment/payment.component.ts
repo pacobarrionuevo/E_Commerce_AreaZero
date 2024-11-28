@@ -1,23 +1,22 @@
 import { Component, inject, signal, ViewChild } from '@angular/core';
-import { UntypedFormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormBuilder, Validators } from '@angular/forms';
 import { StripeElementsOptions, StripePaymentElementOptions } from '@stripe/stripe-js';
-import { StripePaymentElementComponent, injectStripe } from 'ngx-stripe';
-import { provideNgxStripe } from 'ngx-stripe';
-
+import { NgxStripeModule, StripePaymentElementComponent, injectStripe } from 'ngx-stripe';
+import { CheckoutService } from '../../services/checkout.service';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-payment',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule, StripePaymentElementComponent, CommonModule, NgxStripeModule],
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.css'
 })
-
 export class PaymentComponent {
   @ViewChild(StripePaymentElementComponent)
   paymentElement!: StripePaymentElementComponent;
-  
 
   private readonly fb = inject(UntypedFormBuilder);
+  private readonly checkoutService = inject(CheckoutService);
 
   paymentElementForm = this.fb.group({
     name: ['John Doe', [Validators.required]],
@@ -30,7 +29,7 @@ export class PaymentComponent {
 
   elementsOptions: StripeElementsOptions = {
     locale: 'en',
-    client: '{{cus_RIOtoN4tQOVGOJ}}'
+    clientSecret: '', // Esto será inicializado dinámicamente
     appearance: {
       theme: 'flat'
     }
@@ -45,21 +44,27 @@ export class PaymentComponent {
     }
   };
 
-  // Replace with your own public key
-  stripe = injectStripe();
+  stripe = injectStripe('pk_test_Dt4ZBIt...'); // Reemplaza con tu clave pública
   paying = signal(false);
+
+  ngOnInit() {
+    // Llamar al servicio para obtener el clientSecret
+    this.checkoutService.getCreateCheckoutSession().subscribe({
+      next: (response) => {
+        this.elementsOptions.clientSecret = response.clientSecret;
+        console.log('Client Secret received:', response.clientSecret);
+      },
+      error: (err) => {
+        console.error('Error retrieving client secret:', err);
+      }
+    });
+  }
 
   pay() {
     if (this.paying() || this.paymentElementForm.invalid) return;
     this.paying.set(true);
 
-    const {
-      name,
-      email,
-      address,
-      zipcode,
-      city
-    } = this.paymentElementForm.getRawValue();
+    const { name, email, address, zipcode, city } = this.paymentElementForm.getRawValue();
 
     this.stripe
       .confirmPayment({
@@ -79,17 +84,20 @@ export class PaymentComponent {
         },
         redirect: 'if_required'
       })
-      .subscribe(result => {
-        this.paying.set(false);
-        if (result.error) {
-          // Show error to your customer (e.g., insufficient funds)
-          alert({ success: false, error: result.error.message });
-        } else {
-          // The payment has been processed!
-          if (result.paymentIntent.status === 'succeeded') {
-            // Show a success message to your customer
+      .subscribe({
+        next: (result) => {
+          this.paying.set(false);
+          if (result.error) {
+            // Mostrar error al usuario
+            alert({ success: false, error: result.error.message });
+          } else if (result.paymentIntent.status === 'succeeded') {
+            // Mostrar mensaje de éxito
             alert({ success: true });
           }
+        },
+        error: (err) => {
+          console.error('Error confirming payment:', err);
+          this.paying.set(false);
         }
       });
   }

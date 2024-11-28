@@ -36,6 +36,7 @@ export class LoginComponent {
 
         console.log("Inicio de sesión exitoso.");
         this.carritoService.associateCart(this.usuarioId);
+        localStorage.removeItem('cart');
       } else {
         console.error("No se recibió un token de acceso.");
       }
