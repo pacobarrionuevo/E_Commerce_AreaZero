@@ -42,6 +42,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
+    "Method": "PasaProductoAlCarrito",
+    "RelativePath": "api/ControladorCarrito/PasaProductoAlCarrito",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prod",
+        "Type": "E_Commerce_VS.Models.Dto.ProductoCarritoLocal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorCatalogo",
     "Method": "GetAllAsync",
     "RelativePath": "api/ControladorCatalogo",

@@ -177,9 +177,8 @@ namespace E_Commerce_VS.Controllers
                 carrito = new Carrito
                 {
                     UserId = userId,
-                    ProductoCarrito = new List<ProductoCarritoLocal>()
+                    ProductoCarrito = new List<ProductoCarrito>()
                 };
-                await _unitOfWork.RepoCar.InsertAsync(carrito);
             }
 
             var productoEnCarrito = carrito.ProductoCarrito.FirstOrDefault(p => p.ProductoId == prod.ProductId);
@@ -191,9 +190,9 @@ namespace E_Commerce_VS.Controllers
             else
             {
                 // Si no está, agregarlo al carrito
-                carrito.ProductoCarrito.Add(new ProductoCarritoLocal
+                carrito.ProductoCarrito.Add(new ProductoCarrito
                 {   
-                    ProductoId = prod.ProductoId,
+                    ProductoId = prod.ProductId,
                     Cantidad = prod.Cantidad
                 });
             }
