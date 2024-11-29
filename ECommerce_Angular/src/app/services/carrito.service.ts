@@ -3,6 +3,7 @@ import { ApiService } from './api.service';
 import { Result } from '../models/result';
 import { Carrito } from '../models/carrito';
 import { ProductoCarrito } from '../models/producto-carrito';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -62,8 +63,8 @@ export class CarritoService {
     return result;
   }
   
-  async getProductById(productId: number): Promise<Result<ProductoCarrito[]>> {
-    const result = await this.api.get<ProductoCarrito[]>(`${this.productoEndpoint}/${productId}`);
+  async getProductById(productId: number): Promise<Result<Product>> {
+    const result = await this.api.get<Product>(`${this.productoEndpoint}/${productId}`);
     return result;
   }
 
