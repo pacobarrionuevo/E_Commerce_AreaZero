@@ -149,36 +149,60 @@ namespace E_Commerce_VS.Controllers
         
         [Authorize]
         [HttpPost("PasaProductoAlCarrito")]
-        public async Task<IActionResult<ICollection<ProductoCarritoLocal>>> PasaProductoAlCarrito([FromBody] ProductoCarritoLocal prod )
+        public async Task<IActionResult> PasaProductoAlCarrito([FromBody] ProductoCarritoLocal prod )
         {
             if (prod == null || prod.ProductId <= 0 || prod.Cantidad <= 0)
             {
-                return BadRequest("Producto inválido. Asegúrate de que el ID del producto y la cantidad sean válidos.");
+                return BadRequest("El producto enviado no es válido.");
             }
 
-            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "id");
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "sub");
 
             if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
             {
                 return Unauthorized("Usuario no válido.");
             }
 
+            // Verificar si el producto existe en la base de datos
             var producto = await _unitOfWork.RepoProd.GetByIdAsync(prod.ProductId);
             if (producto == null)
             {
                 return NotFound("El producto especificado no existe.");
             }
 
+            // Verificar si el carrito del usuario ya contiene este producto
             var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(userId);
             if (carrito == null)
             {
                 carrito = new Carrito
                 {
-                    UsuarioId = userId,
-                    Productos = new List<ProductoCarritoLocal>()
+                    UserId = userId,
+                    ProductoCarrito = new List<ProductoCarritoLocal>()
                 };
-                await _unitOfWork.CarritoRepository.InsertAsync(carrito);
+                await _unitOfWork.RepoCar.InsertAsync(carrito);
             }
+
+            var productoEnCarrito = carrito.ProductoCarrito.FirstOrDefault(p => p.ProductoId == prod.ProductId);
+            if (productoEnCarrito != null)
+            {
+                // Si el producto ya está en el carrito, aumentar la cantidad
+                productoEnCarrito.Cantidad += prod.Cantidad;
+            }
+            else
+            {
+                // Si no está, agregarlo al carrito
+                carrito.ProductoCarrito.Add(new ProductoCarritoLocal
+                {   
+                    ProductoId = prod.ProductoId,
+                    Cantidad = prod.Cantidad
+                });
+            }
+
+            // Guardar los cambios
+            await _unitOfWork.SaveAsync();
+
+            // Retornar el estado actualizado del carrito
+            return Ok(carrito.ProductoCarrito);
         }
         
     }
