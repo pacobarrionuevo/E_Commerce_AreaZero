@@ -1,28 +1,20 @@
-<div class="cart-container" *ngIf="productosCarrito.length > 0">
-  <div *ngFor="let productosCarrito of productosCarrito" class="cart-item">
-    <h3>{{ productosCarrito.producto.nombre }}</h3>
-    <img
-      class="imagen"
-      [src]="productosCarrito.producto.ruta"
-      [alt]="productosCarrito.producto.nombre + ' image'"
+<div *ngFor="let producto of productosCarrito" class="cart-item">
+  <h3>{{ producto.producto.nombre }}</h3>
+  <img
+    class="imagen"
+    [src]="producto.producto.ruta"
+    [alt]="producto.producto.nombre + ' image'"
+  />
+  <p>Precio: {{ producto.producto.precio }}€</p>
+  <p>
+    Cantidad:
+    <input
+      type="number"
+      [value]="producto.cantidad"
+      (change)="modifyQuantity(producto.producto.id, producto.carritoId, $event)"
     />
-    <p>Precio: {{ productosCarrito.producto.precio }}€</p>
-    <p>
-      Cantidad:
-      <input
-        type="number"
-        [value]="productosCarrito.cantidad"
-        (change)="modifyQuantity(productosCarrito.productoId, productosCarrito.carritoId, $event)"
-      />
-    </p>
-    <button (click)="removeProduct(productosCarrito.productoId, productosCarrito.carritoId)">
-      Eliminar
-    </button>
-  </div>
-  <div>
-    <button [routerLink] = "'/checkout'">PAGAR</button>
-  </div>
-</div>
-<div class="error-message" *ngIf="productosCarrito.length === 0">
-  No hay productos en tu carrito.
+  </p>
+  <button (click)="removeProduct(producto.producto.id, producto.carritoId)">
+    Eliminar
+  </button>
 </div>

@@ -61,10 +61,24 @@ export class CartComponent implements OnInit {
 
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
+    const existingCart = localStorage.getItem('cart');
+    let cart: { productId: number, quantity: number }[] = [];
+      cart = JSON.parse(existingCart);
+      const ProductIdCart = cart.findIndex(item => item.productId === productId);
+        cart.splice(ProductIdCart, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log(`Producto con ID ${productId} eliminado del localStorage`);
+        this.loadCartProducts();
+      return; 
+      
+  
+    // Si no hay productos en el localStorage o no se encuentra el producto, manejar el servidor
     try {
       const result = await this.carritoService.removeProductFromCart(productId, carritoId);
       if (result.success) {
+        // Actualizar la lista de productos en memoria
         this.productosCarrito = this.productosCarrito.filter(p => p.productoId !== productId);
+        console.log(`Producto con ID ${productId} eliminado del servidor`);
       } else {
         this.errorMessage = `Error al eliminar el producto: ${result.error}`;
       }
@@ -72,38 +86,21 @@ export class CartComponent implements OnInit {
       this.errorMessage = `Se produjo un error: ${error.message}`;
     }
   }
-
+  
   // Modificar la cantidad de un producto
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
-    const input = event.target as HTMLInputElement; // Hacemos el casting a HTMLInputElement
-    const quantity = parseInt(input.value, 10); // Ahora accedemos a la propiedad `value`
+    const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const input = event.target as HTMLInputElement;
+    const quantity = parseInt(input.value, 10);
+    const productIdCart = localCart.findIndex((item: { productId: number }) => item.productId === productId);
   
-    if (quantity < 1) {
-      this.errorMessage = 'La cantidad debe ser al menos 1.';
+    if (productIdCart=== -1) {
+      console.error(`Producto con ID ${productId} no encontrado en el carrito.`);
       return;
     }
-  
-    this.isLoading = true;
-    this.errorMessage = '';
-    this.carritoService.modifyProductQuantity(productId, carritoId, quantity)
-      .then((result) => {
-        if (result.success) {
-          // Encuentra el producto en el carrito y actualiza la cantidad
-          const productoCarrito = this.productosCarrito.find(item => item.productoId === productId && item.carritoId === carritoId);
-          if (productoCarrito) {
-            productoCarrito.cantidad = quantity;  // Actualiza la cantidad en el array
-          }
-        } else {
-          this.errorMessage = `Error al actualizar la cantidad: ${result.error}`;
-        }
-      })
-      .catch((error) => {
-        this.errorMessage = `Se produjo un error al actualizar la cantidad: ${error.message}`;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
-  }
-  
 
+    localCart[productIdCart].quantity = quantity;
+    localStorage.setItem('cart', JSON.stringify(localCart));
+  
+  }
 }
