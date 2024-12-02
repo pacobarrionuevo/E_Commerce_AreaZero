@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace E_Commerce_VS.Controllers
 {
@@ -156,7 +157,7 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest("El producto enviado no es válido.");
             }
 
-            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "sub");
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier || c.Type == "id");
 
             if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
             {
