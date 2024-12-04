@@ -146,32 +146,25 @@ namespace E_Commerce_VS.Controllers
 
             return BadRequest("No hay un carrito anónimo para asociar.");
         }
-        
-        
+
+
         [Authorize]
         [HttpPost("PasaProductoAlCarrito")]
-        public async Task<IActionResult> PasaProductoAlCarrito([FromBody] ProductoCarritoLocal prod )
+        public async Task<IActionResult> PasaProductoAlCarrito([FromBody] List<ProductoCarritoLocal> productos)
         {
-            if (prod == null || prod.ProductId <= 0 || prod.Cantidad <= 0)
+            if (productos == null || !productos.Any())
             {
-                return BadRequest("El producto enviado no es válido.");
+                return BadRequest("La lista de productos está vacía o es inválida.");
             }
 
+            // Obtener el userId del token (de los claims)
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier || c.Type == "id");
-
             if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
             {
                 return Unauthorized("Usuario no válido.");
             }
 
-            // Verificar si el producto existe en la base de datos
-            var producto = await _unitOfWork.RepoProd.GetByIdAsync(prod.ProductId);
-            if (producto == null)
-            {
-                return NotFound("El producto especificado no existe.");
-            }
-
-            // Verificar si el carrito del usuario ya contiene este producto
+            // Verificar si el carrito del usuario ya existe
             var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(userId);
             if (carrito == null)
             {
@@ -182,28 +175,47 @@ namespace E_Commerce_VS.Controllers
                 };
             }
 
-            var productoEnCarrito = carrito.ProductoCarrito.FirstOrDefault(p => p.ProductoId == prod.ProductId);
-            if (productoEnCarrito != null)
+            // Iterar por los productos recibidos
+            foreach (var prod in productos)
             {
-                // Si el producto ya está en el carrito, aumentar la cantidad
-                productoEnCarrito.Cantidad += prod.Cantidad;
-            }
-            else
-            {
-                // Si no está, agregarlo al carrito
-                carrito.ProductoCarrito.Add(new ProductoCarrito
-                {   
-                    ProductoId = prod.ProductId,
-                    Cantidad = prod.Cantidad
-                });
+                if (prod.ProductId <= 0 || prod.Cantidad <= 0)
+                {
+                    return BadRequest($"El producto con ID {prod.ProductId} tiene datos inválidos.");
+                }
+
+                // Verificar si el producto existe en la base de datos
+                var producto = await _unitOfWork.RepoProd.GetByIdAsync(prod.ProductId);
+                if (producto == null)
+                {
+                    return NotFound($"El producto con ID {prod.ProductId} no existe.");
+                }
+
+                // Verificar si el producto ya está en el carrito
+                var productoEnCarrito = carrito.ProductoCarrito.FirstOrDefault(p => p.ProductoId == prod.ProductId);
+                if (productoEnCarrito != null)
+                {
+                    // Si ya está, aumentar la cantidad
+                    productoEnCarrito.Cantidad += prod.Cantidad;
+                }
+                else
+                {
+                    // Si no está, añadirlo
+                    carrito.ProductoCarrito.Add(new ProductoCarrito
+                    {
+                        ProductoId = prod.ProductId,
+                        Cantidad = prod.Cantidad
+                    });
+                }
             }
 
-            // Guardar los cambios
+            // Guardar los cambios en la base de datos
             await _unitOfWork.SaveAsync();
 
-            // Retornar el estado actualizado del carrito
+            // Retornar el carrito actualizado
             return Ok(carrito.ProductoCarrito);
         }
-        
     }
+
+
 }
+

@@ -677,3 +677,5 @@ C:\Users\pacob\Desktop\ECOMMERCEREPOSITORIO\E_Commerce_AreaZero\E_Commerce_VS\ob
 C:\Users\pacob\Desktop\ECOMMERCEREPOSITORIO\E_Commerce_AreaZero\E_Commerce_VS\obj\Debug\net8.0\E_Commerce_VS.pdb
 C:\Users\pacob\Desktop\ECOMMERCEREPOSITORIO\E_Commerce_AreaZero\E_Commerce_VS\obj\Debug\net8.0\E_Commerce_VS.genruntimeconfig.cache
 C:\Users\pacob\Desktop\ECOMMERCEREPOSITORIO\E_Commerce_AreaZero\E_Commerce_VS\obj\Debug\net8.0\ref\E_Commerce_VS.dll
+C:\Users\pacob\Desktop\ECOMMERCEREPOSITORIO\E_Commerce_AreaZero\E_Commerce_VS\bin\Debug\net8.0\MySqlConnector.dll
+C:\Users\pacob\Desktop\ECOMMERCEREPOSITORIO\E_Commerce_AreaZero\E_Commerce_VS\bin\Debug\net8.0\Pomelo.EntityFrameworkCore.MySql.dll

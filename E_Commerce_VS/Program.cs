@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Services;
 using E_Commerce_VS.Models.Database.Entidades;
 using Microsoft.Extensions.ML;
+using Microsoft.Extensions.FileProviders;
 
 namespace E_Commerce_VS
 {
@@ -24,7 +25,6 @@ namespace E_Commerce_VS
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
             // Add services to the container.
@@ -93,23 +93,13 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-            app.UseCors();
-
-            // Autenticacion y Autorizacion
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.MapControllers();
-
-            using (IServiceScope scope = app.Services.CreateScope())
+            /*
+            app.UseStaticFiles(new StaticFileOptions
             {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-
-                var seeder = new Seeder(_dbContext);
-                seeder.SeedAsync();
-            }
-            
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "wwwrooot"))
+            });
+            */
 
             // Habilitar CORS
             app.UseCors();
@@ -117,12 +107,11 @@ namespace E_Commerce_VS
             app.UseStaticFiles();
             app.MapControllers();
 
+            await InitDatabaseAsync(app.Services);
 
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-            }
+            // Configuramos Stripe
+            InitStripe(app.Services);
+
             app.Run();
         }
 

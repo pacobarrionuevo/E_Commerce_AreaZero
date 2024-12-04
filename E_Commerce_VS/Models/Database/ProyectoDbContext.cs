@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Models.Database.Entidades;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Hosting.Server;
 
 namespace E_Commerce_VS.Models.Database
 {
@@ -32,7 +33,22 @@ namespace E_Commerce_VS.Models.Database
         {
             //string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             //optionsBuilder.UseSqlite($"DataSource={baseDir}{DATABASE_PATH}");
-            optionsBuilder.UseSqlite(_settings.DatabaseConnection);
+            //optionsBuilder.UseMySql(ServerVersion.AutoDetect("Server = db10822.databaseasp.net; Database = db10822; Uid = db10822; Pwd = N + d9wJ5#4_Yt;"));
+            string stringConnection = "Server = db10822.databaseasp.net; Database = db10822; Uid = db10822; Pwd = N+d9wJ5#4_Yt;";
+
+#if DEBUG
+                optionsBuilder.UseSqlite(_settings.DatabaseConnection);
+#else
+
+            optionsBuilder.UseMySql(stringConnection, ServerVersion.AutoDetect(stringConnection));
+            #endif
+
+
+
+
+
+
+
         }
     }
 }
