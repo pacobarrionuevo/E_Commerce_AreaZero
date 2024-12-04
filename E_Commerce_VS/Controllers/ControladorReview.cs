@@ -44,11 +44,6 @@ namespace E_Commerce_VS.Controllers
         [Authorize]
         public async Task<ActionResult> AddReview([FromBody] CreateReviewDto reviewDto)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             await _reviewService.AddReviewAsync(reviewDto);
             return CreatedAtAction(nameof(GetAllReviews), new { }, reviewDto);
         }

@@ -16,6 +16,11 @@ namespace E_Commerce_VS.Models.Database
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Carrito> Carritos { get; set; }
         public DbSet<ProductoCarrito> ProductoCarritos { get; set; }
+<<<<<<< HEAD
+=======
+
+        public DbSet<OrdenTemporal> OrdenesTemporales { get; set; }
+>>>>>>> origin/gonza
 
         public DbSet<Review> Reviews { get; set; }
 

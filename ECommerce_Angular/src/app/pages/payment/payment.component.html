@@ -1,0 +1,35 @@
+<div [formGroup]="paymentElementForm">
+    <!-- Campo para el nombre -->
+    <label for="name">Name</label>
+    <input id="name" type="text" placeholder="Name" formControlName="name" />
+  
+    <!-- Campo para el correo electrónico -->
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="Email" formControlName="email" />
+  
+    <!-- Campo para la dirección -->
+    <label for="address">Address</label>
+    <input id="address" type="text" placeholder="Address" formControlName="address" />
+  
+    <!-- Campo para el código postal -->
+    <label for="zipcode">ZIP Code</label>
+    <input id="zipcode" type="text" placeholder="ZIP Code" formControlName="zipcode" />
+  
+    <!-- Campo para la ciudad -->
+    <label for="city">City</label>
+    <input id="city" type="text" placeholder="City" formControlName="city" />
+  
+    <!-- Stripe Elements -->
+
+      <ngx-stripe-elements
+        [stripe]="stripe"
+        [elementsOptions]="elementsOptions"
+      >
+        <ngx-stripe-payment [options]="paymentElementOptions"></ngx-stripe-payment>
+      </ngx-stripe-elements>
+
+  
+    <!-- Botón de pago -->
+    <button (click)="pay()">PAY</button>
+  </div>
+  

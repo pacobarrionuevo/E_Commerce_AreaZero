@@ -1,0 +1,24 @@
+<h1>Pasarela de pago</h1>
+
+@if (sessionId) {
+  <section>
+    <h2>Compra realizada con éxito</h2>
+    <button (click)="reload()">Volver a comprar</button>
+  </section>
+}
+@else if (carrito) {
+  <section>
+    <h2>Vas a comprar esto:</h2>
+    <p>{{carrito.id}}</p>
+    <p>{{carrito.productoCarrito}}</p>
+    <p>{{carrito.userId}}</p>
+
+    <button (click)="hostedCheckout()">Comprar en página externa</button>
+    <button (click)="embeddedCheckout()">Comprar embebido</button>
+  </section>
+}
+
+<dialog #checkoutDialog>
+  <div id="checkout"></div>
+  <button (click)="cancelCheckoutDialog()">x</button>
+</dialog>

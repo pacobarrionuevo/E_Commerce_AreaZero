@@ -42,6 +42,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
+    "Method": "PasaProductoAlCarrito",
+    "RelativePath": "api/ControladorCarrito/PasaProductoAlCarrito",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prod",
+        "Type": "E_Commerce_VS.Models.Dto.ProductoCarritoLocal",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorCatalogo",
     "Method": "GetAllAsync",
     "RelativePath": "api/ControladorCatalogo",
@@ -93,6 +109,22 @@
       {
         "Name": "id",
         "Type": "System.Int64",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
+    "Method": "CrearOrdenTemporal",
+    "RelativePath": "api/ControladorCheckout/CrearOrdenTemporal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productosCarrito",
+        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoCarritoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -394,6 +426,25 @@
     ]
   },
   {
+<<<<<<< HEAD
+=======
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
+    "Method": "GetProductosCarrito",
+    "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{carritoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+>>>>>>> origin/gonza
     "ContainingType": "E_Commerce_VS.Controllers.ControladorReview",
     "Method": "GetAllReviews",
     "RelativePath": "api/ControladorReview",
@@ -480,5 +531,31 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.CheckoutApiController",
+    "Method": "Create",
+    "RelativePath": "create-checkout-session",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.SessionStatusController",
+    "Method": "SessionStatus",
+    "RelativePath": "session-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "session_id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

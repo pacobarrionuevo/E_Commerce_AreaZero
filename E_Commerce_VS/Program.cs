@@ -24,6 +24,7 @@ namespace E_Commerce_VS
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
+            StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
             // Add services to the container.
             builder.Services.AddControllers();
@@ -37,6 +38,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<UnitOfWork>();
             builder.Services.AddScoped<RepositorioProducto>();
             builder.Services.AddScoped<RepositorioReview>();
+            builder.Services.AddScoped<RepositorioCarrito>();
 
             builder.Services.AddScoped<Services.ProductService>();
             builder.Services.AddScoped<Services.ReviewService>();
@@ -49,12 +51,15 @@ namespace E_Commerce_VS
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddScoped<ProyectoDbContext>();
 
             //Configuracion de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
+<<<<<<< HEAD
             // Configuraci n de CORS
+=======
+            // Configuraci�n de CORS
+>>>>>>> origin/gonza
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -99,12 +104,19 @@ namespace E_Commerce_VS
 
             app.MapControllers();
 
+<<<<<<< HEAD
             await InitDatabaseAsync(app.Services);
 
             InitStripe(app.Services);
 
             // Empezamos a atender a las peticiones de nuestro servidor 
             await app.RunAsync();
+=======
+            using (IServiceScope scope = app.Services.CreateScope())
+            {
+                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
+                _dbContext.Database.EnsureCreated();
+>>>>>>> origin/gonza
 
             app.Run();
         }

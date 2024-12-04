@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="cart-container" *ngIf="productosCarrito.length > 0">
   <div *ngFor="let productoCarrito of productosCarrito" class="cart-item">
     <h3>{{ productoCarrito.producto.nombre }}</h3>
@@ -5,24 +6,34 @@
       class="imagen"
       [src]="productoCarrito.producto.ruta"
       [alt]="productoCarrito.producto.nombre + ' image'"
+=======
+<div *ngFor="let producto of productosCarrito" class="cart-item">
+  <h3>{{ producto.producto.nombre }}</h3>
+  <img
+    class="imagen"
+    [src]="producto.producto.ruta"
+    [alt]="producto.producto.nombre + ' image'"
+  />
+  <p>Precio: {{ producto.producto.precio }}€</p>
+  <p>
+    Cantidad:
+    <input
+      type="number"
+      [value]="producto.cantidad"
+      (change)="modifyQuantity(producto.producto.id, producto.carritoId, $event)"
+>>>>>>> origin/gonza
     />
-    <p>Precio: {{ productoCarrito.producto.precio }}€</p>
-    <p>
-      Cantidad:
-      <input
-        type="number"
-        [value]="productoCarrito.cantidad"
-        (change)="modifyQuantity(productoCarrito.productoId, productoCarrito.carritoId, $event)"
-      />
-    </p>
-    <button (click)="removeProduct(productoCarrito.productoId, productoCarrito.carritoId)">
-      Eliminar
-    </button>
-  </div>
+  </p>
+  <button (click)="removeProduct(producto.producto.id, producto.carritoId)">
+    Eliminar
+  </button>
 </div>
+<<<<<<< HEAD
 <div class="error-message" *ngIf="productosCarrito.length === 0">
   No hay productos en tu carrito.
 </div>
 <div class="loading" *ngIf="isLoading">
   Cargando...
 </div>
+=======
+>>>>>>> origin/gonza

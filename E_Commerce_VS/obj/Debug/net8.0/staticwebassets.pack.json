@@ -1,7 +1,11 @@
 {
   "Files": [
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
+=======
+      "Id": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
+>>>>>>> origin/gonza
       "PackagePath": "staticwebassets\\images\\1.png"
     },
     {
@@ -77,7 +81,11 @@
       "PackagePath": "staticwebassets\\images\\8.png"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
+=======
+      "Id": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
+>>>>>>> origin/gonza
       "PackagePath": "staticwebassets\\images\\9.png"
     },
     {

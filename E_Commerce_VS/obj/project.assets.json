@@ -5481,11 +5481,17 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\fitob\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\gonza\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> origin/gonza
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
       "projectName": "E_Commerce_VS",
       "projectPath": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
@@ -5494,6 +5500,20 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fitob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+      "projectName": "E_Commerce_VS",
+      "projectPath": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
+      "packagesPath": "C:\\Users\\gonza\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gonza\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\gonza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> origin/gonza
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
