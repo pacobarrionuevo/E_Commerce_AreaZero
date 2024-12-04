@@ -19,10 +19,11 @@ namespace E_Commerce_VS.Controllers
         private readonly ProductService _productService;
         private readonly ProyectoDbContext _dbContext;
 
-        public ControladorCheckout(IOptions<Settings> options, ProductService productService)
+        public ControladorCheckout(IOptions<Settings> options, ProductService productService,ProyectoDbContext contexto)
         {
             _settings = options.Value;
             _productService = productService;
+            _dbContext = contexto;
         }
 
         [HttpGet("products")]
