@@ -17,22 +17,6 @@
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
-    "Method": "AssociateCart",
-    "RelativePath": "api/ControladorCarrito/associate-cart",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
     "Method": "GetCarritos",
     "RelativePath": "api/ControladorCarrito/carritos",
     "HttpMethod": "GET",
@@ -50,8 +34,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "prod",
-        "Type": "E_Commerce_VS.Models.Dto.ProductoCarritoLocal",
+        "Name": "productos",
+        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoCarritoLocal, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

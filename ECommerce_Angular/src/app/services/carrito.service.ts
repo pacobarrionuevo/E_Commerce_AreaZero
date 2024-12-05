@@ -49,7 +49,9 @@ export class CarritoService {
     }
 
     this.api.jwt = token;
-    const body = { products: cart };
+    const body = cart.map(item => ({ProductId: item.productId, Cantidad: item.quantity}));
+  
+    console.log('Payload:', body);
 
     try {
         const result = await this.api.post<string>(`${this.carritoEndpoint}/PasaProductoAlCarrito`, body, 'application/json');
