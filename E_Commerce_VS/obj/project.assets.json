@@ -1270,7 +1270,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -1288,8 +1287,6 @@
           }
         }
       },
-=======
->>>>>>> origin/Fitin
       "SharpZipLib/1.4.0": {
         "type": "package",
         "compile": {
@@ -3932,7 +3929,6 @@
         "packageIcon.png"
       ]
     },
-<<<<<<< HEAD
     "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
       "sha512": "XjnlcxVBLnEMbyEc5cZzgZeDyLvAniACZQ04W1slWN0f4rmfNzl98gEMvHnFH0fMDF06z9MmgGi/Sr7hJ+BVnw==",
       "type": "package",
@@ -3948,8 +3944,6 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
-=======
->>>>>>> origin/Fitin
     "SharpZipLib/1.4.0": {
       "sha512": "CdkbBSPIpHD8xBlu+8kDJiqc1Tf9iV89BObnqcvEbwysXSj5h1MfaeLgeeaxPZmi7CTJO8FDofBBNxBW0Vml7A==",
       "type": "package",
@@ -5565,17 +5559,12 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\pacob\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
-=======
-    "C:\\Users\\fitob\\.nuget\\packages\\": {}
->>>>>>> origin/Fitin
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
       "projectName": "E_Commerce_VS",
       "projectPath": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
@@ -5588,16 +5577,6 @@
       "configFilePaths": [
         "C:\\Users\\pacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-      "projectUniqueName": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
-      "projectName": "E_Commerce_VS",
-      "projectPath": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\E_Commerce_VS.csproj",
-      "packagesPath": "C:\\Users\\fitob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\fitob\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> origin/Fitin
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5703,12 +5682,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
->>>>>>> origin/Fitin
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
