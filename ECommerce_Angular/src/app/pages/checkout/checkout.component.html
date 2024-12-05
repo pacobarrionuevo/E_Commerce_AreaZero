@@ -6,36 +6,20 @@
     <button (click)="reload()">Volver a comprar</button>
   </section>
 }
-<<<<<<< HEAD
-@else if (carrito) {
-  <section>
-    <h2>Vas a comprar esto:</h2>
-    <p>{{carrito.id}}</p>
-    <p>{{carrito.productoCarrito}}</p>
-    <p>{{carrito.userId}}</p>
-=======
 @else if (product) {
     <div *ngFor="let productoCarrito of productosCarrito" class="cart-item">
   <section>
     <h2>Vas a comprar esto:</h2>
     <h3>{{ productoCarrito.producto.nombre }}</h3>
     <h4>{{productoCarrito.producto.precio}}€</h4>
->>>>>>> origin/Fitin
 
     <button (click)="hostedCheckout()">Comprar en página externa</button>
     <button (click)="embeddedCheckout()">Comprar embebido</button>
   </section>
-<<<<<<< HEAD
-=======
 </div>
->>>>>>> origin/Fitin
 }
 
 <dialog #checkoutDialog>
   <div id="checkout"></div>
   <button (click)="cancelCheckoutDialog()">x</button>
-<<<<<<< HEAD
 </dialog>
-=======
-</dialog>
->>>>>>> origin/Fitin

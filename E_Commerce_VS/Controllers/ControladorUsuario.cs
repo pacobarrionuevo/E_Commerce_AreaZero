@@ -113,10 +113,7 @@ namespace E_Commerce_VS.Controllers
             }
             return Unauthorized("Usuario no existe");
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/Fitin
         private UserRegistrarseDto ToDto(Usuario users)
         {
             return new UserRegistrarseDto()

@@ -26,8 +26,4 @@ export class RegisterComponent {
       this.jwt = result.stringToken; 
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/Fitin

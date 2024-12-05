@@ -1,6 +1,7 @@
 ﻿using E_Commerce_VS.Models.Database.Entidades;
 using E_Commerce_VS.Models.Dto;
 using E_Commerce_VS.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,8 +39,9 @@ namespace E_Commerce_VS.Controllers
         }
 
         // Proteger este método con [Authorize]
-        [HttpPost]
         [Authorize]
+        [HttpPost]
+        
         public async Task<ActionResult> AddReview([FromBody] CreateReviewDto reviewDto)
         {
             await _reviewService.AddReviewAsync(reviewDto);

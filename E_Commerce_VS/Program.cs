@@ -92,7 +92,6 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-<<<<<<< HEAD
             /*
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -102,32 +101,22 @@ namespace E_Commerce_VS
             */
 
             // Habilitar CORS
-            app.UseCors();
-
-            app.UseStaticFiles();
-=======
-            app.UseCors();
+            app.UseCors();     
 
             // Autenticacion y Autorizacion
             app.UseAuthentication();
             app.UseAuthorization();
 
->>>>>>> origin/Fitin
             app.MapControllers();
 
             await InitDatabaseAsync(app.Services);
 
-<<<<<<< HEAD
             // Configuramos Stripe
-            InitStripe(app.Services);
-
-=======
             InitStripe(app.Services);
 
             // Empezamos a atender a las peticiones de nuestro servidor 
             await app.RunAsync();
 
->>>>>>> origin/Fitin
             app.Run();
         }
 

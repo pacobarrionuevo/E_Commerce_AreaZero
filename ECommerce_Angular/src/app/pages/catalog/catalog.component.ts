@@ -33,35 +33,6 @@ export class CatalogComponent implements OnInit {
     this.getProducts();
   }
   addProductToCart(productId: number, quantity: number): void {
-<<<<<<< HEAD
-    if (!this.userId) {
-      // Recuperar la colección existente del localStorage
-      const existingCart = localStorage.getItem('cart');
-      let cart: { productId: number, quantity: number }[] = [];
-  
-      if (existingCart) {
-        // Parsear el contenido existente si lo hay
-        cart = JSON.parse(existingCart);
-      }
-  
-      // Verificar si el producto ya está en el carrito
-      const existingProductIndex = cart.findIndex(item => item.productId === productId);
-  
-      if (existingProductIndex !== -1) {
-        // Si ya existe, actualizar la cantidad
-        cart[existingProductIndex].quantity += quantity;
-      } else {
-        // Si no existe, agregar el nuevo producto al carrito
-        cart.push({ productId, quantity });
-      }
-  
-      // Guardar el carrito actualizado en el localStorage
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
-  
-    // También puedes llamar al servicio para manejar carritos en el servidor
-=======
->>>>>>> origin/Fitin
     this.carritoService.addProductToCart(productId, this.userId, quantity)
       .then(result => {
         console.log('Producto añadido al carrito', result);
@@ -97,8 +68,4 @@ export class CatalogComponent implements OnInit {
     this.paginaActual = Math.min(Math.max(1, this.paginaActual + direccion), this.totalPaginas);
     this.getProducts();
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/Fitin

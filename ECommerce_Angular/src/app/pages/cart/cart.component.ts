@@ -5,19 +5,11 @@ import { Product } from '../../models/product';
 import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { RouterLink, RouterModule } from '@angular/router';
-@Component({
-  selector: 'app-cart',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, RouterLink],
-=======
 import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-cart',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
->>>>>>> origin/Fitin
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
@@ -44,28 +36,6 @@ export class CartComponent implements OnInit {
 
   // Cargar los productos del carrito
   loadCartProducts(): void {
-<<<<<<< HEAD
-  const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
-  
-  this.productosCarrito = []; // Reiniciar la lista de productos
-        if (!this.userId){
-          const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
-            this.carritoService.getProductById(item.productId).then(producto => ({
-              producto,
-              cantidad: item.quantity
-            }))
-          );
-      
-          Promise.all(productRequests)
-            .then(productosCarrito => {
-              this.productosCarrito = productosCarrito;
-              console.log('Productos cargados:', this.productosCarrito);
-            })
-            .catch(error => {
-              console.error('Error al cargar productos del carrito:', error);
-            });
-        }
-=======
     const carritoId = Number(localStorage.getItem('carritoId'));
     this.carritoService.getProductosCarrito()
       .then(result => {
@@ -84,7 +54,6 @@ export class CartComponent implements OnInit {
       .catch(error => {
         console.error('Error al cargar productos del carrito:', error);
       });
->>>>>>> origin/Fitin
   }
   
 
