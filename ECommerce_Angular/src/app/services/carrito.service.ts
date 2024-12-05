@@ -62,10 +62,13 @@ export class CarritoService {
     return result;
   }
   
+<<<<<<< HEAD
   async getProductById(productId: number): Promise<Result<ProductoCarrito[]>> {
     const result = await this.api.get<ProductoCarrito[]>(`${this.productoEndpoint}/${productId}`);
     return result;
   }
+=======
+>>>>>>> origin/Fitin
 
   async getProductosCarritoId(carritoId: number): Promise<Result<ProductoCarrito[]>> {
     const result = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito/${carritoId}`);
@@ -101,6 +104,10 @@ export class CarritoService {
     const body = { productId, carritoId, quantity };
     return this.api.put<string>(`${this.productoCarritoEndpoint}/cambiarcantidad`, body, 'application/json');
   }
+<<<<<<< HEAD
 
   
 }
+=======
+}
+>>>>>>> origin/Fitin

@@ -45,4 +45,8 @@ export class LoginComponent {
     }
   }
   
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/Fitin

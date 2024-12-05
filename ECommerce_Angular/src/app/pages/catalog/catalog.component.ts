@@ -33,6 +33,7 @@ export class CatalogComponent implements OnInit {
     this.getProducts();
   }
   addProductToCart(productId: number, quantity: number): void {
+<<<<<<< HEAD
     if (!this.userId) {
       // Recuperar la colección existente del localStorage
       const existingCart = localStorage.getItem('cart');
@@ -59,6 +60,8 @@ export class CatalogComponent implements OnInit {
     }
   
     // También puedes llamar al servicio para manejar carritos en el servidor
+=======
+>>>>>>> origin/Fitin
     this.carritoService.addProductToCart(productId, this.userId, quantity)
       .then(result => {
         console.log('Producto añadido al carrito', result);
@@ -94,4 +97,8 @@ export class CatalogComponent implements OnInit {
     this.paginaActual = Math.min(Math.max(1, this.paginaActual + direccion), this.totalPaginas);
     this.getProducts();
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/Fitin

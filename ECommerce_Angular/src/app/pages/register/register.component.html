@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="section">
     <div class="title">BIENVENIDO A<br/>AREA ZERO</div>
     <div class="input-group">
@@ -21,5 +22,32 @@
         <span>* Mínimo 8 caracteres</span><br/>
         <span>* Mínimo 1 mayúscula</span><br/>
         <span>* Mínimo 3 números</span>
+=======
+<div class="container">
+    <div class="section">
+        <div class="title">BIENVENIDO A<br/>AREA ZERO</div>
+        <div class="input-group">
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="crear-nombre" [(ngModel)]="nombre">
+        </div>
+        <div class="input-group">
+            <label for="create-email">EMAIL:</label>
+            <input type="email" id="create-email" [(ngModel)]="email" placeholder="emaildemuestra@gmail.com">
+        </div>
+        <div class="input-group">
+            <label for="create-password">CONTRASEÑA:</label>
+            <input type="password" id="create-password" [(ngModel)]="password" placeholder="*************">
+        </div>
+        <div class="input-group">
+            <label for="direccion">DIRECCIÓN:</label>
+            <input type="text" id="create-direccion" [(ngModel)]="direccion">
+        </div>
+        <button class="button" (click)="submit()">CREA TU CUENTA</button>
+        <div class="password-requirements">
+            <span>* Mínimo 8 caracteres</span><br/>
+            <span>* Mínimo 1 mayúscula</span><br/>
+            <span>* Mínimo 3 números</span>
+        </div>
+>>>>>>> origin/Fitin
     </div>
 </div>

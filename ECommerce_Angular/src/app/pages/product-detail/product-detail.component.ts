@@ -30,9 +30,9 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private carritoService: CarritoService,
     private productDetailService: ProductDetailService,
-    private reviewService: ReviewService
+    private reviewService: ReviewService,
+    private carritoService: CarritoService
   ) {}
 
   ngOnInit(): void {

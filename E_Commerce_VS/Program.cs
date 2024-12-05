@@ -23,7 +23,6 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
@@ -93,6 +92,7 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
+<<<<<<< HEAD
             /*
             app.UseStaticFiles(new StaticFileOptions
             {
@@ -105,13 +105,29 @@ namespace E_Commerce_VS
             app.UseCors();
 
             app.UseStaticFiles();
+=======
+            app.UseCors();
+
+            // Autenticacion y Autorizacion
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+>>>>>>> origin/Fitin
             app.MapControllers();
 
             await InitDatabaseAsync(app.Services);
 
+<<<<<<< HEAD
             // Configuramos Stripe
             InitStripe(app.Services);
 
+=======
+            InitStripe(app.Services);
+
+            // Empezamos a atender a las peticiones de nuestro servidor 
+            await app.RunAsync();
+
+>>>>>>> origin/Fitin
             app.Run();
         }
 

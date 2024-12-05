@@ -936,6 +936,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "8.0.10",
@@ -948,6 +949,8 @@
           }
         }
       },
+=======
+>>>>>>> origin/Fitin
       "SharpZipLib/1.4.0": {
         "runtime": {
           "lib/net6.0/ICSharpCode.SharpZipLib.dll": {
@@ -1858,6 +1861,7 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
+<<<<<<< HEAD
     "Pomelo.EntityFrameworkCore.MySql/8.0.2": {
       "type": "package",
       "serviceable": true,
@@ -1865,6 +1869,8 @@
       "path": "pomelo.entityframeworkcore.mysql/8.0.2",
       "hashPath": "pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512"
     },
+=======
+>>>>>>> origin/Fitin
     "SharpZipLib/1.4.0": {
       "type": "package",
       "serviceable": true,

@@ -5,11 +5,19 @@ import { Product } from '../../models/product';
 import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { RouterLink, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-cart',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule, RouterLink],
+=======
+import { RouterModule } from '@angular/router';
+@Component({
+  selector: 'app-cart',
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterModule],
+>>>>>>> origin/Fitin
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
@@ -36,6 +44,7 @@ export class CartComponent implements OnInit {
 
   // Cargar los productos del carrito
   loadCartProducts(): void {
+<<<<<<< HEAD
   const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
   
   this.productosCarrito = []; // Reiniciar la lista de productos
@@ -56,6 +65,26 @@ export class CartComponent implements OnInit {
               console.error('Error al cargar productos del carrito:', error);
             });
         }
+=======
+    const carritoId = Number(localStorage.getItem('carritoId'));
+    this.carritoService.getProductosCarrito()
+      .then(result => {
+        if (result.success) {
+          const carritoId = Number(localStorage.getItem('carritoId'));
+          if (carritoId) {
+            this.productosCarrito = result.data.filter(producto => producto.carritoId === carritoId);
+            console.log('Productos cargados para carritoId:', carritoId, this.productosCarrito);
+          } else {
+            console.error('No se encontró carritoId en localStorage.');
+          }
+        } else {
+          console.error('Error al obtener productos del carrito:', result.error);
+        }
+      })
+      .catch(error => {
+        console.error('Error al cargar productos del carrito:', error);
+      });
+>>>>>>> origin/Fitin
   }
   
 
@@ -96,17 +125,17 @@ export class CartComponent implements OnInit {
       if (result.success) {
         this.productosCarrito = this.productosCarrito.filter(p => p.productoId !== productId);
       } else {
-        this.errorMessage = `Error al eliminar el producto: ${result.error}`;
+        this.errorMessage =` Error al eliminar el producto: ${result.error}`;
       }
     } catch (error) {
-      this.errorMessage = `Se produjo un error: ${error.message}`;
+      this.errorMessage =` Se produjo un error: ${error.message}`;
     }
   }
 
   // Modificar la cantidad de un producto
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
     const input = event.target as HTMLInputElement; // Hacemos el casting a HTMLInputElement
-    const quantity = parseInt(input.value, 10); // Ahora accedemos a la propiedad `value`
+    const quantity = parseInt(input.value, 10); // Ahora accedemos a la propiedad value
   
     if (quantity < 1) {
       this.errorMessage = 'La cantidad debe ser al menos 1.';
@@ -124,7 +153,7 @@ export class CartComponent implements OnInit {
             productoCarrito.cantidad = quantity;  // Actualiza la cantidad en el array
           }
         } else {
-          this.errorMessage = `Error al actualizar la cantidad: ${result.error}`;
+          this.errorMessage =` Error al actualizar la cantidad: ${result.error}`;
         }
       })
       .catch((error) => {
@@ -135,5 +164,4 @@ export class CartComponent implements OnInit {
       });
   }
   
-
 }
