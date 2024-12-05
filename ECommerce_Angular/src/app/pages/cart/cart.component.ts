@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoService } from '../../services/carrito.service';
 import { ProductoCarrito } from '../../models/producto-carrito';
-<<<<<<< HEAD
-=======
 import { Product } from '../../models/product';
 import { Result } from '../../models/result';
->>>>>>> origin/gonza
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';

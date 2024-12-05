@@ -2,13 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CatalogoService } from '../../services/catalogo.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-=======
 import { CarritoService } from '../../services/carrito.service';
 import { ApiService } from '../../services/api.service';
 import { Result } from '../../models/result';
 import { AuthService } from '../../services/auth.service';
->>>>>>> origin/gonza
 import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-catalog',
@@ -24,14 +21,6 @@ export class CatalogComponent implements OnInit {
   Ordenacion: number = 2;
   elementosPorPagina: number = 20;
   totalPaginas: number;
-<<<<<<< HEAD
-  constructor(private catalogoService: CatalogoService) {}
-
-  ngOnInit(): void {
-    this.getProducts();
-  }
-
-=======
   userId: any;
 
   constructor(private catalogoService: CatalogoService, private carritoService: CarritoService, private authService: AuthService, private apiService: ApiService) {}
@@ -70,18 +59,17 @@ export class CatalogComponent implements OnInit {
     }
   
     // También puedes llamar al servicio para manejar carritos en el servidor
-    this.carritoService.addProductToCart(productId, this.userId, quantity)
-      .then(result => {
-        console.log('Producto añadido al carrito', result);
-      })
-      .catch(error => {
-        console.error('Error al añadir producto al carrito', error);
-      });
+    //this.carritoService.addProductToCart(productId, this.userId, quantity)
+      //.then(result => {
+        //console.log('Producto añadido al carrito', result);
+      //})
+      //.catch(error => {
+        //console.error('Error al añadir producto al carrito', error);
+      //});
   }
   
 
   // Obtener los productos de la API
->>>>>>> origin/gonza
   getProducts(): void {
     this.catalogoService.getAll(this.Ordenacion, this.paginaActual, this.elementosPorPagina, this.query, this.totalPaginas)
       .subscribe({
@@ -106,8 +94,4 @@ export class CatalogComponent implements OnInit {
     this.paginaActual = Math.min(Math.max(1, this.paginaActual + direccion), this.totalPaginas);
     this.getProducts();
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/gonza
