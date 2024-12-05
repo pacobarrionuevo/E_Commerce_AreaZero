@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Services;
 using E_Commerce_VS.Models.Database.Entidades;
 using Microsoft.Extensions.ML;
+using Microsoft.Extensions.FileProviders;
 
 namespace E_Commerce_VS
 {
@@ -22,9 +23,7 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
             // Add services to the container.
@@ -93,6 +92,15 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
+            /*
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "wwwrooot"))
+            });
+            */
+
+            // Habilitar CORS
             app.UseCors();
 
             // Autenticacion y Autorizacion
@@ -101,28 +109,14 @@ namespace E_Commerce_VS
 
             app.MapControllers();
 
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
+            await InitDatabaseAsync(app.Services);
 
-                var seeder = new Seeder(_dbContext);
-                seeder.SeedAsync();
-            }
-            
+            // Configuramos Stripe
+            InitStripe(app.Services);
 
-            // Habilitar CORS
-            app.UseCors();
+            // Empezamos a atender a las peticiones de nuestro servidor 
+            await app.RunAsync();
 
-            app.UseStaticFiles();
-            app.MapControllers();
-
-
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-            }
             app.Run();
         }
 
@@ -148,5 +142,5 @@ namespace E_Commerce_VS
             StripeConfiguration.ApiKey = options.Value.StripeSecret;
         }
 
-    }    
+    }
 }
