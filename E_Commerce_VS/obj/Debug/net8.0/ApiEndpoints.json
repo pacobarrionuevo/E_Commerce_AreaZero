@@ -42,6 +42,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
+    "Method": "PasaProductoAlCarrito",
+    "RelativePath": "api/ControladorCarrito/PasaProductoAlCarrito",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productos",
+        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoCarritoLocal, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorCatalogo",
     "Method": "GetAllAsync",
     "RelativePath": "api/ControladorCatalogo",
@@ -408,6 +424,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
+    "Method": "GetProductosCarrito",
+    "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{carritoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorReview",

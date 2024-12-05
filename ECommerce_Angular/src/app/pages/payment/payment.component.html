@@ -1,0 +1,35 @@
+<div [formGroup]="paymentElementForm">
+   
+    <label for="name">Name</label>
+    <input id="name" type="text" placeholder="Name" formControlName="name" />
+  
+    
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="Email" formControlName="email" />
+  
+    
+    <label for="address">Address</label>
+    <input id="address" type="text" placeholder="Address" formControlName="address" />
+  
+   
+    <label for="zipcode">ZIP Code</label>
+    <input id="zipcode" type="text" placeholder="ZIP Code" formControlName="zipcode" />
+  
+   
+    <label for="city">City</label>
+    <input id="city" type="text" placeholder="City" formControlName="city" />
+  
+  
+
+      <ngx-stripe-elements
+        [stripe]="stripe"
+        [elementsOptions]="elementsOptions"
+      >
+        <ngx-stripe-payment [options]="paymentElementOptions"></ngx-stripe-payment>
+      </ngx-stripe-elements>
+
+  
+    
+    <button (click)="pay()">PAY</button>
+  </div>
+  

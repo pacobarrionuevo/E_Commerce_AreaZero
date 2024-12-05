@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Models.Dto;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace E_Commerce_VS.Controllers
 {
@@ -12,11 +14,14 @@ namespace E_Commerce_VS.Controllers
     public class ControladorCarrito : ControllerBase
     {
         private readonly ProyectoDbContext _context;
+        private readonly UnitOfWork _unitOfWork;
 
-        public ControladorCarrito(ProyectoDbContext dbContext)
+        public ControladorCarrito(ProyectoDbContext dbContext, UnitOfWork unitOfWork)
         {
             _context = dbContext;
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
+
 
         [HttpGet("carritos")]
         public async Task<IActionResult> GetCarritos()
@@ -142,6 +147,74 @@ namespace E_Commerce_VS.Controllers
             }
 
             return BadRequest("No hay un carrito anónimo para asociar.");
+        }
+
+
+        [Authorize]
+        [HttpPost("PasaProductoAlCarrito")]
+        public async Task<IActionResult> PasaProductoAlCarrito([FromBody] List<ProductoCarritoLocal> productos)
+        {
+            if (productos == null || !productos.Any())
+            {
+                return BadRequest("La lista de productos está vacía o es inválida.");
+            }
+
+            // Obtener el userId del token (de los claims)
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier || c.Type == "id");
+            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+            {
+                return Unauthorized("Usuario no válido.");
+            }
+
+            // Verificar si el carrito del usuario ya existe
+            var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(userId);
+            if (carrito == null)
+            {
+                carrito = new Carrito
+                {
+                    UserId = userId,
+                    ProductoCarrito = new List<ProductoCarrito>()
+                };
+            }
+
+            // Iterar por los productos recibidos
+            foreach (var prod in productos)
+            {
+                if (prod.ProductId <= 0 || prod.Cantidad <= 0)
+                {
+                    return BadRequest($"El producto con ID {prod.ProductId} tiene datos inválidos.");
+                }
+
+                // Verificar si el producto existe en la base de datos
+                var producto = await _unitOfWork.RepoProd.GetByIdAsync(prod.ProductId);
+                if (producto == null)
+                {
+                    return NotFound($"El producto con ID {prod.ProductId} no existe.");
+                }
+
+                // Verificar si el producto ya está en el carrito
+                var productoEnCarrito = carrito.ProductoCarrito.FirstOrDefault(p => p.ProductoId == prod.ProductId);
+                if (productoEnCarrito != null)
+                {
+                    // Si ya está, aumentar la cantidad
+                    productoEnCarrito.Cantidad += prod.Cantidad;
+                }
+                else
+                {
+                    // Si no está, añadirlo
+                    carrito.ProductoCarrito.Add(new ProductoCarrito
+                    {
+                        ProductoId = prod.ProductId,
+                        Cantidad = prod.Cantidad
+                    });
+                }
+            }
+
+            // Guardar los cambios en la base de datos
+            await _unitOfWork.SaveAsync();
+
+            // Retornar el carrito actualizado
+            return Ok(carrito.ProductoCarrito);
         }
     }
 }

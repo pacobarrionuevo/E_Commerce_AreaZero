@@ -5,14 +5,16 @@ import { Product } from '../models/product';
 import { CheckoutSession } from '../models/checkout-session';
 import { CheckoutSessionStatus } from '../models/checkout-session-status';
 import { Carrito } from '../models/carrito';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CheckoutService {
 
-  constructor(private api: ApiService) { }
-
+  constructor(private api: ApiService, private http: HttpClient) { }
+  private Url = 'https://localhost:7133';
   getAllProducts(): Promise<Result<Carrito[]>> {
     return this.api.get<Carrito[]>('/ControladorCheckout/products');
   }
@@ -28,4 +30,9 @@ export class CheckoutService {
   getStatus(sessionId: string): Promise<Result<CheckoutSessionStatus>> {
     return this.api.get<CheckoutSessionStatus>(`checkout/status/${sessionId}`);
   }
+
+  getCreateCheckoutSession(): Observable<CheckoutSession> {
+    return this.http.post<CheckoutSession>(this.Url, {});
+  }
+
 }

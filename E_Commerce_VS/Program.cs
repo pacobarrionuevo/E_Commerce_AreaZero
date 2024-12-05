@@ -38,6 +38,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<UnitOfWork>();
             builder.Services.AddScoped<RepositorioProducto>();
             builder.Services.AddScoped<RepositorioReview>();
+            builder.Services.AddScoped<RepositorioCarrito>();
 
             builder.Services.AddScoped<Services.ProductService>();
             builder.Services.AddScoped<Services.ReviewService>();
@@ -106,7 +107,6 @@ namespace E_Commerce_VS
             // Empezamos a atender a las peticiones de nuestro servidor 
             await app.RunAsync();
 
-            app.Run();
         }
 
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)

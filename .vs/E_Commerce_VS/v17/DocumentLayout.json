@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\models\\database\\repositories\\repositoriocarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\repositories\\repositoriocarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcheckoutapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcheckoutapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,20 +34,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\appsettings.json",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\appsettings.json",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\appsettings.json",
-              "RelativeToolTip": "E_Commerce_VS\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-27T23:15:35.775Z",
+              "DocumentIndex": 1,
+              "Title": "ControladorCarrito.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T19:14:42.72Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "RepositorioCarrito.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T19:14:35.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Settings.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Settings.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Settings.cs",
@@ -55,31 +68,21 @@
               "RelativeToolTip": "E_Commerce_VS\\Settings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T23:15:27.405Z"
+              "WhenOpened": "2024-12-05T19:11:25.722Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ControladorCheckoutApi.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T23:26:19.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
               "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeToolTip": "E_Commerce_VS\\Program.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAkwDMAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAcwCgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T09:03:30.904Z"
+              "WhenOpened": "2024-12-05T19:07:51.205Z",
+              "EditorCaption": ""
             }
           ]
         }

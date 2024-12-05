@@ -42,7 +42,7 @@ namespace E_Commerce_VS.Controllers
             return Ok("Producto eliminado del carrito.");
         }
 
-        
+
         [HttpPut("cambiarcantidad")]
         public async Task<IActionResult> ModifyProduct([FromBody] ModifyProductDto request)
         {
@@ -58,6 +58,33 @@ namespace E_Commerce_VS.Controllers
             _context.ProductoCarritos.Update(productoCarrito);
             await _context.SaveChangesAsync();
             return Ok("Cantidad actualizada en el carrito.");
+        }
+
+        // Obtener productos de un carrito específico
+        [HttpGet("productosCarrito/{carritoId}")]
+        public async Task<IActionResult> GetProductosCarrito(int carritoId)
+        {
+            var productos = await _context.ProductoCarritos
+                .Where(pc => pc.CarritoId == carritoId)
+                .Include(pc => pc.Producto)
+                .Select(pc => new
+                {
+                    pc.Id,
+                    pc.ProductoId,
+                    pc.CarritoId,
+                    pc.Cantidad,
+                    Producto = new
+                    {
+                        pc.Producto.Id,
+                        pc.Producto.Nombre,
+                        pc.Producto.Ruta,
+                        pc.Producto.Precio,
+                        pc.Producto.Stock
+                    }
+                })
+                .ToListAsync();
+
+            return Ok(productos);
         }
     }
 }

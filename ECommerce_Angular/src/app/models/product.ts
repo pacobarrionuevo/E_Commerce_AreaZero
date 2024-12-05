@@ -1,7 +1,7 @@
 export class Product {
   id: number;
   nombre: string;
-  ruta: string; // Mantiene el nombre de la imagen
+  ruta: string; 
   precio: number;
   stock: number;
 
