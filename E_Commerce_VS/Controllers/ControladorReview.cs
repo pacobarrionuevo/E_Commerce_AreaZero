@@ -1,13 +1,7 @@
-﻿using E_Commerce_VS.Models.Database.Entidades;
-using E_Commerce_VS.Models.Dto;
-using E_Commerce_VS.Services;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using E_Commerce_VS.Models.Dto;
 using Microsoft.AspNetCore.Authorization;
-
-
+using Microsoft.AspNetCore.Mvc;
+using E_Commerce_VS.Services;
 namespace E_Commerce_VS.Controllers
 {
     [Route("api/[controller]")]
@@ -26,17 +20,7 @@ namespace E_Commerce_VS.Controllers
         public async Task<ActionResult<IEnumerable<ReviewDto>>> GetAllReviews()
         {
             var reviews = await _reviewService.GetAllReviewsAsync();
-            var averageScore = _reviewService.CalculateAverageScore(reviews.Select(r => new Review
-            {
-                Id = r.Id,
-                FechaPublicacion = r.FechaPublicacion,
-                TextReview = r.TextReview,
-                Label = r.Label,
-                UsuarioId = r.UsuarioId,
-                ProductoId = r.ProductoId
-            }));
-
-            return Ok(new { reviews, averageScore });
+            return Ok(reviews);
         }
 
         // Proteger este método con [Authorize]

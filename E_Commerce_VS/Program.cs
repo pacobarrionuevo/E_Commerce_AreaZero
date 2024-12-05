@@ -22,6 +22,7 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
@@ -44,7 +45,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<Services.ReviewService>();
             builder.Services.AddScoped<Services.SmartSearchService>();
 
-            // A adimos los mappers como Transient
+            // A�adimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
             builder.Services.AddScoped<ReviewMapper>();
 
@@ -55,11 +56,7 @@ namespace E_Commerce_VS
             //Configuracion de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
-<<<<<<< HEAD
-            // Configuraci n de CORS
-=======
             // Configuraci�n de CORS
->>>>>>> origin/gonza
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -104,20 +101,28 @@ namespace E_Commerce_VS
 
             app.MapControllers();
 
-<<<<<<< HEAD
-            await InitDatabaseAsync(app.Services);
-
-            InitStripe(app.Services);
-
-            // Empezamos a atender a las peticiones de nuestro servidor 
-            await app.RunAsync();
-=======
             using (IServiceScope scope = app.Services.CreateScope())
             {
                 ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
                 _dbContext.Database.EnsureCreated();
->>>>>>> origin/gonza
 
+                var seeder = new Seeder(_dbContext);
+                seeder.SeedAsync();
+            }
+            
+
+            // Habilitar CORS
+            app.UseCors();
+
+            app.UseStaticFiles();
+            app.MapControllers();
+
+
+            using (IServiceScope scope = app.Services.CreateScope())
+            {
+                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
+                _dbContext.Database.EnsureCreated();
+            }
             app.Run();
         }
 
@@ -143,5 +148,5 @@ namespace E_Commerce_VS
             StripeConfiguration.ApiKey = options.Value.StripeSecret;
         }
 
-    }
+    }    
 }

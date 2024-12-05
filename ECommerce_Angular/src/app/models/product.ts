@@ -12,8 +12,4 @@ export class Product {
       this.precio = precio;
       this.stock = stock; 
     }
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> origin/gonza

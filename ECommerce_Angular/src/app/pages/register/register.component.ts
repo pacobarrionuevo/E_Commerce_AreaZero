@@ -24,10 +24,6 @@ export class RegisterComponent {
 
     if (result) {
       this.jwt = result.stringToken; 
-    }
+    } 
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/gonza

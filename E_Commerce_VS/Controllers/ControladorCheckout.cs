@@ -19,11 +19,7 @@ namespace E_Commerce_VS.Controllers
         private readonly ProductService _productService;
         private readonly ProyectoDbContext _dbContext;
 
-<<<<<<< HEAD
-        public ControladorCheckout(IOptions<Settings> options, ProductService productService,ProyectoDbContext contexto)
-=======
         public ControladorCheckout(IOptions<Settings> options, ProductService productService, ProyectoDbContext contexto)
->>>>>>> origin/gonza
         {
             _settings = options.Value;
             _productService = productService;

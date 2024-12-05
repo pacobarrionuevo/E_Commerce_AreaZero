@@ -92,7 +92,7 @@ namespace E_Commerce_VS.Controllers
                             //  Datos para autorizar al usario
                             Claims = new Dictionary<string, object>
                             {
-                                {"id", userList.Nombre },
+                                {"id", userList.UsuarioId },
                                 { ClaimTypes.Role, userList.Rol  }
                             },
                             //  Caducidad del Token
@@ -113,10 +113,6 @@ namespace E_Commerce_VS.Controllers
             }
             return Unauthorized("Usuario no existe");
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/gonza
         private UserRegistrarseDto ToDto(Usuario users)
         {
             return new UserRegistrarseDto()
