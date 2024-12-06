@@ -5,7 +5,13 @@ import { Product } from '../../models/product';
 import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { RouterLink, RouterModule } from '@angular/router';
+=======
+import { RouterLink } from '@angular/router';
+import { ImageService } from '../../services/image.service'; 
+
+>>>>>>> origin/salperro2
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -20,7 +26,7 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService, private imageService: ImageService) {} // Inyectamos el servicio de imágenes
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('userId');
@@ -29,6 +35,7 @@ export class CartComponent implements OnInit {
     this.loadCartProducts();
   }
 
+<<<<<<< HEAD
   // Cargar los productos del carrito
   loadCartProducts(): void {
   const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -55,11 +62,28 @@ export class CartComponent implements OnInit {
             });
             
         }
+=======
+  async loadCartProducts(): Promise<void> {
+    this.isLoading = true;
+    this.errorMessage = '';
+
+    try {
+      const result = await this.carritoService.getProductosCarrito();
+      if (result.success) {
+        this.productosCarrito = result.data; 
+      } else {
+        this.errorMessage = `Error al cargar los productos del carrito: ${result.error}`;
+      }
+    } catch (error) {
+      this.errorMessage = `Se produjo un error: ${error.message}`;
+    } finally {
+      this.isLoading = false;
+    }
+>>>>>>> origin/salperro2
   }
   
 
 
-  // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
     const existingCart = localStorage.getItem('cart');
     let cart: { productId: number, quantity: number }[] = [];
@@ -86,6 +110,7 @@ export class CartComponent implements OnInit {
       this.errorMessage = `Se produjo un error: ${error.message}`;
     }
   }
+<<<<<<< HEAD
   
   // Modificar la cantidad de un producto
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
@@ -102,5 +127,36 @@ export class CartComponent implements OnInit {
     localCart[productIdCart].quantity = quantity;
     localStorage.setItem('cart', JSON.stringify(localCart));
   
+=======
+
+  modifyQuantity(productId: number, carritoId: number, event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const quantity = parseInt(input.value, 10);
+
+    if (quantity < 1) {
+      this.errorMessage = 'La cantidad debe ser al menos 1.';
+      return;
+    }
+
+    this.isLoading = true;
+    this.errorMessage = '';
+    this.carritoService.modifyProductQuantity(productId, carritoId, quantity)
+      .then((result) => {
+        if (result.success) {
+          const productoCarrito = this.productosCarrito.find(item => item.productoId === productId && item.carritoId === carritoId);
+          if (productoCarrito) {
+            productoCarrito.cantidad = quantity;
+          }
+        } else {
+          this.errorMessage = `Error al actualizar la cantidad: ${result.error}`;
+        }
+      })
+      .catch((error) => {
+        this.errorMessage = `Se produjo un error al actualizar la cantidad: ${error.message}`;
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
+>>>>>>> origin/salperro2
   }
 }

@@ -1,4 +1,3 @@
-
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f0f2f5;
@@ -7,15 +6,14 @@ body {
   color: #333;
 }
 
-
 .product-detail-container {
-  max-width: 800px;
+  display: flex;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  text-align: center;
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -24,15 +22,12 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.product-detail-container h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #2c3e50;
-  font-weight: 700;
+.product-image {
+  flex: 1;
+  margin-right: 20px;
 }
 
-
-.product-detail-container img {
+.product-image img {
   width: 100%;
   max-width: 400px;
   height: auto;
@@ -41,28 +36,36 @@ body {
   transition: transform 0.3s;
 }
 
-.product-detail-container img:hover {
+.product-image img:hover {
   transform: scale(1.05);
 }
 
-.product-detail-container p {
+.product-info {
+  flex: 2;
+  text-align: left;
+}
+
+.product-info h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.product-info p {
   font-size: 1.2em;
   margin: 10px 0;
 }
 
-.product-detail-container p:nth-child(4) {
-  font-weight: bold;
-  color: #e74c3c;
-}
 
-.product-detail-container p:nth-child(5),
-.product-detail-container p:nth-child(6),
-.product-detail-container p:nth-child(7) {
+.product-info p:nth-child(4),
+.product-info p:nth-child(5),
+.product-info p:nth-child(6),
+.product-info p:nth-child(7) {
   color: #34495e;
 }
 
-
-.product-detail-container button {
+.product-info button {
   padding: 10px 20px;
   font-size: 1em;
   color: #fff;
@@ -73,14 +76,12 @@ body {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.product-detail-container button:hover {
+.product-info button:hover {
   background-color: #16a085;
   transform: scale(1.05);
 }
 
-
 .reviews-section {
-  text-align: left;
   margin-top: 30px;
 }
 
@@ -104,7 +105,6 @@ body {
 .review p {
   margin: 5px 0;
 }
-
 
 .add-review {
   margin-top: 20px;
@@ -145,24 +145,32 @@ body {
   background-color: #2980b9;
 }
 
-
 .cargando {
   font-size: 1.5em;
   color: #7f8c8d;
   margin-top: 20px;
 }
 
-
 @media (max-width: 768px) {
   .product-detail-container {
+    flex-direction: column;
     padding: 10px;
   }
 
-  .product-detail-container h1 {
+  .product-info {
+    text-align: center;
+  }
+
+  .product-info h1 {
     font-size: 2em;
   }
 
-  .product-detail-container img {
+  .product-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .product-image img {
     max-width: 100%;
   }
 }

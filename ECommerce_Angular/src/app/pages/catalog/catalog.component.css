@@ -1,19 +1,14 @@
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,900');
 * {
-  -moz-box-sizing: inherit;
-       box-sizing: inherit;
-  -webkit-transition-property: all;
-          transition-property: all;
-  -webkit-transition-duration: .6s;
-          transition-duration: .6s;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
+  box-sizing: inherit;
+  transition: all 0.6s ease;
 }
+
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
   background-color: #f7f7f7;
@@ -141,18 +136,54 @@ body, html {
   font-weight: 600;
 }
 
-.add-to-cart {
+.product-button {
   width: 100%;
   padding: 12px;
-  background-color: #1A1728;
-  color: white;
-  font-weight: 700;
+  border: 1px solid #3498db;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
   font-size: 16px;
-  border: none;
-  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #3f34db, #2980b9); /* Azul claro a azul oscuro */
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
   margin-top: 15px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+}
+
+.product-button span {
+  position: relative;
+  z-index: 20;
+}
+
+.product-button:after {
+  background: #16819f;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  width: 50px;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform: rotate(35deg);
+  z-index: -10;
+}
+
+.product-button:hover {
+  background: linear-gradient(45deg, #27a1ca, #3fded6); 
+  color: #f1f1f1;
+  transform: scale(1.05);
+}
+
+.product-button:hover:after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .price {
@@ -162,11 +193,14 @@ body, html {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 .add-to-cart:hover {
   background-color: #333;
   transform: scale(1.05);
 }
 
+=======
+>>>>>>> origin/salperro2
 .pagination-controls {
   display: flex;
   align-items: center;
@@ -201,6 +235,7 @@ body, html {
   font-weight: 500;
   color: #555;
 }
+<<<<<<< HEAD
 .btnfos-4 {
   border: 1px solid #3498db;
   overflow: hidden;
@@ -291,3 +326,5 @@ body, html {
     margin-right: 0;
   }
 }
+=======
+>>>>>>> origin/salperro2

@@ -13,8 +13,33 @@
       [value]="producto.cantidad"
       (change)="modifyQuantity(producto.producto.id, producto.carritoId, $event)"
     />
+<<<<<<< HEAD
   </p>
   <button (click)="removeProduct(producto.producto.id, producto.carritoId)">
     Eliminar
   </button>
+=======
+    <p>Precio: {{ productoCarrito.producto.precio / 100 }}€</p>
+    <p>
+      Cantidad:
+      <input
+        type="number"
+        [value]="productoCarrito.cantidad"
+        (change)="modifyQuantity(productoCarrito.productoId, productoCarrito.carritoId, $event)"
+      />
+    </p>
+    <button (click)="removeProduct(productoCarrito.productoId, productoCarrito.carritoId)">
+      Eliminar
+    </button>
+  </div>
+  <div>
+    <button [routerLink]="'/checkout'">PAGAR</button>
+  </div>
+</div>
+<div class="error-message" *ngIf="productosCarrito.length === 0">
+  No hay productos en tu carrito.
+</div>
+<div class="loading" *ngIf="isLoading">
+  Cargando...
+>>>>>>> origin/salperro2
 </div>
