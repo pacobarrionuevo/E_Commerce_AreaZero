@@ -147,7 +147,7 @@ namespace E_Commerce_VS.Controllers
             {
                 FechaCreacion = DateTime.UtcNow,
                 FechaExpiracion = DateTime.UtcNow.AddMinutes(5), 
-                Productos = new List<ProductoOrdenTemporal>()
+                Productos = new List<ProductoCarrito>()
             };
 
             foreach (var productoCarrito in productosCarrito)
@@ -167,7 +167,7 @@ namespace E_Commerce_VS.Controllers
 
                 producto.Stock -= productoCarrito.Cantidad;
 
-                ordenTemporal.Productos.Add(new ProductoOrdenTemporal
+                ordenTemporal.Productos.Add(new ProductoCarrito
                 {
                     ProductoId = (int)producto.Id,
                     Cantidad = productoCarrito.Cantidad,
