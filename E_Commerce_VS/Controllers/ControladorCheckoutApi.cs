@@ -33,4 +33,16 @@ namespace E_Commerce_VS.Controllers
             return Json(new { clientSecret = session.ClientSecret });
         }
     }
+
+    public string precioID(int id)
+    {
+        switch (id)
+        {
+            case 1:
+                return "price_1QPLgTKyA4zEE9fSKNnk7HjR";
+            break;
+
+        }
+        return ""; 
+    }
 }
