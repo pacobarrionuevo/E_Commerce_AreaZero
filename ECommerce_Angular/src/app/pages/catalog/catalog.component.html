@@ -1,5 +1,6 @@
 <body>
   <section class="background">
+    <!-- Formulario de búsqueda -->
     <form (ngSubmit)="searchProducts()" class="search-form">
       <input type="text" placeholder="Buscar productos..." [(ngModel)]="query" name="search" />
       <input type="submit" value="Buscar" />
@@ -20,6 +21,7 @@
       </select>
     </div>
 
+    <!-- Filtros de ordenamiento -->
     <div class="filters">
       <label for="filtroPrecio">Ordenar por:</label>
       <select [(ngModel)]="Ordenacion" name="filtroPrecio" (change)="getProducts()">
@@ -30,17 +32,22 @@
       </select>
     </div>
 
+    <!-- Lista de productos -->
     <div id="lista-productos" class="grid">
       <figure class="product" *ngFor="let product of productList">
         <span class="product-name">{{ product.nombre }}</span>
         <img class="imagen" [src]="product.ruta" [alt]="product.nombre + ' image'" />
-        <button class="product-button" [routerLink]="['/product-detail', product.id]"><span>Ver</span></button>
+        <button class="btnfos btnfos-4" [routerLink]="['/product-detail', product.id]">Ver</button>
         <span class="product-precio">{{ product.precio / 100 }}€</span>
         <button (click)="addProductToCart(product.id, 1)">Añadir al carrito</button>
       </figure>
     </div>
 
+    <!-- Controles de paginación -->
     <div class="pagination-controls">
       <button (click)="cambiarPagina(-1)" [disabled]="paginaActual === 1">Anterior</button>
       <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
       <button (click)="cambiarPagina(1)" [disabled]="paginaActual === totalPaginas">Siguiente</button>
+    </div>
+  </section>
+</body>

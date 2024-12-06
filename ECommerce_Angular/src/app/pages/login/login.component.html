@@ -1,6 +1,5 @@
 <div class="container">
     <div class="section">
-<<<<<<< HEAD
       <div class="title">INICIA SESIÓN EN AREAZERO.ES</div>
       <form (ngSubmit)="submit()">
         <div class="input-group">
@@ -16,7 +15,6 @@
       <button class="button button-signup">
         <a href="../register/register.component.html">REGISTRARSE</a>
       </button>       
-      <button (click)="logout()" class="button">Cerrar Sesión</button>
       <div class="password-requirements">
         <span>* Mínimo 8 caracteres</span>
         <span>* Mínimo 1 mayúscula</span>
@@ -25,21 +23,3 @@
     </div>
   </div>
   
-=======
-      <h2 class="title">Iniciar Sesión</h2>
-      <form (ngSubmit)="submit()">
-        <div class="input-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" [(ngModel)]="email" name="email" required>
-        </div>
-        <div class="input-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" [(ngModel)]="password" name="password" required>
-        </div>
-        <button type="submit" class="button">Iniciar Sesión</button>
-      </form>
-      <button (click)="logout()" *ngIf="jwt" class="button">Cerrar Sesión</button>
-    </div>
-  </div>
-  
->>>>>>> origin/salperro2

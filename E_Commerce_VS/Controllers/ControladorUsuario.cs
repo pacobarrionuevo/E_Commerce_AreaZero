@@ -56,7 +56,7 @@ namespace E_Commerce_VS.Controllers
                 //  Datos para autorizar al usario
                 Claims = new Dictionary<string, object>
                     {
-                        {"id", newUser.UsuarioId },
+                        {"id", newUser.UsuarioId},
                         { ClaimTypes.Role, newUser.Rol  }
                     },
                 //  Caducidad del Token
@@ -92,7 +92,7 @@ namespace E_Commerce_VS.Controllers
                             //  Datos para autorizar al usario
                             Claims = new Dictionary<string, object>
                             {
-                                {"id", userList.UsuarioId },
+                                {"id", userList.Nombre },
                                 { ClaimTypes.Role, userList.Rol  }
                             },
                             //  Caducidad del Token

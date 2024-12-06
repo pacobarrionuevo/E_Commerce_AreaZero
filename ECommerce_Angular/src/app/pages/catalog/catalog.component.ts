@@ -33,41 +33,14 @@ export class CatalogComponent implements OnInit {
     this.getProducts();
   }
   addProductToCart(productId: number, quantity: number): void {
-    if (!this.userId) {
-      // Recuperar la colección existente del localStorage
-      const existingCart = localStorage.getItem('cart');
-      let cart: { productId: number, quantity: number }[] = [];
-  
-      if (existingCart) {
-        // Parsear el contenido existente si lo hay
-        cart = JSON.parse(existingCart);
-      }
-  
-      // Verificar si el producto ya está en el carrito
-      const existingProductIndex = cart.findIndex(item => item.productId === productId);
-  
-      if (existingProductIndex !== -1) {
-        // Si ya existe, actualizar la cantidad
-        cart[existingProductIndex].quantity += quantity;
-      } else {
-        // Si no existe, agregar el nuevo producto al carrito
-        cart.push({ productId, quantity });
-      }
-  
-      // Guardar el carrito actualizado en el localStorage
-      localStorage.setItem('cart', JSON.stringify(cart));
-    }
-  
-    // También puedes llamar al servicio para manejar carritos en el servidor
-    //this.carritoService.addProductToCart(productId, this.userId, quantity)
-      //.then(result => {
-        //console.log('Producto añadido al carrito', result);
-      //})
-      //.catch(error => {
-        //console.error('Error al añadir producto al carrito', error);
-      //});
+    this.carritoService.addProductToCart(productId, this.userId, quantity)
+      .then(result => {
+        console.log('Producto añadido al carrito', result);
+      })
+      .catch(error => {
+        console.error('Error al añadir producto al carrito', error);
+      });
   }
-  
 
   // Obtener los productos de la API
   getProducts(): void {
@@ -86,7 +59,7 @@ export class CatalogComponent implements OnInit {
   }
 
   searchProducts(): void {
-    this.paginaActual = 1; 
+    this.paginaActual = 1; // Reinicia a la primera página para la nueva búsqueda
     this.getProducts();
   }
 

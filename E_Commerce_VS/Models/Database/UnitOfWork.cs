@@ -8,17 +8,14 @@ namespace E_Commerce_VS.Models.Database
 
         public RepositorioProducto RepoProd { get; init; }
         public RepositorioReview RepoRev { get; init; }
-        public RepositorioCarrito RepoCar {  get; init; }
 
-        public UnitOfWork(ProyectoDbContext context, RepositorioProducto repoProd, RepositorioReview repoRev, RepositorioCarrito repoCar)
+        public UnitOfWork(ProyectoDbContext context, RepositorioProducto repoProd, RepositorioReview repoRev)
         {
             _context = context;
 
             RepoProd = repoProd;
 
             RepoRev = repoRev;
-
-            RepoCar = repoCar;
         }
 
         public async Task<bool> SaveAsync()
