@@ -22,8 +22,8 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
             // Add services to the container.
@@ -104,10 +104,11 @@ namespace E_Commerce_VS
 
             InitStripe(app.Services);
 
-            app.Run();
+            // Empezamos a atender a las peticiones de nuestro servidor 
+            await app.RunAsync();
+
         }
 
-        //Métodos de Jose para iniciar la base de datos y el stripe
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
         {
             using IServiceScope scope = serviceProvider.CreateScope();
