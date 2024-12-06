@@ -22,8 +22,8 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
-
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
+
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
             // Add services to the container.
@@ -45,7 +45,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<Services.ReviewService>();
             builder.Services.AddScoped<Services.SmartSearchService>();
 
-            // A�adimos los mappers como Transient
+            // A adimos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
             builder.Services.AddScoped<ReviewMapper>();
 
@@ -56,7 +56,7 @@ namespace E_Commerce_VS
             //Configuracion de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
-            // Configuraci�n de CORS
+            // Configuraci n de CORS
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -110,6 +110,7 @@ namespace E_Commerce_VS
 
         }
 
+        //Métodos de Jose para iniciar la base de datos y el stripe
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
         {
             using IServiceScope scope = serviceProvider.CreateScope();
@@ -132,5 +133,5 @@ namespace E_Commerce_VS
             StripeConfiguration.ApiKey = options.Value.StripeSecret;
         }
 
-    }    
+    }
 }

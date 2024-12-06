@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
   constructor(private carritoService: CarritoService) {}
 
   ngOnInit(): void {
-    const userIdString = localStorage.getItem('userId');
+    const userIdString = localStorage.getItem('usuarioId');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
 
     this.loadCartProducts();
@@ -31,30 +31,45 @@ export class CartComponent implements OnInit {
 
   // Cargar los productos del carrito
   loadCartProducts(): void {
-  const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
-  
-  this.productosCarrito = []; // Reiniciar la lista de productos
-        if (!this.userId){
-          const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
-            this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
-              producto: result.data, // Aquí accedemos a 'data' desde la instancia de Result
-              cantidad: item.quantity
-            }))
-          );
-      
-          Promise.all(productRequests)
-            .then(productosCarrito => {
-              this.productosCarrito = productosCarrito;
-              console.log('Estructura final de productosCarrito:', this.productosCarrito);
-            console.log('Contenido de localCart:', localCart);
-            console.log('Datos procesados de productosCarrito:', JSON.stringify(this.productosCarrito, null, 2));
+    this.productosCarrito = []; // Reiniciar la lista de productos
 
-            })
-            .catch(error => {
-              console.error('Error al cargar productos del carrito:', error);
-            });
-            
-        }
+    if (this.userId) {
+      // Si hay un usuario autenticado, cargar productos desde el servidor
+      this.carritoService.getProductosCarrito()
+        .then(result => {
+          if (result.success) {
+            this.productosCarrito = result.data;
+          } else {
+            console.error('Error al cargar productos del servidor:', result.error);
+          }
+        })
+        .catch(error => {
+          console.error('Error en el servidor:', error);
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
+    } else {
+      // Si no hay usuario autenticado, cargar productos desde el localStorage
+      const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
+        this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
+          producto: result.data,
+          cantidad: item.quantity
+        }))
+      );
+
+      Promise.all(productRequests)
+        .then(productos => {
+          this.productosCarrito = productos;
+        })
+        .catch(error => {
+          console.error('Error al cargar productos locales:', error);
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
+    }
   }
   
 

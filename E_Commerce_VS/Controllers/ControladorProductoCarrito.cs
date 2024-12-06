@@ -61,11 +61,22 @@ namespace E_Commerce_VS.Controllers
         }
 
         // Obtener productos de un carrito específico
-        [HttpGet("productosCarrito/{carritoId}")]
-        public async Task<IActionResult> GetProductosCarrito(int carritoId)
+        [HttpGet("productosCarrito/{userId}")]
+        public async Task<IActionResult> GetProductosCarritoByUserId(int userId)
         {
+            // Verificar si el carrito existe para el usuario
+            var carrito = await _context.Carritos
+                .Include(c => c.ProductoCarrito)
+                .FirstOrDefaultAsync(c => c.UserId == userId);
+
+            if (carrito == null)
+            {
+                return NotFound($"No se encontró un carrito para el usuario con ID {userId}.");
+            }
+
+            // Obtener los productos asociados al carrito
             var productos = await _context.ProductoCarritos
-                .Where(pc => pc.CarritoId == carritoId)
+                .Where(pc => pc.CarritoId == carrito.Id)
                 .Include(pc => pc.Producto)
                 .Select(pc => new
                 {

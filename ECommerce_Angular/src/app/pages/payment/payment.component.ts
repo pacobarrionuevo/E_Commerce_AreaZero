@@ -29,7 +29,7 @@ export class PaymentComponent {
 
   elementsOptions: StripeElementsOptions = {
     locale: 'en',
-    clientSecret: '', 
+    clientSecret: '', // Esto será inicializado dinámicamente
     appearance: {
       theme: 'flat'
     }
@@ -44,11 +44,11 @@ export class PaymentComponent {
     }
   };
 
-  stripe = injectStripe('pk_test_Dt4ZBIt...');
+  stripe = injectStripe('pk_test_Dt4ZBIt...'); // Reemplaza con tu clave pública
   paying = signal(false);
 
   ngOnInit() {
-    
+    // Llamar al servicio para obtener el clientSecret
     this.checkoutService.getCreateCheckoutSession().subscribe({
       next: (response) => {
         this.elementsOptions.clientSecret = response.clientSecret;
@@ -88,10 +88,10 @@ export class PaymentComponent {
         next: (result) => {
           this.paying.set(false);
           if (result.error) {
-          
+            // Mostrar error al usuario
             alert({ success: false, error: result.error.message });
           } else if (result.paymentIntent.status === 'succeeded') {
-            
+            // Mostrar mensaje de éxito
             alert({ success: true });
           }
         },
