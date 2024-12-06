@@ -51,15 +51,15 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest("La cantidad debe ser mayor a 0.");
             }
 
-            var producto = await _context.Productos.FindAsync(request.ProductId);
+            // Buscar el producto utilizando el repositorio
+            var producto = await _unitOfWork.RepoProd.GetByIdAsync(request.ProductId);
             if (producto == null)
             {
                 return BadRequest("El producto no existe.");
             }
 
-            var carrito = await _context.Carritos
-                .Include(c => c.ProductoCarrito)
-                .FirstOrDefaultAsync(c => c.UserId == request.UserId);
+            // Buscar el carrito del usuario
+            var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(request.UserId);
 
             if (carrito == null)
             {
@@ -69,8 +69,7 @@ namespace E_Commerce_VS.Controllers
                     ProductoCarrito = new List<ProductoCarrito>()
                 };
 
-                await _context.Carritos.AddAsync(carrito);
-                await _context.SaveChangesAsync();
+                await _unitOfWork.RepoCar.InsertAsync(carrito);
             }
 
             var productoCarrito = carrito.ProductoCarrito.FirstOrDefault(pc => pc.ProductoId == request.ProductId);
@@ -89,9 +88,10 @@ namespace E_Commerce_VS.Controllers
                 carrito.ProductoCarrito.Add(productoCarrito);
             }
 
-            await _context.SaveChangesAsync();
+            await _unitOfWork.SaveAsync();
             return Ok("Producto añadido o actualizado en el carrito.");
         }
+<<<<<<< HEAD
 
         // Asociar un carrito anónimo a un usuario registrado
         [HttpPost("associate-cart")]
@@ -150,6 +150,8 @@ namespace E_Commerce_VS.Controllers
         }
 
 
+=======
+>>>>>>> origin/gonza
         [Authorize]
         [HttpPost("PasaProductoAlCarrito")]
         public async Task<IActionResult> PasaProductoAlCarrito([FromBody] List<ProductoCarritoLocal> productos)
@@ -175,6 +177,9 @@ namespace E_Commerce_VS.Controllers
                     UserId = userId,
                     ProductoCarrito = new List<ProductoCarrito>()
                 };
+
+                // Agregar el nuevo carrito al contexto
+                _unitOfWork.Context.Carritos.Add(carrito);
             }
 
             // Iterar por los productos recibidos
@@ -217,4 +222,8 @@ namespace E_Commerce_VS.Controllers
             return Ok(carrito.ProductoCarrito);
         }
     }
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> origin/gonza
