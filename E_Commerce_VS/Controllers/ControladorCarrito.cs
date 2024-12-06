@@ -91,7 +91,7 @@ namespace E_Commerce_VS.Controllers
             await _unitOfWork.SaveAsync();
             return Ok("Producto añadido o actualizado en el carrito.");
         }
-<<<<<<< HEAD
+
 
         // Asociar un carrito anónimo a un usuario registrado
         [HttpPost("associate-cart")]
@@ -150,8 +150,7 @@ namespace E_Commerce_VS.Controllers
         }
 
 
-=======
->>>>>>> origin/gonza
+
         [Authorize]
         [HttpPost("PasaProductoAlCarrito")]
         public async Task<IActionResult> PasaProductoAlCarrito([FromBody] List<ProductoCarritoLocal> productos)
@@ -222,8 +221,7 @@ namespace E_Commerce_VS.Controllers
             return Ok(carrito.ProductoCarrito);
         }
     }
-<<<<<<< HEAD
+
     }
-=======
-    }
->>>>>>> origin/gonza
+
+   
