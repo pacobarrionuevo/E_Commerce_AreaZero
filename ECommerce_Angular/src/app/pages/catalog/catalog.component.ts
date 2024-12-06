@@ -3,6 +3,7 @@ import { CatalogoService } from '../../services/catalogo.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-catalog',
@@ -18,7 +19,8 @@ export class CatalogComponent implements OnInit {
   Ordenacion: number = 2;
   elementosPorPagina: number = 20;
   totalPaginas: number;
-  constructor(private catalogoService: CatalogoService) {}
+  userId: any;
+  constructor(private catalogoService: CatalogoService, private carritoService: CarritoService) {}
 
   ngOnInit(): void {
     this.getProducts();

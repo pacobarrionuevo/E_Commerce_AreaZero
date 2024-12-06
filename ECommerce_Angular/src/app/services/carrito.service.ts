@@ -13,7 +13,7 @@ export class CarritoService {
   private carritoEndpoint = 'ControladorCarrito';
   private productoCarritoEndpoint = 'ControladorProductoCarrito';
   private productoEndpoint = 'ControladorProducto';
-  private imageBaseUrl = 'https://localhost:7133/'; 
+
   constructor(private api: ApiService) {}
 
   async getCarritos(): Promise<Result<Carrito[]>> {
@@ -23,7 +23,6 @@ export class CarritoService {
   async associateCart(userId: number): Promise<Result<string>> {
     const body = { userId };
     return this.api.post<string>(`${this.carritoEndpoint}/associate-cart`, body, 'application/json');
-
   }
 
   // Añadir un producto al carrito
@@ -75,47 +74,8 @@ export class CarritoService {
 
   // Obtener todos los productos en el carrito
   async getProductosCarrito(): Promise<Result<ProductoCarrito[]>> {
-<<<<<<< HEAD
     const userId = localStorage.getItem('usuarioId')
     const result = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito/${userId}`);
-=======
-    try {
-      const response = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito`);
-      if (response.success) {
-        const productosCarrito = response.data.map(item => {
-          item.producto.ruta = `${this.imageBaseUrl}/${item.producto.ruta}`; 
-          return new ProductoCarrito(
-            item.productoId,
-            item.carritoId,
-            item.cantidad,
-            item.producto
-          );
-        });
-        return Result.success(response.statusCode, productosCarrito);
-      } else {
-        return Result.error(response.statusCode, response.error);
-      }
-    } catch (error) {
-      return Result.error(500, error.message);
-    }
-    const result = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito`);
-  
-    if (result.success && result.data.length > 0) {
-      // Buscar el carritoId del último producto añadido
-      const lastProduct = result.data.reduce((latest, current) => {
-        return current.id > latest.id ? current : latest;
-      });
-  
-      const carritoId = lastProduct.carritoId;
-  
-      // Guardar el carritoId en el localStorage si no está o si es diferente
-      const storedCarritoId = localStorage.getItem('carritoId');
-      if (!storedCarritoId || Number(storedCarritoId) !== carritoId) {
-        localStorage.setItem('carritoId', carritoId.toString());
-        console.log(`CarritoId actualizado en localStorage: ${carritoId}`);
-      }
-    }
->>>>>>> origin/salperro2
   
     return result;
   }
