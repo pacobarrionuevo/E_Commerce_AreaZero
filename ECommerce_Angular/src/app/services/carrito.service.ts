@@ -110,8 +110,8 @@ export class CarritoService {
   
 
   // Eliminar un producto del carrito
-  async removeProductFromCart(productId: number, carritoId: number): Promise<Result<string>> {
-    const body = { productId, carritoId };
+  async removeProductFromCart(productId: number, userId: number): Promise<Result<string>> {
+    const body = { productId, userId };
     return this.api.put<string>(`${this.productoCarritoEndpoint}/eliminarproductocarrito`, body, 'application/json');
   }
 

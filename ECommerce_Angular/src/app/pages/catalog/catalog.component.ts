@@ -59,15 +59,6 @@ export class CatalogComponent implements OnInit {
     }
   
     // También puedes llamar al servicio para manejar carritos en el servidor
-<<<<<<< HEAD
-    //this.carritoService.addProductToCart(productId, this.userId, quantity)
-      //.then(result => {
-        //console.log('Producto añadido al carrito', result);
-      //})
-      //.catch(error => {
-        //console.error('Error al añadir producto al carrito', error);
-      //});
-=======
     if (this.userId!=null){
       this.carritoService.addProductToCart(productId, this.userId, quantity)
       .then(result => {
@@ -77,7 +68,6 @@ export class CatalogComponent implements OnInit {
         console.error('Error al añadir producto al carrito', error);
       });
     }
->>>>>>> origin/gonza
   }
   
 
