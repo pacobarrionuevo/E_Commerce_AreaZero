@@ -411,14 +411,14 @@
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
-    "Method": "GetProductosCarrito",
-    "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{carritoId}",
+    "Method": "GetProductosCarritoByUserId",
+    "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "carritoId",
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
       }
