@@ -39,6 +39,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<RepositorioProducto>();
             builder.Services.AddScoped<RepositorioReview>();
             builder.Services.AddScoped<RepositorioCarrito>();
+            builder.Services.AddScoped<RepositorioOrdenTemporal>();
 
             builder.Services.AddScoped<Services.ProductService>();
             builder.Services.AddScoped<Services.ReviewService>();
