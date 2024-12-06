@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 #gitignore pal build //Decir jose
 *build_property.ProjectDir
+E_Commerce_VS/obj/Debug/net8.0/E_Commerce_VS.assets.cache

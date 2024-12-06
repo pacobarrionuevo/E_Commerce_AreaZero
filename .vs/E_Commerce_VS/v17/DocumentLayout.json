@@ -7,16 +7,8 @@
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\models\\database\\repositories\\repositoriocarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\repositories\\repositoriocarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,7 +32,7 @@
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\UnitOfWork.cs",
               "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\UnitOfWork.cs",
               "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\UnitOfWork.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA4wBsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA4wBcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T12:51:12.987Z",
               "EditorCaption": ""
@@ -44,44 +40,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RepositorioCarrito.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioCarrito.cs*",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T12:49:45.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ControladorUsuario.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs*",
-              "ViewState": "AgIAAEwAAAAAAAAAAAA5wF4AAAA5AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAA5wFwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T12:48:45.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ControladorCarrito.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs*",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAiwKMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T19:14:42.72Z",
               "EditorCaption": ""
             }
           ]
