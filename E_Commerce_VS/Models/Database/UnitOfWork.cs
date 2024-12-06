@@ -20,18 +20,7 @@ public class UnitOfWork
         RepoProd = repoProd;
         RepoRev = repoRev;
         RepoCar = repoCar;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    }
 
-    public async Task<bool> SaveAsync()
-    {
-        return await _context.SaveChangesAsync() > 0;
->>>>>>> origin/salperro2
-=======
-        RepoOT = repoOT;
->>>>>>> origin/paco_cuartarama
     }
 
     public async Task<bool> SaveAsync()

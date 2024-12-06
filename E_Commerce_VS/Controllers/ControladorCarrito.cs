@@ -266,8 +266,6 @@ namespace E_Commerce_VS.Controllers
 
 
     }
-<<<<<<< HEAD
+
     }
-=======
-}
->>>>>>> origin/salperro2
+
