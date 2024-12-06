@@ -1,31 +1,11 @@
 ﻿using E_Commerce_VS.Models.Database.Repositories;
-using E_Commerce_VS.Models.Database;
 
-public class UnitOfWork
+namespace E_Commerce_VS.Models.Database
 {
-    private readonly ProyectoDbContext _context;
-
-    public RepositorioProducto RepoProd { get; init; }
-    public RepositorioReview RepoRev { get; init; }
-    public RepositorioCarrito RepoCar { get; init; }
-
-    // Exponer el DbContext
-    public ProyectoDbContext Context => _context;
-
-    public UnitOfWork(ProyectoDbContext context, RepositorioProducto repoProd, RepositorioReview repoRev, RepositorioCarrito repoCar)
+    public class UnitOfWork
     {
-        _context = context;
+        private readonly ProyectoDbContext _context;
 
-<<<<<<< HEAD
-        RepoProd = repoProd;
-        RepoRev = repoRev;
-        RepoCar = repoCar;
-    }
-
-    public async Task<bool> SaveAsync()
-    {
-        return await _context.SaveChangesAsync() > 0;
-=======
         public RepositorioProducto RepoProd { get; init; }
         public RepositorioReview RepoRev { get; init; }
         public RepositorioCarrito RepoCar {  get; init; }
@@ -45,6 +25,5 @@ public class UnitOfWork
         {
             return await _context.SaveChangesAsync() > 0;
         }
->>>>>>> origin/paco_tercerarama
     }
 }

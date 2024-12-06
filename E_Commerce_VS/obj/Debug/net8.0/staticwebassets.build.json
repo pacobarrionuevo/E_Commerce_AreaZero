@@ -1,10 +1,10 @@
 {
   "Version": 1,
 <<<<<<< HEAD
-  "Hash": "SNLOheHHpOFKAp+BiYXTG1IaruXFCcnRUV+075+ax34=",
+  "Hash": "VEFJM0W4grH1KZ9ruz2uWKNS1TNusuah71pBnPHrBkU=",
 =======
-  "Hash": "NC72cJn3L+WHctL0toXUrZ4//QXrcZX1w4GRMJwn79o=",
->>>>>>> origin/paco_tercerarama
+  "Hash": "qJqaY4y0liWt/RMlQYzh9wr6ZpEfktQ8ZrzHLJibG38=",
+>>>>>>> origin/salperro2
   "Source": "E_Commerce_VS",
   "BasePath": "_content/E_Commerce_VS",
   "Mode": "Default",
@@ -15,10 +15,10 @@
       "Name": "E_Commerce_VS\\wwwroot",
       "Source": "E_Commerce_VS",
 <<<<<<< HEAD
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "Pattern": "**"
     }
@@ -26,16 +26,16 @@
   "Assets": [
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\1.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/1#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -54,16 +54,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/10#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -82,16 +82,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\11.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\11.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\11.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/11#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -110,16 +110,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\12.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\12.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\12.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/12#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -138,16 +138,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\13.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\13.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\13.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/13#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -166,16 +166,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\14.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\14.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\14.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/14#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -194,16 +194,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\15.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\15.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\15.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/15#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -222,16 +222,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\16.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\16.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\16.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/16#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -250,16 +250,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\17.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\17.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\17.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/17#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -278,16 +278,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\18.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\18.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\18.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/18#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -306,16 +306,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\19.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\19.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\19.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/19#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -334,16 +334,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\2.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\2.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\2.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/2#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -362,16 +362,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\20.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\20.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\20.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/20#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -390,16 +390,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\3.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\3.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\3.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/3#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -418,16 +418,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\4.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\4.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\4.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/4#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -446,16 +446,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\5.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\5.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\5.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/5#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -474,16 +474,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\6.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\6.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\6.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/6#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -502,16 +502,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\7.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\7.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\7.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/7#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -530,16 +530,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\8.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\8.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\8.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/8#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -558,16 +558,16 @@
     },
     {
 <<<<<<< HEAD
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-=======
       "Identity": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\pacob\\Desktop\\ECOMMERCEREPOSITORIO\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
->>>>>>> origin/paco_tercerarama
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\9.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/9#[.{fingerprint}]?.png",
       "AssetKind": "All",
@@ -583,215 +583,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\9.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\carrito.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/carrito.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\carrito.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\chapaplateada.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/chapaplateada.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\chapaplateada.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\discord.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/discord.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\discord.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\instagram.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/instagram.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\instagram.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\Logo.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/Logo.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Logo.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\sobre.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/sobre.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\sobre.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\ticket.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/ticket.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\ticket.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\tiktok.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/tiktok.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\tiktok.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\torneos.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/torneos.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\torneos.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\trofeo.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/trofeo.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\trofeo.png"
-    },
-    {
-      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\twitter.png",
-      "SourceId": "E_Commerce_VS",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
-      "BasePath": "_content/E_Commerce_VS",
-      "RelativePath": "images/twitter.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\twitter.png"
     }
   ],
   "Endpoints": [
@@ -818,7 +609,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -863,7 +654,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -900,7 +691,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -937,7 +728,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -982,7 +773,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1027,7 +818,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1064,7 +855,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1109,7 +900,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1146,7 +937,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1191,7 +982,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1228,7 +1019,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1273,7 +1064,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1310,7 +1101,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1347,7 +1138,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1392,7 +1183,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1437,7 +1228,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1474,7 +1265,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1519,7 +1310,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1556,7 +1347,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1593,7 +1384,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1638,7 +1429,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1683,7 +1474,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1720,7 +1511,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1757,7 +1548,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1802,7 +1593,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1847,7 +1638,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1884,7 +1675,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1929,7 +1720,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1966,7 +1757,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2011,7 +1802,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2048,7 +1839,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2093,7 +1884,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2130,7 +1921,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2175,7 +1966,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2212,7 +2003,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2249,7 +2040,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2294,7 +2085,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2339,7 +2130,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2376,7 +2167,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2421,7 +2212,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 28 Nov 2024 22:42:52 GMT"
+          "Value": "Mon, 04 Nov 2024 15:14:20 GMT"
         },
         {
           "Name": "Cache-Control",

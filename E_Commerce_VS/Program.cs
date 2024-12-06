@@ -24,7 +24,6 @@ namespace E_Commerce_VS
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
             // Add services to the container.
@@ -101,34 +100,14 @@ namespace E_Commerce_VS
 
             app.MapControllers();
 
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
+            await InitDatabaseAsync(app.Services);
 
-                var seeder = new Seeder(_dbContext);
-                seeder.SeedAsync();
-            }
-            
+            InitStripe(app.Services);
 
-            // Habilitar CORS
-            app.UseCors();
-
-<<<<<<< HEAD
-=======
-            app.UseStaticFiles();
-            app.MapControllers();
-
-
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-            }
             app.Run();
->>>>>>> origin/paco_tercerarama
         }
 
+        //Métodos de Jose para iniciar la base de datos y el stripe
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
         {
             using IServiceScope scope = serviceProvider.CreateScope();

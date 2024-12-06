@@ -5,7 +5,13 @@ import { Product } from '../../models/product';
 import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { RouterLink, RouterModule } from '@angular/router';
+=======
+import { RouterLink } from '@angular/router';
+import { ImageService } from '../../services/image.service'; 
+
+>>>>>>> origin/salperro2
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -20,23 +26,16 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService, private imageService: ImageService) {} // Inyectamos el servicio de imágenes
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('userId');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
 
-<<<<<<< HEAD
-=======
-    if (this.userId) {
-      this.associateCartToUser();
-    } else {
-      console.log("Usuario no autenticado, carrito anónimo.");
-    }
->>>>>>> origin/paco_tercerarama
     this.loadCartProducts();
   }
 
+<<<<<<< HEAD
   // Cargar los productos del carrito
   loadCartProducts(): void {
   const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -44,13 +43,8 @@ export class CartComponent implements OnInit {
   this.productosCarrito = []; // Reiniciar la lista de productos
         if (!this.userId){
           const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
-<<<<<<< HEAD
             this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
               producto: result.data, // Aquí accedemos a 'data' desde la instancia de Result
-=======
-            this.carritoService.getProductById(item.productId).then(producto => ({
-              producto,
->>>>>>> origin/paco_tercerarama
               cantidad: item.quantity
             }))
           );
@@ -58,61 +52,38 @@ export class CartComponent implements OnInit {
           Promise.all(productRequests)
             .then(productosCarrito => {
               this.productosCarrito = productosCarrito;
-<<<<<<< HEAD
               console.log('Estructura final de productosCarrito:', this.productosCarrito);
             console.log('Contenido de localCart:', localCart);
             console.log('Datos procesados de productosCarrito:', JSON.stringify(this.productosCarrito, null, 2));
 
-=======
-              console.log('Productos cargados:', this.productosCarrito);
->>>>>>> origin/paco_tercerarama
             })
             .catch(error => {
               console.error('Error al cargar productos del carrito:', error);
             });
-<<<<<<< HEAD
             
         }
-  }
-  
-
 =======
-        }
-  }
-  
-
-  async associateCartToUser(): Promise<void> {
-    if (!this.userId) {
-      this.errorMessage = 'No se encontró el ID de usuario.';
-      return;
-    }
-  
-    const carritoId = Number(localStorage.getItem('carritoId'));
-    if (!carritoId) {
-      this.errorMessage = 'No se encontró el carritoId en el almacenamiento local.';
-      return;
-    }
-  
+  async loadCartProducts(): Promise<void> {
     this.isLoading = true;
     this.errorMessage = '';
+
     try {
-      // Llamada al servicio para asociar el carrito
-      const result = await this.carritoService.associateCart(this.userId);
+      const result = await this.carritoService.getProductosCarrito();
       if (result.success) {
-        console.log('Carrito anónimo asociado correctamente al usuario.');
+        this.productosCarrito = result.data; 
       } else {
-        this.errorMessage = `Error al asociar el carrito: ${result.error}`;
+        this.errorMessage = `Error al cargar los productos del carrito: ${result.error}`;
       }
     } catch (error) {
-      this.errorMessage = `Se produjo un error al asociar el carrito: ${error.message}`;
+      this.errorMessage = `Se produjo un error: ${error.message}`;
     } finally {
       this.isLoading = false;
     }
+>>>>>>> origin/salperro2
   }
   
->>>>>>> origin/paco_tercerarama
 
-  // Eliminar un producto del carrito
+
   async removeProduct(productId: number, carritoId: number): Promise<void> {
     const existingCart = localStorage.getItem('cart');
     let cart: { productId: number, quantity: number }[] = [];
@@ -139,6 +110,7 @@ export class CartComponent implements OnInit {
       this.errorMessage = `Se produjo un error: ${error.message}`;
     }
   }
+<<<<<<< HEAD
   
   // Modificar la cantidad de un producto
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
@@ -155,5 +127,36 @@ export class CartComponent implements OnInit {
     localCart[productIdCart].quantity = quantity;
     localStorage.setItem('cart', JSON.stringify(localCart));
   
+=======
+
+  modifyQuantity(productId: number, carritoId: number, event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const quantity = parseInt(input.value, 10);
+
+    if (quantity < 1) {
+      this.errorMessage = 'La cantidad debe ser al menos 1.';
+      return;
+    }
+
+    this.isLoading = true;
+    this.errorMessage = '';
+    this.carritoService.modifyProductQuantity(productId, carritoId, quantity)
+      .then((result) => {
+        if (result.success) {
+          const productoCarrito = this.productosCarrito.find(item => item.productoId === productId && item.carritoId === carritoId);
+          if (productoCarrito) {
+            productoCarrito.cantidad = quantity;
+          }
+        } else {
+          this.errorMessage = `Error al actualizar la cantidad: ${result.error}`;
+        }
+      })
+      .catch((error) => {
+        this.errorMessage = `Se produjo un error al actualizar la cantidad: ${error.message}`;
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
+>>>>>>> origin/salperro2
   }
 }

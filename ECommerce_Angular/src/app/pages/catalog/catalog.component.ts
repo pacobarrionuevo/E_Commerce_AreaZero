@@ -59,13 +59,13 @@ export class CatalogComponent implements OnInit {
     }
   
     // También puedes llamar al servicio para manejar carritos en el servidor
-    this.carritoService.addProductToCart(productId, this.userId, quantity)
-      .then(result => {
-        console.log('Producto añadido al carrito', result);
-      })
-      .catch(error => {
-        console.error('Error al añadir producto al carrito', error);
-      });
+    //this.carritoService.addProductToCart(productId, this.userId, quantity)
+      //.then(result => {
+        //console.log('Producto añadido al carrito', result);
+      //})
+      //.catch(error => {
+        //console.error('Error al añadir producto al carrito', error);
+      //});
   }
   
 

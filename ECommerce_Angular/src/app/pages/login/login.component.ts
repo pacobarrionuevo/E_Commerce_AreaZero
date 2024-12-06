@@ -1,12 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms'; 
-import { CommonModule } from '@angular/common'; 
+
 import { CarritoService } from '../../services/carrito.service';
+import { CommonModule } from '@angular/common';
+
+import { CommonModule } from '@angular/common'; 
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
+
+  imports: [FormsModule, CommonModule],
+
   imports: [FormsModule, CommonModule], 
+
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -30,8 +39,12 @@ export class LoginComponent implements OnInit {
 
     try {
       const result = await this.authService.login(authData).toPromise();
+
+      console.log('Resultado de login:', result);  // Verifica la respuesta del login 
+
       // Verificamos la respuesta del login
       console.log('Resultado de login:', result);  
+
 
       if (result) {
         // Guarda el token y el ID del usuario en el localStorage
@@ -51,6 +64,10 @@ export class LoginComponent implements OnInit {
       console.error("Error al iniciar sesión:", error);
     }
   }
+
+  logout() {
+    localStorage.removeItem('token');
+
 
   logout() {
     localStorage.removeItem('accessToken');

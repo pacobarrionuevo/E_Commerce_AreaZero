@@ -194,13 +194,13 @@ body, html {
 }
 
 <<<<<<< HEAD
-=======
 .add-to-cart:hover {
   background-color: #333;
   transform: scale(1.05);
 }
 
->>>>>>> origin/paco_tercerarama
+=======
+>>>>>>> origin/salperro2
 .pagination-controls {
   display: flex;
   align-items: center;
@@ -236,7 +236,6 @@ body, html {
   color: #555;
 }
 <<<<<<< HEAD
-=======
 .btnfos-4 {
   border: 1px solid #3498db;
   overflow: hidden;
@@ -327,4 +326,5 @@ body, html {
     margin-right: 0;
   }
 }
->>>>>>> origin/paco_tercerarama
+=======
+>>>>>>> origin/salperro2

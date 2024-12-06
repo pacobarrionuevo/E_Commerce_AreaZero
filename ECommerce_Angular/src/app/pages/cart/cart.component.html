@@ -19,7 +19,7 @@
     Eliminar
   </button>
 =======
-    <p>Precio: {{ productoCarrito.producto.precio }}€</p>
+    <p>Precio: {{ productoCarrito.producto.precio / 100 }}€</p>
     <p>
       Cantidad:
       <input
@@ -33,7 +33,7 @@
     </button>
   </div>
   <div>
-    <button [routerLink] = "'/checkout'">PAGAR</button>
+    <button [routerLink]="'/checkout'">PAGAR</button>
   </div>
 </div>
 <div class="error-message" *ngIf="productosCarrito.length === 0">
@@ -41,6 +41,5 @@
 </div>
 <div class="loading" *ngIf="isLoading">
   Cargando...
-  <button [routerLink]="'/checkout'">Comprar</button>
->>>>>>> origin/paco_tercerarama
+>>>>>>> origin/salperro2
 </div>
