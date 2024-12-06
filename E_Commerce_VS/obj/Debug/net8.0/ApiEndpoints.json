@@ -43,22 +43,6 @@
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
-    "Method": "CrearOrdenTemporal",
-    "RelativePath": "api/ControladorCarrito/CreaOrdenTemporal",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productosLocales",
-        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoCarritoLocal, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_Commerce_VS.Controllers.ControladorCarrito",
     "Method": "PasaProductoAlCarrito",
     "RelativePath": "api/ControladorCarrito/PasaProductoAlCarrito",
     "HttpMethod": "POST",

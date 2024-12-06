@@ -71,6 +71,8 @@ export class CartComponent implements OnInit {
         });
     }
   }
+  
+
 
 
   // Eliminar un producto del carrito
