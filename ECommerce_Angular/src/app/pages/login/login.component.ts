@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms'; 
-
 import { CarritoService } from '../../services/carrito.service';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +8,6 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-
   imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -66,5 +64,5 @@ export class LoginComponent implements OnInit {
     this.jwt = null;
     this.usuarioId = null;
     console.log("Cierre de sesión exitoso.");
-}
+  }
 }
