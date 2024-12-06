@@ -1,29 +1,32 @@
 <header>
     <div class="profile">
-        <a [routerLink]="''">
-            <img [src]="logoImgSrc" alt="Logo">
-        </a>
+      <a [routerLink]="''">
+        <img [src]="logoImgSrc" alt="Logo">
+      </a>
     </div>
-    
+  
     <div class="carrito">
-        <button [routerLink]="'/cart'">
-            <img [src]="carritoImgSrc" alt="Carrito" width="50" height="50">
-        </button>
+      <button [routerLink]="'/cart'">
+        <img [src]="carritoImgSrc" alt="Carrito" width="50" height="50">
+      </button>
     </div>
-
+  
     <div class="torneos">
-        <img [src]="torneosImgSrc" alt="Torneos" width="50" height="50">
+      <img [src]="torneosImgSrc" alt="Torneos" width="50" height="50">
     </div>
-
+  
     <div class="subscripcion">
-        <a [routerLink]="'/catalog'">
-            <img [src]="subscripcionImgSrc" alt="Subscripción" width="50" height="50">
-        </a>
+      <a [routerLink]="'/catalog'">
+        <img [src]="subscripcionImgSrc" alt="Subscripción" width="50" height="50">
+      </a>
     </div>
-
+  
     <div class="nav-buttons">
-        <button [routerLink]="'/aboutus'" class="nav-button">Sobre Nosotros</button>
-        <button [routerLink]="'/login'" class="nav-button">Inicia Sesión</button>
-        <button [routerLink]="'/register'" class="nav-button">Registrarse</button>
+      <button [routerLink]="'/aboutus'" class="nav-button">Sobre Nosotros</button>
+      <button *ngIf="!isLoggedIn" [routerLink]="'/login'" class="nav-button">Inicia Sesión</button>
+      <button *ngIf="!isLoggedIn" [routerLink]="'/register'" class="nav-button">Registrarse</button>
+      <button *ngIf="isLoggedIn" [routerLink]="'/usuario'" class="nav-button">Perfil</button>
+      <button *ngIf="isLoggedIn" (click)="logout()" class="nav-button">Cerrar Sesión</button>
     </div>
-</header>
+  </header>
+  

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthRequest} from '../models/auth-request';
+import { AuthRequest } from '../models/auth-request';
 import { AuthResponse } from '../models/auth-response';
 import { environment } from '../../environments/environment';
 
@@ -15,14 +15,42 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   register(authData: AuthRequest): Observable<AuthResponse> {
-    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/Registro`, authData)
-
-     return resultado;
+    return this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/Registro`, authData);
   }
 
   login(authData: AuthRequest): Observable<AuthResponse> {
-    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/login`, authData)
+    return this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/login`, authData);
+  }
+//esto hay que mirarlo bien
+  getUserDataFromToken(): any {
+    const token = localStorage.getItem('accessToken');
+    console.log('JWT Token:', token); 
+    if (token) {
+      const parts = token.split('.');
+      if (parts.length !== 3) {
+        console.error('El token no está bien estructurado.');
+        return null;
+      }
+      //el payload hay que cambiarlo pq el foro que he mirao no ta mu bien que digamos 
+      const payloadBase64 = parts[1];
+      console.log('Payload Base64:', payloadBase64); 
+      const payloadJson = atob(payloadBase64);
+      console.log('Payload JSON:', payloadJson); 
 
-     return resultado;
+      try {
+        const payload = JSON.parse(payloadJson);
+        console.log('Payload del JWT:', payload);
+
+        return {
+          name: payload.name || 'Nombre no disponible',
+          email: payload.email || 'Correo no disponible',
+          address: payload.address || 'Dirección no disponible'
+        };
+      } catch (e) {
+        console.error('Error al parsear el JSON del payload:', e);
+        return null;
+      }
+    }
+    return null;
   }
 }
