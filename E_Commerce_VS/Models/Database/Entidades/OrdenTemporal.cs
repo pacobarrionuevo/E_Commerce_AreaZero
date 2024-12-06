@@ -8,6 +8,6 @@
         public int? UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
 
-        public List<ProductoOrdenTemporal> Productos { get; set; }
+        public List<ProductoCarrito> Productos { get; set; }
     }
 }

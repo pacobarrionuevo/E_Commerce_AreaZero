@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CatalogoService } from '../../services/catalogo.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CarritoService } from '../../services/carrito.service';
-import { ApiService } from '../../services/api.service';
-import { Result } from '../../models/result';
-import { AuthService } from '../../services/auth.service';
 import { RouterModule } from '@angular/router';
+import { CarritoService } from '../../services/carrito.service';
+
 @Component({
   selector: 'app-catalog',
   standalone: true,
@@ -22,14 +20,9 @@ export class CatalogComponent implements OnInit {
   elementosPorPagina: number = 20;
   totalPaginas: number;
   userId: any;
-
-  constructor(private catalogoService: CatalogoService, private carritoService: CarritoService, private authService: AuthService, private apiService: ApiService) {}
+  constructor(private catalogoService: CatalogoService, private carritoService: CarritoService) {}
 
   ngOnInit(): void {
-    this.userId = localStorage.getItem('usuarioId');
-    if (!this.userId) {
-      console.error('No se encontró el ID de usuario en el localStorage.');
-    }
     this.getProducts();
   }
   addProductToCart(productId: number, quantity: number): void {
@@ -71,7 +64,6 @@ export class CatalogComponent implements OnInit {
   }
   
 
-  // Obtener los productos de la API
   getProducts(): void {
     this.catalogoService.getAll(this.Ordenacion, this.paginaActual, this.elementosPorPagina, this.query, this.totalPaginas)
       .subscribe({
@@ -88,7 +80,7 @@ export class CatalogComponent implements OnInit {
   }
 
   searchProducts(): void {
-    this.paginaActual = 1; // Reinicia a la primera página para la nueva búsqueda
+    this.paginaActual = 1; 
     this.getProducts();
   }
 

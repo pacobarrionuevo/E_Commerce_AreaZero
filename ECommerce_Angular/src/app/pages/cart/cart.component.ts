@@ -6,6 +6,7 @@ import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
+import { ImageService } from '../../services/image.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -20,7 +21,7 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService, private imageService: ImageService) {}
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('usuarioId');

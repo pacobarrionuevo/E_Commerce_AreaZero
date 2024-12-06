@@ -23,7 +23,6 @@ export class CarritoService {
   async associateCart(userId: number): Promise<Result<string>> {
     const body = { userId };
     return this.api.post<string>(`${this.carritoEndpoint}/associate-cart`, body, 'application/json');
-
   }
 
   // Añadir un producto al carrito
