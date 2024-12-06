@@ -3,6 +3,7 @@ import { ApiService } from './api.service';
 import { Result } from '../models/result';
 import { Carrito } from '../models/carrito';
 import { ProductoCarrito } from '../models/producto-carrito';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,37 @@ export class CarritoService {
     return result; 
   }
   
+  async localtoCart(): Promise<Result<string>> {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]'); // Obtener el carrito del almacenamiento local
+    const token = localStorage.getItem('token'); // Obtener el token del almacenamiento local
+
+    // Verificar si el token existe
+    if (!token) {
+        return Result.error(401, "Token no encontrado. No se puede realizar la solicitud.");
+    }
+
+    this.api.jwt = token;
+    const body = { products: cart };
+
+    try {
+        const result = await this.api.post<string>(`${this.carritoEndpoint}/PasaProductoAlCarrito`, body, 'application/json');
+
+        if (result.success) {
+            console.log("Productos añadidos con éxito al carrito");
+            return result;
+        }
+
+        // Manejar errores del backend
+        console.error(`Error desde el backend: ${result.error}`);
+        return result;
+
+    } catch (err) {
+        console.error("Error al enviar productos al carrito:", err);
+        return Result.error(500, "Error inesperado al enviar productos al carrito.");
+    }
+}
+
+
 
   // Obtener todos los productos en el carrito
   async getProductosCarrito(): Promise<Result<ProductoCarrito[]>> {
@@ -61,6 +93,13 @@ export class CarritoService {
     return result;
   }
   
+<<<<<<< HEAD
+=======
+  async getProductById(productId: number): Promise<Result<Product>> {
+    const result = await this.api.get<Product>(`${this.productoEndpoint}/${productId}`);
+    return result;
+  }
+>>>>>>> origin/gonza
 
   async getProductosCarritoId(carritoId: number): Promise<Result<ProductoCarrito[]>> {
     const result = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito/${carritoId}`);
@@ -96,4 +135,9 @@ export class CarritoService {
     const body = { productId, carritoId, quantity };
     return this.api.put<string>(`${this.productoCarritoEndpoint}/cambiarcantidad`, body, 'application/json');
   }
+<<<<<<< HEAD
+=======
+  
+  
+>>>>>>> origin/gonza
 }
