@@ -29,7 +29,11 @@ export class PaymentComponent {
 
   elementsOptions: StripeElementsOptions = {
     locale: 'en',
+<<<<<<< HEAD
     clientSecret: '', 
+=======
+    clientSecret: '', // Esto será inicializado dinámicamente
+>>>>>>> origin/paco_tercerarama
     appearance: {
       theme: 'flat'
     }
@@ -44,11 +48,19 @@ export class PaymentComponent {
     }
   };
 
+<<<<<<< HEAD
   stripe = injectStripe('pk_test_Dt4ZBIt...');
   paying = signal(false);
 
   ngOnInit() {
     
+=======
+  stripe = injectStripe('pk_test_Dt4ZBIt...'); // Reemplaza con tu clave pública
+  paying = signal(false);
+
+  ngOnInit() {
+    // Llamar al servicio para obtener el clientSecret
+>>>>>>> origin/paco_tercerarama
     this.checkoutService.getCreateCheckoutSession().subscribe({
       next: (response) => {
         this.elementsOptions.clientSecret = response.clientSecret;
@@ -88,10 +100,17 @@ export class PaymentComponent {
         next: (result) => {
           this.paying.set(false);
           if (result.error) {
+<<<<<<< HEAD
           
             alert({ success: false, error: result.error.message });
           } else if (result.paymentIntent.status === 'succeeded') {
             
+=======
+            // Mostrar error al usuario
+            alert({ success: false, error: result.error.message });
+          } else if (result.paymentIntent.status === 'succeeded') {
+            // Mostrar mensaje de éxito
+>>>>>>> origin/paco_tercerarama
             alert({ success: true });
           }
         },

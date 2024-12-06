@@ -96,8 +96,13 @@ export class CarritoService {
     return result;
   }
   
+<<<<<<< HEAD
   async getProductById(productId: number): Promise<Result<Product>> {
     const result = await this.api.get<Product>(`${this.productoEndpoint}/${productId}`);
+=======
+  async getProductById(productId: number): Promise<Result<ProductoCarrito[]>> {
+    const result = await this.api.get<ProductoCarrito[]>(`${this.productoEndpoint}/${productId}`);
+>>>>>>> origin/paco_tercerarama
     return result;
   }
 
@@ -135,6 +140,10 @@ export class CarritoService {
     const body = { productId, carritoId, quantity };
     return this.api.put<string>(`${this.productoCarritoEndpoint}/cambiarcantidad`, body, 'application/json');
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> origin/paco_tercerarama
   
 }

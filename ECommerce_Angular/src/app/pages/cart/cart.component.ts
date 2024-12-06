@@ -26,6 +26,14 @@ export class CartComponent implements OnInit {
     const userIdString = localStorage.getItem('userId');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
 
+<<<<<<< HEAD
+=======
+    if (this.userId) {
+      this.associateCartToUser();
+    } else {
+      console.log("Usuario no autenticado, carrito anónimo.");
+    }
+>>>>>>> origin/paco_tercerarama
     this.loadCartProducts();
   }
 
@@ -36,8 +44,13 @@ export class CartComponent implements OnInit {
   this.productosCarrito = []; // Reiniciar la lista de productos
         if (!this.userId){
           const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
+<<<<<<< HEAD
             this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
               producto: result.data, // Aquí accedemos a 'data' desde la instancia de Result
+=======
+            this.carritoService.getProductById(item.productId).then(producto => ({
+              producto,
+>>>>>>> origin/paco_tercerarama
               cantidad: item.quantity
             }))
           );
@@ -45,19 +58,59 @@ export class CartComponent implements OnInit {
           Promise.all(productRequests)
             .then(productosCarrito => {
               this.productosCarrito = productosCarrito;
+<<<<<<< HEAD
               console.log('Estructura final de productosCarrito:', this.productosCarrito);
             console.log('Contenido de localCart:', localCart);
             console.log('Datos procesados de productosCarrito:', JSON.stringify(this.productosCarrito, null, 2));
 
+=======
+              console.log('Productos cargados:', this.productosCarrito);
+>>>>>>> origin/paco_tercerarama
             })
             .catch(error => {
               console.error('Error al cargar productos del carrito:', error);
             });
+<<<<<<< HEAD
             
         }
   }
   
 
+=======
+        }
+  }
+  
+
+  async associateCartToUser(): Promise<void> {
+    if (!this.userId) {
+      this.errorMessage = 'No se encontró el ID de usuario.';
+      return;
+    }
+  
+    const carritoId = Number(localStorage.getItem('carritoId'));
+    if (!carritoId) {
+      this.errorMessage = 'No se encontró el carritoId en el almacenamiento local.';
+      return;
+    }
+  
+    this.isLoading = true;
+    this.errorMessage = '';
+    try {
+      // Llamada al servicio para asociar el carrito
+      const result = await this.carritoService.associateCart(this.userId);
+      if (result.success) {
+        console.log('Carrito anónimo asociado correctamente al usuario.');
+      } else {
+        this.errorMessage = `Error al asociar el carrito: ${result.error}`;
+      }
+    } catch (error) {
+      this.errorMessage = `Se produjo un error al asociar el carrito: ${error.message}`;
+    } finally {
+      this.isLoading = false;
+    }
+  }
+  
+>>>>>>> origin/paco_tercerarama
 
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {

@@ -6,6 +6,10 @@ export class ProductoCarrito {
   cantidad: number;
   producto: Product;
   id: any;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/paco_tercerarama
   constructor(productoId: number, carritoId: number, cantidad: number, producto: Product) {
     this.productoId = productoId;
     this.carritoId = carritoId;

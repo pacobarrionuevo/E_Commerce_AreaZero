@@ -22,6 +22,7 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
@@ -100,13 +101,32 @@ namespace E_Commerce_VS
 
             app.MapControllers();
 
-            await InitDatabaseAsync(app.Services);
+            using (IServiceScope scope = app.Services.CreateScope())
+            {
+                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
+                _dbContext.Database.EnsureCreated();
 
-            InitStripe(app.Services);
+                var seeder = new Seeder(_dbContext);
+                seeder.SeedAsync();
+            }
+            
 
-            // Empezamos a atender a las peticiones de nuestro servidor 
-            await app.RunAsync();
+            // Habilitar CORS
+            app.UseCors();
 
+<<<<<<< HEAD
+=======
+            app.UseStaticFiles();
+            app.MapControllers();
+
+
+            using (IServiceScope scope = app.Services.CreateScope())
+            {
+                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
+                _dbContext.Database.EnsureCreated();
+            }
+            app.Run();
+>>>>>>> origin/paco_tercerarama
         }
 
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
