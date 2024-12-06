@@ -19,6 +19,14 @@ public class UnitOfWork
         RepoProd = repoProd;
         RepoRev = repoRev;
         RepoCar = repoCar;
+<<<<<<< HEAD
+=======
+    }
+
+    public async Task<bool> SaveAsync()
+    {
+        return await _context.SaveChangesAsync() > 0;
+>>>>>>> origin/salperro2
     }
 
     public async Task<bool> SaveAsync()

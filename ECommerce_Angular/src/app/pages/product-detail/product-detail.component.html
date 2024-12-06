@@ -1,22 +1,28 @@
 <div class="product-detail-container" *ngIf="product">
-  <h1>{{ product.nombre }}</h1>
-  <img [src]="product.ruta" [alt]="product.nombre + ' image'" />
-  <p>Precio: {{ product.precio / 100 }}€</p>
-  <p>Identificador: {{ product.id }}</p>
-  <p>Stock: {{ product.stock }}</p> 
-  <p>Número de reseñas: {{ reviews.length }}</p>
-  <button (click)="addProductToCart(product.id, 1, 1)">Añadir al carrito</button>
-  <div class="reviews-section">
-    <h2>Reseñas</h2>
-    <div *ngFor="let review of reviews" class="review">
-      <p><strong>{{ review.fechaPublicacion | date }}</strong> - {{ review.textReview }}</p>
-      <p>Valoración AI: {{ review.label === 1 ? 'Positiva' : review.label === -1 ? 'Negativa' : 'Neutral' }}</p>
-    </div>
-    
-    <div class="add-review">
-      <h3>Añadir una reseña</h3>
-      <textarea [(ngModel)]="newReview" placeholder="Escribe tu reseña..."></textarea>
-      <button (click)="addReview()">Añadir Reseña</button>
+  <div class="product-image">
+    <img [src]="product.ruta" [alt]="product.nombre + ' image'" />
+  </div>
+  <div class="product-info">
+    <h1>{{ product.nombre }}</h1>
+    <p>Precio: {{ product.precio / 100 }}€</p>
+    <p>Identificador: {{ product.id }}</p>
+    <p>Stock: {{ product.stock }}</p>
+    <p>Descripción: {{ product.descripcion }}</p>
+    <p>Número de reseñas: {{ reviews.length }}</p>
+    <button (click)="addProductToCart(product.id, 1)">Añadir al carrito</button>
+
+    <div class="reviews-section">
+      <h2>Reseñas</h2>
+      <div *ngFor="let review of reviews" class="review">
+        <p><strong>{{ review.fechaPublicacion | date }}</strong> - {{ review.textReview }}</p>
+        <p>Valoración AI: {{ review.label === 1 ? 'Positiva' : review.label === -1 ? 'Negativa' : 'Neutral' }}</p>
+      </div>
+
+      <div class="add-review">
+        <h3>Añadir una reseña</h3>
+        <textarea [(ngModel)]="newReview" placeholder="Escribe tu reseña..."></textarea>
+        <button (click)="addReview()">Añadir Reseña</button>
+      </div>
     </div>
   </div>
 </div>

@@ -22,7 +22,6 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
@@ -101,29 +100,13 @@ namespace E_Commerce_VS
 
             app.MapControllers();
 
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
+            await InitDatabaseAsync(app.Services);
 
-                var seeder = new Seeder(_dbContext);
-                seeder.SeedAsync();
-            }
-            
+            InitStripe(app.Services);
 
-            // Habilitar CORS
-            app.UseCors();
+            // Empezamos a atender a las peticiones de nuestro servidor 
+            await app.RunAsync();
 
-            app.UseStaticFiles();
-            app.MapControllers();
-
-
-            using (IServiceScope scope = app.Services.CreateScope())
-            {
-                ProyectoDbContext _dbContext = scope.ServiceProvider.GetService<ProyectoDbContext>();
-                _dbContext.Database.EnsureCreated();
-            }
-            app.Run();
         }
 
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
