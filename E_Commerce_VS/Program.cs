@@ -10,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 using E_Commerce_VS.Services;
 using E_Commerce_VS.Models.Database.Entidades;
 using Microsoft.Extensions.ML;
-using Microsoft.Extensions.FileProviders;
 
 namespace E_Commerce_VS
 {
@@ -23,6 +22,7 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 
@@ -92,16 +92,7 @@ namespace E_Commerce_VS
 
             app.UseStaticFiles();
 
-            /*
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                    Path.Combine(Directory.GetCurrentDirectory(), "wwwrooot"))
-            });
-            */
-
-            // Habilitar CORS
-            app.UseCors();     
+            app.UseCors();
 
             // Autenticacion y Autorizacion
             app.UseAuthentication();
@@ -111,15 +102,12 @@ namespace E_Commerce_VS
 
             await InitDatabaseAsync(app.Services);
 
-            // Configuramos Stripe
             InitStripe(app.Services);
-
-            // Empezamos a atender a las peticiones de nuestro servidor 
-            await app.RunAsync();
 
             app.Run();
         }
 
+        //Métodos de Jose para iniciar la base de datos y el stripe
         static async Task InitDatabaseAsync(IServiceProvider serviceProvider)
         {
             using IServiceScope scope = serviceProvider.CreateScope();

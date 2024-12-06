@@ -115,6 +115,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
+    "Method": "CrearOrdenTemporal",
+    "RelativePath": "api/ControladorCheckout/CrearOrdenTemporal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productosCarrito",
+        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoCarritoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
+    "Method": "EmbeddedCheckout",
+    "RelativePath": "api/ControladorCheckout/embedded",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productos",
+        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
+    "Method": "HostedCheckout",
+    "RelativePath": "api/ControladorCheckout/hosted",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productos",
+        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
+    "Method": "GetCarrito",
+    "RelativePath": "api/ControladorCheckout/products",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
+    "Method": "SessionStatus",
+    "RelativePath": "api/ControladorCheckout/status/{sessionId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sessionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorModelo",
     "Method": "Predict",
     "RelativePath": "api/ControladorModelo",
@@ -352,7 +426,6 @@
     ]
   },
   {
-<<<<<<< HEAD
     "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
     "Method": "GetProductosCarrito",
     "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{carritoId}",
@@ -369,8 +442,6 @@
     "ReturnTypes": []
   },
   {
-=======
->>>>>>> origin/Fitin
     "ContainingType": "E_Commerce_VS.Controllers.ControladorReview",
     "Method": "GetAllReviews",
     "RelativePath": "api/ControladorReview",

@@ -6,17 +6,16 @@
     <button (click)="reload()">Volver a comprar</button>
   </section>
 }
-@else if (product) {
-    <div *ngFor="let productoCarrito of productosCarrito" class="cart-item">
+@else if (carrito) {
   <section>
     <h2>Vas a comprar esto:</h2>
-    <h3>{{ productoCarrito.producto.nombre }}</h3>
-    <h4>{{productoCarrito.producto.precio}}€</h4>
+    <p>{{carrito.id}}</p>
+    <p>{{carrito.productoCarrito}}</p>
+    <p>{{carrito.userId}}</p>
 
     <button (click)="hostedCheckout()">Comprar en página externa</button>
     <button (click)="embeddedCheckout()">Comprar embebido</button>
   </section>
-</div>
 }
 
 <dialog #checkoutDialog>

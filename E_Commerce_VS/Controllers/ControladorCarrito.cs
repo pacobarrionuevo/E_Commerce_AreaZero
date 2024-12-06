@@ -16,10 +16,12 @@ namespace E_Commerce_VS.Controllers
         private readonly ProyectoDbContext _context;
         private readonly UnitOfWork _unitOfWork;
 
-        public ControladorCarrito(ProyectoDbContext dbContext)
+        public ControladorCarrito(ProyectoDbContext dbContext, UnitOfWork unitOfWork)
         {
             _context = dbContext;
+            _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
+
 
         [HttpGet("carritos")]
         public async Task<IActionResult> GetCarritos()
@@ -215,7 +217,4 @@ namespace E_Commerce_VS.Controllers
             return Ok(carrito.ProductoCarrito);
         }
     }
-
-
-}
-
+    }
