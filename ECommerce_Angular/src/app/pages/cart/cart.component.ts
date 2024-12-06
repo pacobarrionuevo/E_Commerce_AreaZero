@@ -75,6 +75,7 @@ export class CartComponent implements OnInit {
 
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
+    if (!this.userId) {
     const existingCart = localStorage.getItem('cart');
     let cart: { productId: number, quantity: number }[] = [];
       cart = JSON.parse(existingCart);
@@ -83,22 +84,18 @@ export class CartComponent implements OnInit {
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log(`Producto con ID ${productId} eliminado del localStorage`);
         this.loadCartProducts();
-      return; 
-      
-  
+    } else if (this.userId)
+   {
     // Si no hay productos en el localStorage o no se encuentra el producto, manejar el servidor
     try {
-      const result = await this.carritoService.removeProductFromCart(productId, carritoId);
-      if (result.success) {
+      const result = await this.carritoService.removeProductFromCart(productId, this.userId);
         // Actualizar la lista de productos en memoria
         this.productosCarrito = this.productosCarrito.filter(p => p.productoId !== productId);
         console.log(`Producto con ID ${productId} eliminado del servidor`);
-      } else {
-        this.errorMessage = `Error al eliminar el producto: ${result.error}`;
-      }
     } catch (error) {
       this.errorMessage = `Se produjo un error: ${error.message}`;
     }
+   } return; 
   }
   
   // Modificar la cantidad de un producto
