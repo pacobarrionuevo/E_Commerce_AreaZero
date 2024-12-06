@@ -51,15 +51,15 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest("La cantidad debe ser mayor a 0.");
             }
 
-            var producto = await _context.Productos.FindAsync(request.ProductId);
+            // Buscar el producto utilizando el repositorio
+            var producto = await _unitOfWork.RepoProd.GetByIdAsync(request.ProductId);
             if (producto == null)
             {
                 return BadRequest("El producto no existe.");
             }
 
-            var carrito = await _context.Carritos
-                .Include(c => c.ProductoCarrito)
-                .FirstOrDefaultAsync(c => c.UserId == request.UserId);
+            // Buscar el carrito del usuario
+            var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(request.UserId);
 
             if (carrito == null)
             {
@@ -69,8 +69,7 @@ namespace E_Commerce_VS.Controllers
                     ProductoCarrito = new List<ProductoCarrito>()
                 };
 
-                await _context.Carritos.AddAsync(carrito);
-                await _context.SaveChangesAsync();
+                await _unitOfWork.RepoCar.InsertAsync(carrito);
             }
 
             var productoCarrito = carrito.ProductoCarrito.FirstOrDefault(pc => pc.ProductoId == request.ProductId);
@@ -89,67 +88,9 @@ namespace E_Commerce_VS.Controllers
                 carrito.ProductoCarrito.Add(productoCarrito);
             }
 
-            await _context.SaveChangesAsync();
+            await _unitOfWork.SaveAsync();
             return Ok("Producto añadido o actualizado en el carrito.");
         }
-
-        // Asociar un carrito anónimo a un usuario registrado
-        [HttpPost("associate-cart")]
-        public async Task<IActionResult> AssociateCart(int userId)
-        {
-            // Buscar el carrito anónimo (sin UserId)
-            var carritoAnonimo = await _context.Carritos
-                .Include(c => c.ProductoCarrito)
-                .FirstOrDefaultAsync(c => c.UserId == null);
-
-            if (carritoAnonimo != null)
-            {
-                // Buscar el carrito del usuario registrado, si existe
-                var carritoUsuario = await _context.Carritos
-                    .Include(c => c.ProductoCarrito)
-                    .FirstOrDefaultAsync(c => c.UserId == userId);
-
-                if (carritoUsuario == null)
-                {
-                    // Si el usuario no tiene carrito, asignar el carrito anónimo
-                    carritoAnonimo.UserId = userId;
-                }
-                else
-                {
-                    // Si ya tiene carrito, combinar productos
-                    foreach (var productoAnonimo in carritoAnonimo.ProductoCarrito)
-                    {
-                        var productoEnCarrito = carritoUsuario.ProductoCarrito
-                            .FirstOrDefault(pc => pc.ProductoId == productoAnonimo.ProductoId);
-
-                        if (productoEnCarrito != null)
-                        {
-                            // Sumar cantidades si el producto ya está en el carrito del usuario
-                            productoEnCarrito.Cantidad += productoAnonimo.Cantidad;
-                        }
-                        else
-                        {
-                            // Añadir el producto al carrito del usuario
-                            carritoUsuario.ProductoCarrito.Add(new ProductoCarrito
-                            {
-                                ProductoId = productoAnonimo.ProductoId,
-                                Cantidad = productoAnonimo.Cantidad
-                            });
-                        }
-                    }
-
-                    // Eliminar el carrito anónimo después de combinar
-                    _context.Carritos.Remove(carritoAnonimo);
-                }
-
-                await _context.SaveChangesAsync();
-                return Ok("Carrito asociado al usuario.");
-            }
-
-            return BadRequest("No hay un carrito anónimo para asociar.");
-        }
-
-
         [Authorize]
         [HttpPost("PasaProductoAlCarrito")]
         public async Task<IActionResult> PasaProductoAlCarrito([FromBody] List<ProductoCarritoLocal> productos)
@@ -175,6 +116,9 @@ namespace E_Commerce_VS.Controllers
                     UserId = userId,
                     ProductoCarrito = new List<ProductoCarrito>()
                 };
+
+                // Agregar el nuevo carrito al contexto
+                _unitOfWork.Context.Carritos.Add(carrito);
             }
 
             // Iterar por los productos recibidos

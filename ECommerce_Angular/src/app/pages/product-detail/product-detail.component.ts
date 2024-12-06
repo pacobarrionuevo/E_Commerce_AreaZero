@@ -72,16 +72,16 @@ export class ProductDetailComponent implements OnInit {
       localStorage.setItem('cart', JSON.stringify(cart));
     }
   
-    // También puedes llamar al servicio para manejar carritos en el servidor
-    //this.carritoService.addProductToCart(productId, this.userId, quantity)
-      //.then(result => {
-        //console.log('Producto añadido al carrito', result);
-      //})
-      //.catch(error => {
-        //console.error('Error al añadir producto al carrito', error);
-      //});
+    if (this.usuarioId!=null){
+      this.carritoService.addProductToCart(productId, this.usuarioId, quantity)
+      .then(result => {
+        console.log('Producto añadido al carrito', result);
+      })
+      .catch(error => {
+        console.error('Error al añadir producto al carrito', error);
+      });
   }
-
+  }
   getProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {

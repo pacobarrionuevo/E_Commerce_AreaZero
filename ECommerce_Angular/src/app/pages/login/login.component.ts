@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common'; 
-
+import { CarritoService } from '../../services/carrito.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   jwt: string | null = ''; 
   usuarioId: number | null = null;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private carritoService: CarritoService) {}
 
   ngOnInit(): void {
     // Obtenemos el token desde el almacenamiento local en OnInit
@@ -42,6 +42,8 @@ export class LoginComponent implements OnInit {
         this.usuarioId = result.usuarioId;
 
         console.log("Inicio de sesión exitoso.");
+        this.carritoService.localtoCart();
+        localStorage.removeItem('cart');
       } else {
         console.error("No se recibió un token de acceso.");
       }
