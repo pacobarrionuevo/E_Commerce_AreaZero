@@ -21,7 +21,7 @@ export class AuthService {
   login(authData: AuthRequest): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/login`, authData);
   }
-//esto hay que mirarlo bien
+
   getUserDataFromToken(): any {
     const token = localStorage.getItem('accessToken');
     console.log('JWT Token:', token); 
@@ -31,20 +31,21 @@ export class AuthService {
         console.error('El token no está bien estructurado.');
         return null;
       }
-      //el payload hay que cambiarlo pq el foro que he mirao no ta mu bien que digamos 
+      //Payload del token para controlar bien el token en la vista usuario
       const payloadBase64 = parts[1];
       console.log('Payload Base64:', payloadBase64); 
+
       const payloadJson = atob(payloadBase64);
       console.log('Payload JSON:', payloadJson); 
 
       try {
         const payload = JSON.parse(payloadJson);
         console.log('Payload del JWT:', payload);
-
         return {
-          name: payload.name || 'Nombre no disponible',
-          email: payload.email || 'Correo no disponible',
-          address: payload.address || 'Dirección no disponible'
+          id: payload.id || 'ID no disponible',
+          name: payload.Nombre || 'Nombre no disponible',
+          email: payload.Email || 'Correo no disponible',
+          address: payload.Direccion || 'Dirección no disponible'
         };
       } catch (e) {
         console.error('Error al parsear el JSON del payload:', e);
@@ -53,4 +54,8 @@ export class AuthService {
     }
     return null;
   }
+  updateUserData(user: any): Observable<any> {
+    return this.http.post<any>(`${this.URL}ControladorUsuario/update`, user);
+  }
+  
 }
