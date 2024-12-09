@@ -26,32 +26,35 @@ namespace E_Commerce_VS.Controllers
             _dbContext = contexto;
         }
 
-        [HttpGet("products")]
-        public async Task<IActionResult> GetCarrito()
-        {
-            var carritos = await _dbContext.Set<Carrito>()
-                .Select(c => new
-                {
-                    c.Id,
-                    c.UserId,
-                    Productos = c.ProductoCarrito.Select(pc => new
+            [HttpGet("products")]
+            public async Task<IActionResult> GetOrdenesTemporales()
+            {
+                // Obtener todas las órdenes temporales activas
+                var ordenesTemporales = await _dbContext.Set<OrdenTemporal>()
+                    .Select(o => new
                     {
-                        pc.ProductoId,
-                        pc.Cantidad,
-                        Producto = new ProductoDto
+                        o.Id,
+                        o.UsuarioId,
+                        Productos = o.Productos.Select(pc => new
                         {
-                            Id = pc.Producto.Id,
-                            Nombre = pc.Producto.Nombre,
-                            Ruta = pc.Producto.Ruta,
-                            Precio = pc.Producto.Precio,
-                            Stock = pc.Producto.Stock
-                        }
+                            pc.ProductoId,
+                            pc.Cantidad,
+                            Producto = new ProductoDto
+                            {
+                                Id = pc.Producto.Id,
+                                Nombre = pc.Producto.Nombre,
+                                Ruta = pc.Producto.Ruta,
+                                Precio = pc.Producto.Precio,
+                                Stock = pc.Producto.Stock
+                            }
+                        })
                     })
-                })
-                .ToListAsync();
+               
+                    .ToListAsync();
 
-            return Ok(carritos);
-        }
+                return Ok(ordenesTemporales);
+            }
+
 
         [HttpPost("hosted")]
         public async Task<ActionResult> HostedCheckout([FromBody] List<ProductoDto> productos)
@@ -136,58 +139,132 @@ namespace E_Commerce_VS.Controllers
 
             return Ok(new { status = session.Status, customerEmail = session.CustomerEmail });
         }
-
         [HttpPost("CrearOrdenTemporal")]
-        public async Task<ActionResult> CrearOrdenTemporal([FromBody] List<ProductoCarritoDto> productosCarrito)
+        public async Task<IActionResult> CrearOrdenTemporal([FromBody] List<ProductoCheckoutDto>? productosCarrito, int? userId, int? ordenId)
         {
-            if (productosCarrito == null || !productosCarrito.Any())
-                return BadRequest("El carrito está vacío.");
-
-            var ordenTemporal = new OrdenTemporal
+            if ((productosCarrito == null || !productosCarrito.Any()) && userId.HasValue)
             {
-                FechaCreacion = DateTime.UtcNow,
-                FechaExpiracion = DateTime.UtcNow.AddMinutes(5), 
-                Productos = new List<ProductoOrdenTemporal>()
-            };
+                var carritoUsuario = await _dbContext.Carritos
+                    .Include(c => c.ProductoCarrito)
+                    .ThenInclude(cp => cp.Producto)
+                    .FirstOrDefaultAsync(c => c.UserId == userId);
 
-            foreach (var productoCarrito in productosCarrito)
-            {
-                var producto = await _dbContext.Productos.FindAsync(productoCarrito.ProductoId);
-
-                if (producto == null)
-                    return NotFound($"Producto con ID {productoCarrito.ProductoId} no encontrado.");
-
-                if (producto.Stock < productoCarrito.Cantidad)
+                if (carritoUsuario == null || !carritoUsuario.ProductoCarrito.Any())
                 {
-                    return BadRequest(new
-                    {
-                        Mensaje = $"No hay suficiente stock para el producto: {producto.Nombre}. Disponible: {producto.Stock}, Solicitado: {productoCarrito.Cantidad}"
-                    });
+                    Console.WriteLine("No se encontraron productos en el carrito del usuario.");
+                    return BadRequest("No se encontraron productos en el carrito del usuario.");
                 }
 
-                producto.Stock -= productoCarrito.Cantidad;
-
-                ordenTemporal.Productos.Add(new ProductoOrdenTemporal
+                productosCarrito = carritoUsuario.ProductoCarrito.Select(cp => new ProductoCheckoutDto
                 {
-                    ProductoId = (int)producto.Id,
-                    Cantidad = productoCarrito.Cantidad,
-                    PrecioUnitario = producto.Precio
-                });
+                    ProductoId = cp.ProductoId,
+                    Cantidad = cp.Cantidad,
+                }).ToList();
+
+                Console.WriteLine($"Productos recuperados: {productosCarrito.Count}");
             }
 
-            _dbContext.OrdenesTemporales.Add(ordenTemporal);
+            if (productosCarrito == null || !productosCarrito.Any())
+            {
+                return BadRequest("No se proporcionaron productos válidos para crear la orden temporal.");
+            }
+
+
+            if (userId.HasValue && !await _dbContext.Set<Usuario>().AnyAsync(u => u.UsuarioId == userId))
+            {
+                return BadRequest($"El usuario con ID {userId} no existe.");
+            }
+
+            // Resto del método...
+        
+
+
+            // Verificar si tanto userId como ordenId están presentes
+            if (ordenId.HasValue)
+            {
+                // Buscar la orden activa con el ordenId
+                var ordenActiva = await _dbContext.OrdenesTemporales
+                    .Include(o => o.Productos)
+                    .FirstOrDefaultAsync(o => o.Id == ordenId && o.FechaExpiracion > DateTime.UtcNow);
+
+                if (ordenActiva != null)
+                {
+                    // Si la orden existe y está activa, la actualizamos
+
+                    // Si se proporciona un userId, lo asignamos a la orden
+                    if (userId.HasValue)
+                    {
+                        ordenActiva.UsuarioId = userId.Value;
+                    }
+
+                    // Actualizamos los productos en la orden activa
+                    foreach (var productoCarrito in productosCarrito)
+                    {
+                        var productoEnOrden = ordenActiva.Productos
+                            .FirstOrDefault(p => p.ProductoId == productoCarrito.ProductoId);
+
+                        if (productoEnOrden != null)
+                        {
+                            // Si el producto ya está en la orden, actualizamos la cantidad
+                            productoEnOrden.Cantidad = productoCarrito.Cantidad;
+                        }
+                        else
+                        {
+                            // Si el producto no está en la orden, lo añadimos
+                            ordenActiva.Productos.Add(new ProductoCarrito
+                            {
+                                ProductoId = productoCarrito.ProductoId,
+                                Cantidad = productoCarrito.Cantidad,
+                            });
+                        }
+                    }
+
+                    // Eliminar productos que ya no están en el carrito
+                    ordenActiva.Productos.RemoveAll(p =>
+                        !productosCarrito.Any(pc => pc.ProductoId == p.ProductoId));
+
+                    // Actualizar la fecha de expiración
+                    ordenActiva.FechaExpiracion = DateTime.UtcNow.AddMinutes(30);
+
+                    // Guardar los cambios en la base de datos
+                    await _dbContext.SaveChangesAsync();
+
+                    return Ok(new
+                    {
+                        Mensaje = "Orden temporal actualizada.",
+                        OrdenId = ordenActiva.Id
+                    });
+                }
+                else
+                {
+                    // Si la orden no existe o está expirada
+                    return BadRequest("La orden temporal no está activa o ha expirado.");
+                }
+            }
+
+            // Si no existe la orden temporal con el ordenId (sessionId), creamos una nueva orden temporal
+            var nuevaOrden = new OrdenTemporal
+            {
+                UsuarioId = userId,
+                Productos = productosCarrito.Select(p => new ProductoCarrito
+                {
+                    ProductoId = p.ProductoId,
+                    Cantidad = p.Cantidad,
+                }).ToList(),
+                FechaExpiracion = DateTime.UtcNow.AddMinutes(30)
+            };
+
+            // Añadir la nueva orden temporal a la base de datos
+            _dbContext.OrdenesTemporales.Add(nuevaOrden);
             await _dbContext.SaveChangesAsync();
 
             return Ok(new
             {
-                OrdenId = ordenTemporal.Id,
-                Mensaje = "Orden temporal creada exitosamente.",
-                ProductosReservados = ordenTemporal.Productos.Select(p => new
-                {
-                    p.ProductoId,
-                    p.Cantidad
-                })
+                Mensaje = "Nueva orden temporal creada.",
+                OrdenId = nuevaOrden.Id
             });
         }
+
+
     }
 }
