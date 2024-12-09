@@ -121,5 +121,40 @@ export class CarritoService {
     return this.api.put<string>(`${this.productoCarritoEndpoint}/cambiarcantidad`, body, 'application/json');
   }
   
+  //////////////////////
+  //PARA IR AL CHECKOUT
+  //////////////////////
+  async goToCheckout(paymentMethod: string): Promise<Result<{ orderId: number }>> {
+    const token = localStorage.getItem('token');
   
+    // Verificar si el token existe para autenticar al usuario
+    if (!token) {
+      return Result.error(401, "Token no encontrado. No se puede proceder al checkout.");
+    }
+  
+    this.api.jwt = token;
+  
+    try {
+      // Llamar al endpoint para crear o recuperar la orden temporal
+      const response = await this.api.post<{ orderId: number }>(
+        `${this.carritoEndpoint}/crearOrdenTemporal`,
+        null, // Asumimos que no se requiere body en esta llamada
+        'application/json'
+      );
+  
+      if (response.success) {
+        console.log(`Orden temporal creada exitosamente con ID: ${response.data.orderId}`);
+        return response;
+      } else {
+        console.error('Error desde el backend:', response.error);
+        return response;
+      }
+    } catch (err) {
+      console.error('Error al intentar crear la orden temporal:', err);
+      return Result.error(500, "Error inesperado al crear la orden temporal.");
+    }
+  }
+  
+
+
 }
