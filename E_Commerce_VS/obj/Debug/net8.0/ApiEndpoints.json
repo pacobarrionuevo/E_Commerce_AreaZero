@@ -531,6 +531,22 @@
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorUsuario",
+    "Method": "UpdateUser",
+    "RelativePath": "api/ControladorUsuario/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userUpdateDto",
+        "Type": "E_Commerce_VS.Models.Dto.UserUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorUsuario",
     "Method": "GetUser",
     "RelativePath": "api/ControladorUsuario/userlist",
     "HttpMethod": "GET",
