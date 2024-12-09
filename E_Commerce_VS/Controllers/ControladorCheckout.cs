@@ -139,10 +139,46 @@ namespace E_Commerce_VS.Controllers
 
             return Ok(new { status = session.Status, customerEmail = session.CustomerEmail });
         }
-
         [HttpPost("CrearOrdenTemporal")]
-        public async Task<IActionResult> CrearOrdenTemporal([FromBody] List<ProductoCheckoutDto> productosCarrito, int? userId, int? ordenId)
+        public async Task<IActionResult> CrearOrdenTemporal([FromBody] List<ProductoCheckoutDto>? productosCarrito, int? userId, int? ordenId)
         {
+            if ((productosCarrito == null || !productosCarrito.Any()) && userId.HasValue)
+            {
+                var carritoUsuario = await _dbContext.Carritos
+                    .Include(c => c.ProductoCarrito)
+                    .ThenInclude(cp => cp.Producto)
+                    .FirstOrDefaultAsync(c => c.UserId == userId);
+
+                if (carritoUsuario == null || !carritoUsuario.ProductoCarrito.Any())
+                {
+                    Console.WriteLine("No se encontraron productos en el carrito del usuario.");
+                    return BadRequest("No se encontraron productos en el carrito del usuario.");
+                }
+
+                productosCarrito = carritoUsuario.ProductoCarrito.Select(cp => new ProductoCheckoutDto
+                {
+                    ProductoId = cp.ProductoId,
+                    Cantidad = cp.Cantidad,
+                }).ToList();
+
+                Console.WriteLine($"Productos recuperados: {productosCarrito.Count}");
+            }
+
+            if (productosCarrito == null || !productosCarrito.Any())
+            {
+                return BadRequest("No se proporcionaron productos válidos para crear la orden temporal.");
+            }
+
+
+            if (userId.HasValue && !await _dbContext.Set<Usuario>().AnyAsync(u => u.UsuarioId == userId))
+            {
+                return BadRequest($"El usuario con ID {userId} no existe.");
+            }
+
+            // Resto del método...
+        
+
+
             // Verificar si tanto userId como ordenId están presentes
             if (ordenId.HasValue)
             {
@@ -228,6 +264,7 @@ namespace E_Commerce_VS.Controllers
                 OrdenId = nuevaOrden.Id
             });
         }
+
 
     }
 }

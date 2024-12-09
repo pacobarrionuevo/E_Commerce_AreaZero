@@ -125,7 +125,7 @@
       {
         "Name": "productosCarrito",
         "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoCheckoutDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "userId",

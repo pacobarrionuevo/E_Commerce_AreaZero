@@ -2,7 +2,7 @@
 {
     public class ProductoCheckoutDto
     {
-        public long ProductoId { get; set; } 
+        public long? ProductoId { get; set; } 
         public int Cantidad { get; set; }   
     }
 }
