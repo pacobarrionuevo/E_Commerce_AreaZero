@@ -20,12 +20,11 @@ public class UnitOfWork
         RepoProd = repoProd;
         RepoRev = repoRev;
         RepoCar = repoCar;
-        RepoOT = repoOT;
+
     }
 
     public async Task<bool> SaveAsync()
     {
         return await _context.SaveChangesAsync() > 0;
     }
-
 }

@@ -6,6 +6,7 @@ import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
+import { CheckoutService } from '../../services/checkout.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -20,14 +21,25 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService, private checkoutService: CheckoutService) {}
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('usuarioId');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
 
     this.loadCartProducts();
-  }
+
+    // Llamar a crearOrdenTemporal para crear o actualizar la orden temporal
+    this.checkoutService.crearOrdenTemporal().subscribe({
+        next: (response) => {
+            console.log('Orden temporal creada o actualizada correctamente:', response);
+        },
+        error: (error) => {
+            console.error('Error al crear la orden temporal:', error);
+        }
+    });
+}
+
 
   // Cargar los productos del carrito
   loadCartProducts(): void {
@@ -74,8 +86,10 @@ export class CartComponent implements OnInit {
   
 
 
+
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
+    if (!this.userId) {
     const existingCart = localStorage.getItem('cart');
     let cart: { productId: number, quantity: number }[] = [];
       cart = JSON.parse(existingCart);
@@ -84,22 +98,18 @@ export class CartComponent implements OnInit {
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log(`Producto con ID ${productId} eliminado del localStorage`);
         this.loadCartProducts();
-      return; 
-      
-  
+    } else if (this.userId)
+   {
     // Si no hay productos en el localStorage o no se encuentra el producto, manejar el servidor
     try {
-      const result = await this.carritoService.removeProductFromCart(productId, carritoId);
-      if (result.success) {
+      const result = await this.carritoService.removeProductFromCart(productId, this.userId);
         // Actualizar la lista de productos en memoria
         this.productosCarrito = this.productosCarrito.filter(p => p.productoId !== productId);
         console.log(`Producto con ID ${productId} eliminado del servidor`);
-      } else {
-        this.errorMessage = `Error al eliminar el producto: ${result.error}`;
-      }
     } catch (error) {
       this.errorMessage = `Se produjo un error: ${error.message}`;
     }
+   } return; 
   }
   
   // Modificar la cantidad de un producto

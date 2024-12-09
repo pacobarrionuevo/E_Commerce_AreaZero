@@ -25,22 +25,25 @@ namespace E_Commerce_VS.Controllers
             return await _context.ProductoCarritos.Include(pc => pc.Producto).ToListAsync();
         }
 
-        // Eliminar un producto del carrito
         [HttpPut("eliminarproductocarrito")]
         public async Task<IActionResult> DeleteProduct([FromBody] DeleteProductDto request)
         {
+            // Buscar el carrito asociado al usuario
+            var carrito = await _context.Carritos
+                .FirstOrDefaultAsync(c => c.UserId == request.UserId);
+
+            // Buscar el producto en el carrito
             var productoCarrito = await _context.ProductoCarritos
-                .FirstOrDefaultAsync(pc => pc.ProductoId == request.ProductId && pc.CarritoId == request.CarritoId);
+                .FirstOrDefaultAsync(pc => pc.ProductoId == request.ProductId && pc.CarritoId == carrito.Id);
 
-            if (productoCarrito == null)
-            {
-                return NotFound("Producto no encontrado en el carrito.");
-            }
-
+            // Eliminarlo
             _context.ProductoCarritos.Remove(productoCarrito);
             await _context.SaveChangesAsync();
+
             return Ok("Producto eliminado del carrito.");
         }
+
+
 
 
         [HttpPut("cambiarcantidad")]

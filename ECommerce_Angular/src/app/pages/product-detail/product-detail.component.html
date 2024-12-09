@@ -7,6 +7,7 @@
     <p>Precio: {{ product.precio / 100 }}€</p>
     <p>Identificador: {{ product.id }}</p>
     <p>Stock: {{ product.stock }}</p>
+    <p>Descripción: {{ product.descripcion }}</p>
     <p>Número de reseñas: {{ reviews.length }}</p>
     <button (click)="addProductToCart(product.id, 1)">Añadir al carrito</button>
 
