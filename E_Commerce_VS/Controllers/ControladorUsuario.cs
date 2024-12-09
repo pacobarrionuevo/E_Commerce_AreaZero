@@ -85,43 +85,46 @@ namespace E_Commerce_VS.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginDto userLoginDto)
         {
-            foreach (Usuario userList in _context.Usuarios.ToList())
+            var user = _context.Usuarios.FirstOrDefault(u => u.Email == userLoginDto.Email);
+            if (user == null)
             {
-                if (userList.Email == userLoginDto.Email)
-                {
-                    var result = PasswordHelper.Hash(userLoginDto.Password);
-                    if (userList.Password == result)
-                    {
-                        // Crear el Token
-                        var tokenDescriptor = new SecurityTokenDescriptor
-                        {
-                            // Datos para autorizar al usuario
-                            Claims = new Dictionary<string, object>
-                            {
-                                {"id", userList.UsuarioId},
-                                {"Nombre", userList.Nombre},
-                                {"Email", userList.Email},
-                                {"Direccion", userList.Direccion}
-                            },
-                            // Caducidad del Token
-                            Expires = DateTime.UtcNow.AddDays(5),
-                            // Clave y algoritmo de firmado
-                            SigningCredentials = new SigningCredentials(
-                                _tokenParameters.IssuerSigningKey,
-                                SecurityAlgorithms.HmacSha256Signature)
-                        };
-
-                        // Crear el token y devolverlo al usuario logueado
-                        JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
-                        SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
-                        string accessToken = tokenHandler.WriteToken(token);
-
-                        return Ok(new { StringToken = accessToken, userList.UsuarioId });
-                    }
-                }
+                return Unauthorized("Usuario no existe");
             }
-            return Unauthorized("Usuario no existe");
+
+            var hashedPassword = PasswordHelper.Hash(userLoginDto.Password);
+            Console.WriteLine($"Hashed Password: {hashedPassword}");
+            if (user.Password != hashedPassword)
+            {
+                return Unauthorized("Contraseña incorrecta");
+            }
+
+            // Crear el Token
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                // Datos para autorizar al usuario
+                Claims = new Dictionary<string, object>
+        {
+            {"id", user.UsuarioId},
+            {"Nombre", user.Nombre},
+            {"Email", user.Email},
+            {"Direccion", user.Direccion}
+        },
+                // Caducidad del Token
+                Expires = DateTime.UtcNow.AddDays(5),
+                // Clave y algoritmo de firmado
+                SigningCredentials = new SigningCredentials(
+                    _tokenParameters.IssuerSigningKey,
+                    SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            // Crear el token y devolverlo al usuario logueado
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
+            string accessToken = tokenHandler.WriteToken(token);
+
+            return Ok(new { StringToken = accessToken, user.UsuarioId });
         }
+
         [HttpPost("update")]
         public async Task<IActionResult> UpdateUser([FromBody] UserUpdateDto userUpdateDto)
         {
