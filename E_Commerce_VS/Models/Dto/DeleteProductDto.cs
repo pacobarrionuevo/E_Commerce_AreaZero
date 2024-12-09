@@ -3,7 +3,7 @@
     public class DeleteProductDto
     {
         public long ProductId { get; set; }
-        public int CarritoId { get; set; }
+        public long UserId { get; set; }
     }
 
 }

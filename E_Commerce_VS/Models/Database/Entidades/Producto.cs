@@ -7,7 +7,7 @@
         public string Ruta { get; set; }
         public int Precio { get; set; }
         public int Stock { get; set; }
-
+        public string Descripcion { get; set; }
         public ICollection<Review> Reviews { get; set; } = new List<Review>();
 
     }

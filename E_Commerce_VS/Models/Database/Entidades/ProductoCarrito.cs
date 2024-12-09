@@ -6,9 +6,10 @@
 
         public long? ProductoId { get; set; }
         public int? CarritoId { get; set; }
-        public int? Cantidad { get; set; }
+        public int Cantidad { get; set; }
+        public int PrecioUnitario { get; set; }
 
-        
+
         public Carrito Carrito { get; set; }
         public Producto Producto { get; set; }
     }

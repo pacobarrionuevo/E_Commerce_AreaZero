@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
   constructor(private carritoService: CarritoService) {}
 
   ngOnInit(): void {
-    const userIdString = localStorage.getItem('userId');
+    const userIdString = localStorage.getItem('usuarioId');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
 
     this.loadCartProducts();
@@ -31,36 +31,53 @@ export class CartComponent implements OnInit {
 
   // Cargar los productos del carrito
   loadCartProducts(): void {
-  const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
-  
-  this.productosCarrito = []; // Reiniciar la lista de productos
-        if (!this.userId){
-          const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
-            this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
-              producto: result.data, // Aquí accedemos a 'data' desde la instancia de Result
-              cantidad: item.quantity
-            }))
-          );
-      
-          Promise.all(productRequests)
-            .then(productosCarrito => {
-              this.productosCarrito = productosCarrito;
-              console.log('Estructura final de productosCarrito:', this.productosCarrito);
-            console.log('Contenido de localCart:', localCart);
-            console.log('Datos procesados de productosCarrito:', JSON.stringify(this.productosCarrito, null, 2));
+    this.productosCarrito = []; // Reiniciar la lista de productos
 
-            })
-            .catch(error => {
-              console.error('Error al cargar productos del carrito:', error);
-            });
-            
-        }
+    if (this.userId) {
+      // Si hay un usuario autenticado, cargar productos desde el servidor
+      this.carritoService.getProductosCarrito()
+        .then(result => {
+          if (result.success) {
+            this.productosCarrito = result.data;
+          } else {
+            console.error('Error al cargar productos del servidor:', result.error);
+          }
+        })
+        .catch(error => {
+          console.error('Error en el servidor:', error);
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
+    } else {
+      // Si no hay usuario autenticado, cargar productos desde el localStorage
+      const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
+        this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
+          producto: result.data,
+          cantidad: item.quantity
+        }))
+      );
+
+      Promise.all(productRequests)
+        .then(productos => {
+          this.productosCarrito = productos;
+        })
+        .catch(error => {
+          console.error('Error al cargar productos locales:', error);
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
+    }
   }
   
 
 
+
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
+    if (!this.userId) {
     const existingCart = localStorage.getItem('cart');
     let cart: { productId: number, quantity: number }[] = [];
       cart = JSON.parse(existingCart);
@@ -69,22 +86,18 @@ export class CartComponent implements OnInit {
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log(`Producto con ID ${productId} eliminado del localStorage`);
         this.loadCartProducts();
-      return; 
-      
-  
+    } else if (this.userId)
+   {
     // Si no hay productos en el localStorage o no se encuentra el producto, manejar el servidor
     try {
-      const result = await this.carritoService.removeProductFromCart(productId, carritoId);
-      if (result.success) {
+      const result = await this.carritoService.removeProductFromCart(productId, this.userId);
         // Actualizar la lista de productos en memoria
         this.productosCarrito = this.productosCarrito.filter(p => p.productoId !== productId);
         console.log(`Producto con ID ${productId} eliminado del servidor`);
-      } else {
-        this.errorMessage = `Error al eliminar el producto: ${result.error}`;
-      }
     } catch (error) {
       this.errorMessage = `Se produjo un error: ${error.message}`;
     }
+   } return; 
   }
   
   // Modificar la cantidad de un producto

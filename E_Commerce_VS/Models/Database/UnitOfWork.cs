@@ -8,17 +8,19 @@ public class UnitOfWork
     public RepositorioProducto RepoProd { get; init; }
     public RepositorioReview RepoRev { get; init; }
     public RepositorioCarrito RepoCar { get; init; }
+    public RepositorioOrdenTemporal RepoOT { get; init; }
 
     // Exponer el DbContext
     public ProyectoDbContext Context => _context;
 
-    public UnitOfWork(ProyectoDbContext context, RepositorioProducto repoProd, RepositorioReview repoRev, RepositorioCarrito repoCar)
+    public UnitOfWork(ProyectoDbContext context, RepositorioProducto repoProd, RepositorioReview repoRev, RepositorioCarrito repoCar, RepositorioOrdenTemporal repoOT)
     {
         _context = context;
 
         RepoProd = repoProd;
         RepoRev = repoRev;
         RepoCar = repoCar;
+
     }
 
     public async Task<bool> SaveAsync()
