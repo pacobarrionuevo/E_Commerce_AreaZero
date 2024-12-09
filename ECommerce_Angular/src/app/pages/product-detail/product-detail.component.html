@@ -9,7 +9,7 @@
     <p>Stock: {{ product.stock }}</p>
     <p>Descripción: {{ product.descripcion }}</p>
     <p>Número de reseñas: {{ reviews.length }}</p>
-    <p>Media de valoraciones: {{ Media }} {{ emoji() }}</p> 
+    <p>Media de valoraciones:{{ emoji() }}</p> 
     <button (click)="addProductToCart(product.id, 1)">Añadir al carrito</button>
 
     <div class="reviews-section">

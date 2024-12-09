@@ -147,7 +147,7 @@ export class ProductDetailComponent implements OnInit {
     } else if (label === 0) {
       return '😐';  
     } else if (label === -1) {
-      return '😞'; 
+      return '🤮'; 
     } else {
       return '';
     }
@@ -155,7 +155,7 @@ export class ProductDetailComponent implements OnInit {
 
   emoji(): string {
     if (this.Media <= 1.66) {
-      return '😞';
+      return '🤮';
     } else if (this.Media <= 3.33) {
       return '😐';
     } else {
