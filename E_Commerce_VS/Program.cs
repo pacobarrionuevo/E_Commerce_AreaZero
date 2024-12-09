@@ -22,7 +22,6 @@ namespace E_Commerce_VS
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
 

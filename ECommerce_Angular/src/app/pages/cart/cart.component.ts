@@ -6,6 +6,7 @@ import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
+import { ImageService } from '../../services/image.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -20,7 +21,7 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService, private imageService: ImageService) {}
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('usuarioId');
@@ -76,7 +77,6 @@ export class CartComponent implements OnInit {
 
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
-    if (!this.userId) {
     const existingCart = localStorage.getItem('cart');
     let cart: { productId: number, quantity: number }[] = [];
       cart = JSON.parse(existingCart);
@@ -85,14 +85,19 @@ export class CartComponent implements OnInit {
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log(`Producto con ID ${productId} eliminado del localStorage`);
         this.loadCartProducts();
-    } else if (this.userId)
-   {
+      return; 
+      
+  
     // Si no hay productos en el localStorage o no se encuentra el producto, manejar el servidor
     try {
-      const result = await this.carritoService.removeProductFromCart(productId, this.userId);
+      const result = await this.carritoService.removeProductFromCart(productId, carritoId);
+      if (result.success) {
         // Actualizar la lista de productos en memoria
         this.productosCarrito = this.productosCarrito.filter(p => p.productoId !== productId);
         console.log(`Producto con ID ${productId} eliminado del servidor`);
+      } else {
+        this.errorMessage = `Error al eliminar el producto: ${result.error}`;
+      }
     } catch (error) {
       this.errorMessage = `Se produjo un error: ${error.message}`;
     }

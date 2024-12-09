@@ -36,10 +36,17 @@
       "OriginalItemSpec": "wwwroot\\images\\1.png"
     },
     {
+<<<<<<< HEAD
       "Identity": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
       "SourceId": "E_Commerce_VS",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+=======
+      "Identity": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\10.png",
+      "SourceId": "E_Commerce_VS",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\",
+>>>>>>> origin/salperro2
       "BasePath": "_content/E_Commerce_VS",
       "RelativePath": "images/10.png",
       "AssetKind": "All",

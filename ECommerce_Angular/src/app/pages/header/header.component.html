@@ -1,36 +1,32 @@
 <header>
     <div class="profile">
-        <img src="assets/images/logo.png" alt="Logo">
+      <a [routerLink]="''">
+        <img [src]="logoImgSrc" alt="Logo">
+      </a>
     </div>
-    
+  
     <div class="carrito">
-        <button [routerLink]="'/catalog'">
-        <img src="/app/assets/images/carrito.png" alt="catalogo" width="50" height="50">
-        </button>
+      <button [routerLink]="'/cart'">
+        <img [src]="carritoImgSrc" alt="Carrito" width="50" height="50">
+      </button>
     </div>
-
+  
     <div class="torneos">
-        <button [routerLink]="'/cart'">
-        <img src="../../assets/images/carrito.png" alt="carrito" width="50" height="50">
-    </button>
-        <img src="assets/images/torneos.png" alt="Torneos" width="50" height="50">
+      <img [src]="torneosImgSrc" alt="Torneos" width="50" height="50">
     </div>
-
+  
     <div class="subscripcion">
-        <img src="assets/images/ticket.png" alt="Subscripción" width="50" height="50">
+      <a [routerLink]="'/catalog'">
+        <img [src]="subscripcionImgSrc" alt="Subscripción" width="50" height="50">
+      </a>
     </div>
-
-    <nav class="search-bar">
-        <input type="text" placeholder="Barra de búsqueda">
-        <button>Buscar</button>
-    </nav>
-
-    <div class="sobre-nosotros">
-        <a [routerLink]="'/aboutus'">Sobre Nosotros</a> 
+  
+    <div class="nav-buttons">
+      <button [routerLink]="'/aboutus'" class="nav-button">Sobre Nosotros</button>
+      <button *ngIf="!isLoggedIn" [routerLink]="'/login'" class="nav-button">Inicia Sesión</button>
+      <button *ngIf="!isLoggedIn" [routerLink]="'/register'" class="nav-button">Registrarse</button>
+      <button *ngIf="isLoggedIn" [routerLink]="'/usuario'" class="nav-button">Perfil</button>
+      <button *ngIf="isLoggedIn" (click)="logout()" class="nav-button">Cerrar Sesión</button>
     </div>
-    
-    <div class="login-register">
-        <a [routerLink]="'/login'">Inicia Sesión</a> /
-        <a [routerLink]="'/register'">Registrarse</a>
-    </div>
-</header>
+  </header>
+  
