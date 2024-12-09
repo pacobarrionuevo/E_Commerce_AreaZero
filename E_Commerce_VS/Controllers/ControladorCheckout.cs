@@ -1,4 +1,5 @@
-﻿using E_Commerce_VS.Extensions;
+﻿using System.Security.Claims;
+using E_Commerce_VS.Extensions;
 using E_Commerce_VS.Models.Database;
 using E_Commerce_VS.Models.Database.Entidades;
 using E_Commerce_VS.Models.Dto;
@@ -26,34 +27,65 @@ namespace E_Commerce_VS.Controllers
             _dbContext = contexto;
         }
 
-            [HttpGet("products")]
-            public async Task<IActionResult> GetOrdenesTemporales()
-            {
-                // Obtener todas las órdenes temporales activas
-                var ordenesTemporales = await _dbContext.Set<OrdenTemporal>()
-                    .Select(o => new
-                    {
-                        o.Id,
-                        o.UsuarioId,
-                        Productos = o.Productos.Select(pc => new
-                        {
-                            pc.ProductoId,
-                            pc.Cantidad,
-                            Producto = new ProductoDto
-                            {
-                                Id = pc.Producto.Id,
-                                Nombre = pc.Producto.Nombre,
-                                Ruta = pc.Producto.Ruta,
-                                Precio = pc.Producto.Precio,
-                                Stock = pc.Producto.Stock
-                            }
-                        })
-                    })
-               
-                    .ToListAsync();
+        [HttpGet("products")]
+        public async Task<IActionResult> GetOrdenesTemporales()
+        {
+            // Obtener el userId desde las reclamaciones si está autenticado
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier || c.Type == "id");
+            int? userId = null;
 
-                return Ok(ordenesTemporales);
+            if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int parsedUserId))
+            {
+                userId = parsedUserId;
             }
+
+            // Obtener las órdenes temporales según el contexto del usuario
+            IQueryable<OrdenTemporal> query = _dbContext.Set<OrdenTemporal>()
+                .Include(o => o.Productos)
+                .ThenInclude(pc => pc.Producto);
+
+            if (userId.HasValue)
+            {
+                // Filtrar las órdenes asociadas al usuario
+                query = query.Where(o => o.UsuarioId == userId.Value);
+            }
+
+            var ordenesTemporales = await query
+                .Select(o => new
+                {
+                    o.Id,
+                    o.UsuarioId,
+                    o.FechaCreacion,
+                    o.FechaExpiracion,
+                    Productos = o.Productos.Select(pc => new
+                    {
+                        pc.Id,
+                        pc.ProductoId,
+                        pc.CarritoId,
+                        pc.Cantidad,
+                        pc.PrecioUnitario,
+                        Producto = pc.Producto == null ? null : new
+                        {
+                            pc.Producto.Id,
+                            pc.Producto.Nombre,
+                            pc.Producto.Ruta,
+                            pc.Producto.Precio,
+                            pc.Producto.Stock
+                        },
+                        Carrito = pc.Carrito == null ? null : new
+                        {
+                            pc.Carrito.Id,
+                            pc.Carrito.UserId
+                        }
+                    })
+                })
+                .ToListAsync();
+
+            // Retornar las órdenes temporales
+            return Ok(ordenesTemporales);
+        }
+
+
 
 
         [HttpPost("hosted")]
