@@ -138,7 +138,7 @@ namespace E_Commerce_VS.Controllers
         }
 
         [HttpPost("CrearOrdenTemporal")]
-        public async Task<ActionResult> CrearOrdenTemporal([FromBody] List<ProductoCarritoDto> productosCarrito)
+        public async Task<ActionResult> CrearOrdenTemporal([FromBody] List<ProductoCheckoutDto> productosCarrito)
         {
             if (productosCarrito == null || !productosCarrito.Any())
                 return BadRequest("El carrito está vacío.");
@@ -146,7 +146,7 @@ namespace E_Commerce_VS.Controllers
             var ordenTemporal = new OrdenTemporal
             {
                 FechaCreacion = DateTime.UtcNow,
-                FechaExpiracion = DateTime.UtcNow.AddMinutes(5), 
+                FechaExpiracion = DateTime.UtcNow.AddMinutes(5),
                 Productos = new List<ProductoCarrito>()
             };
 
