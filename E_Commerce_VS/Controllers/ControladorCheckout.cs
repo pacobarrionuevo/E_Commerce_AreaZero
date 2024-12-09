@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using E_Commerce_VS.Extensions;
+﻿using E_Commerce_VS.Extensions;
 using E_Commerce_VS.Models.Database;
 using E_Commerce_VS.Models.Database.Entidades;
 using E_Commerce_VS.Models.Dto;
@@ -27,65 +26,34 @@ namespace E_Commerce_VS.Controllers
             _dbContext = contexto;
         }
 
-        [HttpGet("products")]
-        public async Task<IActionResult> GetOrdenesTemporales()
-        {
-            // Obtener el userId desde las reclamaciones si está autenticado
-            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier || c.Type == "id");
-            int? userId = null;
-
-            if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int parsedUserId))
+            [HttpGet("products")]
+            public async Task<IActionResult> GetOrdenesTemporales()
             {
-                userId = parsedUserId;
-            }
-
-            // Obtener las órdenes temporales según el contexto del usuario
-            IQueryable<OrdenTemporal> query = _dbContext.Set<OrdenTemporal>()
-                .Include(o => o.Productos)
-                .ThenInclude(pc => pc.Producto);
-
-            if (userId.HasValue)
-            {
-                // Filtrar las órdenes asociadas al usuario
-                query = query.Where(o => o.UsuarioId == userId.Value);
-            }
-
-            var ordenesTemporales = await query
-                .Select(o => new
-                {
-                    o.Id,
-                    o.UsuarioId,
-                    o.FechaCreacion,
-                    o.FechaExpiracion,
-                    Productos = o.Productos.Select(pc => new
+                // Obtener todas las órdenes temporales activas
+                var ordenesTemporales = await _dbContext.Set<OrdenTemporal>()
+                    .Select(o => new
                     {
-                        pc.Id,
-                        pc.ProductoId,
-                        pc.CarritoId,
-                        pc.Cantidad,
-                        pc.PrecioUnitario,
-                        Producto = pc.Producto == null ? null : new
+                        o.Id,
+                        o.UsuarioId,
+                        Productos = o.Productos.Select(pc => new
                         {
-                            pc.Producto.Id,
-                            pc.Producto.Nombre,
-                            pc.Producto.Ruta,
-                            pc.Producto.Precio,
-                            pc.Producto.Stock
-                        },
-                        Carrito = pc.Carrito == null ? null : new
-                        {
-                            pc.Carrito.Id,
-                            pc.Carrito.UserId
-                        }
+                            pc.ProductoId,
+                            pc.Cantidad,
+                            Producto = new ProductoDto
+                            {
+                                Id = pc.Producto.Id,
+                                Nombre = pc.Producto.Nombre,
+                                Ruta = pc.Producto.Ruta,
+                                Precio = pc.Producto.Precio,
+                                Stock = pc.Producto.Stock
+                            }
+                        })
                     })
-                })
-                .ToListAsync();
+               
+                    .ToListAsync();
 
-            // Retornar las órdenes temporales
-            return Ok(ordenesTemporales);
-        }
-
-
+                return Ok(ordenesTemporales);
+            }
 
 
         [HttpPost("hosted")]
@@ -171,10 +139,46 @@ namespace E_Commerce_VS.Controllers
 
             return Ok(new { status = session.Status, customerEmail = session.CustomerEmail });
         }
-
         [HttpPost("CrearOrdenTemporal")]
-        public async Task<IActionResult> CrearOrdenTemporal([FromBody] List<ProductoCheckoutDto> productosCarrito, int? userId, int? ordenId)
+        public async Task<IActionResult> CrearOrdenTemporal([FromBody] List<ProductoCheckoutDto>? productosCarrito, int? userId, int? ordenId)
         {
+            if ((productosCarrito == null || !productosCarrito.Any()) && userId.HasValue)
+            {
+                var carritoUsuario = await _dbContext.Carritos
+                    .Include(c => c.ProductoCarrito)
+                    .ThenInclude(cp => cp.Producto)
+                    .FirstOrDefaultAsync(c => c.UserId == userId);
+
+                if (carritoUsuario == null || !carritoUsuario.ProductoCarrito.Any())
+                {
+                    Console.WriteLine("No se encontraron productos en el carrito del usuario.");
+                    return BadRequest("No se encontraron productos en el carrito del usuario.");
+                }
+
+                productosCarrito = carritoUsuario.ProductoCarrito.Select(cp => new ProductoCheckoutDto
+                {
+                    ProductoId = cp.ProductoId,
+                    Cantidad = cp.Cantidad,
+                }).ToList();
+
+                Console.WriteLine($"Productos recuperados: {productosCarrito.Count}");
+            }
+
+            if (productosCarrito == null || !productosCarrito.Any())
+            {
+                return BadRequest("No se proporcionaron productos válidos para crear la orden temporal.");
+            }
+
+
+            if (userId.HasValue && !await _dbContext.Set<Usuario>().AnyAsync(u => u.UsuarioId == userId))
+            {
+                return BadRequest($"El usuario con ID {userId} no existe.");
+            }
+
+            // Resto del método...
+        
+
+
             // Verificar si tanto userId como ordenId están presentes
             if (ordenId.HasValue)
             {
@@ -260,6 +264,7 @@ namespace E_Commerce_VS.Controllers
                 OrdenId = nuevaOrden.Id
             });
         }
+
 
     }
 }

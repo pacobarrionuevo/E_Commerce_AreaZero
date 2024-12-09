@@ -39,8 +39,6 @@ export class CartComponent implements OnInit {
         }
     });
 }
-
-
   // Cargar los productos del carrito
   loadCartProducts(): void {
     this.productosCarrito = []; // Reiniciar la lista de productos
