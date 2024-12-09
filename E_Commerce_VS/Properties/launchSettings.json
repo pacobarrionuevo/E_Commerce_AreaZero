@@ -25,10 +25,10 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7133;http://localhost:5064",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "JWT_KEY": "vbsidvnsduv78438geovnwedvmsdaasd23r34gvds"
-      }
+        "environmentVariables": {
+            "ASPNETCORE_ENVIRONMENT": "Development",
+            "JWT_KEY": "39473589405fv648eryuvnfdsdvssdvsdv"
+        }
     },
     "IIS Express": {
       "commandName": "IISExpress",
