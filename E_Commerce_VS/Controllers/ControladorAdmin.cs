@@ -32,7 +32,7 @@ namespace E_Commerce_VS.Controllers
                 .ToListAsync();
         }
 
-        // Modificar esAdmin de usuario
+        //  Para Modificar si es Admin un usuario
         [HttpPut("usuarios/{id}")]
         public async Task<IActionResult> UpdateUsuario(int id, [FromBody] UserUpdateDto userUpdateDto)
         {
@@ -64,7 +64,7 @@ namespace E_Commerce_VS.Controllers
             return NoContent();
         }
 
-        // Borrar usuario
+        // Borrar usuario siendo admin
         [HttpDelete("usuarios/{adminId}/{userId}")]
         public async Task<IActionResult> DeleteUsuario(int adminId, int userId)
         {
@@ -98,12 +98,12 @@ namespace E_Commerce_VS.Controllers
                     Ruta = p.Ruta,
                     Descripcion = p.Descripcion,
                     Precio = p.Precio
-                    // Añadir otros campos necesarios
+                    
                 })
                 .ToListAsync();
         }
 
-        // Modificar producto
+        // Modificar producto siendo admin
         [HttpPut("productos/{id}")]
         public async Task<IActionResult> UpdateProducto(long id, [FromBody] ProductUpdateDto productUpdateDto)
         {
@@ -146,13 +146,13 @@ namespace E_Commerce_VS.Controllers
         }
 
 
-        // Método auxiliar para comprobar si el usuario existe
+        // Comprueba si el usuario existe
         private bool UsuarioExists(int id)
         {
             return _context.Usuarios.Any(e => e.UsuarioId == id);
         }
 
-        // Método auxiliar para comprobar si el producto existe
+        //Comprueba si el producto existe
         private bool ProductoExists(long id)
         {
             return _context.Productos.Any(e => e.Id == id);
