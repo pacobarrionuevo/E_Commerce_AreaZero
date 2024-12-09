@@ -47,7 +47,6 @@ export class LoginComponent {
   }
   logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('usuarioId');
     this.jwt = null;
     this.usuarioId = null;
     console.log("Cierre de sesión exitoso.");

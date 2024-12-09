@@ -126,6 +126,16 @@
         "Name": "productosCarrito",
         "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoCheckoutDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ordenId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -164,7 +174,7 @@
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
-    "Method": "GetCarrito",
+    "Method": "GetOrdenesTemporales",
     "RelativePath": "api/ControladorCheckout/products",
     "HttpMethod": "GET",
     "IsController": true,

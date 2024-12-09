@@ -6,6 +6,7 @@ import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
+import { CheckoutService } from '../../services/checkout.service';
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -20,14 +21,25 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService) {}
+  constructor(private carritoService: CarritoService, private checkoutService: CheckoutService) {}
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('usuarioId');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
 
     this.loadCartProducts();
-  }
+
+    // Llamar a crearOrdenTemporal para crear o actualizar la orden temporal
+    this.checkoutService.crearOrdenTemporal().subscribe({
+        next: (response) => {
+            console.log('Orden temporal creada o actualizada correctamente:', response);
+        },
+        error: (error) => {
+            console.error('Error al crear la orden temporal:', error);
+        }
+    });
+}
+
 
   // Cargar los productos del carrito
   loadCartProducts(): void {
