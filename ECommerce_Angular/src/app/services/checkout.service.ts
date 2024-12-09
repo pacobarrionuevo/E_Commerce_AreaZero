@@ -12,9 +12,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CheckoutService {
-  crearOrdenTemporal() {
-    throw new Error('Method not implemented.');
-  }
 
   constructor(private api: ApiService, private http: HttpClient) { }
   private Url = 'https://localhost:7133/api';
