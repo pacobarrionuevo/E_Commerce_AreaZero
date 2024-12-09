@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using E_Commerce_VS.Services;
+
 namespace E_Commerce_VS.Controllers
 {
     [Route("api/[controller]")]
@@ -26,10 +27,24 @@ namespace E_Commerce_VS.Controllers
         // Proteger este método con [Authorize]
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult> AddReview([FromBody] CreateReviewDto reviewDto)
+        public async Task<ActionResult<ReviewDto>> AddReview([FromBody] CreateReviewDto reviewDto)
         {
-            await _reviewService.AddReviewAsync(reviewDto);
-            return CreatedAtAction(nameof(GetAllReviews), new { }, reviewDto);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                Console.WriteLine($"Añadiendo reseña: UsuarioId={reviewDto.UsuarioId}, ProductoId={reviewDto.ProductoId}, TextReview={reviewDto.TextReview}");
+                var newReview = await _reviewService.AddReviewAsync(reviewDto);
+                return CreatedAtAction(nameof(GetAllReviews), new { id = newReview.Id }, newReview);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al añadir la reseña: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error al añadir la reseña.");
+            }
         }
     }
 }

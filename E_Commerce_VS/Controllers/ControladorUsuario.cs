@@ -78,7 +78,8 @@ namespace E_Commerce_VS.Controllers
 
 
         {
-            foreach (Usuario userList in _context.Usuarios.ToList())
+            var user = _context.Usuarios.FirstOrDefault(u => u.Email == userLoginDto.Email);
+            if (user == null)
             {
                 if (userList.Email == userLoginDto.Email)
                 {
@@ -111,8 +112,83 @@ namespace E_Commerce_VS.Controllers
                     }
                 }
             }
-            return Unauthorized("Usuario no existe");
+
+            var hashedPassword = PasswordHelper.Hash(userLoginDto.Password);
+            Console.WriteLine($"Hashed Password: {hashedPassword}");
+            if (user.Password != hashedPassword)
+            {
+                return Unauthorized("Contraseña incorrecta");
+            }
+
+            // Crear el Token
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                // Datos para autorizar al usuario
+                Claims = new Dictionary<string, object>
+        {
+            {"id", user.UsuarioId},
+            {"Nombre", user.Nombre},
+            {"Email", user.Email},
+            {"Direccion", user.Direccion}
+        },
+                // Caducidad del Token
+                Expires = DateTime.UtcNow.AddDays(5),
+                // Clave y algoritmo de firmado
+                SigningCredentials = new SigningCredentials(
+                    _tokenParameters.IssuerSigningKey,
+                    SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            // Crear el token y devolverlo al usuario logueado
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
+            string accessToken = tokenHandler.WriteToken(token);
+
+            return Ok(new { StringToken = accessToken, user.UsuarioId });
         }
+<<<<<<< HEAD
+=======
+
+        [HttpPost("update")]
+        public async Task<IActionResult> UpdateUser([FromBody] UserUpdateDto userUpdateDto)
+        {
+            var user = await _context.Usuarios.FindAsync(userUpdateDto.UsuarioId);
+            if (user == null)
+            {
+                return NotFound("Usuario no encontrado");
+            }
+
+            user.Nombre = userUpdateDto.Nombre;
+            user.Email = userUpdateDto.Email;
+            user.Direccion = userUpdateDto.Direccion;
+
+            _context.Usuarios.Update(user);
+            await _context.SaveChangesAsync();
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Claims = new Dictionary<string, object>
+        {
+            {"id", user.UsuarioId},
+            {"Nombre", user.Nombre},
+            {"Email", user.Email},
+            {"Direccion", user.Direccion}
+        },
+                Expires = DateTime.UtcNow.AddDays(5),
+                SigningCredentials = new SigningCredentials(
+                    _tokenParameters.IssuerSigningKey,
+                    SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
+            string accessToken = tokenHandler.WriteToken(token);
+
+            return Ok(new { StringToken = accessToken });
+        }
+
+
+>>>>>>> origin/salperro2
         private UserRegistrarseDto ToDto(Usuario users)
         {
             return new UserRegistrarseDto()

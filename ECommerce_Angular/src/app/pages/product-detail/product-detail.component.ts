@@ -29,6 +29,7 @@ export class ProductDetailComponent implements OnInit {
   newReview: string = '';
   usuarioId: number | null = null;
   jwt: string | null = null;
+ Media: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,41 +39,29 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Obtenermos el token y el id desde el almacenamiento local
     this.jwt = localStorage.getItem('accessToken'); 
     this.usuarioId = Number(localStorage.getItem('usuarioId')); 
-    // Mensaje en la consola para controlar si se ha iniciado sesion
     console.log('Usuario ID:', this.usuarioId); 
     this.getProduct();
   }
 
   addProductToCart(productId: number, quantity: number): void {
     if (!this.usuarioId) {
-      // Recuperar la colección existente del localStorage
       const existingCart = localStorage.getItem('cart');
       let cart: { productId: number, quantity: number }[] = [];
-  
       if (existingCart) {
-        // Parsear el contenido existente si lo hay
         cart = JSON.parse(existingCart);
       }
-  
-      // Verificar si el producto ya está en el carrito
       const existingProductIndex = cart.findIndex(item => item.productId === productId);
-  
       if (existingProductIndex !== -1) {
-        // Si ya existe, actualizar la cantidad
         cart[existingProductIndex].quantity += quantity;
       } else {
-        // Si no existe, agregar el nuevo producto al carrito
         cart.push({ productId, quantity });
       }
-  
-      // Guardar el carrito actualizado en el localStorage
       localStorage.setItem('cart', JSON.stringify(cart));
     }
   
-    if (this.usuarioId!=null){
+    if (this.usuarioId != null){
       this.carritoService.addProductToCart(productId, this.usuarioId, quantity)
       .then(result => {
         console.log('Producto añadido al carrito', result);
@@ -80,8 +69,9 @@ export class ProductDetailComponent implements OnInit {
       .catch(error => {
         console.error('Error al añadir producto al carrito', error);
       });
+    }
   }
-  }
+
   getProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
@@ -98,6 +88,7 @@ export class ProductDetailComponent implements OnInit {
     if (this.product) {
       this.reviewService.getAllReviews().subscribe((reviews: Review[]) => {
         this.reviews = reviews.filter(review => review.productoId === this.product!.id);
+        this.calcularMedia();
       }, error => {
         console.error('Error al obtener las reseñas:', error);
       });
@@ -105,11 +96,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addReview(): void {
-    // Reaseguramos que se obtiene el token y el id antes de añadir una reseña
     this.jwt = localStorage.getItem('accessToken'); 
     this.usuarioId = Number(localStorage.getItem('usuarioId')); 
-
-    console.log('Verificando token antes de añadir la reseña:', this.jwt); // Mensaje de consola para saber si tenemos el token para poder reseñar
+    console.log('Verificando token antes de añadir la reseña:', this.jwt);
 
     if (!this.jwt) {
       alert('Por favor, inicie sesión para añadir una reseña.');
@@ -123,11 +112,54 @@ export class ProductDetailComponent implements OnInit {
         productoId: this.product?.id || 0
       };
       this.reviewService.addReview(reviewDto).subscribe((review: Review) => {
+        review.fechaPublicacion = new Date(review.fechaPublicacion);
         this.reviews.push(review);
+        this.calcularMedia();
         this.newReview = '';
       }, error => {
         console.error('Error al añadir la reseña:', error);
       });
+    }
+  }
+
+  calcularMedia(): void {
+    if (this.reviews.length > 0) {
+      const totalRating = this.reviews.reduce((total, review) => {
+        let rating = 0;
+        if (review.label === 1) {
+          rating = 5;
+        } else if (review.label === 0) {
+          rating = 2.5;
+        } else if (review.label === -1) {
+          rating = 0;
+        }
+        return total + rating;
+      }, 0);
+      this.Media = totalRating / this.reviews.length;
+    } else {
+      this.Media = 0;
+    }
+  }
+
+  reviewEmoji(label: number): string {
+    if (label === 1) {
+      return '😃';  
+    } else if (label === 0) {
+      return '😐';  
+    } else if (label === -1) {
+      return '😞'; 
+    } else {
+      return '';
+    }
+  }
+
+  emoji(): string {
+    if (this.Media <= 1.66) {
+      return '😞';
+    } else if (this.Media <= 3.33) {
+      return '😐';
+    } else {
+      return '😃';
     }
   }
 }
