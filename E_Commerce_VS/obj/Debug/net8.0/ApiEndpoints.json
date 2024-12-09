@@ -514,14 +514,14 @@
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.ControladorProductoCarrito",
-    "Method": "GetProductosCarritoByUserId",
-    "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{userId}",
+    "Method": "GetProductosCarrito",
+    "RelativePath": "api/ControladorProductoCarrito/productosCarrito/{carritoId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "carritoId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -639,40 +639,8 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "E_Commerce_VS.Controllers.CheckoutApiController",
-    "Method": "Precio",
-    "RelativePath": "create-checkout-session/precio/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
   },
   {
     "ContainingType": "E_Commerce_VS.Controllers.SessionStatusController",

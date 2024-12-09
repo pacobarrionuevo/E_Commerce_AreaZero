@@ -104,7 +104,7 @@ export class CartComponent implements OnInit {
    } return; 
   }
   
-  // Modificar la cantidad de un producto
+ /* // Modificar la cantidad de un producto
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
     const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
     const input = event.target as HTMLInputElement;
@@ -119,5 +119,5 @@ export class CartComponent implements OnInit {
     localCart[productIdCart].quantity = quantity;
     localStorage.setItem('cart', JSON.stringify(localCart));
   
-  }
-}
+  }*/
+

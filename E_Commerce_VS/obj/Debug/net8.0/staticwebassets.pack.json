@@ -81,6 +81,50 @@
       "PackagePath": "staticwebassets\\images\\9.png"
     },
     {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\Logo.png",
+      "PackagePath": "staticwebassets\\images\\Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\carrito.png",
+      "PackagePath": "staticwebassets\\images\\carrito.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\chapaplateada.png",
+      "PackagePath": "staticwebassets\\images\\chapaplateada.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\discord.png",
+      "PackagePath": "staticwebassets\\images\\discord.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\instagram.png",
+      "PackagePath": "staticwebassets\\images\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\sobre.png",
+      "PackagePath": "staticwebassets\\images\\sobre.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\ticket.png",
+      "PackagePath": "staticwebassets\\images\\ticket.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\tiktok.png",
+      "PackagePath": "staticwebassets\\images\\tiktok.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\torneos.png",
+      "PackagePath": "staticwebassets\\images\\torneos.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\trofeo.png",
+      "PackagePath": "staticwebassets\\images\\trofeo.png"
+    },
+    {
+      "Id": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\wwwroot\\images\\twitter.png",
+      "PackagePath": "staticwebassets\\images\\twitter.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.E_Commerce_VS.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
