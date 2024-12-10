@@ -1,10 +1,10 @@
 header {
-  background-color: #b8def1; /* Color base Diaphanous Jellyfish */
+  background-color: #b8def1; 
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #5a738e; /* Color Diaphanous Jellyfish */
+  color: #5a738e; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

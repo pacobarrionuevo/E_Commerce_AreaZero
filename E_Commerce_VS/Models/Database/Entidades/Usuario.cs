@@ -19,7 +19,7 @@ namespace E_Commerce_VS.Models.Database.Entidades
         [MaxLength(150)]
         public string Direccion { get; set; }
 
-        public bool EsAdmin { get; set; }
+        public bool esAdmin { get; set; }
 
     }
 }

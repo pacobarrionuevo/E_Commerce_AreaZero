@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcarrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -230,7 +230,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -248,13 +248,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
               "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
               "RelativeToolTip": "E_Commerce_VS\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAAAFIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T09:06:38.3Z",
               "IsPinned": true,
@@ -292,20 +292,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ControladorCarrito.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
               "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T17:16:16.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ControladorCheckout.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
