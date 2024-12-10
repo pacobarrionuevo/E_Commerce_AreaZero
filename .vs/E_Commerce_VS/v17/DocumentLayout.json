@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\models\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorcheckout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\fitob\\onedrive\\documentos\\github\\e_commerce_areazero\\e_commerce_vs\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -262,25 +262,25 @@
               "IsPinned": true
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserUpdateDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserUpdateDto.cs",
-              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserUpdateDto.cs*",
-              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\UserUpdateDto.cs*",
+              "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserUpdateDto.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\UserUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-09T23:53:01.475Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Usuario.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\Usuario.cs",
@@ -292,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ControladorCheckout.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
@@ -304,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ControladorCarrito.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
@@ -312,8 +312,7 @@
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAAAKYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T17:16:16.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-06T17:16:16.383Z"
             },
             {
               "$type": "Document",
@@ -323,14 +322,14 @@
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
               "ToolTip": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs*",
               "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs*",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAuwLIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T18:54:44.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserDto.cs",
@@ -338,11 +337,12 @@
               "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\UserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T13:05:15.275Z"
+              "WhenOpened": "2024-12-06T13:05:15.275Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ControladorAdmin.cs",
               "DocumentMoniker": "C:\\Users\\fitob\\OneDrive\\Documentos\\GitHub\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorAdmin.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorAdmin.cs",

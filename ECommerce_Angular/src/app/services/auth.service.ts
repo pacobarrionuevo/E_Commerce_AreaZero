@@ -26,9 +26,7 @@ export class AuthService {
   }
 
   register(authData: AuthRequest): Observable<AuthResponse> {
-    const resultado: Observable<AuthResponse> = this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/Registro`, authData)
-
-     return resultado;
+    return this.http.post<AuthResponse>(`${this.URL}ControladorUsuario/Registro`, authData);
   }
 
   login(authData: AuthRequest): Observable<AuthResponse> {

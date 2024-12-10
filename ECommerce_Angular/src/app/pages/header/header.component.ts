@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ImageService } from '../../services/image.service';
 import { AuthService } from '../../services/auth.service';
@@ -7,15 +7,16 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   logoImgSrc: string;
   carritoImgSrc: string;
   torneosImgSrc: string;
   subscripcionImgSrc: string;
+  isLoggedIn: boolean = false;
 
   constructor(private imageService: ImageService, private authService: AuthService) {
     this.logoImgSrc = this.imageService.getImageUrl('logo.png');
