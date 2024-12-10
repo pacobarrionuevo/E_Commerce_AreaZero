@@ -84,9 +84,6 @@ export class CartComponent implements OnInit {
     }
   }
   
-
-
-
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
     if (!this.userId) {

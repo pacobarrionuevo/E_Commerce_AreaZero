@@ -1,8 +1,10 @@
-﻿using E_Commerce_VS.Extensions;
+﻿using System.Security.Claims;
+using E_Commerce_VS.Extensions;
 using E_Commerce_VS.Models.Database;
 using E_Commerce_VS.Models.Database.Entidades;
 using E_Commerce_VS.Models.Dto;
 using E_Commerce_VS.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -95,25 +97,37 @@ namespace E_Commerce_VS.Controllers
         }
 
         [HttpPost("embedded")]
-        public async Task<ActionResult> EmbeddedCheckout([FromBody] List<ProductoDto> productos)
+        public async Task<ActionResult> EmbeddedCheckout()
         {
-            if (productos == null || !productos.Any())
-                return BadRequest("No se proporcionaron productos para el checkout.");
+            int userIdToken = Int32.Parse(User.FindFirst("id").Value);
 
-            var lineItems = productos.Select(product => new SessionLineItemOptions
+            var ordenTemporal = _dbContext.OrdenesTemporales.Include(o => o.Productos).FirstOrDefault(o => o.UsuarioId == userIdToken);
+
+            var lineItems = new List<SessionLineItemOptions>();
+
+            foreach (var producto in ordenTemporal.Productos)
             {
-                PriceData = new SessionLineItemPriceDataOptions
+                var productoStripe = _dbContext.Productos.FirstOrDefault(b => b.Id == producto.Id);
+
+                if (productoStripe != null)
                 {
-                    Currency = "eur",
-                    UnitAmount = (long)(product.Precio * 100),
-                    ProductData = new SessionLineItemPriceDataProductDataOptions
+                    lineItems.Add(new SessionLineItemOptions
                     {
-                        Name = product.Nombre,
-                        Images = new List<string> { product.Ruta }
-                    }
-                },
-                Quantity = 1
-            }).ToList();
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
+                            Currency = "eur",
+                            UnitAmount = (long)(productoStripe.Precio * 100),
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = productoStripe.Nombre,
+                                Description = productoStripe.Descripcion,
+                                Images = new List<string> { productoStripe.Ruta}
+                            }
+                        },
+                        Quantity = producto.Cantidad
+                    });
+                }
+            }
 
             var options = new SessionCreateOptions
             {
@@ -121,7 +135,7 @@ namespace E_Commerce_VS.Controllers
                 Mode = "payment",
                 PaymentMethodTypes = new List<string> { "card" },
                 LineItems = lineItems,
-                CustomerEmail = "correo_cliente@correo.es",
+                CustomerEmail = "correo_cliente@correo.es", 
                 ReturnUrl = _settings.ClientBaseUrl + "/checkout?session_id={CHECKOUT_SESSION_ID}"
             };
 
