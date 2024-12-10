@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
         console.log("Inicio de sesión exitoso.");
         this.carritoService.localtoCart();
         localStorage.removeItem('cart');
-
         this.router.navigate(['/']);
       } else {
         console.error("No se recibió un token de acceso.");
@@ -57,8 +56,7 @@ export class LoginComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('usuarioId');
+    this.authService.logout();
     this.jwt = null;
     this.usuarioId = null;
     console.log("Cierre de sesión exitoso.");

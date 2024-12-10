@@ -12,7 +12,7 @@ import { environment } from '../../environments/environment';
 export class AuthService {
 
   private URL = `${environment.apiUrl}`;
-  //Behavior Subject es para que actualize el header nada más iniciar sesion para que salga la vista usuario
+  //Behavior Subject es para que actualize el header nada más iniciar sesion para que salga el botón del usuario component
   private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
 
   constructor(private http: HttpClient) {}
