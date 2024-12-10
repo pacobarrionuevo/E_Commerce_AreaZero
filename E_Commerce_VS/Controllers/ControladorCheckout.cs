@@ -175,10 +175,6 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest($"El usuario con ID {userId} no existe.");
             }
 
-            // Resto del método...
-        
-
-
             // Verificar si tanto userId como ordenId están presentes
             if (ordenId.HasValue)
             {

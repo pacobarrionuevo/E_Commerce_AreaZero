@@ -124,10 +124,9 @@ export class CarritoService {
   //////////////////////
   //PARA IR AL CHECKOUT
   //////////////////////
-  async goToCheckout(paymentMethod: string): Promise<Result<{ orderId: number }>> {
+  async goToCheckout(): Promise<Result<{ orderId: number }>> {
     const token = localStorage.getItem('token');
-  
-    // Verificar si el token existe para autenticar al usuario
+    
     if (!token) {
       return Result.error(401, "Token no encontrado. No se puede proceder al checkout.");
     }
@@ -135,10 +134,9 @@ export class CarritoService {
     this.api.jwt = token;
   
     try {
-      // Llamar al endpoint para crear o recuperar la orden temporal
       const response = await this.api.post<{ orderId: number }>(
         `${this.carritoEndpoint}/crearOrdenTemporal`,
-        null, // Asumimos que no se requiere body en esta llamada
+        null,
         'application/json'
       );
   

@@ -132,9 +132,9 @@ export class CartComponent implements OnInit {
   }
 
   goToCheckout(): void {
-    const paymentMethod = 'tarjeta'; // Método de pago seleccionado (puedes ajustar según sea necesario)
+    const paymentMethod = 'tarjeta'; // Método de pago seleccionado
   
-    this.carritoService.goToCheckout(paymentMethod).then(response => {
+    this.carritoService.goToCheckout().then(response => {
       if (response.success) {
         const orderId = response.data.orderId;
   
@@ -151,5 +151,6 @@ export class CartComponent implements OnInit {
       alert('Ocurrió un error inesperado. Intenta de nuevo más tarde.');
     });
   }
+  
   
 }
