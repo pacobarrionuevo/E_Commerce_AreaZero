@@ -7,8 +7,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CheckoutService } from '../../services/checkout.service';
-import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-cart',
   standalone: true,
@@ -23,10 +21,7 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(
-    private carritoService: CarritoService,
-    private checkoutService: CheckoutService,
-    private router: Router) {}
+  constructor(private carritoService: CarritoService, private checkoutService: CheckoutService) {}
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('usuarioId');
@@ -43,7 +38,7 @@ export class CartComponent implements OnInit {
             console.error('Error al crear la orden temporal:', error);
         }
     });
-  }
+}
 
 
   // Cargar los productos del carrito
@@ -88,6 +83,9 @@ export class CartComponent implements OnInit {
         });
     }
   }
+  
+
+
 
   // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
@@ -130,27 +128,4 @@ export class CartComponent implements OnInit {
     localStorage.setItem('cart', JSON.stringify(localCart));
   
   }
-
-  goToCheckout(): void {
-    const paymentMethod = 'tarjeta'; // Método de pago seleccionado
-  
-    this.carritoService.goToCheckout().then(response => {
-      if (response.success) {
-        const orderId = response.data.orderId;
-  
-        // Navegar a la vista de checkout con los parámetros necesarios
-        this.router.navigate(['/checkout'], {
-          queryParams: { orderId, paymentMethod }
-        });
-      } else {
-        console.error('Error al crear la orden temporal:', response.error);
-        alert('No se pudo crear la orden temporal. Por favor, intenta de nuevo.');
-      }
-    }).catch(error => {
-      console.error('Error inesperado al intentar proceder al checkout:', error);
-      alert('Ocurrió un error inesperado. Intenta de nuevo más tarde.');
-    });
-  }
-  
-  
 }

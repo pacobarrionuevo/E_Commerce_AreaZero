@@ -30,7 +30,7 @@ namespace E_Commerce_VS.Controllers
                     new SessionLineItemOptions
                     {
                         // Se utiliza el Price ID obtenido dinámicamente
-                        Price = "price_1QPLgTKyA4zEE9fSKNnk7HjR",
+                        Price = priceId,
                         Quantity = 1,
                     },
                 },
