@@ -50,6 +50,7 @@ namespace E_Commerce_VS.Controllers
                 Email = usuario.Email,
                 Password = PasswordHelper.Hash(usuario.Password),
                 Direccion = usuario.Direccion,
+                esAdmin = usuario.esAdmin // Añadimos la propiedad esAdmin
             };
 
             await _context.Usuarios.AddAsync(newUser);
@@ -65,7 +66,8 @@ namespace E_Commerce_VS.Controllers
                     {"id", newUser.UsuarioId},
                     {"Nombre", newUser.Nombre},
                     {"Email", newUser.Email},
-                    {"Direccion", newUser.Direccion}
+                    {"Direccion", newUser.Direccion},
+                    {"esAdmin", newUser.esAdmin} // Añadimos esAdmin a los claims del token
                 },
                 // Caducidad del Token
                 Expires = DateTime.UtcNow.AddDays(5),
@@ -103,12 +105,13 @@ namespace E_Commerce_VS.Controllers
             {
                 // Datos para autorizar al usuario
                 Claims = new Dictionary<string, object>
-        {
-            {"id", user.UsuarioId},
-            {"Nombre", user.Nombre},
-            {"Email", user.Email},
-            {"Direccion", user.Direccion}
-        },
+                {
+                    {"id", user.UsuarioId},
+                    {"Nombre", user.Nombre},
+                    {"Email", user.Email},
+                    {"Direccion", user.Direccion},
+                    {"esAdmin", user.esAdmin} // Añadimos esAdmin a los claims del token
+                },
                 // Caducidad del Token
                 Expires = DateTime.UtcNow.AddDays(5),
                 // Clave y algoritmo de firmado
@@ -137,6 +140,7 @@ namespace E_Commerce_VS.Controllers
             user.Nombre = userUpdateDto.Nombre;
             user.Email = userUpdateDto.Email;
             user.Direccion = userUpdateDto.Direccion;
+            user.esAdmin = userUpdateDto.esAdmin; // Añadimos la propiedad esAdmin
 
             _context.Usuarios.Update(user);
             await _context.SaveChangesAsync();
@@ -144,12 +148,13 @@ namespace E_Commerce_VS.Controllers
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Claims = new Dictionary<string, object>
-        {
-            {"id", user.UsuarioId},
-            {"Nombre", user.Nombre},
-            {"Email", user.Email},
-            {"Direccion", user.Direccion}
-        },
+                {
+                    {"id", user.UsuarioId},
+                    {"Nombre", user.Nombre},
+                    {"Email", user.Email},
+                    {"Direccion", user.Direccion},
+                    {"esAdmin", user.esAdmin} // Añadimos esAdmin a los claims del token
+                },
                 Expires = DateTime.UtcNow.AddDays(5),
                 SigningCredentials = new SigningCredentials(
                     _tokenParameters.IssuerSigningKey,
@@ -163,7 +168,6 @@ namespace E_Commerce_VS.Controllers
             return Ok(new { StringToken = accessToken });
         }
 
-
         private UserRegistrarseDto ToDto(Usuario users)
         {
             return new UserRegistrarseDto()
@@ -173,6 +177,7 @@ namespace E_Commerce_VS.Controllers
                 Email = users.Email,
                 Password = users.Password,
                 Direccion = users.Direccion,
+                esAdmin = users.esAdmin // Añadimos la propiedad esAdmin
             };
         }
     }

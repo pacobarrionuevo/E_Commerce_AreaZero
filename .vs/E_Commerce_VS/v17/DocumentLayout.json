@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\models\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\models\\dto\\userregistrarsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\userregistrarsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -41,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladoradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladoradmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\controllers\\controladorusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\controllers\\controladorreview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,10 +99,6 @@
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\models\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\dto\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|c:\\users\\jorge\\onedrive\\escritorio\\areazero\\e_commerce_areazero\\e_commerce_vs\\models\\database\\entidades\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BAFD97C2-CA23-40E9-AA7A-C6B9CAD01DDB}|E_Commerce_VS\\E_Commerce_VS.csproj|solutionrelative:e_commerce_vs\\models\\database\\entidades\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -118,40 +122,90 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRegistrarseDto.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserRegistrarseDto.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserRegistrarseDto.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserRegistrarseDto.cs*",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\UserRegistrarseDto.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T23:18:41.968Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Program.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAewIEAAABSAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ControladorModelo.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorModelo.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorModelo.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorModelo.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorModelo.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T20:26:29.132Z",
+              "WhenOpened": "2024-12-10T20:26:13.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ControladorCheckoutApi.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T20:26:10.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserUpdateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T16:24:39.423Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ControladorSessionStatus.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "ControladorProducto.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorProducto.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorProducto.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorProducto.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorProducto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T20:26:25.146Z"
+              "WhenOpened": "2024-12-10T20:26:17.187Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ControladorUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs*",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs*",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAswLgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T12:48:45.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ControladorProductoCarrito.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorProductoCarrito.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorProductoCarrito.cs",
@@ -164,42 +218,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ControladorProducto.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorProducto.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorProducto.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorProducto.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorProducto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Program.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Program.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Program.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAewIEAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T20:26:17.187Z"
+              "WhenOpened": "2024-12-10T20:26:29.132Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ControladorModelo.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorModelo.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorModelo.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorModelo.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorModelo.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Title": "ControladorSessionStatus.cs",
+              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
+              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
+              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
+              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorSessionStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T20:26:13.645Z"
+              "WhenOpened": "2024-12-10T20:26:25.146Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ControladorCheckoutApi.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorCheckoutApi.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T20:26:10.491Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "ControladorCheckout.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCheckout.cs",
@@ -211,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "ControladorCatalogo.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCatalogo.cs",
@@ -223,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ControladorReview.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorReview.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorReview.cs",
@@ -235,19 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ControladorUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Controllers\\ControladorUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T12:48:45.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "ControladorAdmin.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorAdmin.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorAdmin.cs",
@@ -259,7 +290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "ControladorCarrito.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Controllers\\ControladorCarrito.cs",
@@ -271,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserDto.cs",
@@ -283,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "ReviewService.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Services\\ReviewService.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Services\\ReviewService.cs",
@@ -295,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ReviewMapper.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Mapper\\ReviewMapper.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Mapper\\ReviewMapper.cs",
@@ -307,7 +338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "ReviewDto.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ReviewDto.cs",
@@ -319,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "RepositorioReview.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioReview.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Repositories\\RepositorioReview.cs",
@@ -331,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Seeder.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Seeder.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Seeder.cs",
@@ -343,7 +374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CreateReviewDto.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\CreateReviewDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\CreateReviewDto.cs",
@@ -355,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Usuario.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\Usuario.cs",
@@ -367,7 +398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ProductUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ProductUpdateDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ProductUpdateDto.cs",
@@ -379,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "ProductoDto.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\ProductoDto.cs",
@@ -391,19 +422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserUpdateDTO.cs",
-              "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
-              "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
-              "ToolTip": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
-              "RelativeToolTip": "E_Commerce_VS\\Models\\Dto\\UserUpdateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T16:24:39.423Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\Entidades\\Producto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\Entidades\\Producto.cs",
@@ -415,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Database\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Database\\UnitOfWork.cs",
@@ -427,7 +446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "UserLoginDto.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Dto\\UserLoginDto.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Dto\\UserLoginDto.cs",
@@ -439,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "ProductoMapper.cs",
               "DocumentMoniker": "C:\\Users\\jorge\\OneDrive\\Escritorio\\AreaZero\\E_Commerce_AreaZero\\E_Commerce_VS\\Models\\Mapper\\ProductoMapper.cs",
               "RelativeDocumentMoniker": "E_Commerce_VS\\Models\\Mapper\\ProductoMapper.cs",

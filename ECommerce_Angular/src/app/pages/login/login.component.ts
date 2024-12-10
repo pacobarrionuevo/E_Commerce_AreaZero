@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     try {
       const result = await this.authService.login(authData).toPromise();
 
-      console.log('Resultado de login:', result);  // Verifica la respuesta del login 
+      console.log('Resultado de login:', result);  
 
       if (result) {
         // Guarda el token y el ID del usuario en el localStorage
@@ -53,12 +53,5 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
     }
-  }
-
-  logout() {
-    this.authService.logout();
-    this.jwt = null;
-    this.usuarioId = null;
-    console.log("Cierre de sesión exitoso.");
   }
 }
