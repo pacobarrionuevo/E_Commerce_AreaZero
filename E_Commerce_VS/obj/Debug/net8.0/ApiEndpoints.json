@@ -507,7 +507,7 @@
     "Parameters": [
       {
         "Name": "userLoginDto",
-        "Type": "E_Commerce_VS.Models.Dto.UserLoginDto",
+        "Type": "E_Commerce_VS.Models.Dto.UserDto",
         "IsRequired": true
       }
     ],
@@ -523,7 +523,7 @@
     "Parameters": [
       {
         "Name": "usuario",
-        "Type": "E_Commerce_VS.Models.Dto.UserRegistrarseDto",
+        "Type": "E_Commerce_VS.Models.Dto.UserDto",
         "IsRequired": true
       }
     ],
@@ -539,7 +539,7 @@
     "Parameters": [
       {
         "Name": "userUpdateDto",
-        "Type": "E_Commerce_VS.Models.Dto.UserUpdateDto",
+        "Type": "E_Commerce_VS.Models.Dto.UserDto",
         "IsRequired": true
       }
     ],
@@ -555,7 +555,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[E_Commerce_VS.Models.Dto.UserRegistrarseDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[E_Commerce_VS.Models.Dto.UserDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
