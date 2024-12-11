@@ -20,7 +20,7 @@
     </button>
   </div>
   <div>
-    <button [routerLink] = "'/checkout'">PAGAR</button>
+    <button (click)="goToPagoTarjeta()">PAGAR</button>
   </div>
 </div>
 <div class="error-message" *ngIf="productosCarrito.length === 0">

@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { CheckoutService } from '../../services/checkout.service';
+import { ImageService } from '../../services/image.service'; // Añadimos el servicio de imágenes
 
 @Component({
   selector: 'app-cart',
@@ -22,7 +23,12 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService, private checkoutService: CheckoutService, private router: Router) {}
+  constructor(
+    private carritoService: CarritoService,
+    private checkoutService: CheckoutService,
+    private router: Router,
+    private imageService: ImageService // Inyectamos el servicio de imágenes
+  ) {}
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('usuarioId');
@@ -58,7 +64,15 @@ export class CartComponent implements OnInit {
       this.carritoService.getProductosCarrito()
         .then(result => {
           if (result.success) {
-            this.productosCarrito = result.data;
+            this.productosCarrito = result.data.map((item: ProductoCarrito) => {
+              return {
+                ...item,
+                producto: {
+                  ...item.producto,
+                  ruta: this.imageService.getImageUrl(item.producto.ruta) // Actualiza la ruta de la imagen
+                }
+              };
+            });
           } else {
             console.error('Error al cargar productos del servidor:', result.error);
           }
@@ -73,7 +87,10 @@ export class CartComponent implements OnInit {
       const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
       const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
         this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
-          producto: result.data,
+          producto: {
+            ...result.data,
+            ruta: this.imageService.getImageUrl(result.data.ruta) // Actualiza la ruta de la imagen
+          },
           cantidad: item.quantity
         }))
       );
@@ -113,17 +130,37 @@ export class CartComponent implements OnInit {
   }
 
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
-    const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
     const input = event.target as HTMLInputElement;
-    const quantity = parseInt(input.value, 10);
-    const productIdCart = localCart.findIndex((item: { productId: number }) => item.productId === productId);
+    const quantity = parseInt(input.value, 10); // Definir la variable 'quantity'
+    
+    if (!this.userId) {
+      const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const productIdCart = localCart.findIndex((item: { productId: number }) => item.productId === productId);
 
-    if (productIdCart === -1) {
-      console.error(`Producto con ID ${productId} no encontrado en el carrito.`);
-      return;
+      if (productIdCart === -1) {
+        console.error(`Producto con ID ${productId} no encontrado en el carrito.`);
+        return;
+      }
+
+      localCart[productIdCart].quantity = quantity;
+      localStorage.setItem('cart', JSON.stringify(localCart));
+    } else {
+      this.carritoService.modifyProductQuantity(productId, carritoId, quantity)
+      .then((result) => {
+        if (result.success) {
+          const productoCarrito = this.productosCarrito.find(item => item.productoId === productId && item.carritoId === carritoId);
+          if (productoCarrito) {
+            productoCarrito.cantidad = quantity;  // Actualiza la cantidad en el array
+          }
+        } else {
+          this.errorMessage = `Error al actualizar la cantidad: ${result.error}`;
+        }
+      })
+      .catch((error) => {
+        this.errorMessage = `Se produjo un error al actualizar la cantidad: ${error.message}`;
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
     }
-
-    localCart[productIdCart].quantity = quantity;
-    localStorage.setItem('cart', JSON.stringify(localCart));
-  }
-}
+}}
