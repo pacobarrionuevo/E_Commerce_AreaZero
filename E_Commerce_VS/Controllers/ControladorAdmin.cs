@@ -32,17 +32,26 @@ namespace E_Commerce_VS.Controllers
                 .ToListAsync();
         }
 
-        //  Para Modificar si es Admin un usuario
+        // Para Modificar si es Admin un usuario
         [HttpPut("usuarios/{id}")]
         public async Task<IActionResult> UpdateUsuario(int id, [FromBody] UserUpdateDto userUpdateDto)
         {
+            if (userUpdateDto == null)
+            {
+                return BadRequest("El cuerpo de la solicitud es nulo.");
+            }
+
             var user = await _context.Usuarios.FindAsync(id);
             if (user == null)
             {
                 return NotFound();
             }
 
+            user.Nombre = userUpdateDto.Nombre;
+            user.Email = userUpdateDto.Email;
+            user.Direccion = userUpdateDto.Direccion;
             user.esAdmin = userUpdateDto.esAdmin;
+
             _context.Entry(user).State = EntityState.Modified;
 
             try
@@ -65,15 +74,9 @@ namespace E_Commerce_VS.Controllers
         }
 
         // Borrar usuario siendo admin
-        [HttpDelete("usuarios/{adminId}/{userId}")]
-        public async Task<IActionResult> DeleteUsuario(int adminId, int userId)
+        [HttpDelete("usuarios/{userId}")]
+        public async Task<IActionResult> DeleteUsuario(int userId)
         {
-            var adminUser = await _context.Usuarios.FindAsync(adminId);
-            if (adminUser == null || !adminUser.esAdmin)
-            {
-                return Unauthorized("No tienes permisos de administrador para realizar esta acción.");
-            }
-
             var userToDelete = await _context.Usuarios.FindAsync(userId);
             if (userToDelete == null)
             {
@@ -98,9 +101,32 @@ namespace E_Commerce_VS.Controllers
                     Ruta = p.Ruta,
                     Descripcion = p.Descripcion,
                     Precio = p.Precio
-                    
                 })
                 .ToListAsync();
+        }
+
+        // Crear nuevo producto
+        [HttpPost("productos")]
+        public async Task<ActionResult<ProductoDto>> CreateProducto([FromBody] ProductCreateDto productCreateDto)
+        {
+            if (productCreateDto == null)
+            {
+                return BadRequest("El cuerpo de la solicitud es nulo.");
+            }
+
+            var product = new Producto
+            {
+                Nombre = productCreateDto.Nombre,
+                Ruta = productCreateDto.Ruta,
+                Descripcion = productCreateDto.Descripcion,
+                Precio = productCreateDto.Precio,
+                Stock = productCreateDto.Stock
+            };
+
+            _context.Productos.Add(product);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(CreateProducto), new { id = product.Id }, product);
         }
 
         // Modificar producto siendo admin
@@ -123,7 +149,7 @@ namespace E_Commerce_VS.Controllers
             product.Descripcion = productUpdateDto.Descripcion;
             product.Precio = productUpdateDto.Precio;
             product.Stock = productUpdateDto.Stock;
-            // Añadir otros campos necesarios
+
             _context.Entry(product).State = EntityState.Modified;
 
             try
@@ -145,6 +171,21 @@ namespace E_Commerce_VS.Controllers
             return NoContent();
         }
 
+        // Borrar producto
+        [HttpDelete("productos/{id}")]
+        public async Task<IActionResult> DeleteProducto(long id)
+        {
+            var product = await _context.Productos.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound("Producto no encontrado.");
+            }
+
+            _context.Productos.Remove(product);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
 
         // Comprueba si el usuario existe
         private bool UsuarioExists(int id)
@@ -152,7 +193,7 @@ namespace E_Commerce_VS.Controllers
             return _context.Usuarios.Any(e => e.UsuarioId == id);
         }
 
-        //Comprueba si el producto existe
+        // Comprueba si el producto existe
         private bool ProductoExists(long id)
         {
             return _context.Productos.Any(e => e.Id == id);

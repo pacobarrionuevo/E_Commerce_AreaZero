@@ -9,6 +9,7 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { AdminComponent } from './pages/admin/admin.component';
 export const routes: Routes = [
     {
         path: '',
@@ -49,5 +50,10 @@ export const routes: Routes = [
     {
         path: 'usuario',
         component: UsuarioComponent,
+    }
+    ,
+    {
+        path: 'admin',
+        component: AdminComponent,
     }
 ];

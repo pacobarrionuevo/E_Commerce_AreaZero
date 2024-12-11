@@ -12,8 +12,9 @@ import { environment } from '../../environments/environment';
 export class AuthService {
 
   private URL = `${environment.apiUrl}`;
-  //Behavior Subject es para que actualize el header nada más iniciar sesion para que salga el botón del usuario component
+    //Behavior Subject es para que actualize el header nada más iniciar sesion para que salga el botón del usuario y el botón admin
   private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
+  private isAdminSubject = new BehaviorSubject<boolean>(this.checkAdmin());
 
   constructor(private http: HttpClient) {}
 
@@ -21,8 +22,31 @@ export class AuthService {
     return !!localStorage.getItem('accessToken');
   }
 
+  private checkAdmin(): boolean {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      const parts = token.split('.');
+      if (parts.length !== 3) {
+        return false;
+      }
+      const payloadBase64 = parts[1];
+      const payloadJson = atob(payloadBase64);
+      try {
+        const payload = JSON.parse(payloadJson);
+        return payload.esAdmin === true;
+      } catch (e) {
+        return false;
+      }
+    }
+    return false;
+  }
+
   get isLoggedIn() {
     return this.loggedIn.asObservable();
+  }
+
+  get isAdmin() {
+    return this.isAdminSubject.asObservable();
   }
 
   register(authData: AuthRequest): Observable<AuthResponse> {
@@ -34,6 +58,7 @@ export class AuthService {
       tap((response: AuthResponse) => {
         localStorage.setItem('accessToken', response.stringToken);
         this.loggedIn.next(true);
+        this.isAdminSubject.next(this.checkAdmin());
       })
     );
   }
@@ -42,6 +67,7 @@ export class AuthService {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('usuarioId');
     this.loggedIn.next(false);
+    this.isAdminSubject.next(false);
   }
 
   getUserDataFromToken(): any {
@@ -53,7 +79,6 @@ export class AuthService {
         console.error('El token no está bien estructurado.');
         return null;
       }
-      // Payload del token para controlar bien el token en la vista usuario
       const payloadBase64 = parts[1];
       console.log('Payload Base64:', payloadBase64);
 
@@ -67,7 +92,8 @@ export class AuthService {
           id: payload.id || 'ID no disponible',
           name: payload.Nombre || 'Nombre no disponible',
           email: payload.Email || 'Correo no disponible',
-          address: payload.Direccion || 'Dirección no disponible'
+          address: payload.Direccion || 'Dirección no disponible',
+          esAdmin: payload.esAdmin || false
         };
       } catch (e) {
         console.error('Error al parsear el JSON del payload:', e);

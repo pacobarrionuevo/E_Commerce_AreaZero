@@ -50,7 +50,7 @@ namespace E_Commerce_VS.Controllers
                 Email = usuario.Email,
                 Password = PasswordHelper.Hash(usuario.Password),
                 Direccion = usuario.Direccion,
-                esAdmin = usuario.esAdmin // Añadimos la propiedad esAdmin
+                esAdmin = usuario.esAdmin 
             };
 
             await _context.Usuarios.AddAsync(newUser);
@@ -67,7 +67,7 @@ namespace E_Commerce_VS.Controllers
                     {"Nombre", newUser.Nombre},
                     {"Email", newUser.Email},
                     {"Direccion", newUser.Direccion},
-                    {"esAdmin", newUser.esAdmin} // Añadimos esAdmin a los claims del token
+                    {"esAdmin", newUser.esAdmin}
                 },
                 // Caducidad del Token
                 Expires = DateTime.UtcNow.AddDays(5),
@@ -110,7 +110,7 @@ namespace E_Commerce_VS.Controllers
                     {"Nombre", user.Nombre},
                     {"Email", user.Email},
                     {"Direccion", user.Direccion},
-                    {"esAdmin", user.esAdmin} // Añadimos esAdmin a los claims del token
+                    {"esAdmin", user.esAdmin} 
                 },
                 // Caducidad del Token
                 Expires = DateTime.UtcNow.AddDays(5),
@@ -140,7 +140,7 @@ namespace E_Commerce_VS.Controllers
             user.Nombre = userUpdateDto.Nombre;
             user.Email = userUpdateDto.Email;
             user.Direccion = userUpdateDto.Direccion;
-            user.esAdmin = userUpdateDto.esAdmin; // Añadimos la propiedad esAdmin
+            user.esAdmin = userUpdateDto.esAdmin; 
 
             _context.Usuarios.Update(user);
             await _context.SaveChangesAsync();
@@ -153,7 +153,7 @@ namespace E_Commerce_VS.Controllers
                     {"Nombre", user.Nombre},
                     {"Email", user.Email},
                     {"Direccion", user.Direccion},
-                    {"esAdmin", user.esAdmin} // Añadimos esAdmin a los claims del token
+                    {"esAdmin", user.esAdmin} 
                 },
                 Expires = DateTime.UtcNow.AddDays(5),
                 SigningCredentials = new SigningCredentials(
