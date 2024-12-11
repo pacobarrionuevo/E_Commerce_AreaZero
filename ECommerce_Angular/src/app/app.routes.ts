@@ -7,6 +7,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CompraconfirmadaComponent } from './pages/compraconfirmada/compraconfirmada.component';
 export const routes: Routes = [
     {
         path: '',
@@ -39,5 +40,9 @@ export const routes: Routes = [
     {
         path: 'checkout',
         component: CheckoutComponent
+    },
+    {
+        path: 'compraconfirmada',
+        component: CompraconfirmadaComponent
     }
 ];

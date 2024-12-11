@@ -1,73 +1,100 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CheckoutService } from '../../services/checkout.service';
+import { StripeService } from 'ngx-stripe';
+import { StripeEmbeddedCheckout, StripeEmbeddedCheckoutOptions } from '@stripe/stripe-js';
 import { Carrito } from '../../models/carrito';
+import { StripeComponent } from '../stripe/stripe.component';
 
 @Component({
   selector: 'app-checkout',
+  standalone: true,
+  imports: [RouterModule, StripeComponent],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css']
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent implements OnInit, OnDestroy {
 
-  @ViewChild('checkoutDialog') checkoutDialogRef!: ElementRef<HTMLDialogElement>;
+  @ViewChild('checkoutDialog')
+  checkoutDialogRef: ElementRef<HTMLDialogElement>;
 
-  carrito: Carrito | null = null;
-  sessionId: string = '';
-  routeQueryMap$!: Subscription;
-  orderId!: string;
-  productos: any[] = [];
-  total: number = 0;
+  carrito: Carrito = null;
+  sessionUrl: string = '';
+  routeQueryMap$: Subscription;
+  stripeEmbedCheckout: StripeEmbeddedCheckout;
 
   constructor(
-    private service: CheckoutService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+    private service: CheckoutService, 
+    private route: ActivatedRoute, 
+    private router: Router,
+    private stripe: StripeService) {}
 
   ngOnInit() {
-    this.route.queryParamMap.subscribe(params => {
-      this.orderId = params.get('orderId') || '';
-      const metodoPago = params.get('metodoPago');
-
-      if (this.orderId) {
-        this.loadOrderDetails(this.orderId);
-      }
-
-      if (metodoPago === 'tarjeta') {
-        this.iniciarPagoConTarjeta();
-      }
-    });
+    this.routeQueryMap$ = this.route.queryParamMap.subscribe(queryMap => this.init(queryMap));
   }
 
-  iniciarPagoConTarjeta() {
-    const productos = this.productos.map(p => ({
-      Nombre: p.nombre,
-      Precio: p.precio,
-      Ruta: p.ruta
+  ngOnDestroy(): void {
+    this.routeQueryMap$.unsubscribe();
+  }
+
+  async init(queryMap: ParamMap) {
+    this.sessionUrl = queryMap.get('sessionUrl');
+    
+    if (this.sessionUrl) {
+      const request = await this.service.getStatus(this.sessionUrl);
+
+      if (request.success) {
+        console.log(request.data);
+      }
+    } else {
+      const request = await this.service.getAllProducts();
+
+      if (request.success) {
+        this.carrito = request.data[0];
+      }
+    }
+  }
+
+  async embeddedCheckout() {
+    if (!this.carrito || !this.carrito.productoCarrito) {
+      console.error('El carrito está vacío.');
+      return;
+    }
+
+    const productos = this.carrito.productoCarrito.map(p => ({
+      Id: p.producto.id,
+      Nombre: p.producto.nombre,
+      Precio: p.producto.precio,
+      Ruta: p.producto.ruta,
+      Stock: p.producto.stock,
+      Cantidad: p.cantidad,
     }));
 
-    this.service.getHostedCheckout(productos).then(response => {
-      if (response.success && response.data.sessionUrl) {
-        window.location.href = response.data.sessionUrl;
-      } else {
-        console.error('Error iniciando el pago:', response.error);
-      }
-    }).catch(err => {
-      console.error('Error en la solicitud:', err);
-    });
+    const request = await this.service.getEmbededCheckout();
+
+    if (request.success) {
+      const options: StripeEmbeddedCheckoutOptions = {
+        clientSecret: request.data.clientSecret
+      };
+
+      this.stripe.initEmbeddedCheckout(options)
+        .subscribe((checkout) => {
+          this.stripeEmbedCheckout = checkout;
+          checkout.mount('#checkout');
+          this.checkoutDialogRef.nativeElement.showModal();
+        });
+    } else {
+      console.error('Error al iniciar el checkout incrustado.', request.error);
+    }
   }
 
-  loadOrderDetails(orderId: string) {
-    this.service.getOrderDetails(orderId).subscribe(
-      (data: any) => {
-        this.productos = data.Productos;
-        this.total = data.Total;
-      },
-      error => {
-        console.error('Error al cargar detalles del pedido:', error);
-      }
-    );
+  reload() {
+    this.router.navigate(['checkout']);
+  }
+
+  cancelCheckoutDialog() {
+    this.stripeEmbedCheckout.destroy();
+    this.checkoutDialogRef.nativeElement.close();
   }
 }

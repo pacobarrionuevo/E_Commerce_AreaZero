@@ -1,16 +1,3 @@
-<h1>Pasarela de Pago</h1>
 
-  <h2>Compra realizada con éxito</h2>
+  <app-stripe></app-stripe>
 
-
-<ng-template #orderSection>
-
-    <h2>Vas a comprar esto:</h2>
-    <p>{{ carrito.id }}</p>
-    <p>{{ carrito.productoCarrito }}</p>
-    <p>{{ carrito.userId }}</p>
-</ng-template>
-
-<dialog #checkoutDialog>
-  <div id="checkout"></div>
-</dialog>

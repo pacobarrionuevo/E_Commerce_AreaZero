@@ -12,36 +12,42 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CheckoutService {
-  
 
   constructor(private api: ApiService, private http: HttpClient) { }
   private Url = 'https://localhost:7133/api';
-
-  getOrderDetails(orderId: string): Observable<any> {
-    return this.http.get<any>(`${this.Url}/ControladorCheckout/order-details/${orderId}`);
-  }
-
-
   getAllProducts(): Promise<Result<Carrito[]>> {
-    return this.api.get<Carrito[]>('/ControladorCheckout/products');
+    return this.api.get<Carrito[]>('ControladorCheckout/products');
   }
 
-  getHostedCheckout(productos: any): Promise<Result<CheckoutSession>> {
-    return this.api.post<CheckoutSession>('ControladorCheckout/hosted', productos);
-  }
-  
-
-  getEmbededCheckout(products: any): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('/ControladorCheckout/embedded', products);
+  getHostedCheckout(products: any): Promise<Result<CheckoutSession>> {
+    return this.api.get<CheckoutSession>('ControladorCheckout/hosted', products);
   }
 
-  getStatus(sessionId: string): Promise<Result<CheckoutSessionStatus>> {
-    return this.api.get<CheckoutSessionStatus>(`checkout/status/${sessionId}`);
+  async getEmbededCheckout(): Promise<Result<CheckoutSession>> {
+    const token = localStorage.getItem('token');
+    this.api.jwt = token;
+    try {
+      const result = await this.api.post<CheckoutSession>('ControladorCheckout/embedded');
+      if (result.success) { 
+        console.log("Embedded checkout obtenido con éxito"); 
+        return result; }
+        console.error(`Error desde el backend: ${result.error}`);
+        return result;
+    } catch (err) {
+      console.error("Error al obtener embedded checkout:", err);
+      return Result.error(500, "Error inesperado al obtener embedded checkout.");
+    }
+  }
+
+  getStatus(sessionUrl: string): Promise<Result<CheckoutSessionStatus>> { 
+    return this.api.get<CheckoutSessionStatus>(`ControladorCheckout/status/${sessionUrl}`); 
   }
 
   getCreateCheckoutSession(): Observable<CheckoutSession> {
     return this.http.post<CheckoutSession>(this.Url, {});
   }
+
+ 
 
   crearOrdenTemporal(): Observable<any> {
     // Recuperar el sessionId y usuarioId del localStorage
@@ -63,8 +69,6 @@ export class CheckoutService {
     if (userId) {
         params.userId = userId;
     }
-
-    // Enviar la solicitud HTTP con ambos parámetros si están disponibles
     return this.http.post(`${this.Url}/ControladorCheckout/CrearOrdenTemporal`, cart, {
         headers: { 'Content-Type': 'application/json' },
         params: params  // Pasamos los dos parámetros si están presentes
@@ -82,4 +86,3 @@ export class CheckoutService {
 
     
   }
-  

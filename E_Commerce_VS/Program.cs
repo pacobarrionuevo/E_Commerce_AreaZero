@@ -23,7 +23,7 @@ namespace E_Commerce_VS
 
             var builder = WebApplication.CreateBuilder(args);
 
-            StripeConfiguration.ApiKey = builder.Configuration.GetSection(Settings.SECTION_NAME).Get<Settings>()?.StripeSecret;
+            builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
 
             // Add services to the container.
             builder.Services.AddControllers();
