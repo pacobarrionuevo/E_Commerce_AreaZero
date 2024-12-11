@@ -141,7 +141,7 @@ namespace E_Commerce_VS.Controllers
                         PriceData = new SessionLineItemPriceDataOptions
                         {
                             Currency = "eur",
-                            UnitAmount = (long)(productoStripe.Precio),
+                            UnitAmount = (long)(productoStripe.Precio * 100),
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
                                 Name = productoStripe.Nombre,
@@ -167,8 +167,10 @@ namespace E_Commerce_VS.Controllers
             var service = new SessionService();
             var session = await service.CreateAsync(options);
 
-            return Ok(new { clientSecret = session.ClientSecret, sessionId = session.Id });
+            return Ok(new { clientSecret = session.ClientSecret, sessionUrl = session.Url });
         }
+
+
 
         [HttpGet("status/{sessionId}")]
         public async Task<ActionResult> SessionStatus(string sessionId)
