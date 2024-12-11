@@ -53,7 +53,7 @@ namespace E_Commerce_VS.Models.Database
             };
 
             Usuario[] usuarios = new Usuario[] { 
-                new Usuario() { UsuarioId = 1, Nombre = "Jose", Password = PasswordHelper.Hash("joseguapeton"), Email = "jose@gmail.com", Direccion = "Calle Jose", esAdmin = true },
+                new Usuario() { UsuarioId = 1, Nombre = "Jose", Password = PasswordHelper.Hash("jose777"), Email = "jose@gmail.com", Direccion = "Calle Jose", esAdmin = true },
                 new Usuario() { UsuarioId = 2, Nombre = "paco", Password = PasswordHelper.Hash("paco"), Email = "paco@gmail.com", Direccion = "Calle Paco", esAdmin = false } 
             };
             await _dbContext.Productos.AddRangeAsync(productos);
