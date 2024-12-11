@@ -5,12 +5,13 @@ import { Product } from '../../models/product';
 import { Result } from '../../models/result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { CheckoutService } from '../../services/checkout.service';
+
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, RouterLink],
+  imports: [CommonModule, FormsModule],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
@@ -21,7 +22,7 @@ export class CartComponent implements OnInit {
   userId: number | null = null;
   product: Product | any;
 
-  constructor(private carritoService: CarritoService, private checkoutService: CheckoutService) {}
+  constructor(private carritoService: CarritoService, private checkoutService: CheckoutService, private router: Router) {}
 
   ngOnInit(): void {
     const userIdString = localStorage.getItem('usuarioId');
@@ -29,24 +30,13 @@ export class CartComponent implements OnInit {
 
     this.loadCartProducts();
 
-    // Llamar a crearOrdenTemporal para crear o actualizar la orden temporal
-    this.checkoutService.crearOrdenTemporal().subscribe({
-        next: (response) => {
-            console.log('Orden temporal creada o actualizada correctamente:', response);
-        },
-        error: (error) => {
-            console.error('Error al crear la orden temporal:', error);
-        }
-    });
+   
 }
 
-
-  // Cargar los productos del carrito
   loadCartProducts(): void {
-    this.productosCarrito = []; // Reiniciar la lista de productos
+    this.productosCarrito = []; 
 
     if (this.userId) {
-      // Si hay un usuario autenticado, cargar productos desde el servidor
       this.carritoService.getProductosCarrito()
         .then(result => {
           if (result.success) {
@@ -62,7 +52,6 @@ export class CartComponent implements OnInit {
           this.isLoading = false;
         });
     } else {
-      // Si no hay usuario autenticado, cargar productos desde el localStorage
       const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
       const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
         this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
@@ -84,7 +73,6 @@ export class CartComponent implements OnInit {
     }
   }
   
-  // Eliminar un producto del carrito
   async removeProduct(productId: number, carritoId: number): Promise<void> {
     if (!this.userId) {
     const existingCart = localStorage.getItem('cart');
@@ -97,10 +85,9 @@ export class CartComponent implements OnInit {
         this.loadCartProducts();
     } else if (this.userId)
    {
-    // Si no hay productos en el localStorage o no se encuentra el producto, manejar el servidor
+
     try {
       const result = await this.carritoService.removeProductFromCart(productId, this.userId);
-        // Actualizar la lista de productos en memoria
         this.productosCarrito = this.productosCarrito.filter(p => p.productoId !== productId);
         console.log(`Producto con ID ${productId} eliminado del servidor`);
     } catch (error) {
@@ -109,7 +96,6 @@ export class CartComponent implements OnInit {
    } return; 
   }
   
-  // Modificar la cantidad de un producto
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
     const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
     const input = event.target as HTMLInputElement;
@@ -124,5 +110,20 @@ export class CartComponent implements OnInit {
     localCart[productIdCart].quantity = quantity;
     localStorage.setItem('cart', JSON.stringify(localCart));
   
+  }
+
+  async goToPagoTarjeta() {
+    this.checkoutService.crearOrdenTemporal().subscribe({
+      next: (response) => {
+          console.log('Orden temporal creada o actualizada correctamente:', response);
+          const ordenId = localStorage.getItem('ordenId');
+          this.router.navigate(['checkout'],
+            { queryParams: {'ordenId': ordenId, 'metodo_pago': 'stripe'}}
+          )
+      },
+      error: (error) => {
+          console.error('Error al crear la orden temporal:', error);
+      }
+  });
   }
 }

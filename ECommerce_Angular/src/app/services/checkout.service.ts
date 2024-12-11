@@ -55,8 +55,6 @@ export class CheckoutService {
     if (userId) {
         params.userId = userId;
     }
-
-    // Enviar la solicitud HTTP con ambos parámetros si están disponibles
     return this.http.post(`${this.Url}/ControladorCheckout/CrearOrdenTemporal`, cart, {
         headers: { 'Content-Type': 'application/json' },
         params: params  // Pasamos los dos parámetros si están presentes
