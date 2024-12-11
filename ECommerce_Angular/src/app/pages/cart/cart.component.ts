@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { CheckoutService } from '../../services/checkout.service';
-import { ImageService } from '../../services/image.service'; // Añadimos el servicio de imágenes
+import { ImageService } from '../../services/image.service';
 
 @Component({
     selector: 'app-cart',
