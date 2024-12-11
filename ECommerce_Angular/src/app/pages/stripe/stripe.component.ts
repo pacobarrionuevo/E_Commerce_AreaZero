@@ -7,11 +7,10 @@ import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-stripe',
-  standalone: true,
-  templateUrl: './stripe.component.html',
-  styleUrls: ['./stripe.component.css'],
-  imports: [CommonModule]
+    selector: 'app-stripe',
+    templateUrl: './stripe.component.html',
+    styleUrls: ['./stripe.component.css'],
+    imports: [CommonModule]
 })
 export class StripeComponent implements OnInit {
   @ViewChild('checkoutDialogRef', { static: false }) checkoutDialogRef: ElementRef<HTMLDialogElement>;

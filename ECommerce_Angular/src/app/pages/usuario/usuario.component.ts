@@ -4,11 +4,10 @@ import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-usuario',
-  standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './usuario.component.html',
-  styleUrls: ['./usuario.component.css']
+    selector: 'app-usuario',
+    imports: [FormsModule, CommonModule],
+    templateUrl: './usuario.component.html',
+    styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit {
   user: any = {};

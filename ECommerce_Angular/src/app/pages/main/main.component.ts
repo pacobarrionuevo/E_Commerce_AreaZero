@@ -3,11 +3,10 @@ import { RouterModule } from '@angular/router';
 import { ImageService } from '../../services/image.service';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  imports: [RouterModule], 
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+    selector: 'app-main',
+    imports: [RouterModule],
+    templateUrl: './main.component.html',
+    styleUrls: ['./main.component.css']
 })
 export class MainComponent {
   sobreImgSrc: string;

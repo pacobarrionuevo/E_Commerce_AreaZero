@@ -28,6 +28,7 @@ export class CheckoutService {
       const result = await this.api.post<CheckoutSession>('ControladorCheckout/embedded');
         return result;
     } catch (err) {
+      return Result.error<CheckoutSession>(500, 'Failed to fetch embedded checkout session.');
     }
   }
 

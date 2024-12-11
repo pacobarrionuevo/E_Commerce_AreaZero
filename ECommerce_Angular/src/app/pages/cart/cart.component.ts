@@ -10,11 +10,10 @@ import { CheckoutService } from '../../services/checkout.service';
 import { ImageService } from '../../services/image.service'; // Añadimos el servicio de imágenes
 
 @Component({
-  selector: 'app-cart',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule, RouterLink],
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+    selector: 'app-cart',
+    imports: [CommonModule, FormsModule, RouterModule, RouterLink],
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
   productosCarrito: ProductoCarrito[] = [];
