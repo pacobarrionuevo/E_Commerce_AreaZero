@@ -141,7 +141,7 @@ namespace E_Commerce_VS.Controllers
                         PriceData = new SessionLineItemPriceDataOptions
                         {
                             Currency = "eur",
-                            UnitAmount = (long)(productoStripe.Precio * 100),
+                            UnitAmount = (long)(productoStripe.Precio),
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
                                 Name = productoStripe.Nombre,
