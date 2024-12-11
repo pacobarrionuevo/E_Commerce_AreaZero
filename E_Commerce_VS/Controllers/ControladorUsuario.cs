@@ -26,7 +26,7 @@ namespace E_Commerce_VS.Controllers
             _context = _dbContext;
             _tokenParameters = jwtOptions.Get(JwtBearerDefaults.AuthenticationScheme).TokenValidationParameters;
         }
-        // Este método nos va a servir para comprobar que los usuarios se añaden
+
         [HttpGet("userlist")]
         public IEnumerable<UserRegistrarseDto> GetUser()
         {
@@ -35,7 +35,7 @@ namespace E_Commerce_VS.Controllers
         [HttpPost("Registro")]
         public async Task<IActionResult> Register([FromBody] UserRegistrarseDto usuario)
         {
-            //comprobar con la bbdd
+
             if (_context.Usuarios.Any(Usuario => Usuario.Nombre == usuario.Nombre))
             {
                 return BadRequest("El nombre del usuario ya está en uso");
@@ -50,27 +50,27 @@ namespace E_Commerce_VS.Controllers
             await _context.Usuarios.AddAsync(newUser);
             await _context.SaveChangesAsync();
             UserRegistrarseDto userCreated = ToDto(newUser);
-            //  Creamos el Token
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                //  Datos para autorizar al usario
+
                 Claims = new Dictionary<string, object>
                     {
                         {"id", newUser.UsuarioId},
                         { ClaimTypes.Role, newUser.Rol  }
                     },
-                //  Caducidad del Token
+
                 Expires = DateTime.UtcNow.AddDays(5),
-                //  Clave y algoritmo de firmado
+
                 SigningCredentials = new SigningCredentials(
                     _tokenParameters.IssuerSigningKey,
                     SecurityAlgorithms.HmacSha256Signature)
             };
-            //  Creamos el token y lo devolvemos al usuario logeado
+
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
             string accessToken = tokenHandler.WriteToken(token);
-            //return Ok(stringToken);
+
             return Ok(new { StringToken = accessToken });
         }
         [HttpPost("login")]
@@ -82,31 +82,29 @@ namespace E_Commerce_VS.Controllers
             {
                 if (userList.Email == userLoginDto.Email)
                 {
-                    //  Cifrar los datos del usuario
+
                     var result = PasswordHelper.Hash(userLoginDto.Password);
                     if (userList.Password == result)
                     {
-                        //  Creamos el Token
+ 
                         var tokenDescriptor = new SecurityTokenDescriptor
                         {
-                            //  Datos para autorizar al usario
                             Claims = new Dictionary<string, object>
                             {
                                 {"id", userList.UsuarioId },
                                 { ClaimTypes.Role, userList.Rol  }
                             },
-                            //  Caducidad del Token
+
                             Expires = DateTime.UtcNow.AddDays(5),
-                            //  Clave y algoritmo de firmado
+
                             SigningCredentials = new SigningCredentials(
                                 _tokenParameters.IssuerSigningKey,
                                 SecurityAlgorithms.HmacSha256Signature)
                         };
-                        //  Creamos el token y lo devolvemos al usuario logeado
+
                         JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
                         SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
                         string accessToken = tokenHandler.WriteToken(token);
-                        //return Ok(stringToken);
                         return Ok(new { StringToken = accessToken, userList.UsuarioId });
                     }
                 }

@@ -33,20 +33,17 @@ namespace E_Commerce_VS.Controllers
             int paginaActual = 1,
             int elementosPorPagina = 10,
 
-            string query = "")  // Parámetro opcional para la búsqueda
+            string query = "")
 
-        {
-            // Obtiene todos los productos desde el servicio
+        {     
             IEnumerable<Producto> productos = await _service.GetAllAsync();
 
-            // Si hay un término de búsqueda, aplica SmartSearchService para obtener coincidencias
             if (!string.IsNullOrEmpty(query))
             {
                 var searchResults = _smartSearchService.Search(query);
                 productos = productos.Where(p => searchResults.Contains(p.Nombre));
             }
 
-            // Aplica el filtro de ordenación seleccionado
             productos = filtro switch
             {
                 Ordenacion.AscendenteNombre => productos.OrderBy(p => p.Nombre),
@@ -56,17 +53,14 @@ namespace E_Commerce_VS.Controllers
                 _ => productos
             };
 
-            // Paginación
             var totalElementos = productos.Count();
             var totalPaginas = (int)Math.Ceiling(totalElementos / (double)elementosPorPagina);
             var productosPaginados = productos
                 .Skip((paginaActual - 1) * elementosPorPagina)
                 .Take(elementosPorPagina);
 
-            // Mapea los productos paginados a DTO
             var productosDto = _mapper.ToDto(productosPaginados, Request);
 
-            // Retorna los resultados paginados y filtrados
             return new Paginacion<ProductoDto>
             {
                 Resultados = productosDto,
@@ -76,7 +70,6 @@ namespace E_Commerce_VS.Controllers
                 PaginaActual = paginaActual
             };
         }
-        // Método para obtener un producto por ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(long id)
         {

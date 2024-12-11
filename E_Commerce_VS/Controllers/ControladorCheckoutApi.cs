@@ -9,14 +9,12 @@ namespace E_Commerce_VS.Controllers
     public class CheckoutApiController : Controller
     {
         [HttpPost]
-        public ActionResult Create(int id) // Se recibe un parámetro ID desde la solicitud
+        public ActionResult Create(int id) 
         {
             var domain = "http://localhost:4242";
 
-            // Obtener el Price ID usando el método Precio
-            string priceId = Precio(id); // Llamada dinámica al método Precio
+            string priceId = Precio(id); 
 
-            // Verificar si el Price ID es válido
             if (priceId == "price_not_found")
             {
                 return BadRequest(new { error = "Invalid product ID" });
@@ -29,7 +27,6 @@ namespace E_Commerce_VS.Controllers
                 {
                     new SessionLineItemOptions
                     {
-                        // Se utiliza el Price ID obtenido dinámicamente
                         Price = priceId,
                         Quantity = 1,
                     },
@@ -43,8 +40,6 @@ namespace E_Commerce_VS.Controllers
 
             return Json(new { clientSecret = session.ClientSecret });
         }
-
-        // Método Precio
 
         [HttpGet("precio/{id}")]
         public string Precio(int id)

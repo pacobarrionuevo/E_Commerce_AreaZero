@@ -18,7 +18,6 @@ namespace E_Commerce_VS.Controllers
             _context = dbContext;
         }
 
-        // Obtener todos los productos del carrito
         [HttpGet("productosCarrito")]
         public async Task<IEnumerable<ProductoCarrito>> GetProductosCarrito()
         {
@@ -28,15 +27,12 @@ namespace E_Commerce_VS.Controllers
         [HttpPut("eliminarproductocarrito")]
         public async Task<IActionResult> DeleteProduct([FromBody] DeleteProductDto request)
         {
-            // Buscar el carrito asociado al usuario
             var carrito = await _context.Carritos
                 .FirstOrDefaultAsync(c => c.UserId == request.UserId);
 
-            // Buscar el producto en el carrito
             var productoCarrito = await _context.ProductoCarritos
                 .FirstOrDefaultAsync(pc => pc.ProductoId == request.ProductId && pc.CarritoId == carrito.Id);
 
-            // Eliminarlo
             _context.ProductoCarritos.Remove(productoCarrito);
             await _context.SaveChangesAsync();
 
@@ -63,11 +59,9 @@ namespace E_Commerce_VS.Controllers
             return Ok("Cantidad actualizada en el carrito.");
         }
 
-        // Obtener productos de un carrito específico
         [HttpGet("productosCarrito/{userId}")]
         public async Task<IActionResult> GetProductosCarritoByUserId(int userId)
         {
-            // Verificar si el carrito existe para el usuario
             var carrito = await _context.Carritos
                 .Include(c => c.ProductoCarrito)
                 .FirstOrDefaultAsync(c => c.UserId == userId);
@@ -77,7 +71,6 @@ namespace E_Commerce_VS.Controllers
                 return NotFound($"No se encontró un carrito para el usuario con ID {userId}.");
             }
 
-            // Obtener los productos asociados al carrito
             var productos = await _context.ProductoCarritos
                 .Where(pc => pc.CarritoId == carrito.Id)
                 .Include(pc => pc.Producto)

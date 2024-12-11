@@ -15,7 +15,6 @@ namespace E_Commerce_VS.Controllers
             _reviewService = reviewService;
         }
 
-        // GET: api/ControladorReview
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ReviewDto>>> GetAllReviews()
         {
@@ -23,7 +22,6 @@ namespace E_Commerce_VS.Controllers
             return Ok(reviews);
         }
 
-        // Proteger este método con [Authorize]
         [HttpPost]
         [Authorize]
         public async Task<ActionResult> AddReview([FromBody] CreateReviewDto reviewDto)

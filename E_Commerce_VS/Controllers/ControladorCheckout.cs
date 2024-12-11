@@ -31,7 +31,6 @@ namespace E_Commerce_VS.Controllers
             [HttpGet("products")]
             public async Task<IActionResult> GetOrdenesTemporales()
             {
-                // Obtener todas las órdenes temporales activas
                 var ordenesTemporales = await _dbContext.Set<OrdenTemporal>()
                     .Select(o => new
                     {
@@ -56,45 +55,6 @@ namespace E_Commerce_VS.Controllers
 
                 return Ok(ordenesTemporales);
             }
-
-
-        [HttpPost("hosted")]
-        public async Task<ActionResult> HostedCheckout([FromBody] List<ProductoDto> productos)
-        {
-            if (productos == null || !productos.Any())
-                return BadRequest("No se proporcionaron productos para el checkout.");
-
-            var lineItems = productos.Select(product => new SessionLineItemOptions
-            {
-                PriceData = new SessionLineItemPriceDataOptions
-                {
-                    Currency = "eur",
-                    UnitAmount = (long)(product.Precio * 100),
-                    ProductData = new SessionLineItemPriceDataProductDataOptions
-                    {
-                        Name = product.Nombre,
-                        Images = new List<string> { product.Ruta }
-                    }
-                },
-                Quantity = 1
-            }).ToList();
-
-            var options = new SessionCreateOptions
-            {
-                UiMode = "hosted",
-                Mode = "payment",
-                PaymentMethodTypes = new List<string> { "card" },
-                LineItems = lineItems,
-                CustomerEmail = "correo_cliente@correo.es",
-                SuccessUrl = _settings.ClientBaseUrl + "/checkout?session_id={CHECKOUT_SESSION_ID}",
-                CancelUrl = _settings.ClientBaseUrl + "/checkout"
-            };
-
-            var service = new SessionService();
-            var session = await service.CreateAsync(options);
-
-            return Ok(new { sessionUrl = session.Url });
-        }
 
         [HttpPost("embedded")]
         public async Task<ActionResult> EmbeddedCheckout()
@@ -189,25 +149,18 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest($"El usuario con ID {userId} no existe.");
             }
 
-            // Verificar si tanto userId como ordenId están presentes
             if (ordenId.HasValue)
             {
-                // Buscar la orden activa con el ordenId
                 var ordenActiva = await _dbContext.OrdenesTemporales
                     .Include(o => o.Productos)
                     .FirstOrDefaultAsync(o => o.Id == ordenId && o.FechaExpiracion > DateTime.UtcNow);
 
                 if (ordenActiva != null)
                 {
-                    // Si la orden existe y está activa, la actualizamos
-
-                    // Si se proporciona un userId, lo asignamos a la orden
                     if (userId.HasValue)
                     {
                         ordenActiva.UsuarioId = userId.Value;
                     }
-
-                    // Actualizamos los productos en la orden activa
                     foreach (var productoCarrito in productosCarrito)
                     {
                         var productoEnOrden = ordenActiva.Productos
@@ -215,12 +168,10 @@ namespace E_Commerce_VS.Controllers
 
                         if (productoEnOrden != null)
                         {
-                            // Si el producto ya está en la orden, actualizamos la cantidad
                             productoEnOrden.Cantidad = productoCarrito.Cantidad;
                         }
                         else
                         {
-                            // Si el producto no está en la orden, lo añadimos
                             ordenActiva.Productos.Add(new ProductoCarrito
                             {
                                 ProductoId = productoCarrito.ProductoId,
@@ -229,14 +180,11 @@ namespace E_Commerce_VS.Controllers
                         }
                     }
 
-                    // Eliminar productos que ya no están en el carrito
                     ordenActiva.Productos.RemoveAll(p =>
                         !productosCarrito.Any(pc => pc.ProductoId == p.ProductoId));
 
-                    // Actualizar la fecha de expiración
                     ordenActiva.FechaExpiracion = DateTime.UtcNow.AddMinutes(30);
 
-                    // Guardar los cambios en la base de datos
                     await _dbContext.SaveChangesAsync();
 
                     return Ok(new
@@ -247,12 +195,10 @@ namespace E_Commerce_VS.Controllers
                 }
                 else
                 {
-                    // Si la orden no existe o está expirada
                     return BadRequest("La orden temporal no está activa o ha expirado.");
                 }
             }
 
-            // Si no existe la orden temporal con el ordenId (sessionId), creamos una nueva orden temporal
             var nuevaOrden = new OrdenTemporal
             {
                 UsuarioId = userId,
@@ -264,7 +210,6 @@ namespace E_Commerce_VS.Controllers
                 FechaExpiracion = DateTime.UtcNow.AddMinutes(30)
             };
 
-            // Añadir la nueva orden temporal a la base de datos
             _dbContext.OrdenesTemporales.Add(nuevaOrden);
             await _dbContext.SaveChangesAsync();
 
