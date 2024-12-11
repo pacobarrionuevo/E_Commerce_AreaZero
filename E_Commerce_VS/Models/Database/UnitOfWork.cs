@@ -10,6 +10,7 @@ public class UnitOfWork
     public RepositorioCarrito RepoCar { get; init; }
     public RepositorioOrdenTemporal RepoOT { get; init; }
 
+
     // Exponer el DbContext
     public ProyectoDbContext Context => _context;
 
@@ -20,6 +21,7 @@ public class UnitOfWork
         RepoProd = repoProd;
         RepoRev = repoRev;
         RepoCar = repoCar;
+        RepoOT = repoOT;
 
     }
 

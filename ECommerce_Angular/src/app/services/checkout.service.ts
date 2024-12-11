@@ -12,19 +12,27 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CheckoutService {
+  
 
   constructor(private api: ApiService, private http: HttpClient) { }
   private Url = 'https://localhost:7133/api';
+
+  getOrderDetails(orderId: string): Observable<any> {
+    return this.http.get<any>(`${this.Url}/ControladorCheckout/order-details/${orderId}`);
+  }
+
+
   getAllProducts(): Promise<Result<Carrito[]>> {
     return this.api.get<Carrito[]>('/ControladorCheckout/products');
   }
 
-  getHostedCheckout(products: any): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('/controladorcheckout/hosted', products);
+  getHostedCheckout(productos: any): Promise<Result<CheckoutSession>> {
+    return this.api.post<CheckoutSession>('ControladorCheckout/hosted', productos);
   }
+  
 
   getEmbededCheckout(products: any): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('/controladorcheckout/embedded', products);
+    return this.api.get<CheckoutSession>('/ControladorCheckout/embedded', products);
   }
 
   getStatus(sessionId: string): Promise<Result<CheckoutSessionStatus>> {

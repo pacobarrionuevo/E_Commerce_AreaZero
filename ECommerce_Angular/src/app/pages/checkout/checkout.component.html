@@ -1,24 +1,16 @@
-<h1>Pasarela de pago</h1>
+<h1>Pasarela de Pago</h1>
 
-@if (sessionId) {
-  <section>
-    <h2>Compra realizada con éxito</h2>
-    <button (click)="reload()">Volver a comprar</button>
-  </section>
-}
-@else if (carrito) {
-  <section>
+  <h2>Compra realizada con éxito</h2>
+
+
+<ng-template #orderSection>
+
     <h2>Vas a comprar esto:</h2>
-    <p>{{carrito.id}}</p>
-    <p>{{carrito.productoCarrito}}</p>
-    <p>{{carrito.userId}}</p>
-
-    <button (click)="hostedCheckout()">Comprar en página externa</button>
-    <button (click)="embeddedCheckout()">Comprar embebido</button>
-  </section>
-}
+    <p>{{ carrito.id }}</p>
+    <p>{{ carrito.productoCarrito }}</p>
+    <p>{{ carrito.userId }}</p>
+</ng-template>
 
 <dialog #checkoutDialog>
   <div id="checkout"></div>
-  <button (click)="cancelCheckoutDialog()">x</button>
 </dialog>
