@@ -16,71 +16,44 @@ export class CarritoService {
 
   constructor(private api: ApiService) {}
 
+  // Obtiene los carritos
   async getCarritos(): Promise<Result<Carrito[]>> {
     return this.api.get<Carrito[]>(`${this.carritoEndpoint}/carritos`);
   }
 
-  async associateCart(userId: number): Promise<Result<string>> {
-    const body = { userId };
-    return this.api.post<string>(`${this.carritoEndpoint}/associate-cart`, body, 'application/json');
-
-  }
-
   // Añadir un producto al carrito
   async addProductToCart(productId: number, userId: number, quantity: number): Promise<Result<number>> {
-    // Enviar los datos al backend
     const body = { productId, userId, quantity };
     const result = await this.api.post<number>(`${this.carritoEndpoint}/addtoshopcart`, body, 'application/json');
-  
-    if (result.success) {
-      console.log(`Producto añadido con éxito al carrito con ID: ${result.data}`);
-    }
-  
     return result; 
   }
-  
+
+  // Pasar los productos del local storage al servidor
   async localtoCart(): Promise<Result<string>> {
     const cart = JSON.parse(localStorage.getItem('cart') || '[]'); // Obtener el carrito del almacenamiento local
     const token = localStorage.getItem('token'); // Obtener el token del almacenamiento local
 
-    // Verificar si el token existe
-    if (!token) {
-        return Result.error(401, "Token no encontrado. No se puede realizar la solicitud.");
-    }
 
     this.api.jwt = token;
     const body = cart.map(item => ({ProductId: item.productId, Cantidad: item.quantity}));
-  
-    console.log('Payload:', body);
 
-    try {
         const result = await this.api.post<string>(`${this.carritoEndpoint}/PasaProductoAlCarrito`, body, 'application/json');
-
-        if (result.success) {
-            console.log("Productos añadidos con éxito al carrito");
-            return result;
-        }
-
-        // Manejar errores del backend
-        console.error(`Error desde el backend: ${result.error}`);
         return result;
 
-    } catch (err) {
-        console.error("Error al enviar productos al carrito:", err);
-        return Result.error(500, "Error inesperado al enviar productos al carrito.");
-    }
+   
 }
 
 
 
-  // Obtener todos los productos en el carrito
+  // Obtiene todos los productos en el carrito
   async getProductosCarrito(): Promise<Result<ProductoCarrito[]>> {
     const userId = localStorage.getItem('usuarioId')
     const result = await this.api.get<ProductoCarrito[]>(`${this.productoCarritoEndpoint}/productosCarrito/${userId}`);
   
     return result;
   }
-  
+
+  // Lllamar los productos por el id
   async getProductById(productId: number): Promise<Result<Product>> {
     const result = await this.api.get<Product>(`${this.productoEndpoint}/${productId}`);
     return result;

@@ -20,9 +20,10 @@ export class RegisterComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   async submit() {
+    //los datos que hacen falta para el registro
     const authData = { nombre: this.nombre, email: this.email , password: this.password, direccion: this.direccion }; 
     const result = await this.authService.register(authData).toPromise();
-
+//navega al login para iniciar sesión
     if (result) {
       this.jwt = result.stringToken; 
       this.router.navigate(['/login']); 

@@ -30,12 +30,11 @@ export class LoginComponent {
 
     try {
       const result = await this.authService.login(authData).toPromise();
-      console.log('Resultado de login:', result);  // Verifica la respuesta del login 
 
       if (result) {
         // Guarda el token y el ID del usuario en el localStorage
-        localStorage.setItem('token', result.stringToken); // Guarda el token JWT
-        localStorage.setItem('usuarioId', result.usuarioId.toString()); // Guarda el ID del usuario
+        localStorage.setItem('token', result.stringToken); 
+        localStorage.setItem('usuarioId', result.usuarioId.toString()); 
 
         // Asigna el token y el ID a las variables locales
         this.jwt = result.stringToken;
@@ -52,11 +51,4 @@ export class LoginComponent {
       console.error("Error al iniciar sesión:", error);
     }
   }
-  logout() {
-    localStorage.removeItem('token');
-    this.jwt = null;
-    this.usuarioId = null;
-    console.log("Cierre de sesión exitoso.");
-  }
-  
 }

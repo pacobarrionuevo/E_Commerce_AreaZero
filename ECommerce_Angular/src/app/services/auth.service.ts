@@ -17,11 +17,11 @@ export class AuthService {
   private isAdminSubject = new BehaviorSubject<boolean>(this.checkAdmin());
 
   constructor(private http: HttpClient) {}
-
+//mira si tiene token
   private hasToken(): boolean {
     return !!localStorage.getItem('accessToken');
   }
-
+//checkea si es admin
   private checkAdmin(): boolean {
     const token = localStorage.getItem('accessToken');
     if (token) {
@@ -62,14 +62,14 @@ export class AuthService {
       })
     );
   }
-
+//lógica del log out
   logout(): void {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('usuarioId');
     this.loggedIn.next(false);
     this.isAdminSubject.next(false);
   }
-
+//consigue los datos del token
   getUserDataFromToken(): any {
     const token = localStorage.getItem('accessToken');
    
@@ -98,7 +98,7 @@ export class AuthService {
     }
     return null;
   }
-
+//actualiza los datos de usuario
   updateUserData(user: any): Observable<any> {
     return this.http.post<any>(`${this.URL}ControladorUsuario/update`, user);
   }

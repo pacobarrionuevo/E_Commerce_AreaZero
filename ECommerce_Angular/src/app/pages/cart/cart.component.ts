@@ -27,16 +27,18 @@ export class CartComponent implements OnInit {
     private carritoService: CarritoService,
     private checkoutService: CheckoutService,
     private router: Router,
-    private imageService: ImageService // Inyectamos el servicio de imágenes
+    private imageService: ImageService 
   ) {}
 
   ngOnInit(): void {
+    //Guardo el userid en una variable del local storage
     const userIdString = localStorage.getItem('usuarioId');
     this.userId = userIdString ? parseInt(userIdString, 10) : null;
-
+    //cargar los productos
     this.loadCartProducts();
   }
 
+  //boton para ir al pago y crear la orden temporal para reservar el stock
   async goToPagoTarjeta() {
     this.checkoutService.crearOrdenTemporal().subscribe({
       next: async (response) => {
@@ -47,16 +49,12 @@ export class CartComponent implements OnInit {
           this.router.navigate(['checkout'], {
             queryParams: { 'sessionUrl': sessionUrl, 'metodo_pago': 'stripe' }
           });
-        } else {
-          console.error('Error al crear la sesión de Stripe:', stripeSession.error);
-        }
+        } 
       },
-      error: (error) => {
-        console.error('Error al crear la orden temporal:', error);
-      }
     });
   }
 
+  //Cargar los productos, si no hay userid los carga del localstorage y si hay userid los carga del servidor 
   loadCartProducts(): void {
     this.productosCarrito = []; 
 
@@ -65,17 +63,10 @@ export class CartComponent implements OnInit {
         .then(result => {
           if (result.success) {
             this.productosCarrito = result.data.map((item: ProductoCarrito) => {
-              return {
-                ...item,
-                producto: {
-                  ...item.producto,
-                  ruta: this.imageService.getImageUrl(item.producto.ruta) // Actualiza la ruta de la imagen
-                }
+              return {...item, producto: {...item.producto, ruta: this.imageService.getImageUrl(item.producto.ruta) }
               };
             });
-          } else {
-            console.error('Error al cargar productos del servidor:', result.error);
-          }
+          } 
         })
         .catch(error => {
           console.error('Error en el servidor:', error);
@@ -87,12 +78,7 @@ export class CartComponent implements OnInit {
       const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
       const productRequests = localCart.map((item: { productId: number, quantity: number }) =>
         this.carritoService.getProductById(item.productId).then((result: Result<Product>) => ({
-          producto: {
-            ...result.data,
-            ruta: this.imageService.getImageUrl(result.data.ruta) // Actualiza la ruta de la imagen
-          },
-          cantidad: item.quantity
-        }))
+          producto: {...result.data, ruta: this.imageService.getImageUrl(result.data.ruta) }, cantidad: item.quantity}))
       );
 
       Promise.all(productRequests)
@@ -108,14 +94,14 @@ export class CartComponent implements OnInit {
     }
   }
 
-  async removeProduct(productId: number, carritoId: number): Promise<void> {
+  //Borrar productos del local storage o del servidor, también dependiendo del userid guardado
+  async removeProduct(productId: number): Promise<void> {
     if (!this.userId) {
       const existingCart = localStorage.getItem('cart');
       let cart: { productId: number, quantity: number }[] = JSON.parse(existingCart);
       const ProductIdCart = cart.findIndex(item => item.productId === productId);
       cart.splice(ProductIdCart, 1);
       localStorage.setItem('cart', JSON.stringify(cart));
-      console.log(`Producto con ID ${productId} eliminado del localStorage`);
       this.loadCartProducts();
     } else {
       try {
@@ -131,7 +117,7 @@ export class CartComponent implements OnInit {
 
   modifyQuantity(productId: number, carritoId: number, event: Event): void {
     const input = event.target as HTMLInputElement;
-    const quantity = parseInt(input.value, 10); // Definir la variable 'quantity'
+    const quantity = parseInt(input.value, 10); 
     
     if (!this.userId) {
       const localCart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -150,11 +136,9 @@ export class CartComponent implements OnInit {
         if (result.success) {
           const productoCarrito = this.productosCarrito.find(item => item.productoId === productId && item.carritoId === carritoId);
           if (productoCarrito) {
-            productoCarrito.cantidad = quantity;  // Actualiza la cantidad en el array
+            productoCarrito.cantidad = quantity;  
           }
-        } else {
-          this.errorMessage = `Error al actualizar la cantidad: ${result.error}`;
-        }
+        } 
       })
       .catch((error) => {
         this.errorMessage = `Se produjo un error al actualizar la cantidad: ${error.message}`;
