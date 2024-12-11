@@ -6,6 +6,7 @@ import { Product } from '../../models/product';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarritoService } from '../../services/carrito.service';
+import { AuthService } from '../../services/auth.service';
 
 interface Review {
   id: number;
@@ -14,6 +15,7 @@ interface Review {
   label: number;
   usuarioId: number;
   productoId: number;
+  usuarioNombre?: string;
 }
 
 @Component({
@@ -30,17 +32,20 @@ export class ProductDetailComponent implements OnInit {
   usuarioId: number | null = null;
   jwt: string | null = null;
   Media: number = 0;
+  usuarioNombre: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
     private carritoService: CarritoService,
     private productDetailService: ProductDetailService,
-    private reviewService: ReviewService
+    private reviewService: ReviewService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.jwt = localStorage.getItem('accessToken'); 
     this.usuarioId = Number(localStorage.getItem('usuarioId')); 
+    this.loadUserData();
     this.getProduct();
   }
 
@@ -95,9 +100,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addReview(): void {
-    this.jwt = localStorage.getItem('accessToken'); 
-    this.usuarioId = Number(localStorage.getItem('usuarioId')); 
-
     if (!this.jwt) {
       alert('Por favor, inicie sesión para añadir una reseña.');
       return;
@@ -111,6 +113,7 @@ export class ProductDetailComponent implements OnInit {
       };
       this.reviewService.addReview(reviewDto).subscribe((review: Review) => {
         review.fechaPublicacion = new Date(review.fechaPublicacion);
+        review.usuarioNombre = this.usuarioNombre;
         this.reviews.push(review);
         this.calcularMedia();
         this.newReview = '';
@@ -158,6 +161,13 @@ export class ProductDetailComponent implements OnInit {
       return '😐';
     } else {
       return '😃';
+    }
+  }
+
+  loadUserData(): void {
+    const user = this.authService.getUserDataFromToken();
+    if (user) {
+      this.usuarioNombre = user.name;
     }
   }
 }
