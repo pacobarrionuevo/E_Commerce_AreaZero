@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   torneosImgSrc: string;
   subscripcionImgSrc: string;
   isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
 
   constructor(private imageService: ImageService) {
     this.logoImgSrc = this.imageService.getImageUrl('logo.png');
@@ -25,7 +26,12 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isLoggedIn = !!localStorage.getItem('accessToken');
+    this.authService.isLoggedIn.subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+    });
+    this.authService.isAdmin.subscribe(admin => {
+      this.isAdmin = admin;
+    });
   }
 
   logout(): void {

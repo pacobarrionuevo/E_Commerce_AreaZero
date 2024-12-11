@@ -9,52 +9,51 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
-import { AdminComponent } from './pages/admin/admin.component';  // Importar el componente
-
+import { AdminComponent } from './pages/admin/admin.component';
 export const routes: Routes = [
-  {
-    path: '',
-    component: MainComponent,
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-  },
-  {
-    path: 'catalog',
-    component: CatalogComponent,
-  },
-  {
-    path: 'aboutus',
-    component: AboutusComponent,
-  },
-  {
-    path: 'cart',
-    component: CartComponent,
-  },
-  {
-    path: 'product-detail/:id',
-    component: ProductDetailComponent,
-  },
-  {
-    path: 'checkout',
-    component: CheckoutComponent
-  },
-  {
-    path: 'pay',
-    component: PaymentComponent,
-  },
-  {
-    path: 'usuario',
-    component: UsuarioComponent,
-  },
-  {
-    path: 'admin', // Ruta del administrador
-    component: AdminComponent,
-    // Puedes agregar un guardia para verificar si es admin
-  }
+    {
+        path: '',
+        component: MainComponent,
+    },
+    {
+        path: 'login',
+        component: LoginComponent,
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
+    },
+    {
+        path:'catalog',
+        component: CatalogComponent,
+    },
+    {
+        path: 'aboutus',
+        component: AboutusComponent,
+    },
+    {
+        path: 'cart',
+        component: CartComponent,
+    },
+    {
+        path: 'product-detail/:id',
+        component: ProductDetailComponent,
+    },
+    {
+        path: 'checkout',
+        component: CheckoutComponent
+    },
+    {
+        path: 'pay',
+        component: PaymentComponent,
+    },
+    {
+        path: 'usuario',
+        component: UsuarioComponent,
+    }
+    ,
+    {
+        path: 'admin',
+        component: AdminComponent,
+    }
 ];

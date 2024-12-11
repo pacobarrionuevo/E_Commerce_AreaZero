@@ -4,7 +4,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #5a738e; 
+  color: #5a738e;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,6 +33,13 @@ header {
 .carrito img {
   width: 50px;
   height: 50px;
+}
+
+.torneos a,
+.subscripcion a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-bar {
@@ -92,4 +99,63 @@ nav a {
 
 nav a:hover {
   color: #3498db;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  .profile img {
+      width: 60px;
+      height: 60px;
+  }
+
+  .carrito img,
+  .torneos img,
+  .subscripcion img {
+      width: 40px;
+      height: 40px;
+  }
+
+  .nav-buttons {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  .nav-button {
+      margin: 5px 0;
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      padding: 5px;
+  }
+
+  .profile img {
+      width: 50px;
+      height: 50px;
+  }
+
+  .carrito img,
+  .torneos img,
+  .subscripcion img {
+      width: 30px;
+      height: 30px;
+  }
+
+  .nav-buttons {
+      width: 100%;
+  }
+
+  .nav-button {
+      padding: 8px 10px;
+      font-size: 14px;
+  }
 }
