@@ -7,11 +7,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-compraconfirmada',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './compraconfirmada.component.html',
-  styleUrl: './compraconfirmada.component.css'
+    selector: 'app-compraconfirmada',
+    imports: [CommonModule, FormsModule],
+    templateUrl: './compraconfirmada.component.html',
+    styleUrl: './compraconfirmada.component.css'
 })
 export class CompraconfirmadaComponent {
   productosCarrito: ProductoCarrito[] = [];

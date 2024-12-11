@@ -5,11 +5,10 @@ import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [RouterModule, CommonModule],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'app-header',
+    imports: [RouterModule, CommonModule],
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   logoImgSrc: string;

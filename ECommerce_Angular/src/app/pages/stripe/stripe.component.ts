@@ -4,12 +4,14 @@ import { loadStripe, Stripe, StripeElements } from '@stripe/stripe-js';
 import { CheckoutService } from '../../services/checkout.service';
 import { StripeEmbeddedCheckoutOptions } from '@stripe/stripe-js';
 import { environment } from '../../../environments/environment';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-stripe',
   standalone: true,
   templateUrl: './stripe.component.html',
-  styleUrls: ['./stripe.component.css']
+  styleUrls: ['./stripe.component.css'],
+  imports: [CommonModule]
 })
 export class StripeComponent implements OnInit {
   @ViewChild('checkoutDialogRef', { static: false }) checkoutDialogRef: ElementRef<HTMLDialogElement>;
@@ -59,7 +61,7 @@ export class StripeComponent implements OnInit {
 
       const options: StripeEmbeddedCheckoutOptions = {
         clientSecret: result.data.clientSecret,
-        onComplete: () => this.confirmacion()
+        onComplete: () => this.confirmacion() // Redirigir al confirmar
       };
 
       // Almacenar el sessionUrl obtenido del backend
@@ -84,6 +86,6 @@ export class StripeComponent implements OnInit {
   }
 
   confirmacion() {
-    this.router.navigateByUrl("confirmacion");
+    this.router.navigateByUrl("compraconfirmada");
   }
 }

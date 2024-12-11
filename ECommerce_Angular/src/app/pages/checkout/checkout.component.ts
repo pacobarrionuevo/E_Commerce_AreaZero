@@ -8,11 +8,10 @@ import { Carrito } from '../../models/carrito';
 import { StripeComponent } from '../stripe/stripe.component';
 
 @Component({
-  selector: 'app-checkout',
-  standalone: true,
-  imports: [RouterModule, StripeComponent],
-  templateUrl: './checkout.component.html',
-  styleUrls: ['./checkout.component.css']
+    selector: 'app-checkout',
+    imports: [RouterModule, StripeComponent],
+    templateUrl: './checkout.component.html',
+    styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
 

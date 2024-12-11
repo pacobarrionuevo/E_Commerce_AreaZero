@@ -6,11 +6,10 @@ import { RouterModule } from '@angular/router';
 import { CarritoService } from '../../services/carrito.service';
 
 @Component({
-  selector: 'app-catalog',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './catalog.component.html',
-  styleUrls: ['./catalog.component.css']
+    selector: 'app-catalog',
+    imports: [CommonModule, FormsModule, RouterModule],
+    templateUrl: './catalog.component.html',
+    styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
   productList: any[] = [];
