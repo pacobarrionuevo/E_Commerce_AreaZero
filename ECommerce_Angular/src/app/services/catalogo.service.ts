@@ -23,7 +23,7 @@ interface Paginacion<T> {
   providedIn: 'root'
 })
 export class CatalogoService {
-  private apiUrl = 'https://localhost:7133/api/ControladorCatalogo'; 
+  private apiUrl = 'https://areazero.runasp.net/api/ControladorCatalogo'; 
 
   constructor(private http: HttpClient) {}
 

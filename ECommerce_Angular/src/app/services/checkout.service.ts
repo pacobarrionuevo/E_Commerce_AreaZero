@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class CheckoutService {
 
   constructor(private api: ApiService, private http: HttpClient) { }
-  private Url = 'https://localhost:7133/api';
+  private Url = 'https://areazero.runasp.net/api';
 
   getAllProducts(): Promise<Result<Carrito[]>> {
     return this.api.get<Carrito[]>('ControladorCheckout/products');
