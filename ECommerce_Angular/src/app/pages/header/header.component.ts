@@ -26,9 +26,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //controla si ha iniciado sesión
     this.authService.isLoggedIn.subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
     });
+    //controla si es admin o no el usuario
     this.authService.isAdmin.subscribe(admin => {
       this.isAdmin = admin;
     });

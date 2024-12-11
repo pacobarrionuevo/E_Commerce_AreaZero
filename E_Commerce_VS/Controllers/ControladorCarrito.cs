@@ -22,7 +22,7 @@ namespace E_Commerce_VS.Controllers
             _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
         }
 
-
+        //Devuelve todos los carritos 
         [HttpGet("carritos")]
         public async Task<IActionResult> GetCarritos()
         {
@@ -51,14 +51,12 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest("La cantidad debe ser mayor a 0.");
             }
 
-            // Buscar el producto utilizando el repositorio
             var producto = await _unitOfWork.RepoProd.GetByIdAsync(request.ProductId);
             if (producto == null)
             {
                 return BadRequest("El producto no existe.");
             }
 
-            // Buscar el carrito del usuario
             var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(request.UserId);
 
             if (carrito == null)
@@ -93,30 +91,26 @@ namespace E_Commerce_VS.Controllers
         }
 
 
-        // Asociar un carrito anónimo a un usuario registrado
+        // Asociar un carrito anonimo a un usuario registrado
         [HttpPost("associate-cart")]
         public async Task<IActionResult> AssociateCart(int userId)
         {
-            // Buscar el carrito anónimo (sin UserId)
             var carritoAnonimo = await _context.Carritos
                 .Include(c => c.ProductoCarrito)
                 .FirstOrDefaultAsync(c => c.UserId == null);
 
             if (carritoAnonimo != null)
             {
-                // Buscar el carrito del usuario registrado, si existe
                 var carritoUsuario = await _context.Carritos
                     .Include(c => c.ProductoCarrito)
                     .FirstOrDefaultAsync(c => c.UserId == userId);
 
                 if (carritoUsuario == null)
                 {
-                    // Si el usuario no tiene carrito, asignar el carrito anónimo
                     carritoAnonimo.UserId = userId;
                 }
                 else
                 {
-                    // Si ya tiene carrito, combinar productos
                     foreach (var productoAnonimo in carritoAnonimo.ProductoCarrito)
                     {
                         var productoEnCarrito = carritoUsuario.ProductoCarrito
@@ -124,12 +118,11 @@ namespace E_Commerce_VS.Controllers
 
                         if (productoEnCarrito != null)
                         {
-                            // Sumar cantidades si el producto ya está en el carrito del usuario
+
                             productoEnCarrito.Cantidad += productoAnonimo.Cantidad;
                         }
                         else
                         {
-                            // Añadir el producto al carrito del usuario
                             carritoUsuario.ProductoCarrito.Add(new ProductoCarrito
                             {
                                 ProductoId = productoAnonimo.ProductoId,
@@ -138,7 +131,6 @@ namespace E_Commerce_VS.Controllers
                         }
                     }
 
-                    // Eliminar el carrito anónimo después de combinar
                     _context.Carritos.Remove(carritoAnonimo);
                 }
 
@@ -150,24 +142,24 @@ namespace E_Commerce_VS.Controllers
         }
 
 
-
+        //Pasa un producto de la orden temporal al carrito
         [Authorize]
         [HttpPost("PasaProductoAlCarrito")]
         public async Task<IActionResult> PasaProductoAlCarrito([FromBody] List<ProductoCarritoLocal> productos)
         {
+            //otro que novea el trabajito que nos costo
             if (productos == null || !productos.Any())
             {
                 return BadRequest("La lista de productos está vacía o es inválida.");
             }
 
-            // Obtener el userId del token (de los claims)
+            // Obtener el userId del token desde los claims
             var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier || c.Type == "id");
             if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
             {
                 return Unauthorized("Usuario no válido.");
             }
 
-            // Verificar si el carrito del usuario ya existe
             var carrito = await _unitOfWork.RepoCar.GetCarritoByUserIdAsync(userId);
             if (carrito == null)
             {
@@ -177,11 +169,10 @@ namespace E_Commerce_VS.Controllers
                     ProductoCarrito = new List<ProductoCarrito>()
                 };
 
-                // Agregar el nuevo carrito al contexto
                 _unitOfWork.Context.Carritos.Add(carrito);
             }
 
-            // Iterar por los productos recibidos
+            // Todos los productos recibidos se pasan por este bucle
             foreach (var prod in productos)
             {
                 if (prod.ProductId <= 0 || prod.Cantidad <= 0)
@@ -189,23 +180,22 @@ namespace E_Commerce_VS.Controllers
                     return BadRequest($"El producto con ID {prod.ProductId} tiene datos inválidos.");
                 }
 
-                // Verificar si el producto existe en la base de datos
+                // Verificar si el producto existe en la base de datos y luego mirar si esta en el carrito
                 var producto = await _unitOfWork.RepoProd.GetByIdAsync(prod.ProductId);
                 if (producto == null)
                 {
                     return NotFound($"El producto con ID {prod.ProductId} no existe.");
                 }
 
-                // Verificar si el producto ya está en el carrito
                 var productoEnCarrito = carrito.ProductoCarrito.FirstOrDefault(p => p.ProductoId == prod.ProductId);
                 if (productoEnCarrito != null)
                 {
-                    // Si ya está, aumentar la cantidad
+ 
                     productoEnCarrito.Cantidad += prod.Cantidad;
                 }
                 else
                 {
-                    // Si no está, añadirlo
+                    // Si el producto no esta, añadirlo
                     carrito.ProductoCarrito.Add(new ProductoCarrito
                     {
                         ProductoId = prod.ProductId,
@@ -214,10 +204,7 @@ namespace E_Commerce_VS.Controllers
                 }
             }
 
-            // Guardar los cambios en la base de datos
             await _unitOfWork.SaveAsync();
-
-            // Retornar el carrito actualizado
             return Ok(carrito.ProductoCarrito);
         }
     }

@@ -21,6 +21,8 @@ export class CompraconfirmadaComponent {
   }
 
 
+  //cargar los productos que habia en el carrito
+
   async cargarProductos() {
     try {
       const result = await this.carritoService.getProductosCarrito();

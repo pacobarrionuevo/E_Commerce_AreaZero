@@ -4,6 +4,7 @@ namespace E_Commerce_VS.Models.Database.Paginación
 {
     public static class Extensiones
     {
+        //Para obtener el resultado de pagina
         public static async Task<Paginacion<TEntity>> GetPagedResultAsync<TEntity>(this IQueryable<TEntity> source, int ElementosPorPagina, int PaginaActual)
        where TEntity : class
         {

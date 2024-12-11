@@ -32,7 +32,11 @@ namespace E_Commerce_VS.Controllers
                 .ToListAsync();
         }
 
+<<<<<<< HEAD
         // Para Modificar si es Admin un usuario
+=======
+        // Para modificar si es admin un usuario
+>>>>>>> origin/main
         [HttpPut("usuarios/{id}")]
         public async Task<IActionResult> UpdateUsuario(int id, [FromBody] UserUpdateDto userUpdateDto)
         {

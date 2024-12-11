@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { Result } from '../models/result';
-import { Product } from '../models/product';
 import { CheckoutSession } from '../models/checkout-session';
 import { CheckoutSessionStatus } from '../models/checkout-session-status';
 import { Carrito } from '../models/carrito';
@@ -14,54 +13,41 @@ import { HttpClient } from '@angular/common/http';
 export class CheckoutService {
 
   constructor(private api: ApiService, private http: HttpClient) { }
-  private Url = 'https://localhost:7133/api';
+  private Url = 'https://areazero.runasp.net/api';
+
   getAllProducts(): Promise<Result<Carrito[]>> {
     return this.api.get<Carrito[]>('ControladorCheckout/products');
   }
 
-  getHostedCheckout(products: any): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('ControladorCheckout/hosted', products);
-  }
 
+  // Recoger el checkout embedido
   async getEmbededCheckout(): Promise<Result<CheckoutSession>> {
     const token = localStorage.getItem('token');
     this.api.jwt = token;
     try {
       const result = await this.api.post<CheckoutSession>('ControladorCheckout/embedded');
-      if (result.success) { 
-        console.log("Embedded checkout obtenido con éxito"); 
-        return result; }
-        console.error(`Error desde el backend: ${result.error}`);
         return result;
     } catch (err) {
-      console.error("Error al obtener embedded checkout:", err);
-      return Result.error(500, "Error inesperado al obtener embedded checkout.");
+      return Result.error<CheckoutSession>(500, 'Failed to fetch embedded checkout session.');
     }
   }
 
+  // Obtener el estado de la orden
   getStatus(sessionUrl: string): Promise<Result<CheckoutSessionStatus>> { 
     return this.api.get<CheckoutSessionStatus>(`ControladorCheckout/status/${sessionUrl}`); 
   }
 
-  getCreateCheckoutSession(): Observable<CheckoutSession> {
-    return this.http.post<CheckoutSession>(this.Url, {});
-  }
-
- 
-
+  // Mandar los productos para crear la orden temporal
   crearOrdenTemporal(): Observable<any> {
-    // Recuperar el sessionId y usuarioId del localStorage
     const ordenId = localStorage.getItem('ordenId');
     const userId = localStorage.getItem('usuarioId');
     
-    // Obtener el carrito desde localStorage y formatearlo
     const localcart = JSON.parse(localStorage.getItem('cart') || '[]');
     const cart = localcart.map(item => ({
         ProductoId: item.productId,
         Cantidad: item.quantity
     }));
     
-    // Preparar los parámetros, añadiendo los dos si están presentes
     const params: any = {};
     if (ordenId) {
         params.ordenId = ordenId;
@@ -71,16 +57,13 @@ export class CheckoutService {
     }
     return this.http.post(`${this.Url}/ControladorCheckout/CrearOrdenTemporal`, cart, {
         headers: { 'Content-Type': 'application/json' },
-        params: params  // Pasamos los dos parámetros si están presentes
+        params: params
     }).pipe(
-        // Aquí se guarda el sessionId (o OrdenId) devuelto por el backend
         tap(response => {
             if (response && response.ordenId) {
-                localStorage.setItem('ordenId', response.ordenId); // Guardamos el nuevo sessionId
-                console.log('Nuevo sessionId guardado en localStorage:', response.ordenId);
+                localStorage.setItem('ordenId', response.ordenId);
             }
         })
     );
-}
-    
   }
+}

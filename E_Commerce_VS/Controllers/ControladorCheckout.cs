@@ -83,53 +83,48 @@ namespace E_Commerce_VS.Controllers
             });
         }
 
-
-        [HttpPost("hosted")]
-        public async Task<ActionResult> HostedCheckout([FromBody] List<ProductoDto> productos)
+        //Obtiene los detalles de una orden en concreto
+        [HttpGet("order-details/{id}")]
+        public async Task<IActionResult> GetOrderDetails(int id)
         {
-            if (productos == null || !productos.Any())
-                return BadRequest("No se proporcionaron productos para el checkout.");
+            var orden = await _dbContext.OrdenesTemporales
+                .Include(o => o.Productos)
+                .ThenInclude(p => p.Producto)
+                .FirstOrDefaultAsync(o => o.Id == id);
 
-            var lineItems = productos.Select(product => new SessionLineItemOptions
+            if (orden == null || orden.FechaExpiracion <= DateTime.UtcNow)
             {
-                PriceData = new SessionLineItemPriceDataOptions
-                {
-                    Currency = "eur",
-                    UnitAmount = (long)(product.Precio * 100),
-                    ProductData = new SessionLineItemPriceDataProductDataOptions
-                    {
-                        Name = product.Nombre,
-                        Images = new List<string> { product.Ruta }
-                    }
-                },
-                Quantity = 1
-            }).ToList();
+                return NotFound("Orden no encontrada o expirada.");
+            }
 
-            var options = new SessionCreateOptions
+            var productos = orden.Productos.Select(p => new
             {
-                UiMode = "hosted",
-                Mode = "payment",
-                PaymentMethodTypes = new List<string> { "card" },
-                LineItems = lineItems,
-                CustomerEmail = "correo_cliente@correo.es",
-                SuccessUrl = _settings.ClientBaseUrl + "/checkout?session_id={CHECKOUT_SESSION_ID}",
-                CancelUrl = _settings.ClientBaseUrl + "/checkout"
-            };
+                p.Producto.Id,
+                p.Producto.Nombre,
+                p.Producto.Precio,
+                p.Cantidad,
+                Total = p.Cantidad * p.Producto.Precio
+            });
 
-            var service = new SessionService();
-            var session = await service.CreateAsync(options);
-
-            return Ok(new { sessionUrl = session.Url });
+            return Ok(new
+            {
+                Productos = productos,
+                Total = productos.Sum(p => p.Total)
+            });
         }
+
+        //Muestra la tarjetita de Stripe creada por defecto
         [HttpPost("embedded")]
         public async Task<ActionResult> EmbeddedCheckout()
         {
+            //Hacemos que lea el id del token y que reciba la orden temporal por ese id
             int userIdToken = Int32.Parse(User.FindFirst("id").Value);
 
             var ordenTemporal = _dbContext.OrdenesTemporales.Include(o => o.Productos).FirstOrDefault(o => o.UsuarioId == userIdToken);
 
             var lineItems = new List<SessionLineItemOptions>();
 
+            //Se deberian ir guardando todos los productos que hay en la orden temporal
             foreach (var producto in ordenTemporal.Productos)
             {
                 var productoStripe = _dbContext.Productos.FirstOrDefault(b => b.Id == producto.Id);
@@ -167,9 +162,10 @@ namespace E_Commerce_VS.Controllers
             var service = new SessionService();
             var session = await service.CreateAsync(options);
 
-            return Ok(new { clientSecret = session.ClientSecret, sessionId = session.Id });
+            return Ok(new { clientSecret = session.ClientSecret, sessionUrl = session.Url });
         }
 
+        //Devuelve el estado de la session
         [HttpGet("status/{sessionId}")]
         public async Task<ActionResult> SessionStatus(string sessionId)
         {
@@ -178,9 +174,12 @@ namespace E_Commerce_VS.Controllers
 
             return Ok(new { status = session.Status, customerEmail = session.CustomerEmail });
         }
+
+        //CREA UNA ORDEN TEMPORAL GIGANTE
         [HttpPost("CrearOrdenTemporal")]
         public async Task<IActionResult> CrearOrdenTemporal([FromBody] List<ProductoCheckoutDto>? productosCarrito, int? userId, int? ordenId)
         {
+            //Se hace cuando se da al boton de pagar en el front
             if ((productosCarrito == null || !productosCarrito.Any()) && userId.HasValue)
             {
                 var carritoUsuario = await _dbContext.Carritos
@@ -205,10 +204,9 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest("No se proporcionaron productos válidos para crear la orden temporal.");
             }
 
-            // Verificar si tanto userId como ordenId están presentes
             if (ordenId.HasValue)
             {
-                // Buscar la orden activa con el ordenId
+                // Busca la orden activa para ver cual es la necesaria
                 var ordenActiva = await _dbContext.OrdenesTemporales
                     .Include(o => o.Productos)
                     .FirstOrDefaultAsync(o => o.Id == ordenId && o.FechaExpiracion > DateTime.UtcNow);
@@ -236,9 +234,10 @@ namespace E_Commerce_VS.Controllers
                         var productoEnOrden = ordenActiva.Productos
                             .FirstOrDefault(p => p.ProductoId == productoCarrito.ProductoId);
 
+                        //Reserva de stock
                         if (productoEnOrden != null)
                         {
-                            producto.Stock += productoEnOrden.Cantidad; // Revertir cantidad previa
+                            producto.Stock += productoEnOrden.Cantidad;
                             productoEnOrden.Cantidad = productoCarrito.Cantidad;
                         }
                         else
@@ -250,7 +249,8 @@ namespace E_Commerce_VS.Controllers
                             });
                         }
 
-                        producto.Stock -= productoCarrito.Cantidad; // Actualizar stock con nueva cantidad
+                        // Actualizar stock con la nueva cantidad dicha
+                        producto.Stock -= productoCarrito.Cantidad; 
                     }
 
                     ordenActiva.Productos.RemoveAll(p =>
@@ -270,6 +270,7 @@ namespace E_Commerce_VS.Controllers
                 return BadRequest("La orden temporal no está activa o ha expirado.");
             }
 
+            //Aqui si la orden temporal es nueva
             var nuevaOrden = new OrdenTemporal
             {
                 UsuarioId = userId,

@@ -18,12 +18,11 @@ namespace E_Commerce_VS.Services
             _model = model;
         }
 
+        //Pilla todas las reviews y las mappea
         public async Task<IEnumerable<ReviewDto>> GetAllReviewsAsync()
         {
-            // Obtener todas las reseñas desde el repositorio del UnitOfWork
             var reviews = await _unitOfWork.RepoRev.GetAllAsync();
 
-            // Mapear manualmente a DTO
             var reviewDtos = new List<ReviewDto>();
             foreach (var review in reviews)
             {
@@ -41,13 +40,13 @@ namespace E_Commerce_VS.Services
             return reviewDtos;
         }
 
+        //Crea una review : D
         public async Task<ReviewDto> AddReviewAsync(CreateReviewDto createReviewDto)
         {
             var input = new ModelInput { Text = createReviewDto.TextReview };
             var prediction = _model.Predict(input);
             var label = (int)prediction.PredictedLabel;
 
-            // Crear entidad Review desde el DTO
             var review = new Review
             {
                 UsuarioId = createReviewDto.UsuarioId,
@@ -57,13 +56,9 @@ namespace E_Commerce_VS.Services
                 ProductoId = createReviewDto.ProductoId
             };
 
-            // Insertar en el repositorio
             await _unitOfWork.RepoRev.InsertAsync(review);
-
-            // Guardar cambios
             await _unitOfWork.SaveAsync();
 
-            // Devolver el ReviewDto con los detalles
             return new ReviewDto
             {
                 Id = review.Id,

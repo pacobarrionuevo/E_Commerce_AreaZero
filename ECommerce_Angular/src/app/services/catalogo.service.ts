@@ -23,10 +23,11 @@ interface Paginacion<T> {
   providedIn: 'root'
 })
 export class CatalogoService {
-  private apiUrl = 'https://localhost:7133/api/ControladorCatalogo'; 
+  private apiUrl = 'https://areazero.runasp.net/api/ControladorCatalogo'; 
 
   constructor(private http: HttpClient) {}
 
+  // Recibe el catálogo entero con unas opciones predeterminadas
   getAll(
     Ordenacion: number = 2,
     paginaActual: number = 1,

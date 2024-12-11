@@ -43,22 +43,21 @@ public class SmartSearchService
     {
         IEnumerable<string> result;
 
-        // Si la consulta está vacía o solo tiene espacios en blanco, devolvemos todos los items
+        // Si la consulta esta vacia o solo tiene espacios en blanco, devolvemos todos los items que debe
         if (string.IsNullOrWhiteSpace(query))
         {
             result = ITEMS;
         }
-        // En caso contrario, realizamos la búsqueda
+        // Sino pues realizamos la busqueda
         else
         {
-            // Limpiamos la query y la separamos por espacios
+            // Limpiamos la query, las separamos por espacios y las guardamos
             string[] queryKeys = GetKeys(ClearText(query));
-            // Aquí guardaremos los items que coincidan
             List<string> matches = new List<string>();
 
             foreach (string item in ITEMS)
             {
-                // Limpiamos el item y lo separamos por espacios
+                // Separamos por espacios
                 string[] itemKeys = GetKeys(ClearText(item));
 
                 // Si coincide alguna de las palabras de item con las de query
@@ -75,6 +74,7 @@ public class SmartSearchService
         return result;
     }
 
+    //Metodo para ver si hay match (tinder ahh method)
     private bool IsMatch(string[] queryKeys, string[] itemKeys)
     {
         bool isMatch = false;
@@ -102,19 +102,18 @@ public class SmartSearchService
             || _stringSimilarityComparer.Similarity(itemKey, queryKey) >= THRESHOLD;
     }
 
-    // Separa las palabras quitando los espacios y 
+
     private string[] GetKeys(string query)
     {
         return query.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
     }
 
-    // Normaliza el texto quitándole las tildes y pasándolo a minúsculas
     private string ClearText(string text)
     {
         return RemoveDiacritics(text.ToLower());
     }
 
-    // Quita las tildes a un texto
+    // Quita tildes
     private string RemoveDiacritics(string text)
     {
         string normalizedString = text.Normalize(NormalizationForm.FormD);

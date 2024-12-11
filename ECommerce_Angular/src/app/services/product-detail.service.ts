@@ -7,10 +7,11 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductDetailService {
-  private baseUrl = 'https://localhost:7133/api/ControladorCatalogo';
+  private baseUrl = 'https://areazero.runasp.net/api/ControladorCatalogo';
 
   constructor(private http: HttpClient) {}
 
+  // Obtener los detalles del producto por su id
   getProducto(id: number): Observable<Product> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Product>(url);

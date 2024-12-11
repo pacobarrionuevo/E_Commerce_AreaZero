@@ -17,7 +17,7 @@ export class UsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.loadUserData();
   }
-
+//carga los datos del usuario
   loadUserData(): void {
     this.user = this.authService.getUserDataFromToken();
     if (!this.user) {
@@ -29,7 +29,7 @@ export class UsuarioComponent implements OnInit {
       };
     }
   }
-
+//actualiza los datos del usuario
   updateUserData(): void {
     const updatedUser = {
       UsuarioId: this.user.id,
@@ -37,7 +37,7 @@ export class UsuarioComponent implements OnInit {
       Email: this.user.email,
       Direccion: this.user.address
     };
-     
+    
     this.authService.updateUserData(updatedUser).subscribe(response => {
       const newToken = response.StringToken;
       localStorage.setItem('accessToken', newToken);

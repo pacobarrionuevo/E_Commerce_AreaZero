@@ -1,12 +1,8 @@
 <div class="stripe-container">
     <h2>Realizar Pago</h2>
-    
-    <!-- Utiliza un elemento <dialog> en lugar de <div> -->
     <dialog #checkoutDialogRef id="checkout-dialog" class="checkout-dialog">
       <div id="checkout"></div>
     </dialog>
-  
-    <!-- Esto es opcional, pero puede ser útil para proporcionar feedback visual al usuario -->
     <div class="checkout-status">
       <p *ngIf="stripeEmbedCheckout">Listo para procesar el pago.</p>
     </div>

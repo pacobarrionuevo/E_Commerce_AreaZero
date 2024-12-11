@@ -27,19 +27,18 @@ namespace E_Commerce_VS.Controllers
             _smartSearchService = smartSearchService;
         }
 
+        //Devuelve el catalogo entero
         [HttpGet]
         public async Task<Paginacion<ProductoDto>> GetAllAsync(
             Ordenacion filtro = Ordenacion.AscendenteNombre,
             int paginaActual = 1,
             int elementosPorPagina = 10,
-
-            string query = "")  // Parámetro opcional para la búsqueda
+            string query = "")
 
         {
-            // Obtiene todos los productos desde el servicio
             IEnumerable<Producto> productos = await _service.GetAllAsync();
 
-            // Si hay un término de búsqueda, aplica SmartSearchService para obtener coincidencias
+            // Si hay un término de búsqueda, aplica SmartSearchService para obtener las coincidencias
             if (!string.IsNullOrEmpty(query))
             {
                 var searchResults = _smartSearchService.Search(query);
@@ -47,6 +46,7 @@ namespace E_Commerce_VS.Controllers
             }
 
             // Aplica el filtro de ordenación seleccionado
+            // Aqui es donde entra en juego el enum de 4 variables, en vez de 2 de 2
             productos = filtro switch
             {
                 Ordenacion.AscendenteNombre => productos.OrderBy(p => p.Nombre),
@@ -56,17 +56,15 @@ namespace E_Commerce_VS.Controllers
                 _ => productos
             };
 
-            // Paginación
+            // Paginacion segun lo que pase el usuario
             var totalElementos = productos.Count();
             var totalPaginas = (int)Math.Ceiling(totalElementos / (double)elementosPorPagina);
             var productosPaginados = productos
                 .Skip((paginaActual - 1) * elementosPorPagina)
                 .Take(elementosPorPagina);
 
-            // Mapea los productos paginados a DTO
-            var productosDto = _mapper.ToDto(productosPaginados, Request);
 
-            // Retorna los resultados paginados y filtrados
+            var productosDto = _mapper.ToDto(productosPaginados, Request);
             return new Paginacion<ProductoDto>
             {
                 Resultados = productosDto,

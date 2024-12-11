@@ -125,6 +125,10 @@
       "PackagePath": "staticwebassets\\images\\twitter.png"
     },
     {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.E_Commerce_VS.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.E_Commerce_VS.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

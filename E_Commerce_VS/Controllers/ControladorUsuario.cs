@@ -28,20 +28,24 @@ namespace E_Commerce_VS.Controllers
             _tokenParameters = jwtOptions.Get(JwtBearerDefaults.AuthenticationScheme).TokenValidationParameters;
         }
 
+        //Controlador que devuelve una lista de todos los usuarios
         [HttpGet("userlist")]
         public IEnumerable<UserRegistrarseDto> GetUser()
         {
             return _context.Usuarios.Select(ToDto);
         }
 
+        //Metodo para registrar usuario
         [HttpPost("Registro")]
         public async Task<IActionResult> Register([FromBody] UserRegistrarseDto usuario)
         {
+            //Comprobacion de que no exista ya el usuario
             if (_context.Usuarios.Any(Usuario => Usuario.Nombre == usuario.Nombre))
             {
                 return BadRequest("El nombre del usuario ya está en uso");
             }
 
+            //Crea el usuario, lo almacena y lo mappea con el DTO
             Usuario newUser = new Usuario()
             {
                 Nombre = usuario.Nombre,
@@ -55,6 +59,7 @@ namespace E_Commerce_VS.Controllers
             await _context.SaveChangesAsync();
             UserRegistrarseDto userCreated = ToDto(newUser);
 
+            //Token, y le pasamos por claims todo lo que necesitamos para varias clases, como la vista admin (ej.)
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Claims = new Dictionary<string, object>
@@ -71,15 +76,19 @@ namespace E_Commerce_VS.Controllers
                     SecurityAlgorithms.HmacSha256Signature)
             };
 
+            //Crea el token lo guarda lo hashea y da OK
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
             SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);
             string accessToken = tokenHandler.WriteToken(token);
             return Ok(new { StringToken = accessToken });
         }
 
+        //Metodo para que un cliente inicie sesion
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginDto userLoginDto)
         {
+
+            //Comprueba que tanto el email como la password sean correctas
             var user = _context.Usuarios.FirstOrDefault(u => u.Email == userLoginDto.Email);
             if (user == null)
             {
@@ -91,6 +100,7 @@ namespace E_Commerce_VS.Controllers
                 return Unauthorized("Contraseña incorrecta");
             }
 
+            //Token con todo lo que necesita (igual que Registro)
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Claims = new Dictionary<string, object>
@@ -114,6 +124,7 @@ namespace E_Commerce_VS.Controllers
             return Ok(new { StringToken = accessToken, user.UsuarioId });
         }
 
+        //Metodo para actualizar un usuario, se llama en el cliente para la vista admin
         [HttpPost("update")]
         public async Task<IActionResult> UpdateUser([FromBody] UserUpdateDto userUpdateDto)
         {
@@ -154,6 +165,7 @@ namespace E_Commerce_VS.Controllers
             return Ok(new { StringToken = accessToken });
         }
 
+        //Creamos aquí el Dto para tenerlo a mano
         private UserRegistrarseDto ToDto(Usuario users)
         {
             return new UserRegistrarseDto()

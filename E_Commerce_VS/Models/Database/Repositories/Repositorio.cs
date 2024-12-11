@@ -5,6 +5,8 @@ namespace E_Commerce_VS.Models.Database.Repositories
 {
     public class Repositorio<TEntity> : IRepositorio<TEntity> where TEntity : class
     {
+
+        //Calcado de Jose :D
         private readonly ProyectoDbContext _context;
 
         public Repositorio(ProyectoDbContext context)

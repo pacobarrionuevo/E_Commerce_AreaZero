@@ -21,7 +21,7 @@ export class AdminComponent implements OnInit {
   };
 
   constructor(private adminService: AdminService) {}
-
+//carga usuarios y productos
   ngOnInit(): void {
     this.loadUsuarios();
     this.loadProductos();
@@ -38,13 +38,13 @@ export class AdminComponent implements OnInit {
       this.productos = productos;
     });
   }
-
+//actualliza usuario(que no va por cierto)
   updateUsuario(usuario: any): void {
     this.adminService.updateUsuario(usuario.id, usuario).subscribe(() => {
       this.loadUsuarios();
     });
   }
-
+//borra usuario
   deleteUsuario(userId: number): void {
     const confirmation = confirm('¿Estás seguro de que deseas eliminar este usuario?');
     if (confirmation) {
@@ -53,7 +53,7 @@ export class AdminComponent implements OnInit {
       });
     }
   }
-
+  //crea producto
   createProducto(): void {
     this.adminService.createProducto(this.nuevoProducto).subscribe(() => {
       this.loadProductos();
@@ -66,13 +66,13 @@ export class AdminComponent implements OnInit {
       };
     });
   }
-
+  //actualiza producto
   updateProducto(producto: any): void {
     this.adminService.updateProducto(producto.id, producto).subscribe(() => {
       this.loadProductos();
     });
   }
-
+  //borra producto
   deleteProducto(productId: number): void {
     const confirmation = confirm('¿Estás seguro de que deseas eliminar este producto?');
     if (confirmation) {

@@ -23,19 +23,13 @@ namespace E_Commerce_VS.Controllers
             return Ok(reviews);
         }
 
-        // Protege este método con [Authorize]
+        // Para crear una review a un producto, tenemos que asociarla con un usuarioId, asi que necesita el authorize
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<ReviewDto>> AddReview([FromBody] CreateReviewDto reviewDto)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            
-                Console.WriteLine($"Añadiendo reseña: UsuarioId={reviewDto.UsuarioId}, ProductoId={reviewDto.ProductoId}, TextReview={reviewDto.TextReview}");
-                var newReview = await _reviewService.AddReviewAsync(reviewDto);
-                return CreatedAtAction(nameof(GetAllReviews), new { id = newReview.Id }, newReview);
+            var newReview = await _reviewService.AddReviewAsync(reviewDto);
+            return CreatedAtAction(nameof(GetAllReviews), new { id = newReview.Id }, newReview);
            
         }
     }

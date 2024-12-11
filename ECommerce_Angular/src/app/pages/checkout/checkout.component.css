@@ -8,16 +8,4 @@ section img {
     max-width: 1100px;
     overflow: visible;
   
-    button {
-      position: absolute;
-      top: -0.7em;
-      right: -0.7em;
-      height: 1.4em;
-      width: 1.4em;
-      padding-bottom: 0.15em;
-      line-height: 100%;
-      color: red;
-      font-size: 25px;
-      border-radius: 100%;
-    }
   }

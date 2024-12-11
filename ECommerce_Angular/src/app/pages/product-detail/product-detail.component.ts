@@ -42,12 +42,13 @@ export class ProductDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //pilla el token,el id de usuario y carga el producto elegido y los datos del usuario
     this.jwt = localStorage.getItem('accessToken'); 
     this.usuarioId = Number(localStorage.getItem('usuarioId')); 
     this.loadUserData();
     this.getProduct();
   }
-
+ //Añadir los productos al carrito local o al servidor dependiendo de si esta logeado o no por el userid
   addProductToCart(productId: number, quantity: number): void {
     if (!this.usuarioId) {
       const existingCart = localStorage.getItem('cart');
@@ -55,6 +56,7 @@ export class ProductDetailComponent implements OnInit {
       if (existingCart) {
         cart = JSON.parse(existingCart);
       }
+       // Actualizar la cantidad o añadirlo dependiendo de si estaba o no
       const existingProductIndex = cart.findIndex(item => item.productId === productId);
       if (existingProductIndex !== -1) {
         cart[existingProductIndex].quantity += quantity;
@@ -74,7 +76,7 @@ export class ProductDetailComponent implements OnInit {
       });
     }
   }
-
+//consigue el producto
   getProduct(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     if (id) {
@@ -86,7 +88,7 @@ export class ProductDetailComponent implements OnInit {
       });
     }
   }
-
+//consigue las reseñas
   getReviews(): void {
     if (this.product) {
       this.reviewService.getAllReviews().subscribe((reviews: Review[]) => {
@@ -97,7 +99,7 @@ export class ProductDetailComponent implements OnInit {
       });
     }
   }
-
+  //para añadir review pide iniciar sesion
   addReview(): void {
     if (!this.jwt) {
       alert('Por favor, inicie sesión para añadir una reseña.');
@@ -121,7 +123,7 @@ export class ProductDetailComponent implements OnInit {
       });
     }
   }
-
+  //calcula la media de la reseña
   calcularMedia(): void {
     if (this.reviews.length > 0) {
       const totalRating = this.reviews.reduce((total, review) => {
@@ -140,7 +142,7 @@ export class ProductDetailComponent implements OnInit {
       this.Media = 0;
     }
   }
-
+//pone emojis en cuestion de el label
   reviewEmoji(label: number): string {
     if (label === 1) {
       return '😃';  

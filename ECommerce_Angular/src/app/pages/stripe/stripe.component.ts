@@ -7,11 +7,10 @@ import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-stripe',
-  standalone: true,
-  templateUrl: './stripe.component.html',
-  styleUrls: ['./stripe.component.css'],
-  imports: [CommonModule]
+    selector: 'app-stripe',
+    templateUrl: './stripe.component.html',
+    styleUrls: ['./stripe.component.css'],
+    imports: [CommonModule]
 })
 export class StripeComponent implements OnInit {
   @ViewChild('checkoutDialogRef', { static: false }) checkoutDialogRef: ElementRef<HTMLDialogElement>;
@@ -53,6 +52,7 @@ export class StripeComponent implements OnInit {
     }
   }
 
+  //Iniciar el embedded
   async embeddedCheckout() {
     const result = await this.checkoutService.getEmbededCheckout();
 
@@ -61,10 +61,8 @@ export class StripeComponent implements OnInit {
 
       const options: StripeEmbeddedCheckoutOptions = {
         clientSecret: result.data.clientSecret,
-        onComplete: () => this.confirmacion() // Redirigir al confirmar
+        onComplete: () => this.confirmacion() 
       };
-
-      // Almacenar el sessionUrl obtenido del backend
       this.sessionUrl = result.data.sessionUrl;
 
       if (this.stripe) {
@@ -72,16 +70,9 @@ export class StripeComponent implements OnInit {
         this.stripeEmbedCheckout = checkout;
         if (this.checkoutDialogRef && this.checkoutDialogRef.nativeElement) {
           checkout.mount('#checkout');
-          this.checkoutDialogRef.nativeElement.showModal(); // Mostrar el dialogo
-        } else {
-          console.error('checkoutDialogRef no está correctamente referenciado o no tiene nativeElement');
-        }
-      } else {
-        console.error('El objeto stripe no está correctamente inicializado o no tiene el método initEmbeddedCheckout');
+          this.checkoutDialogRef.nativeElement.showModal(); 
+        } 
       }
-
-    } else {
-      console.error('Error al obtener el checkout embebido:', result.error);
     }
   }
 
@@ -89,3 +80,4 @@ export class StripeComponent implements OnInit {
     this.router.navigateByUrl("compraconfirmada");
   }
 }
+  

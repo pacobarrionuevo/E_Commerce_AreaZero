@@ -7,6 +7,7 @@ namespace E_Commerce_VS.Services
 {
     public class ProductService
     {
+        //carpetica de donde sacamos las imagene
         private const string PRODUCTS_FOLDER = "images";
 
         private readonly UnitOfWork _unitOfWork;
@@ -26,6 +27,7 @@ namespace E_Commerce_VS.Services
             return _unitOfWork.RepoProd.GetByIdAsync(id);
         }
 
+        //En verdad esto es bastante self explanatory
         public async Task<Producto> InsertAsync(CreateUpdateProductoRequest prodReq)
         {
             string relativePath = $"{PRODUCTS_FOLDER}/{Guid.NewGuid()}_{prodReq.Archivo.FileName}";

@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
       if (result) {
         // Guarda el token y el ID del usuario en el localStorage
-        localStorage.setItem('accessToken', result.stringToken); 
+        localStorage.setItem('token', result.stringToken); 
         localStorage.setItem('usuarioId', result.usuarioId.toString()); 
 
         this.jwt = result.stringToken;

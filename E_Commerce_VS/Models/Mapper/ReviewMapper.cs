@@ -3,6 +3,7 @@ using E_Commerce_VS.Models.Dto;
 
 namespace E_Commerce_VS.Models.Mapper
 {
+    //Para mappear las reviews, igual que los productos
     public class ReviewMapper
     {
         public ReviewDto ToDto(Review review)

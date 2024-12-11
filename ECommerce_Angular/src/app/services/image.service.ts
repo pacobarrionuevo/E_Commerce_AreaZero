@@ -4,10 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ImageService {
-  private baseURL = 'https://localhost:7133/images';
+  private baseURL = 'https://areazero.runasp.net/images';
 
   constructor() {}
 
+  // Obtener la url de la imagen
   getImageUrl(imageName: string): string {
     return `${this.baseURL}/${imageName}`;
   }

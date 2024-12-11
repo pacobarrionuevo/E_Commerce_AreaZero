@@ -9,6 +9,7 @@ namespace E_Commerce_VS.Controllers
     [ApiController]
     public class ControladorModelo : ControllerBase
     {
+        //Calcaito de jose, quien ademas me dijo que tenia que ser asi para que funcionase asi que nada con Dios
         private readonly PredictionEnginePool<ModelInput, ModelOutput> _model;
 
         public ControladorModelo(PredictionEnginePool<ModelInput, ModelOutput> model)

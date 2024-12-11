@@ -4,7 +4,6 @@ namespace E_Commerce_VS.Models.Database.Entidades
 {
     public class Usuario
     {
-
         public int UsuarioId { get; set; }
 
         [MaxLength(100)]
@@ -20,6 +19,5 @@ namespace E_Commerce_VS.Models.Database.Entidades
         public string Direccion { get; set; }
 
         public bool esAdmin { get; set; }
-
     }
 }

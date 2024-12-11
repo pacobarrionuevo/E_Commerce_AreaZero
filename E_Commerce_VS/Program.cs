@@ -17,10 +17,13 @@ namespace E_Commerce_VS
     {
         public static async Task Main(string[] args)
         {
+            //Aqui esta la ruta para acceder al modelo de inteligencia artificial
             string modelPath = Path.Combine(Environment.CurrentDirectory, "MLModel_AreaZero.mlnet");
 
+            //Las imagenes se crean en el directorio base
             Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 
+            //Se buildea la app. Esto es bastante parecido a como lo tiene Jose asi que tampoco hay mucho que comentar.
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.Configure<Settings>(builder.Configuration.GetSection(Settings.SECTION_NAME));
@@ -44,7 +47,7 @@ namespace E_Commerce_VS
             builder.Services.AddScoped<Services.ReviewService>();
             builder.Services.AddScoped<Services.SmartSearchService>();
 
-            // A adimos los mappers como Transient
+            // Ponemos los mappers como Transient
             builder.Services.AddScoped<ProductoMapper>();
             builder.Services.AddScoped<ReviewMapper>();
 
@@ -55,7 +58,7 @@ namespace E_Commerce_VS
             //Configuracion de MLModel para las reseñas
             builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelPath);
 
-            // Configuraci n de CORS
+            // Configuracion de CORS
             builder.Services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
