@@ -11,6 +11,7 @@ export class ProductDetailService {
 
   constructor(private http: HttpClient) {}
 
+  // Obtener los detalles del producto por su id
   getProducto(id: number): Observable<Product> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Product>(url);

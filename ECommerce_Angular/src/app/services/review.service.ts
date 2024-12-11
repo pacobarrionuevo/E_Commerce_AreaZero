@@ -26,6 +26,7 @@ export class ReviewService {
 
   constructor(private http: HttpClient) {}
 
+  // Mandar el token en el header de la petición
   private getAuthHeaders(): HttpHeaders {
     const token = localStorage.getItem('accessToken');
     let headers = new HttpHeaders();
@@ -35,10 +36,12 @@ export class ReviewService {
     return headers;
   }
 
+  // Obtener todas las reviews
   getAllReviews(): Observable<Review[]> {
     return this.http.get<Review[]>(this.apiUrl, { headers: this.getAuthHeaders() });
   }
 
+  // Añadir una review nueva
   addReview(reviewDto: CreateReviewDto): Observable<Review> {
     return this.http.post<Review>(this.apiUrl, reviewDto, { headers: this.getAuthHeaders() });
   }

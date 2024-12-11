@@ -8,6 +8,7 @@ export class ImageService {
 
   constructor() {}
 
+  // Obtener la url de la imagen
   getImageUrl(imageName: string): string {
     return `${this.baseURL}/${imageName}`;
   }

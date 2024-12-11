@@ -15,7 +15,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(),
     // Configura Stripe, hay que pasarle la clave pública (se encuentra en el dashboard => desarrolladores)
     provideNgxStripe(environment.stripePublicKey),
-    // Deshabilita el warning cuando las imágenes son muy grandes
     { provide: IMAGE_CONFIG, useValue: { disableImageSizeWarning: true, disableImageLazyLoadWarning: true } }, 
   ]
 };

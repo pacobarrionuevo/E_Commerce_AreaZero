@@ -27,6 +27,7 @@ export class CatalogoService {
 
   constructor(private http: HttpClient) {}
 
+  // Recibe el catálogo entero con unas opciones predeterminadas
   getAll(
     Ordenacion: number = 2,
     paginaActual: number = 1,
