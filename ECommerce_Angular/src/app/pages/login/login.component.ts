@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms'; 
 import { CarritoService } from '../../services/carrito.service';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   email: string = ''; 
   password: string = ''; 
   jwt: string | null = null; 
@@ -20,19 +20,26 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private carritoService: CarritoService, private router: Router) {}
 
+  ngOnInit(): void {
+    // Obtenemos el token desde el almacenamiento local en OnInit
+    this.jwt = localStorage.getItem('accessToken'); 
+    // Verificamos la existencia del token
+    console.log('Token JWT en login:', this.jwt); 
+  }
+
   async submit() {
     const authData = { email: this.email, password: this.password }; 
 
     try {
       const result = await this.authService.login(authData).toPromise();
-      console.log('Resultado de login:', result);  // Verifica la respuesta del login 
+
+      console.log('Resultado de login:', result);  
 
       if (result) {
         // Guarda el token y el ID del usuario en el localStorage
-        localStorage.setItem('token', result.stringToken); // Guarda el token JWT
-        localStorage.setItem('usuarioId', result.usuarioId.toString()); // Guarda el ID del usuario
+        localStorage.setItem('accessToken', result.stringToken); 
+        localStorage.setItem('usuarioId', result.usuarioId.toString()); 
 
-        // Asigna el token y el ID a las variables locales
         this.jwt = result.stringToken;
         this.usuarioId = result.usuarioId;
 
@@ -46,11 +53,5 @@ export class LoginComponent {
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
     }
-  }
-  logout() {
-    this.authService.logout();
-    this.jwt = null;
-    this.usuarioId = null;
-    console.log("Cierre de sesión exitoso.");
   }
 }
