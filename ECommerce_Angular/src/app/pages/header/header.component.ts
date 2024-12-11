@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ImageService } from '../../services/image.service';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
   isAdmin: boolean = false;
 
-  constructor(private imageService: ImageService) {
+  constructor(private imageService: ImageService, private authService: AuthService) {
     this.logoImgSrc = this.imageService.getImageUrl('logo.png');
     this.carritoImgSrc = this.imageService.getImageUrl('carrito.png');
     this.torneosImgSrc = this.imageService.getImageUrl('trofeo.png');
@@ -35,8 +36,6 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(): void {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('usuarioId');
-    this.isLoggedIn = false;
+    this.authService.logout();
   }
 }
