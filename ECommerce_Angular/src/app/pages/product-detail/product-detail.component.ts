@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
   newReview: string = '';
   usuarioId: number | null = null;
   jwt: string | null = null;
- Media: number = 0;
+  Media: number = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,7 +41,6 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.jwt = localStorage.getItem('accessToken'); 
     this.usuarioId = Number(localStorage.getItem('usuarioId')); 
-    console.log('Usuario ID:', this.usuarioId); 
     this.getProduct();
   }
 
@@ -98,7 +97,6 @@ export class ProductDetailComponent implements OnInit {
   addReview(): void {
     this.jwt = localStorage.getItem('accessToken'); 
     this.usuarioId = Number(localStorage.getItem('usuarioId')); 
-    console.log('Verificando token antes de añadir la reseña:', this.jwt);
 
     if (!this.jwt) {
       alert('Por favor, inicie sesión para añadir una reseña.');

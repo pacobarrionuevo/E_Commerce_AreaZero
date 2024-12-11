@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { FormsModule} from '@angular/forms'; 
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms'; 
 
 @Component({
   selector: 'app-register',
@@ -16,14 +17,15 @@ export class RegisterComponent {
   direccion: string = ''; 
   jwt: string = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   async submit() {
-    const authData = { nombre: this.nombre, email: this.email , password: this.password, direccion: this.direccion   }; 
+    const authData = { nombre: this.nombre, email: this.email , password: this.password, direccion: this.direccion }; 
     const result = await this.authService.register(authData).toPromise();
 
     if (result) {
       this.jwt = result.stringToken; 
+      this.router.navigate(['/login']); 
     }
   }
 }

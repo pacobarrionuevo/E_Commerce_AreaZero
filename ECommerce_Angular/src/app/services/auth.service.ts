@@ -72,7 +72,7 @@ export class AuthService {
 
   getUserDataFromToken(): any {
     const token = localStorage.getItem('accessToken');
-    console.log('JWT Token:', token);
+   
     if (token) {
       const parts = token.split('.');
       if (parts.length !== 3) {
@@ -80,14 +80,10 @@ export class AuthService {
         return null;
       }
       const payloadBase64 = parts[1];
-      console.log('Payload Base64:', payloadBase64);
-
       const payloadJson = atob(payloadBase64);
-      console.log('Payload JSON:', payloadJson);
 
       try {
         const payload = JSON.parse(payloadJson);
-        console.log('Payload del JWT:', payload);
         return {
           id: payload.id || 'ID no disponible',
           name: payload.Nombre || 'Nombre no disponible',

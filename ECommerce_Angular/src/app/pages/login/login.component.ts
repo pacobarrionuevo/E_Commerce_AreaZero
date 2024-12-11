@@ -23,8 +23,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     // Obtenemos el token desde el almacenamiento local en OnInit
     this.jwt = localStorage.getItem('accessToken'); 
-    // Verificamos la existencia del token
-    console.log('Token JWT en login:', this.jwt); 
   }
 
   async submit() {
@@ -32,8 +30,6 @@ export class LoginComponent implements OnInit {
 
     try {
       const result = await this.authService.login(authData).toPromise();
-
-      console.log('Resultado de login:', result);  
 
       if (result) {
         // Guarda el token y el ID del usuario en el localStorage

@@ -1,5 +1,6 @@
 ﻿using static System.Net.Mime.MediaTypeNames;
 using E_Commerce_VS.Models.Database.Entidades;
+using E_Commerce_VS.Recursos;
 
 namespace E_Commerce_VS.Models.Database
 {
@@ -51,14 +52,13 @@ namespace E_Commerce_VS.Models.Database
                 new Review() {Id = 4, UsuarioId = 4, FechaPublicacion = DateTime.UtcNow , TextReview = "No me gusta", Label = -1, ProductoId = 3},
             };
 
-            Usuario[] Usuarios = new Usuario[] {
-                new Usuario() {UsuarioId = 1, Nombre = "Jorge", Password = "jorge33", Email = "jorge@gmail.com", Direccion= "Calle Jorge", esAdmin = true},
-                new Usuario() {UsuarioId = 2, Nombre = "paco", Password = "paco", Email = "paco@gmail.com", Direccion= "Calle Paco", esAdmin = false}
+            Usuario[] usuarios = new Usuario[] { 
+                new Usuario() { UsuarioId = 1, Nombre = "Jose", Password = PasswordHelper.Hash("joseguapeton"), Email = "jose@gmail.com", Direccion = "Calle Jose", esAdmin = true },
+                new Usuario() { UsuarioId = 2, Nombre = "paco", Password = PasswordHelper.Hash("paco"), Email = "paco@gmail.com", Direccion = "Calle Paco", esAdmin = false } 
             };
-
             await _dbContext.Productos.AddRangeAsync(productos);
             await _dbContext.Reviews.AddRangeAsync(reviews);
-            await _dbContext.Usuarios.AddRangeAsync(Usuarios);
+            await _dbContext.Usuarios.AddRangeAsync(usuarios);
         }
 
     }
