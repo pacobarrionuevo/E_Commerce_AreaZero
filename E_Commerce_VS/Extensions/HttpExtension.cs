@@ -2,6 +2,7 @@
 {
     public static class HttpExtensions
     {
+        //Jose
         public static string GetBaseUrl(this HttpRequest request)
         {
             return $"{request.Scheme}://{request.Host}/";

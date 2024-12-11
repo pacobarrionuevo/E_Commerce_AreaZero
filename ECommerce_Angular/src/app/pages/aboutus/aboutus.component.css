@@ -18,7 +18,7 @@ body {
 
 .header {
   width: 100%;
-  background: #b8def1; /* Color base Diaphanous Jellyfish */
+  background: #b8def1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,14 +38,14 @@ body {
 .about-us-title h1 {
   font-weight: 700;
   font-size: 48px;
-  color: #5a738e; /* Color Diaphanous Jellyfish */
+  color: #5a738e; 
   text-align: center;
   margin: 0;
 }
 
 .line1 {
   width: 150px;
-  border: 2px solid #5a738e; /* Color Diaphanous Jellyfish */
+  border: 2px solid #5a738e; 
   margin: 20px auto 0;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .mission-section, .vision-section, .values-section {
-  background: #e8f4fa; /* Color más claro Diaphanous Jellyfish */
+  background: #e8f4fa; 
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,7 +66,7 @@ body {
 
 .mission-section h2, .vision-section h2, .values-section h2 {
   font-size: 36px;
-  color: #395b75; /* Color Diaphanous Jellyfish */
+  color: #395b75; 
   margin-bottom: 20px;
 }
 
@@ -78,20 +78,20 @@ body {
 }
 
 .values-section p strong {
-  color: #395b75; /* Color Diaphanous Jellyfish */
+  color: #395b75; 
 }
 
 .social-media {
   text-align: center;
   padding: 40px 20px;
-  background-color: #e8f4fa; /* Igual que las secciones */
+  background-color: #e8f4fa; 
   border-radius: 0 0 10px 10px;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .social-media p {
   font-size: 24px;
-  color: #395b75; /* Color Diaphanous Jellyfish */
+  color: #395b75; 
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -112,4 +112,72 @@ body {
 .social-icons img:hover {
   transform: scale(1.1);
   opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+  .about-us-container {
+    padding: 20px 10px;
+  }
+
+  .header {
+    padding: 20px;
+  }
+
+  .about-us-title h1 {
+    font-size: 36px;
+  }
+
+  .line1 {
+    width: 100px;
+  }
+
+  .main-content {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .mission-section h2, .vision-section h2, .values-section h2 {
+    font-size: 28px;
+  }
+
+  .mission-section p, .vision-section p, .values-section p {
+    font-size: 16px;
+  }
+
+  .social-media p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-us-title h1 {
+    font-size: 28px;
+  }
+
+  .line1 {
+    width: 80px;
+  }
+
+  .mission-section h2, .vision-section h2, .values-section h2 {
+    font-size: 24px;
+  }
+
+  .mission-section p, .vision-section p, .values-section p {
+    font-size: 14px;
+  }
+
+  .social-media p {
+    font-size: 18px;
+  }
+
+  .social-icons img {
+    width: 48px;
+    height: 48px;
+  }
 }

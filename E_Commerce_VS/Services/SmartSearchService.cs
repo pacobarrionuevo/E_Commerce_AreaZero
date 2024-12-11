@@ -43,20 +43,25 @@ public class SmartSearchService
     {
         IEnumerable<string> result;
 
+        // Si la consulta esta vacia o solo tiene espacios en blanco, devolvemos todos los items que debe
         if (string.IsNullOrWhiteSpace(query))
         {
             result = ITEMS;
         }
-
+        // Sino pues realizamos la busqueda
         else
         {
+            // Limpiamos la query, las separamos por espacios y las guardamos
             string[] queryKeys = GetKeys(ClearText(query));
             List<string> matches = new List<string>();
 
             foreach (string item in ITEMS)
             {
+                // Separamos por espacios
                 string[] itemKeys = GetKeys(ClearText(item));
 
+                // Si coincide alguna de las palabras de item con las de query
+                // entonces añadimos item a la lista de coincidencias
                 if (IsMatch(queryKeys, itemKeys))
                 {
                     matches.Add(item);
@@ -69,6 +74,7 @@ public class SmartSearchService
         return result;
     }
 
+    //Metodo para ver si hay match (tinder ahh method)
     private bool IsMatch(string[] queryKeys, string[] itemKeys)
     {
         bool isMatch = false;
@@ -88,12 +94,14 @@ public class SmartSearchService
         return isMatch;
     }
 
+    // Hay coincidencia si las palabras son las mismas o si item contiene query o si son similares
     private bool IsMatch(string itemKey, string queryKey)
     {
         return itemKey == queryKey
             || itemKey.Contains(queryKey)
             || _stringSimilarityComparer.Similarity(itemKey, queryKey) >= THRESHOLD;
     }
+
 
     private string[] GetKeys(string query)
     {
@@ -105,6 +113,7 @@ public class SmartSearchService
         return RemoveDiacritics(text.ToLower());
     }
 
+    // Quita tildes
     private string RemoveDiacritics(string text)
     {
         string normalizedString = text.Normalize(NormalizationForm.FormD);

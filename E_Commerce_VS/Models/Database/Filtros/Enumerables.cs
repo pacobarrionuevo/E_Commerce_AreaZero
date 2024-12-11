@@ -2,6 +2,7 @@
 {
     public class Enumerables
     {
+        //En vez de hacer dos enumerables como Jose tenia pensado, nos salia mas rentable hacer este conjunto y a funcionar.
         public enum Ordenacion
         {
             AscendentePrecio = 0,

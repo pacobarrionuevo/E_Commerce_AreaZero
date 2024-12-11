@@ -7,8 +7,9 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { PaymentComponent } from './pages/payment/payment.component';
-import { StripeComponent } from './pages/stripe/stripe.component';
+import { CompraconfirmadaComponent } from './pages/compraconfirmada/compraconfirmada.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { AdminComponent } from './pages/admin/admin.component';
 export const routes: Routes = [
     {
         path: '',
@@ -43,11 +44,16 @@ export const routes: Routes = [
         component: CheckoutComponent
     },
     {
-        path: 'pay',
-        component: PaymentComponent,
+        path: 'compraconfirmada',
+        component: CompraconfirmadaComponent,
     },
     {
-        path: 'stripe',
-        component: StripeComponent,
+        path: 'usuario',
+        component: UsuarioComponent,
+    }
+    ,
+    {
+        path: 'admin',
+        component: AdminComponent,
     }
 ];

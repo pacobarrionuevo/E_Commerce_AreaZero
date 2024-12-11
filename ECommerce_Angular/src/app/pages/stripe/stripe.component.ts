@@ -1,72 +1,91 @@
-import { Component, OnInit } from '@angular/core';
-import { StripeEmbeddedCheckout, StripeEmbeddedCheckoutOptions } from '@stripe/stripe-js';
-import { StripeService } from 'ngx-stripe';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { loadStripe, Stripe, StripeElements } from '@stripe/stripe-js';
 import { CheckoutService } from '../../services/checkout.service';
-import { ParamMap, Router } from '@angular/router';
-import { Result } from '../../models/result';
+import { StripeEmbeddedCheckoutOptions } from '@stripe/stripe-js';
+import { environment } from '../../../environments/environment';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-stripe',
-  imports: [],
+  standalone: true,
   templateUrl: './stripe.component.html',
-  styleUrl: './stripe.component.css'
+  styleUrls: ['./stripe.component.css'],
+  imports: [CommonModule]
 })
 export class StripeComponent implements OnInit {
-  stripe: any;
-  sessionId: string = '';
+  @ViewChild('checkoutDialogRef', { static: false }) checkoutDialogRef: ElementRef<HTMLDialogElement>;
+  intervalId: any;
+  sessionUrl: string = '';
+  stripe: Stripe | null = null;
+  elements: StripeElements | null = null;
   stripeEmbedCheckout: any;
-  service: CheckoutService;
-  checkoutDialogRef: any;
-  intervalId: NodeJS.Timeout;
-  routeQueryMap$: any;
-  route: any;
-  ngOnInit() {
-    this.intervalId = setInterval(() => {
-      this.routeQueryMap$ = this.route.queryParamMap.subscribe(queryMap => this.init(queryMap));
-    }, 5000);
-    this.embeddedCheckout()
+
+  constructor(
+    private checkoutService: CheckoutService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  async ngOnInit() {
+    this.stripe = await loadStripe(environment.stripePublicKey);
+
+    if (this.stripe) {
+      this.elements = this.stripe.elements();
+    } else {
+      console.error('Error al inicializar Stripe');
+    }
+
+    this.route.queryParamMap.subscribe(queryMap => this.init(queryMap));
+    this.embeddedCheckout();
   }
+
   async init(queryMap: ParamMap) {
-    this.sessionId = queryMap.get('ordenId');
-    if (this.sessionId) {
-      const request = await this.service.getStatus(this.sessionId);
-      console.log(this.sessionId)
+    this.sessionUrl = queryMap.get('sessionUrl')!;
+    if (this.sessionUrl) {
+      const request = await this.checkoutService.getStatus(this.sessionUrl);
+      console.log(this.sessionUrl);
       if (request.success) {
         console.log(request.data);
-      }else {
+      } else {
         console.log("request null");
-      }
-    }
-  }
-
-  constructor( private checkoutService: CheckoutService, private router: Router) {}
-  
-  async embeddedCheckout() {
-    this.checkoutService.getEmbededCheckout()
-      .then(result => {
-        if (result.success) {
-          const options: StripeEmbeddedCheckoutOptions = {
-            clientSecret: result.data.clientSecret,
-            onComplete: () => this.confirmacion()
-          };
-
-          this.stripe.initEmbeddedCheckout(options)
-            .subscribe((checkout) => {
-              this.stripeEmbedCheckout = checkout;
-              checkout.mount('#checkout');
-              this.checkoutDialogRef.nativeElement.showModal();
-            });
-        } else {
-          console.error('Error al obtener el checkout embebido:', result.error);
-        }
-      })
-      .catch(error => {
-        console.error('Error al inicializar el checkout embebido:', error);
-      });
-  }
-  confirmacion(){
-    this.router.navigateByUrl("confirmacion")
-  }
-
+      }
     }
-  
+  }
 
+  async embeddedCheckout() {
+    const result = await this.checkoutService.getEmbededCheckout();
+
+    if (result.success) {
+      console.log("Embedded checkout obtenido con éxito");
+
+      const options: StripeEmbeddedCheckoutOptions = {
+        clientSecret: result.data.clientSecret,
+        onComplete: () => this.confirmacion() // Redirigir al confirmar
+      };
+
+      // Almacenar el sessionUrl obtenido del backend
+      this.sessionUrl = result.data.sessionUrl;
+
+      if (this.stripe) {
+        const checkout = await this.stripe.initEmbeddedCheckout(options);
+        this.stripeEmbedCheckout = checkout;
+        if (this.checkoutDialogRef && this.checkoutDialogRef.nativeElement) {
+          checkout.mount('#checkout');
+          this.checkoutDialogRef.nativeElement.showModal(); // Mostrar el dialogo
+        } else {
+          console.error('checkoutDialogRef no está correctamente referenciado o no tiene nativeElement');
+        }
+      } else {
+        console.error('El objeto stripe no está correctamente inicializado o no tiene el método initEmbeddedCheckout');
+      }
+
+    } else {
+      console.error('Error al obtener el checkout embebido:', result.error);
+    }
+  }
+
+  confirmacion() {
+    this.router.navigateByUrl("compraconfirmada");
+  }
+}

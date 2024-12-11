@@ -5,6 +5,7 @@ namespace E_Commerce_VS.Recursos;
 
 internal class PasswordHelper
 {
+    // Made by Jose aka nuestro profe favorito
     public static string Hash(string password)
     {
         byte[] inputBytes = Encoding.UTF8.GetBytes(password);

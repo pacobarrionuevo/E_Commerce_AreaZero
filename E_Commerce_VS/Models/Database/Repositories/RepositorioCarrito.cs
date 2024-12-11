@@ -12,7 +12,7 @@ namespace E_Commerce_VS.Models.Database.Repositories
             _dbContext = context;
         }
 
-        // Obtener todos los carritos incluyendo sus productos
+        // Para obtener todos los carritos que hay guardados incluyendo sus productos
         public async Task<IEnumerable<Carrito>> GetAllAsync()
         {
             return await _dbContext.Carritos
@@ -20,7 +20,7 @@ namespace E_Commerce_VS.Models.Database.Repositories
                 .ToListAsync();
         }
 
-        // Obtener un carrito por UserId incluyendo sus productos
+        // Este metodo devuelve el carrito asociado a un usuario (por su Id)
         public async Task<Carrito> GetCarritoByUserIdAsync(int? userId)
         {
             return await _dbContext.Carritos

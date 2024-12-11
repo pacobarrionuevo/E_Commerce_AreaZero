@@ -18,15 +18,18 @@ namespace E_Commerce_VS.Controllers
             _context = dbContext;
         }
 
+        // Controlador que obtiene todos los productos del carrito
         [HttpGet("productosCarrito")]
         public async Task<IEnumerable<ProductoCarrito>> GetProductosCarrito()
         {
             return await _context.ProductoCarritos.Include(pc => pc.Producto).ToListAsync();
         }
 
+        //Controlador que elimina un producto del carrito
         [HttpPut("eliminarproductocarrito")]
         public async Task<IActionResult> DeleteProduct([FromBody] DeleteProductDto request)
         {
+            //nove que trabajito este
             var carrito = await _context.Carritos
                 .FirstOrDefaultAsync(c => c.UserId == request.UserId);
 
@@ -39,9 +42,7 @@ namespace E_Commerce_VS.Controllers
             return Ok("Producto eliminado del carrito.");
         }
 
-
-
-
+        //Modifica la cantidad de un producto que hay en el carrito
         [HttpPut("cambiarcantidad")]
         public async Task<IActionResult> ModifyProduct([FromBody] ModifyProductDto request)
         {
@@ -59,6 +60,7 @@ namespace E_Commerce_VS.Controllers
             return Ok("Cantidad actualizada en el carrito.");
         }
 
+        // Obtener productos del carrito de un usuario
         [HttpGet("productosCarrito/{userId}")]
         public async Task<IActionResult> GetProductosCarritoByUserId(int userId)
         {

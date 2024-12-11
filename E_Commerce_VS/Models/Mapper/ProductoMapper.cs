@@ -7,6 +7,8 @@ namespace E_Commerce_VS.Models.Mapper
 {
     public class ProductoMapper
     {
+        //Le pasamos el review mapper porque el producto se supone que luego tiene que enseñar las reseñas que hace la gente
+        //La libertad de opinion esta sobrevalorada
         private readonly ReviewMapper _reviewMapper = new ReviewMapper();
         public ProductoDto ToDto(Producto producto, HttpRequest httpRequest = null)
         {

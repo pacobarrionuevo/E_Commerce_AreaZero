@@ -3,6 +3,7 @@ using Stripe.Checkout;
 
 namespace E_Commerce_VS.Controllers
 {
+    //Controla que el estado de la sesion
     [Route("session-status")]
     [ApiController]
     public class SessionStatusController : Controller

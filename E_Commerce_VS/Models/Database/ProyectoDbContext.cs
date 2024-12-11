@@ -6,6 +6,7 @@ namespace E_Commerce_VS.Models.Database
 {
     public class ProyectoDbContext : DbContext
     {
+        //Nombre de la base de datos y luego se llama ahi
         private const string DATABASE_PATH = "areaZero.db";
 
         private readonly Settings _settings;
