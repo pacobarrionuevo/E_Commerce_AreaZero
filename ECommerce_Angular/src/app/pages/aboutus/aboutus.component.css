@@ -7,22 +7,19 @@ body {
 }
 
 .about-us-container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  background: #ffffff;
+  background: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 .header {
-  width: 100%;
   background: #b8def1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 40px;
   border-radius: 10px 10px 0 0;
 }
@@ -38,14 +35,14 @@ body {
 .about-us-title h1 {
   font-weight: 700;
   font-size: 48px;
-  color: #5a738e; 
+  color: #5a738e;
   text-align: center;
   margin: 0;
 }
 
 .line1 {
   width: 150px;
-  border: 2px solid #5a738e; 
+  border: 2px solid #5a738e;
   margin: 20px auto 0;
 }
 
@@ -57,7 +54,7 @@ body {
 }
 
 .mission-section, .vision-section, .values-section {
-  background: #e8f4fa; 
+  background: #e8f4fa;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,7 +63,7 @@ body {
 
 .mission-section h2, .vision-section h2, .values-section h2 {
   font-size: 36px;
-  color: #395b75; 
+  color: #395b75;
   margin-bottom: 20px;
 }
 
@@ -78,20 +75,20 @@ body {
 }
 
 .values-section p strong {
-  color: #395b75; 
+  color: #395b75;
 }
 
 .social-media {
   text-align: center;
   padding: 40px 20px;
-  background-color: #e8f4fa; 
+  background: #e8f4fa;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .social-media p {
   font-size: 24px;
-  color: #395b75; 
+  color: #395b75;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -113,7 +110,6 @@ body {
   transform: scale(1.1);
   opacity: 0.8;
 }
-
 
 @media (max-width: 768px) {
   .about-us-container {
