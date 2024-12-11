@@ -1,5 +1,6 @@
 ﻿using static System.Net.Mime.MediaTypeNames;
 using E_Commerce_VS.Models.Database.Entidades;
+using E_Commerce_VS.Recursos;
 
 namespace E_Commerce_VS.Models.Database
 {
@@ -41,7 +42,8 @@ namespace E_Commerce_VS.Models.Database
                 new Producto() { Id = 17, Nombre = "Sword & Shield: Silver Tempest", Ruta = "images/17.png", Precio = 499, Stock = 10, Descripcion = "Un paquete de expansión de Sword & Shield: Silver Tempest con cartas emocionantes y poderosas." },
                 new Producto() { Id = 18, Nombre = "Escarlata y Púrpura: Llamas Obsidianas", Ruta = "images/18.png", Precio = 499, Stock = 10, Descripcion = "Expande tu mazo con el paquete de Escarlata y Púrpura: Llamas Obsidianas, que incluye cartas exclusivas." },
                 new Producto() { Id = 19, Nombre = "Escarlata y Púrpura: Evoluciones en Paldea", Ruta = "images/19.png", Precio = 499, Stock = 10, Descripcion = "Nuevas cartas de Escarlata y Púrpura centradas en las evoluciones de Paldea, perfectas para fortalecer tu colección." },
-                new Producto() { Id = 20, Nombre = "Sword & Shield: Evolving Skies", Ruta = "images/20.png", Precio = 499, Stock = 10, Descripcion = "Un paquete de expansión de Sword & Shield: Evolving Skies, lleno de cartas únicas y sorprendentes." }, };
+                new Producto() { Id = 20, Nombre = "Sword & Shield: Evolving Skies", Ruta = "images/20.png", Precio = 499, Stock = 10, Descripcion = "Un paquete de expansión de Sword & Shield: Evolving Skies, lleno de cartas únicas y sorprendentes." },
+            };
             Review[] reviews = new Review[]
             {
                 new Review() {Id = 1, UsuarioId = 1, FechaPublicacion = DateTime.UtcNow , TextReview = "Me gusta mucho esta coleccion", Label = 1, ProductoId = 1},
@@ -50,8 +52,13 @@ namespace E_Commerce_VS.Models.Database
                 new Review() {Id = 4, UsuarioId = 4, FechaPublicacion = DateTime.UtcNow , TextReview = "No me gusta", Label = -1, ProductoId = 3},
             };
 
+            Usuario[] usuarios = new Usuario[] { 
+                new Usuario() { UsuarioId = 1, Nombre = "Jose", Password = PasswordHelper.Hash("jose777"), Email = "jose@gmail.com", Direccion = "Calle Jose", esAdmin = true },
+                new Usuario() { UsuarioId = 2, Nombre = "paco", Password = PasswordHelper.Hash("paco"), Email = "paco@gmail.com", Direccion = "Calle Paco", esAdmin = false } 
+            };
             await _dbContext.Productos.AddRangeAsync(productos);
             await _dbContext.Reviews.AddRangeAsync(reviews);
+            await _dbContext.Usuarios.AddRangeAsync(usuarios);
         }
 
     }

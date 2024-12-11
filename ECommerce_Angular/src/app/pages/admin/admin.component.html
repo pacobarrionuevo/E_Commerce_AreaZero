@@ -1,1 +1,96 @@
-<p>admin works!</p>
+<div class="admin-container">
+    <h2>Panel de Administración</h2>
+  
+    <div class="usuarios-section">
+      <h3>Usuarios</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <td>{{ usuario.id }}</td>
+            <td>
+              <input type="text" [(ngModel)]="usuario.nombre" (blur)="updateUsuario(usuario)">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="usuario.email" (blur)="updateUsuario(usuario)">
+            </td>
+            <td>
+              <input type="checkbox" [(ngModel)]="usuario.esAdmin" (change)="updateUsuario(usuario)">
+            </td>
+            <td>
+              <button class="button" (click)="deleteUsuario(usuario.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="productos-section">
+      <h3>Productos</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <td>{{ producto.id }}</td>
+            <td>
+              <input type="text" [(ngModel)]="producto.nombre" (blur)="updateProducto(producto)">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="producto.descripcion" (blur)="updateProducto(producto)">
+            </td>
+            <td>
+              <input type="number" [(ngModel)]="producto.precio" (blur)="updateProducto(producto)">
+            </td>
+            <td>
+              <button class="button" (click)="deleteProducto(producto.id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    
+    <div class="crear-producto-section">
+      <h3>Crear Nuevo Producto</h3>
+      <form (ngSubmit)="createProducto()">
+        <div class="input-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" [(ngModel)]="nuevoProducto.nombre" name="nombre" required>
+        </div>
+        <div class="input-group">
+          <label for="ruta">Ruta:</label>
+          <input type="text" id="ruta" [(ngModel)]="nuevoProducto.ruta" name="ruta" required>
+        </div>
+        <div class="input-group">
+          <label for="descripcion">Descripción:</label>
+          <input type="text" id="descripcion" [(ngModel)]="nuevoProducto.descripcion" name="descripcion" required>
+        </div>
+        <div class="input-group">
+          <label for="precio">Precio:</label>
+          <input type="number" id="precio" [(ngModel)]="nuevoProducto.precio" name="precio" required>
+        </div>
+        <div class="input-group">
+          <label for="stock">Stock:</label>
+          <input type="number" id="stock" [(ngModel)]="nuevoProducto.stock" name="stock" required>
+        </div>
+        <button type="submit" class="button">Crear Producto</button>
+      </form>
+    </div>
+  </div>
+  

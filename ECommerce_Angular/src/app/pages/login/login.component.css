@@ -17,6 +17,7 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
+    padding: 20px;
 }
 
 .title {
@@ -125,4 +126,52 @@ body {
 .password-requirements span {
     display: block;
     margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .input-group input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .password-requirements {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .password-requirements {
+        font-size: 10px;
+    }
 }

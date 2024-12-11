@@ -8,6 +8,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { CompraconfirmadaComponent } from './pages/compraconfirmada/compraconfirmada.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { AdminComponent } from './pages/admin/admin.component';
 export const routes: Routes = [
     {
         path: '',
@@ -43,6 +45,15 @@ export const routes: Routes = [
     },
     {
         path: 'compraconfirmada',
-        component: CompraconfirmadaComponent
+        component: CompraconfirmadaComponent,
+    },
+    {
+        path: 'usuario',
+        component: UsuarioComponent,
+    }
+    ,
+    {
+        path: 'admin',
+        component: AdminComponent,
     }
 ];

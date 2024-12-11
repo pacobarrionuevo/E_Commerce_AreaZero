@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms'; 
 import { CarritoService } from '../../services/carrito.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +15,15 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   email: string = ''; 
   password: string = ''; 
-  jwt: string = ''; 
+  jwt: string | null = null; 
   usuarioId: number | null = null;
 
-  constructor(private authService: AuthService, private carritoService: CarritoService) {}
+  constructor(private authService: AuthService, private carritoService: CarritoService, private router: Router) {}
+
+  ngOnInit(): void {
+    // Obtenemos el token desde el almacenamiento local en OnInit
+    this.jwt = localStorage.getItem('accessToken'); 
+  }
 
   async submit() {
     const authData = { email: this.email, password: this.password }; 
@@ -38,6 +44,7 @@ export class LoginComponent {
         console.log("Inicio de sesión exitoso.");
         this.carritoService.localtoCart();
         localStorage.removeItem('cart');
+        this.router.navigate(['/']);
       } else {
         console.error("No se recibió un token de acceso.");
       }
