@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StripeEmbeddedCheckout, StripeEmbeddedCheckoutOptions } from '@stripe/stripe-js';
 import { StripeService } from 'ngx-stripe';
 import { CheckoutService } from '../../services/checkout.service';
-import { Router } from '@angular/router';
+import { ParamMap, Router } from '@angular/router';
 import { Result } from '../../models/result';
 @Component({
   selector: 'app-stripe',
@@ -12,7 +12,9 @@ import { Result } from '../../models/result';
 })
 export class StripeComponent implements OnInit {
   stripe: any;
+  sessionId: string = '';
   stripeEmbedCheckout: any;
+  service: CheckoutService;
   checkoutDialogRef: any;
   intervalId: NodeJS.Timeout;
   routeQueryMap$: any;
@@ -23,13 +25,22 @@ export class StripeComponent implements OnInit {
     }, 5000);
     this.embeddedCheckout()
   }
-  init(queryMap: any) {
-    throw new Error('Method not implemented.');
+  async init(queryMap: ParamMap) {
+    this.sessionId = queryMap.get('ordenId');
+    if (this.sessionId) {
+      const request = await this.service.getStatus(this.sessionId);
+      console.log(this.sessionId)
+      if (request.success) {
+        console.log(request.data);
+      }else {
+        console.log("request null");
+      }
+    }
   }
 
   constructor( private checkoutService: CheckoutService, private router: Router) {}
   
-  async embeddedCheckout(): Promise<void> {
+  async embeddedCheckout() {
     this.checkoutService.getEmbededCheckout()
       .then(result => {
         if (result.success) {

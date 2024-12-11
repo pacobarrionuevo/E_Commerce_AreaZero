@@ -45,7 +45,7 @@ export class CheckoutComponent implements OnInit, OnDestroy  {
   }
 
   async init(queryMap: ParamMap) {
-    this.sessionId = queryMap.get('session_id');
+    this.sessionId = queryMap.get('ordenId');
 
     if (this.sessionId) {
       const request = await this.service.getStatus(this.sessionId);
@@ -103,7 +103,7 @@ export class CheckoutComponent implements OnInit, OnDestroy  {
     }));
     
   
-    const request = await this.service.getEmbededCheckout(productos);
+    const request = await this.service.getEmbededCheckout();
   
     if (request.success) {
       const options: StripeEmbeddedCheckoutOptions = {

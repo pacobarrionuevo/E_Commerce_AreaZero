@@ -16,24 +16,26 @@ export class CheckoutService {
   constructor(private api: ApiService, private http: HttpClient) { }
   private Url = 'https://localhost:7133/api';
   getAllProducts(): Promise<Result<Carrito[]>> {
-    return this.api.get<Carrito[]>('/ControladorCheckout/products');
+    return this.api.get<Carrito[]>('ControladorCheckout/products');
   }
 
   getHostedCheckout(products: any): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('/controladorcheckout/hosted', products);
+    return this.api.get<CheckoutSession>('ControladorCheckout/hosted', products);
   }
 
-  getEmbededCheckout(products: any): Promise<Result<CheckoutSession>> {
-    return this.api.get<CheckoutSession>('/controladorcheckout/embedded', products);
+  getEmbededCheckout(): Promise<Result<CheckoutSession>> {
+    return this.api.get<CheckoutSession>('ControladorCheckout/embedded');
   }
 
   getStatus(sessionId: string): Promise<Result<CheckoutSessionStatus>> {
-    return this.api.get<CheckoutSessionStatus>(`checkout/status/${sessionId}`);
+    return this.api.get<CheckoutSessionStatus>(`ControladorCheckout/status/${sessionId}`);
   }
 
   getCreateCheckoutSession(): Observable<CheckoutSession> {
     return this.http.post<CheckoutSession>(this.Url, {});
   }
+
+ 
 
   crearOrdenTemporal(): Observable<any> {
     // Recuperar el sessionId y usuarioId del localStorage

@@ -1,0 +1,29 @@
+<div id="confirmacion-compra">
+    <section class="mensaje-compra">
+        <h2>¡Gracias por tu compra, {{nombre}}!</h2>
+        <p>Te enviaremos todos los detalles de tu pedido a tu correo electrónico.</p>
+    </section>
+
+    <section class="detalle-pago">
+        <h3>Detalles de la compra</h3>
+        <p><strong>Método de pago:</strong> {{tipoPago}}</p>
+        <p><strong>Entrega:</strong> {{entrega}}</p>
+    </section>
+
+    <section class="lista-productos">
+        <h3>Productos adquiridos</h3>
+        <div class="productos-grid">
+            <div *ngFor="let producto of productos" class="producto-item">
+                <img [src]="producto.urlImg" alt="Imagen del producto" class="producto-imagen">
+                <div class="producto-detalles">
+                    <p class="producto-nombre">{{producto.marcaModelo}}</p>
+                    <p class="producto-precio">Precio: {{producto.precio}} €</p>
+                    <p class="producto-cantidad">Cantidad: {{producto.cantidad}}</p>
+                    <p class="producto-total">Subtotal: {{producto.cantidad * producto.precio}} €</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
+</div>
