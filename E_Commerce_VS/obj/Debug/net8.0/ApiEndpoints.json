@@ -287,13 +287,7 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productos",
-        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -307,6 +301,22 @@
       {
         "Name": "productos",
         "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_VS.Controllers.ControladorCheckout",
+    "Method": "GetOrderDetails",
+    "RelativePath": "api/ControladorCheckout/order-details/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

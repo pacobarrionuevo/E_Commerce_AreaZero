@@ -54,6 +54,34 @@ namespace E_Commerce_VS.Controllers
 
                 return Ok(ordenesTemporales);
             }
+        [HttpGet("order-details/{id}")]
+        public async Task<IActionResult> GetOrderDetails(int id)
+        {
+            var orden = await _dbContext.OrdenesTemporales
+                .Include(o => o.Productos)
+                .ThenInclude(p => p.Producto)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (orden == null || orden.FechaExpiracion <= DateTime.UtcNow)
+            {
+                return NotFound("Orden no encontrada o expirada.");
+            }
+
+            var productos = orden.Productos.Select(p => new
+            {
+                p.Producto.Id,
+                p.Producto.Nombre,
+                p.Producto.Precio,
+                p.Cantidad,
+                Total = p.Cantidad * p.Producto.Precio
+            });
+
+            return Ok(new
+            {
+                Productos = productos,
+                Total = productos.Sum(p => p.Total)
+            });
+        }
 
 
         [HttpPost("hosted")]
@@ -93,27 +121,38 @@ namespace E_Commerce_VS.Controllers
 
             return Ok(new { sessionUrl = session.Url });
         }
-
         [HttpPost("embedded")]
-        public async Task<ActionResult> EmbeddedCheckout([FromBody] List<ProductoDto> productos)
+        public async Task<ActionResult> EmbeddedCheckout()
         {
-            if (productos == null || !productos.Any())
-                return BadRequest("No se proporcionaron productos para el checkout.");
+            int userIdToken = Int32.Parse(User.FindFirst("id").Value);
 
-            var lineItems = productos.Select(product => new SessionLineItemOptions
+            var ordenTemporal = _dbContext.OrdenesTemporales.Include(o => o.Productos).FirstOrDefault(o => o.UsuarioId == userIdToken);
+
+            var lineItems = new List<SessionLineItemOptions>();
+
+            foreach (var producto in ordenTemporal.Productos)
             {
-                PriceData = new SessionLineItemPriceDataOptions
+                var productoStripe = _dbContext.Productos.FirstOrDefault(b => b.Id == producto.Id);
+
+                if (productoStripe != null)
                 {
-                    Currency = "eur",
-                    UnitAmount = (long)(product.Precio * 100),
-                    ProductData = new SessionLineItemPriceDataProductDataOptions
+                    lineItems.Add(new SessionLineItemOptions
                     {
-                        Name = product.Nombre,
-                        Images = new List<string> { product.Ruta }
-                    }
-                },
-                Quantity = 1
-            }).ToList();
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
+                            Currency = "eur",
+                            UnitAmount = (long)(productoStripe.Precio),
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = productoStripe.Nombre,
+                                Description = productoStripe.Descripcion,
+                                Images = new List<string> { productoStripe.Ruta }
+                            }
+                        },
+                        Quantity = producto.Cantidad
+                    });
+                }
+            }
 
             var options = new SessionCreateOptions
             {
@@ -128,7 +167,7 @@ namespace E_Commerce_VS.Controllers
             var service = new SessionService();
             var session = await service.CreateAsync(options);
 
-            return Ok(new { clientSecret = session.ClientSecret });
+            return Ok(new { clientSecret = session.ClientSecret, sessionId = session.Id });
         }
 
         [HttpGet("status/{sessionId}")]
@@ -151,7 +190,6 @@ namespace E_Commerce_VS.Controllers
 
                 if (carritoUsuario == null || !carritoUsuario.ProductoCarrito.Any())
                 {
-                    Console.WriteLine("No se encontraron productos en el carrito del usuario.");
                     return BadRequest("No se encontraron productos en el carrito del usuario.");
                 }
 
@@ -160,24 +198,12 @@ namespace E_Commerce_VS.Controllers
                     ProductoId = cp.ProductoId,
                     Cantidad = cp.Cantidad,
                 }).ToList();
-
-                Console.WriteLine($"Productos recuperados: {productosCarrito.Count}");
             }
 
             if (productosCarrito == null || !productosCarrito.Any())
             {
                 return BadRequest("No se proporcionaron productos válidos para crear la orden temporal.");
             }
-
-
-            if (userId.HasValue && !await _dbContext.Set<Usuario>().AnyAsync(u => u.UsuarioId == userId))
-            {
-                return BadRequest($"El usuario con ID {userId} no existe.");
-            }
-
-            // Resto del método...
-        
-
 
             // Verificar si tanto userId como ordenId están presentes
             if (ordenId.HasValue)
@@ -189,44 +215,49 @@ namespace E_Commerce_VS.Controllers
 
                 if (ordenActiva != null)
                 {
-                    // Si la orden existe y está activa, la actualizamos
-
-                    // Si se proporciona un userId, lo asignamos a la orden
                     if (userId.HasValue)
                     {
                         ordenActiva.UsuarioId = userId.Value;
                     }
 
-                    // Actualizamos los productos en la orden activa
                     foreach (var productoCarrito in productosCarrito)
                     {
+                        var producto = await _dbContext.Productos.FindAsync(productoCarrito.ProductoId);
+                        if (producto == null)
+                        {
+                            return NotFound($"Producto con ID {productoCarrito.ProductoId} no encontrado.");
+                        }
+
+                        if (producto.Stock < productoCarrito.Cantidad)
+                        {
+                            return BadRequest($"Stock insuficiente para el producto {producto.Nombre}. Disponible: {producto.Stock}, solicitado: {productoCarrito.Cantidad}.");
+                        }
+
                         var productoEnOrden = ordenActiva.Productos
                             .FirstOrDefault(p => p.ProductoId == productoCarrito.ProductoId);
 
                         if (productoEnOrden != null)
                         {
-                            // Si el producto ya está en la orden, actualizamos la cantidad
+                            producto.Stock += productoEnOrden.Cantidad; // Revertir cantidad previa
                             productoEnOrden.Cantidad = productoCarrito.Cantidad;
                         }
                         else
                         {
-                            // Si el producto no está en la orden, lo añadimos
                             ordenActiva.Productos.Add(new ProductoCarrito
                             {
                                 ProductoId = productoCarrito.ProductoId,
                                 Cantidad = productoCarrito.Cantidad,
                             });
                         }
+
+                        producto.Stock -= productoCarrito.Cantidad; // Actualizar stock con nueva cantidad
                     }
 
-                    // Eliminar productos que ya no están en el carrito
                     ordenActiva.Productos.RemoveAll(p =>
                         !productosCarrito.Any(pc => pc.ProductoId == p.ProductoId));
 
-                    // Actualizar la fecha de expiración
                     ordenActiva.FechaExpiracion = DateTime.UtcNow.AddMinutes(30);
 
-                    // Guardar los cambios en la base de datos
                     await _dbContext.SaveChangesAsync();
 
                     return Ok(new
@@ -235,26 +266,39 @@ namespace E_Commerce_VS.Controllers
                         OrdenId = ordenActiva.Id
                     });
                 }
-                else
-                {
-                    // Si la orden no existe o está expirada
-                    return BadRequest("La orden temporal no está activa o ha expirado.");
-                }
+
+                return BadRequest("La orden temporal no está activa o ha expirado.");
             }
 
-            // Si no existe la orden temporal con el ordenId (sessionId), creamos una nueva orden temporal
             var nuevaOrden = new OrdenTemporal
             {
                 UsuarioId = userId,
-                Productos = productosCarrito.Select(p => new ProductoCarrito
-                {
-                    ProductoId = p.ProductoId,
-                    Cantidad = p.Cantidad,
-                }).ToList(),
+                Productos = new List<ProductoCarrito>(),
                 FechaExpiracion = DateTime.UtcNow.AddMinutes(30)
             };
 
-            // Añadir la nueva orden temporal a la base de datos
+            foreach (var productoCarrito in productosCarrito)
+            {
+                var producto = await _dbContext.Productos.FindAsync(productoCarrito.ProductoId);
+                if (producto == null)
+                {
+                    return NotFound($"Producto con ID {productoCarrito.ProductoId} no encontrado.");
+                }
+
+                if (producto.Stock < productoCarrito.Cantidad)
+                {
+                    return BadRequest($"Stock insuficiente para el producto {producto.Nombre}. Disponible: {producto.Stock}, solicitado: {productoCarrito.Cantidad}.");
+                }
+
+                producto.Stock -= productoCarrito.Cantidad;
+
+                nuevaOrden.Productos.Add(new ProductoCarrito
+                {
+                    ProductoId = productoCarrito.ProductoId,
+                    Cantidad = productoCarrito.Cantidad,
+                });
+            }
+
             _dbContext.OrdenesTemporales.Add(nuevaOrden);
             await _dbContext.SaveChangesAsync();
 
@@ -264,7 +308,6 @@ namespace E_Commerce_VS.Controllers
                 OrdenId = nuevaOrden.Id
             });
         }
-
 
     }
 }

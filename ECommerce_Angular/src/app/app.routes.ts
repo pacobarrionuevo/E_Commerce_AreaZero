@@ -7,9 +7,13 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+<<<<<<< HEAD
 import { PaymentComponent } from './pages/payment/payment.component';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { AdminComponent } from './pages/admin/admin.component';
+=======
+import { CompraconfirmadaComponent } from './pages/compraconfirmada/compraconfirmada.component';
+>>>>>>> origin/gonza
 export const routes: Routes = [
     {
         path: '',
@@ -44,8 +48,8 @@ export const routes: Routes = [
         component: CheckoutComponent
     },
     {
-        path: 'pay',
-        component: PaymentComponent,
+      path: 'compraconfirmada',
+      component: CompraconfirmadaComponent
     },
     {
         path: 'usuario',
