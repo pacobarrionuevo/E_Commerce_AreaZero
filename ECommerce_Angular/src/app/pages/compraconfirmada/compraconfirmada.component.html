@@ -1,29 +1,26 @@
-<div id="confirmacion-compra">
-    <section class="mensaje-compra">
-        <h2>¡Gracias por tu compra, {{nombre}}!</h2>
-        <p>Te enviaremos todos los detalles de tu pedido a tu correo electrónico.</p>
-    </section>
-
-    <section class="detalle-pago">
-        <h3>Detalles de la compra</h3>
-        <p><strong>Método de pago:</strong> {{tipoPago}}</p>
-        <p><strong>Entrega:</strong> {{entrega}}</p>
+<div id="confirmacion-compra" class="container">
+    <section class="mensaje-compra text-center">
+        <h2>Compra hecha rey, píllate algo más.</h2>
+        <strong>Método de pago: tarjeta</strong>
     </section>
 
     <section class="lista-productos">
         <h3>Productos adquiridos</h3>
-        <div class="productos-grid">
-            <div *ngFor="let producto of productos" class="producto-item">
-                <img [src]="producto.urlImg" alt="Imagen del producto" class="producto-imagen">
+        <div *ngIf="productosCarrito?.length > 0; else noProductos" class="productos-grid">
+            <div *ngFor="let producto of productosCarrito" class="producto-item">
+                <div class="producto-imagen-container">
+                    <img [src]="producto.producto.ruta" alt="Imagen del producto" class="producto-imagen" />
+                </div>
                 <div class="producto-detalles">
-                    <p class="producto-nombre">{{producto.marcaModelo}}</p>
-                    <p class="producto-precio">Precio: {{producto.precio}} €</p>
-                    <p class="producto-cantidad">Cantidad: {{producto.cantidad}}</p>
-                    <p class="producto-total">Subtotal: {{producto.cantidad * producto.precio}} €</p>
+                    <p class="producto-nombre">{{ producto.producto.nombre }}</p>
+                    <p class="producto-precio">Precio: {{ producto.producto.precio / 100}} €</p>
+                    <p class="producto-cantidad">Cantidad: {{ producto.cantidad }}</p>
+                    <p class="producto-total">Subtotal: {{ producto.cantidad * producto.producto.precio / 100}} €</p>
                 </div>
             </div>
         </div>
+        <ng-template #noProductos>
+            <p>No se encontraron productos en esta compra.</p>
+        </ng-template>
     </section>
-
-    <app-footer></app-footer>
 </div>

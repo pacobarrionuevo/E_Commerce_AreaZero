@@ -147,13 +147,7 @@
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productos",
-        "Type": "System.Collections.Generic.List\u00601[[E_Commerce_VS.Models.Dto.ProductoDto, E_Commerce_VS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
