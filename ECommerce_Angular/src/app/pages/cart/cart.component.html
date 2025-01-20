@@ -6,7 +6,7 @@
       [src]="productosCarrito.producto.ruta"
       [alt]="productosCarrito.producto.nombre + ' image'"
     />
-    <p>Precio: {{ productosCarrito.producto.precio }}€</p>
+    <p>Precio: {{ productosCarrito.producto.precio/100 }}€</p>
     <p>
       Cantidad:
       <input
